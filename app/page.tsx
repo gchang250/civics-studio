@@ -1,65 +1,150 @@
-import Image from "next/image";
+import Link from "next/link";
 
-export default function Home() {
+const projects = [
+  {
+    title: "Detente",
+    type: "Print-and-play game",
+    description:
+      "A political negotiation game that helps students practise strategy, persuasion, deduction, and civic thinking.",
+    href: "/projects/detente",
+    cta: "Download game files",
+  },
+  {
+    title: "The Fried Rice Index",
+    type: "Data project",
+    description:
+      "A global affordability index comparing cities through the price of a bowl of egg fried rice.",
+    href: "/projects/fried-rice-index",
+    cta: "Visit project",
+  },
+];
+
+const focusAreas = [
+  "Civic literacy",
+  "Economic literacy",
+  "Negotiation",
+  "Public decision-making",
+];
+
+export default function HomePage() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+    <div>
+      <section className="border-b border-slate-300 bg-white">
+        <div className="mx-auto max-w-7xl px-5 py-16 md:py-20">
+          <div className="max-w-4xl">
+            <p className="text-sm font-bold uppercase tracking-[0.16em] text-[#8b1e1e]">
+              Civics Studio
+            </p>
+
+            <h1 className="serif mt-4 text-5xl font-bold leading-tight tracking-tight text-[#061a33] md:text-7xl">
+              Practical civic education for young people.
+            </h1>
+
+            <p className="mt-6 max-w-3xl text-xl leading-8 text-slate-700">
+              Civics Studio creates free games, data projects, and learning
+              resources that help students understand politics, economics, and
+              public life.
+            </p>
+
+            <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+              <Link
+                href="/projects"
+                className="bg-[#061a33] px-6 py-3 text-center text-sm font-bold text-white transition hover:bg-[#0b2d57]"
+              >
+                View Projects
+              </Link>
+              <Link
+                href="/projects/detente"
+                className="border border-[#061a33] px-6 py-3 text-center text-sm font-bold text-[#061a33] transition hover:bg-[#061a33] hover:text-white"
+              >
+                Download Detente
+              </Link>
+            </div>
+          </div>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+      </section>
+
+      <section className="border-b border-slate-300 bg-[#f4f6f8]">
+        <div className="mx-auto grid max-w-7xl gap-6 px-5 py-8 md:grid-cols-4">
+          {focusAreas.map((area) => (
+            <div
+              key={area}
+              className="border-l-4 border-[#8b1e1e] bg-white p-5 shadow-sm"
+            >
+              <p className="text-sm font-bold text-[#061a33]">{area}</p>
+            </div>
+          ))}
         </div>
-      </main>
+      </section>
+
+      <section className="mx-auto max-w-7xl px-5 py-14">
+        <div className="mb-6 flex items-end justify-between gap-6 border-b border-slate-300 pb-4">
+          <div>
+            <p className="text-sm font-bold uppercase tracking-[0.16em] text-[#8b1e1e]">
+              Featured projects
+            </p>
+            <h2 className="serif mt-2 text-3xl font-bold text-[#061a33] md:text-4xl">
+              Current work
+            </h2>
+          </div>
+
+          <Link
+            href="/projects"
+            className="hidden text-sm font-bold text-[#061a33] hover:underline md:block"
+          >
+            All projects →
+          </Link>
+        </div>
+
+        <div className="grid gap-6 md:grid-cols-2">
+          {projects.map((project) => (
+            <Link
+              key={project.title}
+              href={project.href}
+              className="group border border-slate-300 bg-white shadow-sm transition hover:border-[#061a33] hover:shadow-md"
+            >
+              <div className="border-b border-slate-300 bg-[#061a33] px-6 py-4 text-white">
+                <p className="text-sm font-bold uppercase tracking-[0.14em]">
+                  {project.type}
+                </p>
+              </div>
+
+              <div className="p-6 md:p-8">
+                <h3 className="serif text-3xl font-bold text-[#061a33]">
+                  {project.title}
+                </h3>
+                <p className="mt-4 leading-7 text-slate-700">
+                  {project.description}
+                </p>
+                <p className="mt-6 text-sm font-bold text-[#8b1e1e]">
+                  {project.cta} →
+                </p>
+              </div>
+            </Link>
+          ))}
+        </div>
+      </section>
+
+      <section className="bg-white">
+        <div className="mx-auto max-w-7xl px-5 py-14">
+          <div className="border border-slate-300 bg-[#f8fafc] p-8 md:grid md:grid-cols-[0.7fr_1.3fr] md:gap-10 md:p-10">
+            <div>
+              <p className="text-sm font-bold uppercase tracking-[0.16em] text-[#8b1e1e]">
+                Statement
+              </p>
+              <h2 className="serif mt-2 text-3xl font-bold text-[#061a33]">
+                Non-partisan by design.
+              </h2>
+            </div>
+
+            <p className="mt-5 leading-8 text-slate-700 md:mt-0">
+              Civics Studio does not promote any political party or ideology.
+              The goal is to help young people understand public life more
+              clearly and participate more thoughtfully.
+            </p>
+          </div>
+        </div>
+      </section>
     </div>
   );
 }
