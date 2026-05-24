@@ -1,4 +1,5 @@
 import Link from "next/link";
+import DownloadLink from "@/app/components/DownloadLink";
 
 const resources = [
   {
@@ -108,9 +109,9 @@ export default function ResourcesPage() {
                 );
 
                 return available ? (
-                  <a key={resource.title} href={resource.href}>
+                  <DownloadLink key={resource.title} href={resource.href} file={resource.title}>
                     {content}
-                  </a>
+                  </DownloadLink>
                 ) : (
                   <div key={resource.title}>{content}</div>
                 );

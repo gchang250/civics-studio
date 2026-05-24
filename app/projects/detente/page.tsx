@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import DownloadLink from "@/app/components/DownloadLink";
 
 const stats = [
   { label: "Players", value: "4–6" },
@@ -66,12 +67,13 @@ export default function DetentePage() {
               </p>
 
               <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-                <a
+                <DownloadLink
                   href="/downloads/detente-rulebook.pdf"
+                  file="Rulebook"
                   className="bg-[#1C3557] px-6 py-3 text-center text-sm font-bold uppercase tracking-[0.08em] text-white transition hover:bg-[#C9A94B] hover:text-[#1C3557]"
                 >
                   Download rulebook
-                </a>
+                </DownloadLink>
 
                 <a
                   href="#downloads"
@@ -187,9 +189,10 @@ export default function DetentePage() {
 
           <div className="divide-y divide-[#D8D0C3] border border-[#D8D0C3]">
             {downloads.map((file) => (
-              <a
+              <DownloadLink
                 key={file.href}
                 href={file.href}
+                file={file.title}
                 className="grid gap-4 bg-[#FAF7F0] p-5 transition hover:bg-white md:grid-cols-[0.3fr_1fr_0.15fr]"
               >
                 <h3 className="serif text-2xl font-bold text-[#1C3557]">
@@ -201,7 +204,7 @@ export default function DetentePage() {
                 <p className="text-sm font-bold uppercase tracking-[0.08em] text-[#C9A94B]">
                   PDF →
                 </p>
-              </a>
+              </DownloadLink>
             ))}
           </div>
         </div>
