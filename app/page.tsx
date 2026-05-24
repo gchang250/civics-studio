@@ -125,6 +125,49 @@ export default function HomePage() {
         </div>
       </section>
 
+      <section className="mx-auto max-w-7xl px-5 py-6">
+        <div className="grid gap-6 md:grid-cols-3">
+          <div className="border border-slate-300 bg-white p-6 shadow-sm">
+            <p className="text-sm font-bold uppercase tracking-[0.16em] text-[#8b1e1e]">
+              Free
+            </p>
+            <h3 className="serif mt-2 text-2xl font-bold text-[#061a33]">
+              Open access resources
+            </h3>
+            <p className="mt-3 text-sm leading-6 text-slate-700">
+              Civics Studio projects are designed to be freely used by students,
+              clubs, classrooms, and youth groups.
+            </p>
+          </div>
+
+          <div className="border border-slate-300 bg-white p-6 shadow-sm">
+            <p className="text-sm font-bold uppercase tracking-[0.16em] text-[#8b1e1e]">
+              Practical
+            </p>
+            <h3 className="serif mt-2 text-2xl font-bold text-[#061a33]">
+              Built around use
+            </h3>
+            <p className="mt-3 text-sm leading-6 text-slate-700">
+              The focus is on games, simulations, indexes, and guides that students
+              can actually apply.
+            </p>
+          </div>
+
+          <div className="border border-slate-300 bg-white p-6 shadow-sm">
+            <p className="text-sm font-bold uppercase tracking-[0.16em] text-[#8b1e1e]">
+              Non-partisan
+            </p>
+            <h3 className="serif mt-2 text-2xl font-bold text-[#061a33]">
+              Understanding first
+            </h3>
+            <p className="mt-3 text-sm leading-6 text-slate-700">
+              Civics Studio does not endorse parties, candidates, or political
+              campaigns.
+            </p>
+          </div>
+        </div>
+      </section>
+
       <section className="bg-white">
         <div className="mx-auto max-w-7xl px-5 py-14">
           <div className="border border-slate-300 bg-[#f8fafc] p-8 md:grid md:grid-cols-[0.7fr_1.3fr] md:gap-10 md:p-10">

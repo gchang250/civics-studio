@@ -2,10 +2,24 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import "./globals.css";
 
+
+
 export const metadata: Metadata = {
-  title: "Civics Studio",
+  title: {
+    default: "Civics Studio",
+    template: "%s | Civics Studio",
+  },
   description:
     "Civics Studio creates free civic learning tools, games, and data projects for youth.",
+  keywords: [
+    "civic education",
+    "youth civic engagement",
+    "Canada civics",
+    "Detente",
+    "Fried Rice Index",
+    "political literacy",
+    "economic literacy",
+  ],
 };
 
 const navItems = [
