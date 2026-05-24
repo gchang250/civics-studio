@@ -1,18 +1,10 @@
 import Image from "next/image";
 import Link from "next/link";
-
-const articles = [
-  {
-    title: "Why Civic Education Needs to Be Practical",
-    description:
-      "Civics is often taught as a list of institutions. It should also teach how power, incentives, negotiation, and public decisions actually work.",
-    href: "/articles/why-civics-matters",
-    category: "Civic Education",
-    date: "May 2026",
-  },
-];
+import { getAllArticles } from "@/lib/articles";
 
 export default function ArticlesPage() {
+  const articles = getAllArticles();
+
   return (
     <div>
       {/* Hero with photo */}
@@ -70,38 +62,42 @@ export default function ArticlesPage() {
             </h2>
           </div>
 
-          <div className="divide-y divide-[#D8D0C3] border-y border-[#D8D0C3]">
-            {articles.map((article) => (
-              <Link
-                key={article.href}
-                href={article.href}
-                className="grid gap-6 bg-[#FAF7F0] px-5 py-7 transition hover:bg-white md:grid-cols-[0.25fr_1fr_0.15fr]"
-              >
-                <div>
-                  <p className="text-xs font-bold uppercase tracking-[0.18em] text-[#C9A94B]">
-                    {article.category}
-                  </p>
-                  <p className="mt-2 text-sm text-[#5E5A54]">
-                    {article.date}
-                  </p>
-                </div>
+          {articles.length === 0 ? (
+            <p className="text-[#5E5A54]">No articles yet.</p>
+          ) : (
+            <div className="divide-y divide-[#D8D0C3] border-y border-[#D8D0C3]">
+              {articles.map((article) => (
+                <Link
+                  key={article.slug}
+                  href={`/articles/${article.slug}`}
+                  className="grid gap-6 bg-[#FAF7F0] px-5 py-7 transition hover:bg-white md:grid-cols-[0.25fr_1fr_0.15fr]"
+                >
+                  <div>
+                    <p className="text-xs font-bold uppercase tracking-[0.18em] text-[#C9A94B]">
+                      {article.category}
+                    </p>
+                    <p className="mt-2 text-sm text-[#5E5A54]">
+                      {article.dateFormatted}
+                    </p>
+                  </div>
 
-                <div>
-                  <h2 className="serif text-3xl font-bold tracking-[-0.025em] text-[#1C3557]">
-                    {article.title}
-                  </h2>
+                  <div>
+                    <h2 className="serif text-3xl font-bold tracking-[-0.025em] text-[#1C3557]">
+                      {article.title}
+                    </h2>
 
-                  <p className="mt-3 max-w-3xl leading-7 text-[#5E5A54]">
-                    {article.description}
+                    <p className="mt-3 max-w-3xl leading-7 text-[#5E5A54]">
+                      {article.description}
+                    </p>
+                  </div>
+
+                  <p className="text-sm font-bold uppercase tracking-[0.08em] text-[#1C3557]">
+                    Read →
                   </p>
-                </div>
-
-                <p className="text-sm font-bold uppercase tracking-[0.08em] text-[#1C3557]">
-                  Read →
-                </p>
-              </Link>
-            ))}
-          </div>
+                </Link>
+              ))}
+            </div>
+          )}
         </div>
       </section>
     </div>
