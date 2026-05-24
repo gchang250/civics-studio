@@ -2,13 +2,15 @@
 
 :root {
   --background: #faf7f0;
-  --foreground: #111111;
+  --foreground: #1c3557;
   --paper: #ffffff;
   --soft: #f3eee4;
   --border: #d8d0c3;
   --muted: #5e5a54;
-  --red: #8a1538;
-  --navy: #102a43;
+  --red: #c8102e;
+  --navy: #1c3557;
+  --gold: #c9a94b;
+  --gold-light: #e8d4a0;
 }
 
 html {

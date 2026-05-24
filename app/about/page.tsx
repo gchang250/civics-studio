@@ -1,51 +1,80 @@
+import Image from "next/image";
+
 export default function AboutPage() {
   return (
     <div>
+      {/* Hero — split layout */}
       <section className="border-b border-[#D8D0C3] bg-[#FAF7F0]">
-        <div className="mx-auto max-w-7xl px-5 py-14 md:py-18">
-          <p className="text-xs font-bold uppercase tracking-[0.18em] text-[#8A1538]">
-            About
-          </p>
+        <div className="mx-auto grid max-w-7xl lg:grid-cols-[1fr_1fr]">
 
-          <h1 className="serif mt-4 max-w-5xl text-5xl font-bold leading-tight tracking-[-0.035em] text-[#111111] md:text-6xl">
-            Civics Studio is a youth-led Canadian civic education project.
-          </h1>
+          {/* Left — text */}
+          <div className="flex flex-col justify-center px-5 py-14 md:py-18 lg:pr-12">
+            <p className="text-xs font-bold uppercase tracking-[0.18em] text-[#C9A94B]">
+              About
+            </p>
 
-          <p className="mt-5 max-w-3xl text-lg leading-8 text-[#5E5A54]">
-            The project creates free games, data tools, and learning resources
-            that make politics, economics, and public life easier for young
-            people to understand.
-          </p>
+            <h1 className="serif mt-4 text-5xl font-bold leading-tight tracking-[-0.035em] text-[#1C3557] md:text-6xl">
+              Civics Studio is a youth-led Canadian civic education project.
+            </h1>
+
+            <p className="mt-5 max-w-xl text-lg leading-8 text-[#5E5A54]">
+              The project creates free games, data tools, and learning resources
+              that make politics, economics, and government more accessible and
+              easier to understand.
+            </p>
+          </div>
+
+          {/* Right — photo */}
+          <div className="relative hidden min-h-[420px] overflow-hidden lg:block">
+            <Image
+              src="https://images.unsplash.com/photo-1761322572550-967ea8c0bfd9?auto=format&fit=crop&w=900&q=80"
+              alt="Open notebook with pen and pencils on desk"
+              fill
+              className="object-cover"
+              priority
+            />
+            <div className="absolute inset-0 bg-[#1C3557]/15" />
+            <a
+              href="https://unsplash.com/photos/open-notebook-with-pen-and-pencils-on-desk-n9AaeihA9HI"
+              target="_blank"
+              rel="noreferrer"
+              className="absolute bottom-2 right-3 text-[10px] text-white/40 hover:text-white/70 transition"
+            >
+              Photo: Clay Banks / Unsplash
+            </a>
+          </div>
         </div>
       </section>
 
+      {/* Mission */}
       <section className="bg-white">
         <div className="mx-auto grid max-w-7xl gap-10 px-5 py-12 md:grid-cols-[0.8fr_1.2fr]">
           <div>
-            <p className="text-xs font-bold uppercase tracking-[0.18em] text-[#8A1538]">
+            <p className="text-xs font-bold uppercase tracking-[0.18em] text-[#C9A94B]">
               Mission
             </p>
-            <h2 className="serif mt-2 text-3xl font-bold tracking-[-0.02em] text-[#111111]">
+            <h2 className="serif mt-2 text-3xl font-bold tracking-[-0.02em] text-[#1C3557]">
               Make civic learning practical.
             </h2>
           </div>
 
           <p className="max-w-3xl text-lg leading-8 text-[#5E5A54]">
-            Many young people are told that politics and economics matter, but
-            not enough are given practical ways to understand them. Civics
-            Studio turns abstract systems into activities, projects, and tools
-            that students can actually use.
+            Many students are told that politics and economics matter, but aren't
+            given practical ways to engage with them. Civics Studio turns
+            abstract systems into activities, projects, and tools that are
+            actually usable.
           </p>
         </div>
       </section>
 
+      {/* Current work */}
       <section className="border-y border-[#D8D0C3] bg-[#F3EEE4]">
         <div className="mx-auto grid max-w-7xl gap-6 px-5 py-12 md:grid-cols-2">
           <div className="bg-white p-6 shadow-sm">
-            <p className="text-xs font-bold uppercase tracking-[0.18em] text-[#8A1538]">
+            <p className="text-xs font-bold uppercase tracking-[0.18em] text-[#C9A94B]">
               Current work
             </p>
-            <h2 className="serif mt-3 text-3xl font-bold tracking-[-0.02em] text-[#111111]">
+            <h2 className="serif mt-3 text-3xl font-bold tracking-[-0.02em] text-[#1C3557]">
               Games and data projects.
             </h2>
             <p className="mt-4 leading-8 text-[#5E5A54]">
@@ -56,37 +85,38 @@ export default function AboutPage() {
           </div>
 
           <div className="bg-white p-6 shadow-sm">
-            <p className="text-xs font-bold uppercase tracking-[0.18em] text-[#8A1538]">
+            <p className="text-xs font-bold uppercase tracking-[0.18em] text-[#C9A94B]">
               Approach
             </p>
-            <h2 className="serif mt-3 text-3xl font-bold tracking-[-0.02em] text-[#111111]">
+            <h2 className="serif mt-3 text-3xl font-bold tracking-[-0.02em] text-[#1C3557]">
               Interactive, accessible, non-partisan.
             </h2>
             <p className="mt-4 leading-8 text-[#5E5A54]">
-              Civics Studio focuses on practical learning: games, simulations,
-              indexes, guides, and resources that make public systems easier to
-              discuss and understand.
+              Civics Studio focuses on practical formats: games, simulations,
+              indexes, guides, and resources that make civic and economic
+              systems easier to discuss and understand.
             </p>
           </div>
         </div>
       </section>
 
+      {/* Non-partisan */}
       <section className="bg-[#FAF7F0]">
         <div className="mx-auto max-w-7xl px-5 py-12">
-          <div className="grid gap-8 border-t border-[#111111] pt-8 md:grid-cols-[0.7fr_1.3fr]">
+          <div className="grid gap-8 border-t border-[#1C3557] pt-8 md:grid-cols-[0.7fr_1.3fr]">
             <div>
-              <p className="text-xs font-bold uppercase tracking-[0.18em] text-[#8A1538]">
+              <p className="text-xs font-bold uppercase tracking-[0.18em] text-[#C9A94B]">
                 Non-partisan statement
               </p>
-              <h2 className="serif mt-2 text-3xl font-bold tracking-[-0.02em] text-[#111111]">
+              <h2 className="serif mt-2 text-3xl font-bold tracking-[-0.02em] text-[#1C3557]">
                 No party or ideology.
               </h2>
             </div>
 
             <p className="max-w-3xl text-lg leading-8 text-[#5E5A54]">
               Civics Studio does not promote any political party or ideology.
-              The goal is to help young people understand public life more
-              clearly and participate more thoughtfully.
+              The goal is to help people understand how civic systems work — and
+              participate in them more thoughtfully.
             </p>
           </div>
         </div>

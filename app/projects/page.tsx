@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 
 const projects = [
@@ -8,6 +9,11 @@ const projects = [
       "A political negotiation game for practising strategy, persuasion, resource management, and civic thinking.",
     href: "/projects/detente",
     status: "Files available",
+    image:
+      "https://images.unsplash.com/photo-1528819622765-d6bcf132f793?auto=format&fit=crop&w=800&q=80",
+    imageAlt: "Chess pieces on a board",
+    photographer: "Felix Mittermeier",
+    photoHref: "https://unsplash.com/photos/chess-pieces-nAjil1z3eLk",
   },
   {
     title: "The Fried Rice Index",
@@ -16,6 +22,12 @@ const projects = [
       "A global affordability index using the price of egg fried rice to compare cost of living across cities.",
     href: "/projects/fried-rice-index",
     status: "Live project",
+    image:
+      "https://images.unsplash.com/photo-1756713545237-7c97075b71da?auto=format&fit=crop&w=800&q=80",
+    imageAlt: "Bangkok street food market at night",
+    photographer: "GVZ 42",
+    photoHref:
+      "https://unsplash.com/photos/street-food-stall-at-night-with-neon-signs-H9ZhJTDNyKE",
   },
 ];
 
@@ -24,57 +36,70 @@ export default function ProjectsPage() {
     <div>
       <section className="border-b border-[#D8D0C3] bg-[#FAF7F0]">
         <div className="mx-auto max-w-7xl px-5 py-14 md:py-18">
-          <p className="text-xs font-bold uppercase tracking-[0.18em] text-[#8A1538]">
+          <p className="text-xs font-bold uppercase tracking-[0.18em] text-[#C9A94B]">
             Projects
           </p>
 
-          <h1 className="serif mt-4 max-w-4xl text-5xl font-bold leading-tight tracking-[-0.035em] text-[#111111] md:text-6xl">
+          <h1 className="serif mt-4 max-w-4xl text-5xl font-bold leading-tight tracking-[-0.035em] text-[#1C3557] md:text-6xl">
             Games, data, and civic tools.
           </h1>
 
           <p className="mt-5 max-w-3xl text-lg leading-8 text-[#5E5A54]">
-            Civics Studio builds practical projects that help young people
-            understand politics, economics, negotiation, affordability, and
-            public life.
+            Civics Studio builds practical projects that make politics,
+            economics, negotiation, and affordability easier to understand.
           </p>
         </div>
       </section>
 
       <section className="bg-white">
         <div className="mx-auto max-w-7xl px-5 py-12">
-          <div className="grid gap-0 border border-[#D8D0C3] md:grid-cols-2">
-            {projects.map((project, index) => (
-              <Link
-                key={project.title}
-                href={project.href}
-                className={`group bg-[#FAF7F0] p-7 transition hover:bg-white ${
-                  index === 0
-                    ? "border-b border-[#D8D0C3] md:border-b-0 md:border-r"
-                    : ""
-                }`}
-              >
-                <div className="flex items-center justify-between gap-4">
-                  <p className="text-xs font-bold uppercase tracking-[0.18em] text-[#8A1538]">
-                    {project.type}
-                  </p>
+          <div className="grid gap-6 md:grid-cols-2">
+            {projects.map((project) => (
+              <div key={project.title} className="flex flex-col">
+                <Link
+                  href={project.href}
+                  className="group overflow-hidden border border-[#D8D0C3] bg-[#FAF7F0] transition hover:shadow-md"
+                >
+                  {/* Photo */}
+                  <div className="relative h-52 overflow-hidden bg-[#1C3557]">
+                    <Image
+                      src={project.image}
+                      alt={project.imageAlt}
+                      fill
+                      className="object-cover opacity-90 transition duration-500 group-hover:scale-105"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#1C3557]/50 to-transparent" />
+                    <p className="absolute bottom-4 left-5 text-xs font-bold uppercase tracking-[0.18em] text-[#C9A94B]">
+                      {project.type}
+                    </p>
+                  </div>
 
-                  <p className="text-xs font-bold uppercase tracking-[0.08em] text-[#5E5A54]">
-                    {project.status}
-                  </p>
-                </div>
+                  {/* Text */}
+                  <div className="p-7">
+                    <div className="flex items-start justify-between gap-4">
+                      <h2 className="serif text-4xl font-bold tracking-[-0.035em] text-[#1C3557]">
+                        {project.title}
+                      </h2>
+                      <p className="mt-2 shrink-0 text-xs font-bold uppercase tracking-[0.08em] text-[#5E5A54]">
+                        {project.status}
+                      </p>
+                    </div>
 
-                <h2 className="serif mt-5 text-4xl font-bold tracking-[-0.035em] text-[#111111]">
-                  {project.title}
-                </h2>
+                    <p className="mt-4 max-w-xl leading-7 text-[#5E5A54]">
+                      {project.description}
+                    </p>
 
-                <p className="mt-4 max-w-xl leading-7 text-[#5E5A54]">
-                  {project.description}
+                    <p className="mt-7 text-sm font-bold uppercase tracking-[0.08em] text-[#1C3557] group-hover:text-[#C9A94B]">
+                      View project →
+                    </p>
+                  </div>
+                </Link>
+                <p className="mt-1 text-right text-[10px] text-[#5E5A54]/60">
+                  <a href={project.photoHref} target="_blank" rel="noreferrer" className="hover:text-[#5E5A54] transition">
+                    Photo: {project.photographer} / Unsplash
+                  </a>
                 </p>
-
-                <p className="mt-7 text-sm font-bold uppercase tracking-[0.08em] text-[#111111] group-hover:text-[#8A1538]">
-                  View project →
-                </p>
-              </Link>
+              </div>
             ))}
           </div>
         </div>
