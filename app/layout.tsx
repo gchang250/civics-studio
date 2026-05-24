@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
-
-
 
 export const metadata: Metadata = {
   title: {
@@ -24,6 +23,7 @@ export const metadata: Metadata = {
 
 const navItems = [
   { href: "/", label: "Home" },
+  { href: "/mission", label: "Mission" },
   { href: "/projects", label: "Projects" },
   { href: "/resources", label: "Resources" },
   { href: "/about", label: "About" },
@@ -92,6 +92,7 @@ export default function RootLayout({
               <h3 className="text-sm font-bold uppercase tracking-[0.14em] text-slate-300">
                 Projects
               </h3>
+
               <div className="mt-4 flex flex-col gap-2 text-sm">
                 <Link href="/projects/detente" className="hover:underline">
                   Detente
@@ -109,12 +110,14 @@ export default function RootLayout({
               <h3 className="text-sm font-bold uppercase tracking-[0.14em] text-slate-300">
                 Contact
               </h3>
+
               <a
                 href="mailto:civicsstudio@gmail.com"
                 className="mt-4 inline-block text-sm hover:underline"
               >
                 civicsstudio@gmail.com
               </a>
+
               <p className="mt-4 text-sm leading-6 text-slate-300">
                 Civics Studio is non-partisan and does not promote any political
                 party or ideology.
@@ -122,6 +125,8 @@ export default function RootLayout({
             </div>
           </div>
         </footer>
+
+        <Analytics />
       </body>
     </html>
   );
