@@ -45,203 +45,171 @@ const downloads = [
 
 export default function DetentePage() {
   return (
-    <div className="bg-[#f7f1e6]">
-      <section className="mx-auto max-w-7xl px-5 py-12">
-        <div className="border-b-2 border-slate-950 pb-10">
-          <p className="text-xs font-bold uppercase tracking-[0.22em] text-[#8b1e1e] sans">
-            Free print-and-play game
-          </p>
+    <div>
+      <section className="border-b border-[#D8D0C3] bg-[#FAF7F0]">
+        <div className="mx-auto max-w-7xl px-5 py-14 md:py-18">
+          <div className="grid gap-10 lg:grid-cols-[1.25fr_0.75fr]">
+            <div>
+              <p className="text-xs font-bold uppercase tracking-[0.18em] text-[#8A1538]">
+                Free print-and-play game
+              </p>
 
-          <h1 className="mt-5 text-7xl font-black uppercase leading-[0.88] tracking-[-0.06em] text-[#071d3a] md:text-9xl">
-            Detente
-          </h1>
+              <h1 className="serif mt-4 text-6xl font-bold leading-tight tracking-[-0.045em] text-[#111111] md:text-7xl">
+                Detente
+              </h1>
 
-          <p className="mt-6 max-w-4xl text-2xl leading-9 text-slate-800">
-            A political negotiation game about resources, hidden goals, and
-            public signals.
-          </p>
-        </div>
-      </section>
+              <p className="mt-5 max-w-3xl text-xl leading-8 text-[#5E5A54]">
+                A political negotiation game about resources, hidden goals, and
+                public signals.
+              </p>
 
-      <section className="mx-auto max-w-7xl px-5">
-        <div className="grid gap-8 border-b-2 border-slate-950 pb-12 lg:grid-cols-[1.2fr_0.8fr]">
-          <div className="text-lg leading-9 text-slate-800">
-            <p>
-              Detente is a fast-paced card and resource game where players act
-              as world leaders competing to achieve secret political goals.
-              Every trade reveals information. Every deal creates suspicion.
-              Every player has to negotiate, observe, mislead, and decide when
-              to trust others.
-            </p>
-
-            <p className="mt-6">
-              The game is designed to help students practise negotiation,
-              strategic thinking, political deduction, and civic literacy
-              through a format that is active instead of theoretical.
-            </p>
-
-            <div className="mt-10 flex flex-col gap-3 sm:flex-row sans">
-              <a
-                href="/downloads/detente-rulebook.pdf"
-                className="border-2 border-slate-950 bg-[#071d3a] px-6 py-3 text-center text-sm font-bold uppercase tracking-[0.14em] text-white transition hover:bg-slate-950"
-              >
-                Download Rulebook
-              </a>
-
-              <a
-                href="#downloads"
-                className="border-2 border-slate-950 bg-transparent px-6 py-3 text-center text-sm font-bold uppercase tracking-[0.14em] text-slate-950 transition hover:bg-slate-950 hover:text-white"
-              >
-                View Individual Files
-              </a>
-            </div>
-          </div>
-
-          <aside className="border-2 border-slate-950 bg-[#fffaf0]">
-            <h2 className="border-b-2 border-slate-950 px-6 py-4 text-sm font-bold uppercase tracking-[0.2em] text-[#071d3a] sans">
-              Game Brief
-            </h2>
-
-            <div className="grid grid-cols-2">
-              {stats.map((stat, index) => (
-                <div
-                  key={stat.label}
-                  className={`p-6 ${
-                    index === 0 || index === 2 ? "border-r border-slate-950" : ""
-                  } ${index < 2 ? "border-b border-slate-950" : ""}`}
+              <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+                <a
+                  href="/downloads/detente-rulebook.pdf"
+                  className="bg-[#111111] px-6 py-3 text-center text-sm font-bold uppercase tracking-[0.08em] text-white transition hover:bg-[#8A1538]"
                 >
-                  <p className="text-xs font-bold uppercase tracking-[0.16em] text-slate-600 sans">
-                    {stat.label}
-                  </p>
-                  <p className="mt-2 text-3xl font-black text-slate-950">
-                    {stat.value}
-                  </p>
-                </div>
-              ))}
+                  Download rulebook
+                </a>
+
+                <a
+                  href="#downloads"
+                  className="border border-[#111111] px-6 py-3 text-center text-sm font-bold uppercase tracking-[0.08em] text-[#111111] transition hover:bg-[#111111] hover:text-white"
+                >
+                  View files
+                </a>
+              </div>
             </div>
 
-            <div className="border-t-2 border-slate-950 bg-[#071d3a] p-6 text-white">
-              <h3 className="text-xl font-black uppercase">Core idea</h3>
-              <p className="mt-3 text-sm leading-7 text-slate-200 sans">
-                In politics, every action is a signal. Detente turns
-                negotiation, trade, suspicion, and strategy into a replayable
-                tabletop experience.
+            <aside className="border-l-4 border-[#8A1538] bg-white p-6 shadow-sm">
+              <p className="text-xs font-bold uppercase tracking-[0.18em] text-[#8A1538]">
+                Game brief
               </p>
-            </div>
-          </aside>
+
+              <div className="mt-5 grid grid-cols-2 gap-px bg-[#D8D0C3]">
+                {stats.map((stat) => (
+                  <div key={stat.label} className="bg-white p-4">
+                    <p className="text-xs font-bold uppercase tracking-[0.08em] text-[#5E5A54]">
+                      {stat.label}
+                    </p>
+                    <p className="serif mt-1 text-2xl font-bold text-[#111111]">
+                      {stat.value}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            </aside>
+          </div>
         </div>
       </section>
 
-      <section className="mx-auto max-w-7xl px-5 py-12">
-        <div className="border-b-2 border-slate-950 pb-4">
-          <p className="text-xs font-bold uppercase tracking-[0.22em] text-[#8b1e1e] sans">
-            Learning outcomes
-          </p>
-          <h2 className="mt-2 text-5xl font-black uppercase tracking-[-0.05em] text-[#071d3a]">
-            What students practise
-          </h2>
-        </div>
-
-        <div className="grid border-b-2 border-slate-950 sm:grid-cols-2 md:grid-cols-3">
-          {skills.map((skill) => (
-            <div
-              key={skill}
-              className="border-r border-b border-slate-950 bg-[#fffaf0] p-6 text-lg font-bold last:border-r-0"
-            >
-              {skill}
-            </div>
-          ))}
-        </div>
-      </section>
-
-      <section className="mx-auto max-w-7xl px-5 py-12">
-        <div className="grid gap-8 border-b-2 border-slate-950 pb-12 md:grid-cols-[0.8fr_1.2fr]">
+      <section className="bg-white">
+        <div className="mx-auto grid max-w-7xl gap-10 px-5 py-12 md:grid-cols-[0.8fr_1.2fr]">
           <div>
-            <p className="text-xs font-bold uppercase tracking-[0.22em] text-[#8b1e1e] sans">
-              Rules summary
+            <p className="text-xs font-bold uppercase tracking-[0.18em] text-[#8A1538]">
+              Overview
             </p>
-            <h2 className="mt-3 text-4xl font-black uppercase leading-none tracking-[-0.04em] text-slate-950">
-              How the game works
+            <h2 className="serif mt-2 text-3xl font-bold tracking-[-0.02em] text-[#111111]">
+              Every deal is a signal.
             </h2>
           </div>
 
-          <div className="text-lg leading-9 text-slate-800">
+          <div className="max-w-3xl text-lg leading-8 text-[#5E5A54]">
             <p>
-              Each player receives a Country Type card, starting resources, and
-              a secret Goal card. On their turn, players negotiate trades or
-              accuse another player of pursuing a specific goal.
+              Players act as world leaders competing to achieve secret political
+              goals. They trade resources, read incentives, obscure their real
+              motives, and decide when to accuse another player.
             </p>
 
-            <p className="mt-6">
-              The first player to complete their secret goal wins. A player can
-              also eliminate another player by correctly identifying their goal.
-              Every trade gives other players information, so winning requires
-              both strategy and misdirection.
+            <p className="mt-5">
+              The game is designed to help students practise negotiation,
+              political deduction, strategy, and civic reasoning through a
+              short tabletop simulation.
             </p>
           </div>
         </div>
       </section>
 
-      <section id="downloads" className="mx-auto max-w-7xl px-5 py-12">
-        <div className="border-b-2 border-slate-950 pb-4">
-          <p className="text-xs font-bold uppercase tracking-[0.22em] text-[#8b1e1e] sans">
-            Download files
-          </p>
-
-          <h2 className="mt-2 text-5xl font-black uppercase tracking-[-0.05em] text-[#071d3a]">
-            Print each file individually
-          </h2>
-        </div>
-
-        <div className="divide-y-2 divide-slate-950 border-b-2 border-slate-950 bg-[#fffaf0]">
-          {downloads.map((file) => (
-            <a
-              key={file.href}
-              href={file.href}
-              className="grid gap-4 p-6 transition hover:bg-white md:grid-cols-[0.35fr_1fr_0.15fr]"
-            >
-              <h3 className="text-2xl font-black uppercase tracking-[-0.03em] text-slate-950">
-                {file.title}
-              </h3>
-
-              <p className="text-base leading-7 text-slate-700 sans">
-                {file.description}
-              </p>
-
-              <p className="text-sm font-bold uppercase tracking-[0.14em] text-[#8b1e1e] sans">
-                PDF →
-              </p>
-            </a>
-          ))}
-        </div>
-      </section>
-
-      <section className="mx-auto max-w-7xl px-5 py-12">
-        <div className="grid gap-8 border-2 border-slate-950 bg-[#071d3a] p-8 text-white md:grid-cols-[0.8fr_1.2fr] md:p-10">
-          <div>
-            <p className="text-xs font-bold uppercase tracking-[0.22em] text-slate-300 sans">
-              For classrooms and clubs
+      <section className="border-y border-[#D8D0C3] bg-[#F3EEE4]">
+        <div className="mx-auto max-w-7xl px-5 py-12">
+          <div className="mb-6 border-b border-[#111111] pb-4">
+            <p className="text-xs font-bold uppercase tracking-[0.18em] text-[#8A1538]">
+              Learning outcomes
             </p>
-
-            <h2 className="mt-3 text-4xl font-black uppercase leading-none tracking-[-0.04em]">
-              Use Detente as a civic simulation.
+            <h2 className="serif mt-2 text-3xl font-bold tracking-[-0.02em] text-[#111111]">
+              What students practise
             </h2>
           </div>
 
-          <div>
-            <p className="text-lg leading-9 text-slate-200">
-              Detente can be used in classrooms, Model UN clubs, debate clubs,
-              student councils, and youth programs as a short activity about
-              negotiation, political strategy, public decision-making, and
-              resource competition.
-            </p>
+          <div className="grid gap-px bg-[#D8D0C3] sm:grid-cols-2 md:grid-cols-3">
+            {skills.map((skill) => (
+              <div key={skill} className="bg-white p-5">
+                <p className="font-bold text-[#111111]">{skill}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
 
-            <Link
-              href="/contact"
-              className="mt-8 inline-block border-2 border-white px-6 py-3 text-sm font-bold uppercase tracking-[0.14em] text-white transition hover:bg-white hover:text-[#071d3a] sans"
-            >
-              Contact Civics Studio
-            </Link>
+      <section id="downloads" className="bg-white">
+        <div className="mx-auto max-w-7xl px-5 py-12">
+          <div className="mb-6 border-b border-[#111111] pb-4">
+            <p className="text-xs font-bold uppercase tracking-[0.18em] text-[#8A1538]">
+              Download files
+            </p>
+            <h2 className="serif mt-2 text-3xl font-bold tracking-[-0.02em] text-[#111111]">
+              Print each file individually.
+            </h2>
+          </div>
+
+          <div className="divide-y divide-[#D8D0C3] border border-[#D8D0C3]">
+            {downloads.map((file) => (
+              <a
+                key={file.href}
+                href={file.href}
+                className="grid gap-4 bg-[#FAF7F0] p-5 transition hover:bg-white md:grid-cols-[0.3fr_1fr_0.15fr]"
+              >
+                <h3 className="serif text-2xl font-bold text-[#111111]">
+                  {file.title}
+                </h3>
+
+                <p className="leading-7 text-[#5E5A54]">{file.description}</p>
+
+                <p className="text-sm font-bold uppercase tracking-[0.08em] text-[#8A1538]">
+                  PDF →
+                </p>
+              </a>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-[#FAF7F0]">
+        <div className="mx-auto max-w-7xl px-5 py-12">
+          <div className="grid gap-8 border-t border-[#111111] pt-8 md:grid-cols-[0.7fr_1.3fr]">
+            <div>
+              <p className="text-xs font-bold uppercase tracking-[0.18em] text-[#8A1538]">
+                Classroom use
+              </p>
+              <h2 className="serif mt-2 text-3xl font-bold tracking-[-0.02em] text-[#111111]">
+                Built for clubs and classrooms.
+              </h2>
+            </div>
+
+            <div>
+              <p className="max-w-3xl text-lg leading-8 text-[#5E5A54]">
+                Detente can be used in classrooms, Model UN clubs, debate
+                clubs, student councils, and youth programs as a short activity
+                about negotiation, political strategy, and public
+                decision-making.
+              </p>
+
+              <Link
+                href="/contact"
+                className="mt-6 inline-block bg-[#111111] px-5 py-3 text-sm font-bold uppercase tracking-[0.08em] text-white transition hover:bg-[#8A1538]"
+              >
+                Contact Civics Studio
+              </Link>
+            </div>
           </div>
         </div>
       </section>

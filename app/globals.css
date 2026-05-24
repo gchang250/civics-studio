@@ -1,13 +1,14 @@
 @import "tailwindcss";
 
 :root {
-  --background: #f4f6f8;
-  --foreground: #101828;
-  --navy: #061a33;
-  --navy-light: #0b2d57;
-  --red: #8b1e1e;
-  --border: #d0d5dd;
-  --card: #ffffff;
+  --background: #faf7f0;
+  --foreground: #111111;
+  --paper: #ffffff;
+  --soft: #f3eee4;
+  --border: #d8d0c3;
+  --muted: #5e5a54;
+  --red: #8a1538;
+  --navy: #102a43;
 }
 
 html {
@@ -17,13 +18,13 @@ html {
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans), Arial, Helvetica, sans-serif;
 }
 
 .serif {
-  font-family: Georgia, "Times New Roman", Times, serif;
+  font-family: var(--font-serif), Georgia, "Times New Roman", Times, serif;
 }
 
 ::selection {
-  background: #c7d7ee;
+  background: #e8ddd0;
 }

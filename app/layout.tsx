@@ -1,7 +1,20 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Analytics } from "@vercel/analytics/next";
+import { Libre_Baskerville, Source_Sans_3 } from "next/font/google";
 import "./globals.css";
+
+const libreBaskerville = Libre_Baskerville({
+  subsets: ["latin"],
+  weight: ["400", "700"],
+  variable: "--font-serif",
+});
+
+const sourceSans = Source_Sans_3({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700", "800"],
+  variable: "--font-sans",
+});
 
 export const metadata: Metadata = {
   title: {
@@ -37,37 +50,37 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>
-        <header className="bg-[#061a33] text-white">
-          <div className="border-b border-white/15">
+      <body className={`${sourceSans.variable} ${libreBaskerville.variable}`}>
+        <header className="border-b border-[#111111] bg-[#FAF7F0]">
+          <div className="border-b border-[#D8D0C3]">
             <div className="mx-auto flex max-w-7xl items-center justify-between px-5 py-2 text-xs">
-              <p className="font-semibold uppercase tracking-[0.18em] text-slate-300">
+              <p className="font-bold uppercase tracking-[0.18em] text-[#8A1538]">
                 Youth-led civic education
               </p>
-              <p className="hidden text-slate-300 sm:block">
-                Non-partisan learning tools for public life
+              <p className="hidden text-[#5E5A54] sm:block">
+                Non-partisan tools for public life
               </p>
             </div>
           </div>
 
-          <div className="mx-auto max-w-7xl px-5 py-6">
+          <div className="mx-auto max-w-7xl px-5 py-8 text-center">
             <Link href="/" className="inline-block">
-              <p className="serif text-4xl font-bold tracking-tight md:text-5xl">
+              <p className="serif text-4xl font-bold tracking-[-0.025em] text-[#111111] md:text-6xl">
                 Civics Studio
               </p>
-              <p className="mt-1 text-sm text-slate-300">
-                Games, data projects, and civic learning resources
+              <p className="mt-3 text-sm uppercase tracking-[0.22em] text-[#5E5A54]">
+                Games · Data · Civic Learning
               </p>
             </Link>
           </div>
 
-          <nav className="border-t border-white/15 bg-[#0b2d57]">
-            <div className="mx-auto flex max-w-7xl flex-wrap px-5">
+          <nav className="border-t border-[#111111]">
+            <div className="mx-auto flex max-w-7xl flex-wrap justify-center px-5">
               {navItems.map((item) => (
                 <Link
                   key={item.href}
                   href={item.href}
-                  className="border-r border-white/15 px-5 py-3 text-sm font-semibold text-white transition first:border-l hover:bg-white hover:text-[#061a33]"
+                  className="px-5 py-3 text-sm font-bold uppercase tracking-[0.08em] text-[#111111] transition hover:bg-[#111111] hover:text-white"
                 >
                   {item.label}
                 </Link>
@@ -78,21 +91,22 @@ export default function RootLayout({
 
         <main>{children}</main>
 
-        <footer className="mt-16 border-t border-slate-300 bg-[#061a33] text-white">
-          <div className="mx-auto grid max-w-7xl gap-10 px-5 py-12 md:grid-cols-3">
+        <footer className="mt-16 border-t border-[#111111] bg-[#111111] text-white">
+          <div className="mx-auto grid max-w-7xl gap-10 px-5 py-12 md:grid-cols-[1.2fr_0.8fr_1fr]">
             <div>
-              <h2 className="serif text-2xl font-bold">Civics Studio</h2>
-              <p className="mt-3 text-sm leading-6 text-slate-300">
-                Free civic learning tools, games, and data projects for young
-                people in Canada and beyond.
+              <h2 className="serif text-3xl font-bold tracking-tight">
+                Civics Studio
+              </h2>
+              <p className="mt-4 max-w-md text-sm leading-6 text-slate-300">
+                Free games, data projects, and civic learning resources for
+                young people in Canada and beyond.
               </p>
             </div>
 
             <div>
-              <h3 className="text-sm font-bold uppercase tracking-[0.14em] text-slate-300">
+              <h3 className="text-xs font-bold uppercase tracking-[0.18em] text-slate-400">
                 Projects
               </h3>
-
               <div className="mt-4 flex flex-col gap-2 text-sm">
                 <Link href="/projects/detente" className="hover:underline">
                   Detente
@@ -107,17 +121,15 @@ export default function RootLayout({
             </div>
 
             <div>
-              <h3 className="text-sm font-bold uppercase tracking-[0.14em] text-slate-300">
+              <h3 className="text-xs font-bold uppercase tracking-[0.18em] text-slate-400">
                 Contact
               </h3>
-
               <a
                 href="mailto:civicsstudio@gmail.com"
                 className="mt-4 inline-block text-sm hover:underline"
               >
                 civicsstudio@gmail.com
               </a>
-
               <p className="mt-4 text-sm leading-6 text-slate-300">
                 Civics Studio is non-partisan and does not promote any political
                 party or ideology.

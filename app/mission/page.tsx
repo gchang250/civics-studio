@@ -1,25 +1,25 @@
 export default function MissionPage() {
   return (
     <div>
-      <section className="border-b border-slate-300 bg-white">
-        <div className="mx-auto max-w-7xl px-5 py-14">
-          <p className="text-sm font-bold uppercase tracking-[0.16em] text-[#8b1e1e]">
+      <section className="border-b border-[#D8D0C3] bg-[#FAF7F0]">
+        <div className="mx-auto max-w-7xl px-5 py-14 md:py-18">
+          <p className="text-xs font-bold uppercase tracking-[0.18em] text-[#8A1538]">
             Mission
           </p>
 
-          <h1 className="serif mt-4 max-w-4xl text-5xl font-bold leading-tight text-[#061a33] md:text-6xl">
+          <h1 className="serif mt-4 max-w-5xl text-5xl font-bold leading-tight tracking-[-0.035em] text-[#111111] md:text-6xl">
             Helping young people understand the systems that shape public life.
           </h1>
 
-          <p className="mt-6 max-w-3xl text-lg leading-8 text-slate-700">
+          <p className="mt-5 max-w-3xl text-lg leading-8 text-[#5E5A54]">
             Civics Studio exists to make civic and economic learning more
             practical, accessible, and engaging for students.
           </p>
         </div>
       </section>
 
-      <section className="mx-auto max-w-7xl px-5 py-12">
-        <div className="grid gap-6 md:grid-cols-3">
+      <section className="bg-white">
+        <div className="mx-auto grid max-w-7xl gap-6 px-5 py-12 md:grid-cols-3">
           {[
             {
               title: "Make civics practical",
@@ -34,35 +34,38 @@ export default function MissionPage() {
               text: "Civics Studio does not promote any party or ideology. The goal is understanding, not persuasion.",
             },
           ].map((item) => (
-            <div
-              key={item.title}
-              className="border border-slate-300 bg-white p-6 shadow-sm"
-            >
-              <h2 className="serif text-2xl font-bold text-[#061a33]">
+            <div key={item.title} className="bg-[#FAF7F0] p-6 shadow-sm">
+              <p className="text-xs font-bold uppercase tracking-[0.18em] text-[#8A1538]">
+                Principle
+              </p>
+              <h2 className="serif mt-3 text-2xl font-bold tracking-[-0.02em] text-[#111111]">
                 {item.title}
               </h2>
-              <p className="mt-4 leading-7 text-slate-700">{item.text}</p>
+              <p className="mt-4 leading-7 text-[#5E5A54]">{item.text}</p>
             </div>
           ))}
         </div>
       </section>
 
-      <section className="mx-auto max-w-7xl px-5 py-4">
-        <div className="border border-slate-300 bg-white p-8 shadow-sm">
-          <p className="text-sm font-bold uppercase tracking-[0.16em] text-[#8b1e1e]">
-            Why it matters
-          </p>
+      <section className="border-y border-[#D8D0C3] bg-[#F3EEE4]">
+        <div className="mx-auto max-w-7xl px-5 py-12">
+          <div className="grid gap-8 md:grid-cols-[0.7fr_1.3fr]">
+            <div>
+              <p className="text-xs font-bold uppercase tracking-[0.18em] text-[#8A1538]">
+                Why it matters
+              </p>
+              <h2 className="serif mt-2 text-3xl font-bold tracking-[-0.02em] text-[#111111]">
+                Civic disengagement grows when public life feels distant.
+              </h2>
+            </div>
 
-          <h2 className="serif mt-3 text-3xl font-bold text-[#061a33]">
-            Civic disengagement grows when public life feels distant.
-          </h2>
-
-          <p className="mt-5 max-w-4xl leading-8 text-slate-700">
-            Many students know that politics and economics affect their lives,
-            but they are often introduced to these subjects through abstract
-            definitions instead of practical experiences. Civics Studio uses
-            projects that students can play, download, compare, and discuss.
-          </p>
+            <p className="max-w-3xl text-lg leading-8 text-[#5E5A54]">
+              Many students know that politics and economics affect their lives,
+              but they are often introduced to these subjects through abstract
+              definitions instead of practical experiences. Civics Studio uses
+              projects that students can play, download, compare, and discuss.
+            </p>
+          </div>
         </div>
       </section>
     </div>

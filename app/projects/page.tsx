@@ -22,17 +22,17 @@ const projects = [
 export default function ProjectsPage() {
   return (
     <div>
-      <section className="border-b border-slate-300 bg-white">
-        <div className="mx-auto max-w-7xl px-5 py-14">
-          <p className="text-sm font-bold uppercase tracking-[0.16em] text-[#8b1e1e]">
+      <section className="border-b border-[#D8D0C3] bg-[#FAF7F0]">
+        <div className="mx-auto max-w-7xl px-5 py-14 md:py-18">
+          <p className="text-xs font-bold uppercase tracking-[0.18em] text-[#8A1538]">
             Projects
           </p>
 
-          <h1 className="serif mt-4 text-5xl font-bold text-[#061a33] md:text-6xl">
+          <h1 className="serif mt-4 max-w-4xl text-5xl font-bold leading-tight tracking-[-0.035em] text-[#111111] md:text-6xl">
             Games, data, and civic tools.
           </h1>
 
-          <p className="mt-5 max-w-3xl text-lg leading-8 text-slate-700">
+          <p className="mt-5 max-w-3xl text-lg leading-8 text-[#5E5A54]">
             Civics Studio builds practical projects that help young people
             understand politics, economics, negotiation, affordability, and
             public life.
@@ -40,38 +40,43 @@ export default function ProjectsPage() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-7xl px-5 py-12">
-        <div className="grid gap-6 md:grid-cols-2">
-          {projects.map((project) => (
-            <Link
-              key={project.title}
-              href={project.href}
-              className="border border-slate-300 bg-white shadow-sm transition hover:border-[#061a33] hover:shadow-md"
-            >
-              <div className="flex items-center justify-between gap-4 border-b border-slate-300 bg-[#061a33] px-6 py-4 text-white">
-                <p className="text-sm font-bold uppercase tracking-[0.14em]">
-                  {project.type}
-                </p>
-                <p className="text-xs font-semibold text-slate-200">
-                  {project.status}
-                </p>
-              </div>
+      <section className="bg-white">
+        <div className="mx-auto max-w-7xl px-5 py-12">
+          <div className="grid gap-0 border border-[#D8D0C3] md:grid-cols-2">
+            {projects.map((project, index) => (
+              <Link
+                key={project.title}
+                href={project.href}
+                className={`group bg-[#FAF7F0] p-7 transition hover:bg-white ${
+                  index === 0
+                    ? "border-b border-[#D8D0C3] md:border-b-0 md:border-r"
+                    : ""
+                }`}
+              >
+                <div className="flex items-center justify-between gap-4">
+                  <p className="text-xs font-bold uppercase tracking-[0.18em] text-[#8A1538]">
+                    {project.type}
+                  </p>
 
-              <div className="p-6 md:p-8">
-                <h2 className="serif text-3xl font-bold text-[#061a33]">
+                  <p className="text-xs font-bold uppercase tracking-[0.08em] text-[#5E5A54]">
+                    {project.status}
+                  </p>
+                </div>
+
+                <h2 className="serif mt-5 text-4xl font-bold tracking-[-0.035em] text-[#111111]">
                   {project.title}
                 </h2>
 
-                <p className="mt-4 leading-7 text-slate-700">
+                <p className="mt-4 max-w-xl leading-7 text-[#5E5A54]">
                   {project.description}
                 </p>
 
-                <p className="mt-6 text-sm font-bold text-[#8b1e1e]">
+                <p className="mt-7 text-sm font-bold uppercase tracking-[0.08em] text-[#111111] group-hover:text-[#8A1538]">
                   View project →
                 </p>
-              </div>
-            </Link>
-          ))}
+              </Link>
+            ))}
+          </div>
         </div>
       </section>
     </div>
