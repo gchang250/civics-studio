@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Comments from "@/app/components/Comments";
 
 const focusAreas = [
   "French literacy",
@@ -209,6 +210,8 @@ export default function CYFFLPage() {
           </div>
         </div>
       </section>
+
+      <Comments pageId="cyffl" />
     </div>
   );
 }
