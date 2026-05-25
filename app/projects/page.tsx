@@ -29,6 +29,20 @@ const projects = [
     photoHref:
       "https://unsplash.com/photos/street-food-stall-at-night-with-neon-signs-H9ZhJTDNyKE",
   },
+  {
+    title: "CYFFL",
+    fullName: "Canadian Youth Foundation for French Literacy",
+    type: "French literacy program",
+    description:
+      "A youth-led initiative creating free online French learning resources and local academic support for students.",
+    href: "/projects/cyffl",
+    status: "Live project",
+    image:
+      "https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?auto=format&fit=crop&w=800&q=80",
+    imageAlt: "Open book in a library",
+    photographer: "Aaron Burden",
+    photoHref: "https://unsplash.com/photos/1zR3WNSTnvY",
+  },
 ];
 
 export default function ProjectsPage() {
@@ -46,21 +60,21 @@ export default function ProjectsPage() {
 
           <p className="mt-5 max-w-3xl text-lg leading-8 text-[#5E5A54]">
             Civics Studio builds practical projects that make politics,
-            economics, negotiation, and affordability easier to understand.
+            economics, negotiation, affordability, French learning, and civic
+            participation easier to understand.
           </p>
         </div>
       </section>
 
       <section className="bg-white">
         <div className="mx-auto max-w-7xl px-5 py-12">
-          <div className="grid gap-6 md:grid-cols-2">
+          <div className="grid gap-6 md:grid-cols-3">
             {projects.map((project) => (
               <div key={project.title} className="flex flex-col">
                 <Link
                   href={project.href}
-                  className="group overflow-hidden border border-[#D8D0C3] bg-[#FAF7F0] transition hover:shadow-md"
+                  className="group flex h-full flex-col overflow-hidden border border-[#D8D0C3] bg-[#FAF7F0] transition hover:shadow-md"
                 >
-                  {/* Photo */}
                   <div className="relative h-52 overflow-hidden bg-[#1C3557]">
                     <Image
                       src={project.image}
@@ -68,19 +82,29 @@ export default function ProjectsPage() {
                       fill
                       className="object-cover opacity-90 transition duration-500 group-hover:scale-105"
                     />
+
                     <div className="absolute inset-0 bg-gradient-to-t from-[#1C3557]/50 to-transparent" />
+
                     <p className="absolute bottom-4 left-5 text-xs font-bold uppercase tracking-[0.18em] text-[#C9A94B]">
                       {project.type}
                     </p>
                   </div>
 
-                  {/* Text */}
-                  <div className="p-7">
+                  <div className="flex flex-1 flex-col p-7">
                     <div className="flex items-start justify-between gap-4">
-                      <h2 className="serif text-4xl font-bold tracking-[-0.035em] text-[#1C3557]">
-                        {project.title}
-                      </h2>
-                      <p className="mt-2 shrink-0 text-xs font-bold uppercase tracking-[0.08em] text-[#5E5A54]">
+                      <div>
+                        <h2 className="serif text-4xl font-bold tracking-[-0.035em] text-[#1C3557]">
+                          {project.title}
+                        </h2>
+
+                        {"fullName" in project && (
+                          <p className="mt-2 text-sm font-semibold leading-5 text-[#5E5A54]">
+                            {project.fullName}
+                          </p>
+                        )}
+                      </div>
+
+                      <p className="mt-2 shrink-0 text-right text-xs font-bold uppercase tracking-[0.08em] text-[#5E5A54]">
                         {project.status}
                       </p>
                     </div>
@@ -89,13 +113,19 @@ export default function ProjectsPage() {
                       {project.description}
                     </p>
 
-                    <p className="mt-7 text-sm font-bold uppercase tracking-[0.08em] text-[#1C3557] group-hover:text-[#C9A94B]">
+                    <p className="mt-auto pt-7 text-sm font-bold uppercase tracking-[0.08em] text-[#1C3557] group-hover:text-[#C9A94B]">
                       View project →
                     </p>
                   </div>
                 </Link>
+
                 <p className="mt-1 text-right text-[10px] text-[#5E5A54]/60">
-                  <a href={project.photoHref} target="_blank" rel="noreferrer" className="hover:text-[#5E5A54] transition">
+                  <a
+                    href={project.photoHref}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="transition hover:text-[#5E5A54]"
+                  >
                     Photo: {project.photographer} / Unsplash
                   </a>
                 </p>
