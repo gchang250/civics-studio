@@ -1,5 +1,5 @@
 import Image from "next/image";
-import DisqusComments from "@/app/components/DisqusComments";
+import Comments from "@/app/components/Comments";
 
 const topics = [
   "Cost of living",
@@ -127,7 +127,7 @@ export default function FriedRiceIndexPage() {
         </div>
       </section>
 
-      <DisqusComments identifier="fried-rice-index" title="The Fried Rice Index" />
+      <Comments pageId="fried-rice-index" />
     </div>
   );
 }
