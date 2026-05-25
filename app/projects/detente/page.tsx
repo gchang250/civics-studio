@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import DownloadLink from "@/app/components/DownloadLink";
+import DisqusComments from "@/app/components/DisqusComments";
 
 const stats = [
   { label: "Players", value: "4–6" },
@@ -241,6 +242,8 @@ export default function DetentePage() {
           </div>
         </div>
       </section>
+
+      <DisqusComments identifier="detente" title="Detente" />
     </div>
   );
 }
