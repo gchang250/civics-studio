@@ -38,7 +38,6 @@ export const metadata: Metadata = {
 };
 
 const navItems = [
-  { href: "/", label: "Home" },
   { href: "/mission", label: "Mission" },
   { href: "/projects", label: "Projects" },
   { href: "/articles", label: "Articles" },
@@ -55,108 +54,108 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${sourceSans.variable} ${libreBaskerville.variable}`}>
-        <header>
-          {/* Top info bar — navy */}
-          <div className="bg-[#1C3557]">
-            <div className="mx-auto flex max-w-7xl items-center justify-between px-5 py-2 text-xs">
-              <p className="font-bold uppercase tracking-[0.18em] text-[#C9A94B]">
-                Youth-led civic education
-              </p>
-              <p className="hidden text-white/50 sm:block">
-                Non-partisan civic education
-              </p>
-            </div>
-          </div>
 
-          {/* Brand masthead — warm cream, seal + wordmark side-by-side */}
-          <div className="border-b-2 border-[#C9A94B] bg-[#FAF7F0]">
-            <div className="mx-auto flex max-w-7xl items-center justify-center gap-5 px-5 py-7 md:gap-8">
-              {/* Seal — hidden on small screens */}
-              <div className="hidden shrink-0 md:block">
-                <Image
-                  src="/seal.png"
-                  alt="Civics Studio seal"
-                  width={72}
-                  height={72}
-                  className="drop-shadow-sm"
-                  priority
-                />
-              </div>
+        {/* ── Navbar ──────────────────────────────────────── */}
+        <header className="sticky top-0 z-50 border-b border-white/10 bg-[#0A1628]/95 backdrop-blur-md">
+          <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-5">
 
-              {/* Gold vertical divider */}
-              <div className="hidden h-14 w-px bg-[#C9A94B] md:block" />
+            {/* Logo */}
+            <Link href="/" className="flex items-center gap-3 shrink-0">
+              <Image
+                src="/seal.png"
+                alt="Civics Studio seal"
+                width={32}
+                height={32}
+                className="drop-shadow-sm"
+                priority
+              />
+              <span className="serif text-xl font-bold tracking-tight text-white">
+                Civics Studio
+              </span>
+            </Link>
 
-              {/* Wordmark */}
-              <Link href="/" className="inline-block text-center">
-                <p className="serif text-4xl font-bold tracking-[-0.025em] text-[#1C3557] md:text-[3.5rem]">
-                  Civics Studio
-                </p>
-                <p className="mt-2 text-xs uppercase tracking-[0.22em] text-[#C9A94B]">
-                  Games · Data · Civic Learning
-                </p>
-              </Link>
-            </div>
-          </div>
-
-          {/* Navigation — navy */}
-          <nav className="bg-[#1C3557]">
-            <div className="mx-auto flex max-w-7xl flex-wrap justify-center px-5">
+            {/* Nav links */}
+            <nav className="hidden items-center gap-1 md:flex">
               {navItems.map((item) => (
                 <Link
                   key={item.href}
                   href={item.href}
-                  className="px-5 py-3 text-sm font-bold uppercase tracking-[0.08em] text-white/75 transition hover:text-[#C9A94B]"
+                  className="px-4 py-2 text-xs font-bold uppercase tracking-[0.1em] text-white/60 transition hover:text-[#C9A94B]"
                 >
                   {item.label}
                 </Link>
               ))}
-            </div>
-          </nav>
+            </nav>
+
+            {/* CTA */}
+            <Link
+              href="/projects/detente"
+              className="hidden border border-[#C9A94B]/40 px-4 py-2 text-xs font-bold uppercase tracking-[0.1em] text-[#C9A94B] transition hover:bg-[#C9A94B] hover:text-[#0A1628] sm:block"
+            >
+              Download Detente
+            </Link>
+          </div>
         </header>
 
         <main>{children}</main>
 
-        <footer className="mt-16 border-t-2 border-[#C9A94B] bg-[#1C3557] text-white">
-          <div className="mx-auto grid max-w-7xl gap-10 px-5 py-12 md:grid-cols-[1.2fr_0.8fr_1fr]">
-            <div className="border-l-2 border-[#C9A94B] pl-6">
-              <h2 className="serif text-3xl font-bold tracking-tight">
-                Civics Studio
-              </h2>
-              <p className="mt-4 max-w-md text-sm leading-6 text-white/60">
+        {/* ── Footer ──────────────────────────────────────── */}
+        <footer className="border-t border-white/10 bg-[#0A1628] text-white">
+          <div className="mx-auto grid max-w-7xl gap-10 px-5 py-16 md:grid-cols-[1.5fr_1fr_1fr]">
+
+            <div>
+              <Link href="/" className="flex items-center gap-3">
+                <Image src="/seal.png" alt="Civics Studio seal" width={36} height={36} />
+                <span className="serif text-2xl font-bold text-white">Civics Studio</span>
+              </Link>
+              <p className="mt-4 max-w-sm text-sm leading-7 text-white/40">
                 Free games, data projects, and civic learning resources for
                 students and educators in Canada and beyond.
+              </p>
+              <p className="mt-6 text-xs text-white/25">
+                Non-partisan. No party, no ideology.
               </p>
             </div>
 
             <div>
-              <h3 className="text-xs font-bold uppercase tracking-[0.18em] text-[#C9A94B]">
+              <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-[#C9A94B]">
                 Projects
-              </h3>
-              <div className="mt-4 flex flex-col gap-2 text-sm">
-                <Link href="/projects/detente" className="text-white/80 hover:text-[#C9A94B] transition">
+              </p>
+              <div className="mt-4 flex flex-col gap-3 text-sm">
+                <Link href="/projects/detente" className="text-white/50 hover:text-white transition">
                   Detente
                 </Link>
-                <Link href="/projects/fried-rice-index" className="text-white/80 hover:text-[#C9A94B] transition">
+                <Link href="/projects/fried-rice-index" className="text-white/50 hover:text-white transition">
                   The Fried Rice Index
+                </Link>
+                <Link href="/projects/cyffl" className="text-white/50 hover:text-white transition">
+                  CYFFL
                 </Link>
               </div>
             </div>
 
             <div>
-              <h3 className="text-xs font-bold uppercase tracking-[0.18em] text-[#C9A94B]">
+              <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-[#C9A94B]">
                 Contact
-              </h3>
+              </p>
               <a
                 href="mailto:civicsstudio@gmail.com"
-                className="mt-4 inline-block text-sm text-white/80 hover:text-[#C9A94B] transition"
+                className="mt-4 inline-block text-sm text-white/50 hover:text-white transition"
               >
                 civicsstudio@gmail.com
               </a>
-              <p className="mt-4 text-sm leading-6 text-white/50">
-                Civics Studio is non-partisan and does not promote any political
-                party or ideology. All resources are free.
-              </p>
+              <div className="mt-6 flex flex-col gap-2 text-sm">
+                <Link href="/articles" className="text-white/50 hover:text-white transition">Articles</Link>
+                <Link href="/resources" className="text-white/50 hover:text-white transition">Resources</Link>
+                <Link href="/about" className="text-white/50 hover:text-white transition">About</Link>
+              </div>
             </div>
+          </div>
+
+          <div className="border-t border-white/5 px-5 py-5">
+            <p className="mx-auto max-w-7xl text-xs text-white/20">
+              © {new Date().getFullYear()} Civics Studio
+            </p>
           </div>
         </footer>
 
