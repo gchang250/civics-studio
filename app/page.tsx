@@ -2,6 +2,7 @@ import Link from "next/link";
 import Hero from "@/app/components/Hero";
 import StickyProjects from "@/app/components/StickyProjects";
 import AnimatedSection from "@/app/components/AnimatedSection";
+import Marquee from "@/app/components/Marquee";
 
 const stats = [
   {
@@ -27,12 +28,8 @@ export default function HomePage() {
       {/* ── Hero ──────────────────────────────────────────── */}
       <Hero />
 
-      {/* ── Section bridge ───────────────────────────────── */}
-      <div className="border-b border-white/10 bg-[#0A1628] px-8 py-5">
-        <p className="text-[11px] font-bold uppercase tracking-[0.3em] text-[#C9A94B]">
-          Our work
-        </p>
-      </div>
+      {/* ── Marquee strip ────────────────────────────────── */}
+      <Marquee />
 
       {/* ── Sticky scroll project showcase ───────────────── */}
       <StickyProjects />
