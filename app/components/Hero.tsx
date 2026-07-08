@@ -186,9 +186,9 @@ export default function Hero() {
             className="absolute right-[2%] top-[20%] z-10 h-[270px] w-[310px] border border-[#e5e0d4] bg-[#faf8f5] p-2.5 transition duration-300 hover:border-[#8b1e1e]/40"
           >
             <div className="relative h-[88%] w-full overflow-hidden">
-              <Image
-                src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=750&q=85"
-                alt="Minimalist modern concrete architecture facade"
+               <Image
+                src="https://images.unsplash.com/photo-1744339700180-d3a299e2cd1f?auto=format&fit=crop&w=750&q=85"
+                alt="A beautiful, minimalist view of the Canadian Parliament building and Peace Tower"
                 fill
                 className="object-cover transition duration-500 hover:scale-103"
               />
@@ -210,8 +210,8 @@ export default function Hero() {
           >
             <div className="relative h-[83%] w-full overflow-hidden">
               <Image
-                src="https://images.unsplash.com/photo-1615485290382-441e4d049cb5?auto=format&fit=crop&w=650&q=85"
-                alt="Minimalist plate on beige linen napery"
+                src="https://images.unsplash.com/photo-1586201375761-83865001e31c?auto=format&fit=crop&w=650&q=85"
+                alt="A minimalist white ceramic bowl of white rice on a clean neutral background"
                 fill
                 className="object-cover transition duration-500 hover:scale-103"
               />

@@ -15,11 +15,11 @@ const projects = [
     cta: "Explore the tracker",
     href: "/projects/parliament-tracker",
     image:
-      "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1400&q=85",
-    imageAlt: "Minimalist modern concrete architecture facade",
-    photographer: "Jean-Philippe Delberghe",
+      "https://images.unsplash.com/photo-1744339700180-d3a299e2cd1f?auto=format&fit=crop&w=1400&q=85",
+    imageAlt: "A beautiful, minimalist view of the Canadian Parliament building and Peace Tower",
+    photographer: "Dennis Zhang",
     photoHref:
-      "https://unsplash.com/photos/minimalist-architecture-with-clean-lines-and-concrete-wall-793K7V0Z8v8",
+      "https://unsplash.com/photos/the-canadian-parliament-building-stands-tall-LYKUm-VRJPs",
   },
   {
     number: "02",
@@ -30,11 +30,11 @@ const projects = [
     cta: "Analyze an article",
     href: "/projects/media-bias-tracker",
     image:
-      "https://images.unsplash.com/photo-1566378246598-5b11a0d486cc?auto=format&fit=crop&w=1400&q=85",
-    imageAlt: "Minimalist black and white newspaper page with fine typography",
-    photographer: "Christin Hume",
+      "https://images.unsplash.com/photo-1504711434969-e33886168f5c?auto=format&fit=crop&w=1400&q=85",
+    imageAlt: "Minimalist newspaper lying flat on a clean table surface",
+    photographer: "Roman Kraft",
     photoHref:
-      "https://unsplash.com/photos/a-stack-of-newspaper-pages-laying-flat-H9ZhJTDNyKE",
+      "https://unsplash.com/photos/a-folded-newspaper-lying-on-a-surface-H9ZhJTDNyKE",
   },
   {
     number: "03",
@@ -45,10 +45,10 @@ const projects = [
     cta: "Download free",
     href: "/projects/detente",
     image:
-      "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1400&q=85",
-    imageAlt: "Abstract rendering of soft minimalist architectural waves in cream and terracotta",
-    photographer: "Google DeepMind",
-    photoHref: "https://unsplash.com/photos/abstract-soft-3d-render-curves-nAjil1z3eLk",
+      "https://images.unsplash.com/photo-1529699211952-734e80c4d42b?auto=format&fit=crop&w=1400&q=85",
+    imageAlt: "Close-up of minimalist wooden chess pieces standing on a board",
+    photographer: "Randy Fath",
+    photoHref: "https://unsplash.com/photos/chess-pieces-on-board-nAjil1z3eLk",
   },
   {
     number: "04",
@@ -59,11 +59,11 @@ const projects = [
     cta: "Visit the index",
     href: "/projects/fried-rice-index",
     image:
-      "https://images.unsplash.com/photo-1615485290382-441e4d049cb5?auto=format&fit=crop&w=1400&q=85",
-    imageAlt: "Minimalist ceramic plate and linen fabric napkin on a concrete surface",
-    photographer: "Evgeni Tcherkasski",
+      "https://images.unsplash.com/photo-1586201375761-83865001e31c?auto=format&fit=crop&w=1400&q=85",
+    imageAlt: "A minimalist white ceramic bowl of white rice on a clean neutral background",
+    photographer: "Purnomo Capung",
     photoHref:
-      "https://unsplash.com/photos/minimal-white-ceramic-plate-on-beige-linen-cloth-H9ZhJTDNyKE",
+      "https://unsplash.com/photos/bowl-of-rice-on-neutral-table-H9ZhJTDNyKE",
   },
   {
     number: "05",
