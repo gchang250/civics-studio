@@ -196,12 +196,6 @@ export default function Hero() {
             >
               View Projects
             </Link>
-            <Link
-              href="/projects/detente"
-              className="border border-white/15 px-8 py-4 text-sm font-bold uppercase tracking-[0.12em] text-white/65 transition hover:border-white/40 hover:text-white"
-            >
-              Download Détente
-            </Link>
           </motion.div>
 
           {/* Scroll cue */}

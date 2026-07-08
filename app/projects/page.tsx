@@ -8,7 +8,7 @@ const projects = [
     description:
       "Live MP roster, ridings, and real vote records pulled from Parliament's open data, flagging when an MP's ballot broke from their own party's whip.",
     href: "/projects/parliament-tracker",
-    status: "Flagship",
+    status: "Live project",
     image:
       "https://images.unsplash.com/photo-1744339700180-d3a299e2cd1f?auto=format&fit=crop&w=800&q=80",
     imageAlt: "The Canadian Parliament building",
@@ -17,12 +17,12 @@ const projects = [
       "https://unsplash.com/photos/the-canadian-parliament-building-stands-tall-LYKUm-VRJPs",
   },
   {
-    title: "Media Bias Tracker",
+    title: "Media Bias Detector",
     type: "AI tool",
     description:
       "Paste in any article or transcript and get a non-partisan, AI-assisted read on loaded language, framing, insinuation, and where the piece sits on the political spectrum.",
     href: "/projects/media-bias-tracker",
-    status: "Flagship",
+    status: "Live project",
     image:
       "https://images.unsplash.com/photo-1579532536935-619928decd08?auto=format&fit=crop&w=800&q=80",
     imageAlt: "A stack of newspapers on a wooden table",

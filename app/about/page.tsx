@@ -79,12 +79,12 @@ export default function AboutPage() {
               Games and data projects.
             </h2>
             <p className="mt-4 leading-8 text-[#5E5A54]">
-              Parliament Tracker and Media Bias Tracker are our flagship
-              projects, using Parliament&apos;s own open data and AI-assisted
-              analysis to make whip pressure and media framing visible.
-              Detente teaches political literacy through negotiation and
-              strategy. The Fried Rice Index teaches economic literacy through
-              everyday price comparison.
+              Parliament Tracker and Media Bias Detector use
+              Parliament&apos;s own open data and AI-assisted analysis to make
+              whip pressure and media framing visible. Detente teaches
+              political literacy through negotiation and strategy. The Fried
+              Rice Index teaches economic literacy through everyday price
+              comparison.
             </p>
           </div>
 

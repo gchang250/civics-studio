@@ -25,7 +25,7 @@ export default async function ParliamentTrackerPage() {
       <section className="border-b border-[#D8D0C3] bg-[#FAF7F0]">
         <div className="mx-auto max-w-7xl px-5 py-14 md:py-18">
           <p className="text-xs font-bold uppercase tracking-[0.18em] text-[#C9A94B]">
-            Data project · Flagship
+            Data project
           </p>
 
           <h1 className="serif mt-4 max-w-4xl text-5xl font-bold leading-tight tracking-[-0.035em] text-[#1C3557] md:text-6xl">

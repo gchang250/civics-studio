@@ -3,7 +3,7 @@ import BiasAnalyzer from "./BiasAnalyzer";
 import Comments from "@/app/components/Comments";
 
 export const metadata: Metadata = {
-  title: "Media Bias Tracker",
+  title: "Media Bias Detector",
   description:
     "Paste in an article or transcript and get an AI-assisted, non-partisan read on loaded language, framing, insinuation, and where the piece sits on the political spectrum.",
 };
@@ -14,11 +14,11 @@ export default function MediaBiasTrackerPage() {
       <section className="border-b border-[#D8D0C3] bg-[#FAF7F0]">
         <div className="mx-auto max-w-5xl px-5 py-14 md:py-18">
           <p className="text-xs font-bold uppercase tracking-[0.18em] text-[#C9A94B]">
-            AI tool · Flagship
+            AI tool
           </p>
 
           <h1 className="serif mt-4 max-w-3xl text-5xl font-bold leading-tight tracking-[-0.035em] text-[#1C3557] md:text-6xl">
-            Media Bias Tracker
+            Media Bias Detector
           </h1>
 
           <p className="mt-5 max-w-2xl text-lg leading-8 text-[#5E5A54]">

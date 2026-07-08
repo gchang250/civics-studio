@@ -8,10 +8,10 @@ import Link from "next/link";
 const projects = [
   {
     number: "01",
-    type: "Data project · Flagship",
+    type: "Data project",
     title: "Parliament Tracker",
     description:
-      "Live MP roster, ridings, and real vote records pulled straight from Parliament's open data — flagging when an MP's ballot broke from their own party's whip.",
+      "Live MP roster, ridings, and real vote records pulled straight from Parliament's open data, flagging when an MP's ballot broke from their own party's whip.",
     cta: "Explore the tracker",
     href: "/projects/parliament-tracker",
     image:
@@ -23,8 +23,8 @@ const projects = [
   },
   {
     number: "02",
-    type: "AI tool · Flagship",
-    title: "Media Bias Tracker",
+    type: "AI tool",
+    title: "Media Bias Detector",
     description:
       "Paste in any article or transcript and get a non-partisan, AI-assisted read on loaded language, framing, insinuation, and where it sits on the political spectrum.",
     cta: "Analyze an article",

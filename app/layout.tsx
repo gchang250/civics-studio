@@ -106,14 +106,6 @@ export default function RootLayout({
               ))}
             </nav>
 
-            {/* Download link */}
-            <Link
-              href="/projects/detente"
-              className="hidden border border-white/20 px-4 py-2 text-[10px] font-bold uppercase tracking-[0.12em] text-white/50 transition hover:border-white/50 hover:text-white sm:block"
-            >
-              Download Détente
-            </Link>
-
             <MobileNav items={navItems} />
           </div>
         </header>
@@ -150,7 +142,7 @@ export default function RootLayout({
                   Parliament Tracker
                 </Link>
                 <Link href="/projects/media-bias-tracker" className="text-white/45 transition hover:text-white">
-                  Media Bias Tracker
+                  Media Bias Detector
                 </Link>
                 <Link href="/projects/detente" className="text-white/45 transition hover:text-white">
                   Détente

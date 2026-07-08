@@ -61,7 +61,7 @@ export async function POST(request: NextRequest) {
     return Response.json(
       {
         error:
-          "Media Bias Tracker isn't configured yet. Add a GEMINI_API_KEY environment variable to enable it.",
+          "Media Bias Detector isn't configured yet. Add a GEMINI_API_KEY environment variable to enable it.",
       },
       { status: 503 }
     );

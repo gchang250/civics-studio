@@ -5,9 +5,8 @@ import Marquee from "@/app/components/Marquee";
 import AnimatedSection from "@/app/components/AnimatedSection";
 
 const stats = [
+  { value: "500+", label: "Users", desc: "Across all Civics Studio projects" },
   { value: "5", label: "Active Projects", desc: "Trackers, games, data, and literacy programs" },
-  { value: "Free", label: "Always", desc: "Every resource costs nothing to access" },
-  { value: "Non-partisan", label: "By Conviction", desc: "For independent representation, not above politics" },
 ];
 
 export default function HomePage() {
@@ -51,10 +50,10 @@ export default function HomePage() {
             </p>
           </AnimatedSection>
 
-          <div className="grid gap-px bg-[#D8D0C3] sm:grid-cols-3">
+          <div className="grid gap-px bg-[#D8D0C3] sm:grid-cols-2">
             {stats.map((s, i) => (
-              <AnimatedSection key={s.label} delay={i * 0.08}>
-                <div className="bg-[#FAF7F0] p-10 text-center">
+              <AnimatedSection key={s.label} delay={i * 0.08} className="h-full">
+                <div className="flex h-full flex-col justify-center bg-[#FAF7F0] p-10 text-center">
                   <p className="serif text-[clamp(2rem,4vw,3rem)] font-bold text-[#1C3557]">
                     {s.value}
                   </p>
