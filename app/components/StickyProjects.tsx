@@ -15,11 +15,11 @@ const projects = [
     cta: "Explore the tracker",
     href: "/projects/parliament-tracker",
     image:
-      "https://images.unsplash.com/photo-1744339700180-d3a299e2cd1f?auto=format&fit=crop&w=1400&q=85",
-    imageAlt: "The Canadian Parliament building",
-    photographer: "Dennis Zhang",
+      "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1400&q=85",
+    imageAlt: "Minimalist modern concrete architecture facade",
+    photographer: "Jean-Philippe Delberghe",
     photoHref:
-      "https://unsplash.com/photos/the-canadian-parliament-building-stands-tall-LYKUm-VRJPs",
+      "https://unsplash.com/photos/minimalist-architecture-with-clean-lines-and-concrete-wall-793K7V0Z8v8",
   },
   {
     number: "02",
@@ -30,11 +30,11 @@ const projects = [
     cta: "Analyze an article",
     href: "/projects/media-bias-tracker",
     image:
-      "https://images.unsplash.com/photo-1579532536935-619928decd08?auto=format&fit=crop&w=1400&q=85",
-    imageAlt: "A stack of newspapers on a wooden table",
-    photographer: "Annie Spratt",
+      "https://images.unsplash.com/photo-1566378246598-5b11a0d486cc?auto=format&fit=crop&w=1400&q=85",
+    imageAlt: "Minimalist black and white newspaper page with fine typography",
+    photographer: "Christin Hume",
     photoHref:
-      "https://unsplash.com/photos/a-stack-of-newspapers-sitting-on-top-of-a-wooden-table-hWJsOnaWTqs",
+      "https://unsplash.com/photos/a-stack-of-newspaper-pages-laying-flat-H9ZhJTDNyKE",
   },
   {
     number: "03",
@@ -45,10 +45,10 @@ const projects = [
     cta: "Download free",
     href: "/projects/detente",
     image:
-      "https://images.unsplash.com/photo-1528819622765-d6bcf132f793?auto=format&fit=crop&w=1400&q=85",
-    imageAlt: "Chess pieces on a board",
-    photographer: "Felix Mittermeier",
-    photoHref: "https://unsplash.com/photos/chess-pieces-nAjil1z3eLk",
+      "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1400&q=85",
+    imageAlt: "Abstract rendering of soft minimalist architectural waves in cream and terracotta",
+    photographer: "Google DeepMind",
+    photoHref: "https://unsplash.com/photos/abstract-soft-3d-render-curves-nAjil1z3eLk",
   },
   {
     number: "04",
@@ -59,11 +59,11 @@ const projects = [
     cta: "Visit the index",
     href: "/projects/fried-rice-index",
     image:
-      "https://images.unsplash.com/photo-1756713545237-7c97075b71da?auto=format&fit=crop&w=1400&q=85",
-    imageAlt: "Bangkok street food market at night",
-    photographer: "GVZ 42",
+      "https://images.unsplash.com/photo-1615485290382-441e4d049cb5?auto=format&fit=crop&w=1400&q=85",
+    imageAlt: "Minimalist ceramic plate and linen fabric napkin on a concrete surface",
+    photographer: "Evgeni Tcherkasski",
     photoHref:
-      "https://unsplash.com/photos/street-food-stall-at-night-with-neon-signs-H9ZhJTDNyKE",
+      "https://unsplash.com/photos/minimal-white-ceramic-plate-on-beige-linen-cloth-H9ZhJTDNyKE",
   },
   {
     number: "05",
@@ -74,10 +74,10 @@ const projects = [
     cta: "Learn more",
     href: "/projects/cyffl",
     image:
-      "https://images.unsplash.com/photo-1651514645933-c26e0eb4ace3?auto=format&fit=crop&w=1400&q=85",
-    imageAlt: "Group of people in conversation",
-    photographer: "Small Group Network",
-    photoHref: "https://unsplash.com/photos/a-group-of-people-talking-bxiOjnbjRM0",
+      "https://images.unsplash.com/photo-1544947950-fa07a98d237f?auto=format&fit=crop&w=1400&q=85",
+    imageAlt: "Sleek minimalist white book with blank cover resting in soft sunlight",
+    photographer: "Hope House Press",
+    photoHref: "https://unsplash.com/photos/white-hardbound-book-on-beige-surface-bxiOjnbjRM0",
   },
 ];
 
@@ -164,11 +164,11 @@ export default function StickyProjects() {
             <AnimatePresence mode="wait">
               <motion.div
                 key={`img-${activeIndex}`}
-                initial={{ opacity: 0, scale: 1.02 }}
-                animate={{ opacity: 1, scale: 1 }}
+                initial={{ clipPath: "polygon(0 100%, 100% 100%, 100% 100%, 0 100%)", scale: 1.04 }}
+                animate={{ clipPath: "polygon(0 0%, 100% 0%, 100% 100%, 0 100%)", scale: 1 }}
                 exit={{ opacity: 0, scale: 0.98 }}
-                transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-                className="absolute inset-0"
+                transition={{ duration: 0.85, ease: [0.16, 1, 0.3, 1] }}
+                className="absolute inset-0 bg-[#f3efe6]"
               >
                 <Image
                   src={active.image}

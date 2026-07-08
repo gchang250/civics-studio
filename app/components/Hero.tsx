@@ -164,8 +164,8 @@ export default function Hero() {
           >
             <div className="relative h-[85%] w-full overflow-hidden">
               <Image
-                src="https://images.unsplash.com/photo-1528819622765-d6bcf132f793?auto=format&fit=crop&w=650&q=85"
-                alt="Chess pieces"
+                src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=650&q=85"
+                alt="Abstract rendering of soft minimalist curves"
                 fill
                 className="object-cover transition duration-500 hover:scale-103"
               />
@@ -187,8 +187,8 @@ export default function Hero() {
           >
             <div className="relative h-[88%] w-full overflow-hidden">
               <Image
-                src="https://images.unsplash.com/photo-1744339700180-d3a299e2cd1f?auto=format&fit=crop&w=750&q=85"
-                alt="Canadian Parliament"
+                src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=750&q=85"
+                alt="Minimalist modern concrete architecture facade"
                 fill
                 className="object-cover transition duration-500 hover:scale-103"
               />
@@ -210,8 +210,8 @@ export default function Hero() {
           >
             <div className="relative h-[83%] w-full overflow-hidden">
               <Image
-                src="https://images.unsplash.com/photo-1756713545237-7c97075b71da?auto=format&fit=crop&w=650&q=85"
-                alt="Bangkok street food market"
+                src="https://images.unsplash.com/photo-1615485290382-441e4d049cb5?auto=format&fit=crop&w=650&q=85"
+                alt="Minimalist plate on beige linen napery"
                 fill
                 className="object-cover transition duration-500 hover:scale-103"
               />

@@ -6,15 +6,15 @@ const projects = [
     title: "Parliament Tracker",
     type: "Data project",
     description:
-      "Live MP roster, ridings, and real vote records pulled from Parliament's open data, flagging when an MP's ballot broke from their own party's whip.",
+      "Live MP roster, ridings, and real vote records pulled straight from Parliament's open data, flagging when an MP's ballot broke from their own party's whip.",
     href: "/projects/parliament-tracker",
     status: "Live project",
     image:
-      "https://images.unsplash.com/photo-1744339700180-d3a299e2cd1f?auto=format&fit=crop&w=800&q=80",
-    imageAlt: "The Canadian Parliament building",
-    photographer: "Dennis Zhang",
+      "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80",
+    imageAlt: "Minimalist modern concrete architecture facade",
+    photographer: "Jean-Philippe Delberghe",
     photoHref:
-      "https://unsplash.com/photos/the-canadian-parliament-building-stands-tall-LYKUm-VRJPs",
+      "https://unsplash.com/photos/minimalist-architecture-with-clean-lines-and-concrete-wall-793K7V0Z8v8",
   },
   {
     title: "Media Bias Detector",
@@ -24,11 +24,11 @@ const projects = [
     href: "/projects/media-bias-tracker",
     status: "Live project",
     image:
-      "https://images.unsplash.com/photo-1579532536935-619928decd08?auto=format&fit=crop&w=800&q=80",
-    imageAlt: "A stack of newspapers on a wooden table",
-    photographer: "Annie Spratt",
+      "https://images.unsplash.com/photo-1566378246598-5b11a0d486cc?auto=format&fit=crop&w=800&q=80",
+    imageAlt: "Minimalist black and white newspaper page with fine typography",
+    photographer: "Christin Hume",
     photoHref:
-      "https://unsplash.com/photos/a-stack-of-newspapers-sitting-on-top-of-a-wooden-table-hWJsOnaWTqs",
+      "https://unsplash.com/photos/a-stack-of-newspaper-pages-laying-flat-H9ZhJTDNyKE",
   },
   {
     title: "Detente",
@@ -38,10 +38,10 @@ const projects = [
     href: "/projects/detente",
     status: "Files available",
     image:
-      "https://images.unsplash.com/photo-1528819622765-d6bcf132f793?auto=format&fit=crop&w=800&q=80",
-    imageAlt: "Chess pieces on a board",
-    photographer: "Felix Mittermeier",
-    photoHref: "https://unsplash.com/photos/chess-pieces-nAjil1z3eLk",
+      "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=800&q=80",
+    imageAlt: "Abstract rendering of soft minimalist architectural waves in cream and terracotta",
+    photographer: "Google DeepMind",
+    photoHref: "https://unsplash.com/photos/abstract-soft-3d-render-curves-nAjil1z3eLk",
   },
   {
     title: "The Fried Rice Index",
@@ -51,11 +51,11 @@ const projects = [
     href: "/projects/fried-rice-index",
     status: "Live project",
     image:
-      "https://images.unsplash.com/photo-1756713545237-7c97075b71da?auto=format&fit=crop&w=800&q=80",
-    imageAlt: "Bangkok street food market at night",
-    photographer: "GVZ 42",
+      "https://images.unsplash.com/photo-1615485290382-441e4d049cb5?auto=format&fit=crop&w=800&q=80",
+    imageAlt: "Minimalist ceramic plate and linen fabric napkin on a concrete surface",
+    photographer: "Evgeni Tcherkasski",
     photoHref:
-      "https://unsplash.com/photos/street-food-stall-at-night-with-neon-signs-H9ZhJTDNyKE",
+      "https://unsplash.com/photos/minimal-white-ceramic-plate-on-beige-linen-cloth-H9ZhJTDNyKE",
   },
   {
     title: "CYFFL",
@@ -66,10 +66,10 @@ const projects = [
     href: "/projects/cyffl",
     status: "Live project",
     image:
-      "https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?auto=format&fit=crop&w=800&q=80",
-    imageAlt: "Open book in a library",
-    photographer: "Aaron Burden",
-    photoHref: "https://unsplash.com/photos/1zR3WNSTnvY",
+      "https://images.unsplash.com/photo-1544947950-fa07a98d237f?auto=format&fit=crop&w=800&q=80",
+    imageAlt: "Sleek minimalist white book with blank cover resting in soft sunlight",
+    photographer: "Hope House Press",
+    photoHref: "https://unsplash.com/photos/white-hardbound-book-on-beige-surface-bxiOjnbjRM0",
   },
 ];
 
