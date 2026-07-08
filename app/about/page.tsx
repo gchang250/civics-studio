@@ -29,8 +29,8 @@ export default function AboutPage() {
           {/* Right — photo */}
           <div className="relative hidden min-h-[420px] overflow-hidden lg:block">
             <Image
-              src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=900&q=80"
-              alt="High-end minimalist design studio conference table and workspace"
+              src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=900&q=80"
+              alt="A minimalist team workspace showing colleagues discussing layouts around a wooden table"
               fill
               className="object-cover"
               priority
