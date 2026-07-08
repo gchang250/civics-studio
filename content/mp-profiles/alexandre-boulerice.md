@@ -13,6 +13,17 @@ sources:
     url: "https://www.cbc.ca/news/canada/montreal/alexandre-boulerice-ndp-quebec-solidaire-9.7178354"
   - title: "openparliament.ca — Alexandre Boulerice, Independent MP for Rosemont—La Petite-Patrie"
     url: "https://openparliament.ca/politicians/alexandre-boulerice/"
+platformAlignment:
+  - promise: "Environmental policy"
+    voteSession: "45-1"
+    voteNumber: 170
+    rating: fulfilled
+    explanation: "Boulerice voted Yes at second reading of Bill C-267 (durability of electronic products and appliances), consistent with his long-standing environmental focus."
+  - promise: "Workers' rights and income inequality"
+    voteSession: "45-1"
+    voteNumber: 160
+    rating: mixed
+    explanation: "Boulerice voted No on the government's budget bill (C-30), cast after he had already left the NDP caucus. Coming from a career built on workers'-rights and inequality advocacy, a No vote here more plausibly reads as 'this doesn't do enough' than opposition to spending on principle — the same ambiguity that applies to his former NDP colleagues' identical ballots."
 ---
 
 Alexandre Boulerice won re-election in Rosemont—La Petite-Patrie in 2025 as the NDP's only Quebec MP and the party's deputy leader. In April 2026 he left the federal NDP caucus entirely to sit as an Independent ahead of a run for the provincial party Québec Solidaire, becoming another blow to a federal NDP caucus already reduced to a handful of seats.

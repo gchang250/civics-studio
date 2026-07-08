@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { getMPDetail, getMPVotingRecord, type WhipAlignment } from "@/lib/openparliament";
-import { getProfile, hasProfile } from "@/lib/mpProfiles";
+import { getMPDetail, getMPVotingRecord, getVoteDetail, type WhipAlignment } from "@/lib/openparliament";
+import { getProfile, hasProfile, ALIGNMENT_LABELS, alignmentPct } from "@/lib/mpProfiles";
 import { partyColor } from "@/lib/partyStyles";
 
 interface Props {
@@ -46,6 +46,14 @@ export default async function MPProfilePage({ params }: Props) {
     getMPVotingRecord(slug, mp.currentParty ?? "", 12),
     hasProfile(slug) ? getProfile(slug) : Promise.resolve(null),
   ]);
+
+  const alignmentVotes = profile
+    ? await Promise.all(
+        profile.platformAlignment.map((entry) =>
+          getVoteDetail(entry.voteSession, entry.voteNumber)
+        )
+      )
+    : [];
 
   const colors = partyColor(mp.currentParty ?? "Independent");
   const withParty = votingRecord.filter((v) => v.alignment === "with_party").length;
@@ -153,6 +161,12 @@ export default async function MPProfilePage({ params }: Props) {
             <div className="divide-y divide-[#D8D0C3]">
               {votingRecord.map((entry) => {
                 const style = alignmentStyles[entry.alignment];
+                const partyPosition = entry.vote.partyVotes.find(
+                  (pv) => pv.party === mp.currentParty
+                );
+                const dissentPct = partyPosition
+                  ? Math.round(partyPosition.disagreement * 100)
+                  : 0;
                 return (
                   <div key={`${entry.vote.session}-${entry.vote.number}`} className="py-5">
                     <div className="flex flex-wrap items-center justify-between gap-3">
@@ -172,6 +186,13 @@ export default async function MPProfilePage({ params }: Props) {
                     <p className="mt-1 text-sm text-[#5E5A54]">
                       Ballot: <span className="font-bold">{entry.ballot}</span> · Result: {entry.vote.result}
                     </p>
+                    {dissentPct > 0 && (
+                      <p className="mt-1 text-xs italic text-[#5E5A54]">
+                        {entry.alignment === "against_party"
+                          ? `${dissentPct}% of the ${mp.currentParty} caucus also broke ranks on this vote — this wasn't a lone dissent.`
+                          : `${dissentPct}% of the ${mp.currentParty} caucus voted differently on this one, even though this MP stuck with the party line.`}
+                      </p>
+                    )}
                   </div>
                 );
               })}
@@ -193,6 +214,7 @@ export default async function MPProfilePage({ params }: Props) {
           </div>
 
           {profile ? (
+            <>
             <div className="grid gap-8 md:grid-cols-[0.8fr_1.2fr]">
               <div>
                 <p className="text-xs font-bold uppercase tracking-[0.08em] text-[#5E5A54]">
@@ -231,6 +253,56 @@ export default async function MPProfilePage({ params }: Props) {
                 dangerouslySetInnerHTML={{ __html: profile.contentHtml }}
               />
             </div>
+
+            {profile.platformAlignment.length > 0 && (
+              <div className="mt-10 border-t border-[#D8D0C3] pt-8">
+                <p className="text-xs font-bold uppercase tracking-[0.08em] text-[#5E5A54]">
+                  How their votes measure up
+                </p>
+                <div className="mt-5 space-y-6">
+                  {profile.platformAlignment.map((entry, i) => {
+                    const vote = alignmentVotes[i];
+                    const pct = alignmentPct(entry.rating);
+                    return (
+                      <div key={i} className="bg-white p-5 shadow-sm">
+                        <p className="text-sm font-bold text-[#1C3557]">{entry.promise}</p>
+
+                        <div className="relative mt-4 h-2.5 w-full max-w-md rounded-full bg-gradient-to-r from-[#C8102E] via-[#C9A94B] to-[#3D9B35]">
+                          <div
+                            className="absolute top-1/2 h-5 w-5 -translate-y-1/2 -translate-x-1/2 rounded-full border-4 border-white bg-[#1C3557] shadow-md"
+                            style={{ left: `${pct}%` }}
+                          />
+                        </div>
+                        <p className="mt-2 text-xs font-bold uppercase tracking-[0.08em] text-[#5E5A54]">
+                          {ALIGNMENT_LABELS[entry.rating]}
+                        </p>
+
+                        <p className="mt-3 text-sm leading-6 text-[#5E5A54]">{entry.explanation}</p>
+
+                        {vote && (
+                          <p className="mt-3 text-xs text-[#5E5A54]">
+                            Vote #{vote.number} ({vote.session}),{" "}
+                            {new Date(vote.date).toLocaleDateString("en-CA", {
+                              year: "numeric",
+                              month: "long",
+                              day: "numeric",
+                            })}
+                            {": "}
+                            {vote.description} — Result: {vote.result}
+                          </p>
+                        )}
+                      </div>
+                    );
+                  })}
+                </div>
+                <p className="mt-4 text-xs italic text-[#5E5A54]">
+                  Civics Studio&apos;s editorial judgment, based on the MP&apos;s own stated
+                  platform and their actual recorded vote — not the MP&apos;s or party&apos;s
+                  characterization.
+                </p>
+              </div>
+            )}
+            </>
           ) : (
             <div className="bg-white p-8 text-center shadow-sm">
               <p className="text-[#5E5A54]">

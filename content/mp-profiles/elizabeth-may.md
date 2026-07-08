@@ -14,6 +14,17 @@ sources:
     url: "https://www.cbc.ca/news/canada/british-columbia/green-party-leader-elizabeth-may-wins-saanich-gulf-islands-1.7521274"
   - title: "openparliament.ca — Elizabeth May, Green MP for Saanich—Gulf Islands"
     url: "https://openparliament.ca/politicians/elizabeth-may/"
+platformAlignment:
+  - promise: "Expanding affordable housing"
+    voteSession: "45-1"
+    voteNumber: 169
+    rating: fulfilled
+    explanation: "May voted Yes at second reading of Bill C-26 (payments to improve housing supply), consistent with her housing platform."
+  - promise: "Stronger climate action"
+    voteSession: "45-1"
+    voteNumber: 170
+    rating: fulfilled
+    explanation: "May voted Yes at second reading of Bill C-267 (durability of electronic products and appliances), a clean match with her environmental platform even though it wasn't itemized by name in her campaign materials."
 ---
 
 Elizabeth May won a fifth term representing Saanich—Gulf Islands in 2025, campaigning on the Green platform above alongside a special "Protecting Canada" response to U.S. tariff threats. The 2025 election reduced the Green caucus to a single seat — hers — after the party's other MP did not return.

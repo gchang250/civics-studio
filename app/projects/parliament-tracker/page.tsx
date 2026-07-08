@@ -5,6 +5,8 @@ import { getProfileSlugs } from "@/lib/mpProfiles";
 import MPDirectory from "./MPDirectory";
 import Comments from "@/app/components/Comments";
 
+const TOTAL_SEATS = 343;
+
 export const metadata: Metadata = {
   title: "Parliament Tracker",
   description:
@@ -41,9 +43,11 @@ export default async function ParliamentTrackerPage() {
 
           <div className="mt-8 grid max-w-2xl gap-4 sm:grid-cols-3">
             <div className="border-l-4 border-[#C9A94B] bg-white p-4 shadow-sm">
-              <p className="serif text-2xl font-bold text-[#1C3557]">{mps.length}</p>
+              <p className="serif text-2xl font-bold text-[#1C3557]">
+                {mps.length} of {TOTAL_SEATS}
+              </p>
               <p className="text-xs font-bold uppercase tracking-[0.08em] text-[#5E5A54]">
-                MPs tracked live
+                Seats tracked live
               </p>
             </div>
             <div className="border-l-4 border-[#C9A94B] bg-white p-4 shadow-sm">
@@ -90,6 +94,12 @@ export default async function ParliamentTrackerPage() {
                 (marked &quot;Full profile&quot; below) and are expanding that
                 set over time. Every other MP still gets a real, live voting
                 record — just without the platform comparison yet.
+              </p>
+              <p className="text-sm text-white/40">
+                Note: only {mps.length} of {TOTAL_SEATS} seats have a sitting
+                MP right now — North Vancouver–Capilano and
+                Saint-Hyacinthe–Bagot–Acton are both vacant pending
+                byelections, per Elections Canada.
               </p>
             </div>
           </div>
