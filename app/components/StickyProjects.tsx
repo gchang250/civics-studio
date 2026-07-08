@@ -8,6 +8,36 @@ import Link from "next/link";
 const projects = [
   {
     number: "01",
+    type: "Data project · Flagship",
+    title: "Parliament Tracker",
+    description:
+      "Live MP roster, ridings, and real vote records pulled straight from Parliament's open data — flagging when an MP's ballot broke from their own party's whip.",
+    cta: "Explore the tracker",
+    href: "/projects/parliament-tracker",
+    image:
+      "https://images.unsplash.com/photo-1744339700180-d3a299e2cd1f?auto=format&fit=crop&w=1400&q=85",
+    imageAlt: "The Canadian Parliament building",
+    photographer: "Dennis Zhang",
+    photoHref:
+      "https://unsplash.com/photos/the-canadian-parliament-building-stands-tall-LYKUm-VRJPs",
+  },
+  {
+    number: "02",
+    type: "AI tool · Flagship",
+    title: "Media Bias Tracker",
+    description:
+      "Paste in any article or transcript and get a non-partisan, AI-assisted read on loaded language, framing, insinuation, and where it sits on the political spectrum.",
+    cta: "Analyze an article",
+    href: "/projects/media-bias-tracker",
+    image:
+      "https://images.unsplash.com/photo-1579532536935-619928decd08?auto=format&fit=crop&w=1400&q=85",
+    imageAlt: "A stack of newspapers on a wooden table",
+    photographer: "Annie Spratt",
+    photoHref:
+      "https://unsplash.com/photos/a-stack-of-newspapers-sitting-on-top-of-a-wooden-table-hWJsOnaWTqs",
+  },
+  {
+    number: "03",
     type: "Print-and-play game",
     title: "Detente",
     description:
@@ -21,7 +51,7 @@ const projects = [
     photoHref: "https://unsplash.com/photos/chess-pieces-nAjil1z3eLk",
   },
   {
-    number: "02",
+    number: "04",
     type: "Data project",
     title: "The Fried Rice Index",
     description:
@@ -36,7 +66,7 @@ const projects = [
       "https://unsplash.com/photos/street-food-stall-at-night-with-neon-signs-H9ZhJTDNyKE",
   },
   {
-    number: "03",
+    number: "05",
     type: "French literacy program",
     title: "CYFFL",
     description:
@@ -105,7 +135,7 @@ export default function StickyProjects() {
                 transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
               >
                 <p className="text-[11px] font-bold uppercase tracking-[0.3em] text-[#C9A94B]">
-                  {active.number} — {active.type}
+                  {active.number} · {active.type}
                 </p>
 
                 <h2 className="serif mt-5 text-[clamp(3rem,5.5vw,4.5rem)] font-bold leading-[1.0] tracking-[-0.045em] text-[#1C3557]">
@@ -118,7 +148,7 @@ export default function StickyProjects() {
 
                 <Link
                   href={active.href}
-                  className="mt-10 inline-flex items-center gap-2 bg-[#1C3557] px-7 py-3.5 text-sm font-bold uppercase tracking-[0.1em] text-white transition hover:bg-[#C9A94B] hover:text-[#1C3557]"
+                  className="mt-10 inline-flex items-center gap-2 bg-[#1C3557] px-7 py-3.5 text-sm font-bold uppercase tracking-[0.1em] text-white transition hover:bg-[#0f2347]"
                 >
                   {active.cta}
                   <span>→</span>

@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import Script from "next/script";
 import { Libre_Baskerville, Source_Sans_3 } from "next/font/google";
+import { SITE_URL } from "@/lib/site";
 import "./globals.css";
 
 const GA_ID = process.env.NEXT_PUBLIC_GA_ID;
@@ -20,6 +21,7 @@ const sourceSans = Source_Sans_3({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(SITE_URL),
   title: {
     default: "Civics Studio",
     template: "%s | Civics Studio",
@@ -35,12 +37,14 @@ export const metadata: Metadata = {
     "political literacy",
     "economic literacy",
   ],
+  verification: process.env.GOOGLE_SITE_VERIFICATION
+    ? { google: process.env.GOOGLE_SITE_VERIFICATION }
+    : undefined,
 };
 
 const navItems = [
   { href: "/mission", label: "Mission" },
   { href: "/projects", label: "Projects" },
-  { href: "/articles", label: "Articles" },
   { href: "/resources", label: "Resources" },
   { href: "/about", label: "About" },
   { href: "/contact", label: "Contact" },
@@ -55,44 +59,58 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${sourceSans.variable} ${libreBaskerville.variable}`}>
 
+        {/* ── Utility bar ─────────────────────────────────── */}
+        <div className="border-b border-white/5 bg-[#060E1A]">
+          <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-2">
+            <span className="text-[10px] font-semibold uppercase tracking-[0.3em] text-white/30">
+              Non-Partisan Civic Education
+            </span>
+            <a
+              href="mailto:civicsstudio@gmail.com"
+              className="text-[10px] text-white/25 transition hover:text-white/60"
+            >
+              civicsstudio@gmail.com
+            </a>
+          </div>
+        </div>
+
         {/* ── Navbar ──────────────────────────────────────── */}
-        <header className="sticky top-0 z-50 border-b border-white/10 bg-[#0A1628]/95 backdrop-blur-md">
-          <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-5">
+        <header className="sticky top-0 z-50 border-b border-white/10 bg-[#0A1628]/97 backdrop-blur-md">
+          <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-6">
 
             {/* Logo */}
-            <Link href="/" className="flex items-center gap-3 shrink-0">
+            <Link href="/" className="flex shrink-0 items-center gap-3">
               <Image
                 src="/seal.png"
                 alt="Civics Studio seal"
                 width={32}
                 height={32}
-                className="drop-shadow-sm"
                 priority
               />
-              <span className="serif text-xl font-bold tracking-tight text-white">
+              <span className="serif text-base font-bold tracking-tight text-white">
                 Civics Studio
               </span>
             </Link>
 
             {/* Nav links */}
-            <nav className="hidden items-center gap-1 md:flex">
+            <nav className="hidden items-center gap-6 md:flex">
               {navItems.map((item) => (
                 <Link
                   key={item.href}
                   href={item.href}
-                  className="px-4 py-2 text-xs font-bold uppercase tracking-[0.1em] text-white/60 transition hover:text-[#C9A94B]"
+                  className="text-[11px] font-bold uppercase tracking-[0.12em] text-white/55 transition hover:text-white"
                 >
                   {item.label}
                 </Link>
               ))}
             </nav>
 
-            {/* CTA */}
+            {/* Download link */}
             <Link
               href="/projects/detente"
-              className="hidden border border-[#C9A94B]/40 px-4 py-2 text-xs font-bold uppercase tracking-[0.1em] text-[#C9A94B] transition hover:bg-[#C9A94B] hover:text-[#0A1628] sm:block"
+              className="hidden border border-white/20 px-4 py-2 text-[10px] font-bold uppercase tracking-[0.12em] text-white/50 transition hover:border-white/50 hover:text-white sm:block"
             >
-              Download Detente
+              Download Détente
             </Link>
           </div>
         </header>
@@ -100,61 +118,65 @@ export default function RootLayout({
         <main>{children}</main>
 
         {/* ── Footer ──────────────────────────────────────── */}
-        <footer className="border-t border-white/10 bg-[#0A1628] text-white">
-          <div className="mx-auto grid max-w-7xl gap-10 px-5 py-16 md:grid-cols-[1.5fr_1fr_1fr]">
+        <footer className="border-t border-white/10 bg-[#060E1A] text-white">
+          <div className="mx-auto grid max-w-7xl gap-12 px-6 py-16 md:grid-cols-[2fr_1fr_1fr]">
 
             <div>
               <Link href="/" className="flex items-center gap-3">
-                <Image src="/seal.png" alt="Civics Studio seal" width={36} height={36} />
-                <span className="serif text-2xl font-bold text-white">Civics Studio</span>
+                <Image src="/seal.png" alt="Civics Studio seal" width={40} height={40} />
+                <div>
+                  <span className="serif block text-xl font-bold text-white">Civics Studio</span>
+                  <span className="block text-[10px] uppercase tracking-[0.2em] text-white/30">Est. 2024</span>
+                </div>
               </Link>
-              <p className="mt-4 max-w-sm text-sm leading-7 text-white/40">
+              <p className="mt-6 max-w-sm text-sm leading-7 text-white/35">
                 Free games, data projects, and civic learning resources for
                 students and educators in Canada and beyond.
               </p>
-              <p className="mt-6 text-xs text-white/25">
-                Non-partisan. No party, no ideology.
+              <p className="mt-6 text-[10px] uppercase tracking-[0.2em] text-white/20">
+                For independent representation in Canada.
               </p>
             </div>
 
             <div>
-              <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-[#C9A94B]">
+              <p className="text-[10px] font-bold uppercase tracking-[0.25em] text-[#C9A94B]">
                 Projects
               </p>
-              <div className="mt-4 flex flex-col gap-3 text-sm">
-                <Link href="/projects/detente" className="text-white/50 hover:text-white transition">
-                  Detente
+              <div className="mt-5 flex flex-col gap-3 text-sm">
+                <Link href="/projects/parliament-tracker" className="text-white/45 transition hover:text-white">
+                  Parliament Tracker
                 </Link>
-                <Link href="/projects/fried-rice-index" className="text-white/50 hover:text-white transition">
+                <Link href="/projects/media-bias-tracker" className="text-white/45 transition hover:text-white">
+                  Media Bias Tracker
+                </Link>
+                <Link href="/projects/detente" className="text-white/45 transition hover:text-white">
+                  Détente
+                </Link>
+                <Link href="/projects/fried-rice-index" className="text-white/45 transition hover:text-white">
                   The Fried Rice Index
                 </Link>
-                <Link href="/projects/cyffl" className="text-white/50 hover:text-white transition">
+                <Link href="/projects/cyffl" className="text-white/45 transition hover:text-white">
                   CYFFL
                 </Link>
               </div>
             </div>
 
             <div>
-              <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-[#C9A94B]">
-                Contact
+              <p className="text-[10px] font-bold uppercase tracking-[0.25em] text-[#C9A94B]">
+                Site
               </p>
-              <a
-                href="mailto:civicsstudio@gmail.com"
-                className="mt-4 inline-block text-sm text-white/50 hover:text-white transition"
-              >
-                civicsstudio@gmail.com
-              </a>
-              <div className="mt-6 flex flex-col gap-2 text-sm">
-                <Link href="/articles" className="text-white/50 hover:text-white transition">Articles</Link>
-                <Link href="/resources" className="text-white/50 hover:text-white transition">Resources</Link>
-                <Link href="/about" className="text-white/50 hover:text-white transition">About</Link>
+              <div className="mt-5 flex flex-col gap-3 text-sm">
+                <Link href="/mission" className="text-white/45 transition hover:text-white">Mission</Link>
+                <Link href="/resources" className="text-white/45 transition hover:text-white">Resources</Link>
+                <Link href="/about" className="text-white/45 transition hover:text-white">About</Link>
+                <Link href="/contact" className="text-white/45 transition hover:text-white">Contact</Link>
               </div>
             </div>
           </div>
 
-          <div className="border-t border-white/5 px-5 py-5">
-            <p className="mx-auto max-w-7xl text-xs text-white/20">
-              © {new Date().getFullYear()} Civics Studio
+          <div className="border-t border-white/5 px-6 py-5">
+            <p className="mx-auto max-w-7xl text-[10px] uppercase tracking-[0.2em] text-white/15">
+              © {new Date().getFullYear()} Civics Studio · All rights reserved
             </p>
           </div>
         </footer>

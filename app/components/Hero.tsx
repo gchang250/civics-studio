@@ -18,7 +18,6 @@ const WORDS = [
 export default function Hero() {
   const containerRef = useRef<HTMLDivElement>(null);
 
-  // Normalised mouse position [0, 1]
   const rawX = useMotionValue(0.5);
   const rawY = useMotionValue(0.5);
 
@@ -33,7 +32,6 @@ export default function Hero() {
     [rawX, rawY]
   );
 
-  // Per-image parallax — different depths
   const x1 = useSpring(useTransform(rawX, [0, 1], [28, -28]), { stiffness: 55, damping: 18 });
   const y1 = useSpring(useTransform(rawY, [0, 1], [18, -18]), { stiffness: 55, damping: 18 });
 
@@ -47,59 +45,55 @@ export default function Hero() {
     <section
       ref={containerRef}
       onMouseMove={handleMouseMove}
-      className="relative min-h-[92vh] overflow-hidden bg-[#030C18]"
+      className="relative min-h-[92vh] overflow-hidden bg-[#0A1628]"
     >
-      {/* ── Film-grain noise overlay ─────────────────────── */}
+      {/* Film-grain noise */}
       <div
-        className="pointer-events-none absolute inset-0 opacity-[0.04] mix-blend-overlay"
+        className="pointer-events-none absolute inset-0 opacity-[0.035] mix-blend-overlay"
         style={{
           backgroundImage:
             "url(\"data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E\")",
         }}
       />
 
-      {/* ── Ambient gradient orbs ────────────────────────── */}
+      {/* Ambient gradient orbs */}
       <motion.div
         animate={{ x: [0, 50, 0], y: [0, -35, 0] }}
         transition={{ duration: 14, repeat: Infinity, ease: "easeInOut" }}
-        className="pointer-events-none absolute -top-32 left-[5%] h-[700px] w-[700px] rounded-full bg-[#C9A94B]/[0.045] blur-[140px]"
+        className="pointer-events-none absolute -top-32 left-[5%] h-[700px] w-[700px] rounded-full bg-[#C9A94B]/[0.035] blur-[140px]"
       />
       <motion.div
         animate={{ x: [0, -60, 0], y: [0, 50, 0] }}
         transition={{ duration: 20, repeat: Infinity, ease: "easeInOut", delay: 4 }}
-        className="pointer-events-none absolute bottom-[-10%] right-[15%] h-[500px] w-[500px] rounded-full bg-[#1C3557]/50 blur-[100px]"
+        className="pointer-events-none absolute bottom-[-10%] right-[15%] h-[500px] w-[500px] rounded-full bg-[#1C3557]/40 blur-[100px]"
       />
       <motion.div
         animate={{ x: [0, 30, 0], y: [0, 20, 0] }}
         transition={{ duration: 10, repeat: Infinity, ease: "easeInOut", delay: 2 }}
-        className="pointer-events-none absolute top-1/3 right-[10%] h-[300px] w-[300px] rounded-full bg-[#C9A94B]/[0.025] blur-[80px]"
+        className="pointer-events-none absolute top-1/3 right-[10%] h-[300px] w-[300px] rounded-full bg-[#C9A94B]/[0.02] blur-[80px]"
       />
 
-      {/* ── Orbital rings (right half) ───────────────────── */}
+      {/* Orbital rings */}
       <div className="pointer-events-none absolute inset-y-0 right-0 w-1/2 overflow-hidden">
         <div className="absolute inset-0 flex items-center justify-center translate-x-[15%]">
-          {/* Outer dashed ring */}
           <motion.div
             animate={{ rotate: 360 }}
             transition={{ duration: 45, repeat: Infinity, ease: "linear" }}
             className="absolute h-[580px] w-[580px] rounded-full"
-            style={{ border: "1px dashed rgba(201,169,75,0.11)" }}
+            style={{ border: "1px dashed rgba(201,169,75,0.10)" }}
           />
-          {/* Mid solid ring */}
           <motion.div
             animate={{ rotate: -360 }}
             transition={{ duration: 28, repeat: Infinity, ease: "linear" }}
             className="absolute h-[400px] w-[400px] rounded-full"
-            style={{ border: "1px solid rgba(255,255,255,0.05)" }}
+            style={{ border: "1px solid rgba(255,255,255,0.04)" }}
           />
-          {/* Inner gold ring */}
           <motion.div
             animate={{ rotate: 360 }}
             transition={{ duration: 16, repeat: Infinity, ease: "linear" }}
             className="absolute h-[240px] w-[240px] rounded-full"
-            style={{ border: "1.5px solid rgba(201,169,75,0.18)" }}
+            style={{ border: "1.5px solid rgba(201,169,75,0.16)" }}
           />
-          {/* Orbiting gold dot — outer ring */}
           <motion.div
             animate={{ rotate: 360 }}
             transition={{ duration: 45, repeat: Infinity, ease: "linear" }}
@@ -107,7 +101,6 @@ export default function Hero() {
           >
             <div className="absolute top-0 left-1/2 h-2.5 w-2.5 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#C9A94B] shadow-[0_0_12px_4px_rgba(201,169,75,0.55)]" />
           </motion.div>
-          {/* Orbiting white dot — inner ring */}
           <motion.div
             animate={{ rotate: -360 }}
             transition={{ duration: 16, repeat: Infinity, ease: "linear" }}
@@ -115,7 +108,6 @@ export default function Hero() {
           >
             <div className="absolute top-0 left-1/2 h-1.5 w-1.5 -translate-x-1/2 -translate-y-1/2 rounded-full bg-white/50" />
           </motion.div>
-          {/* Second orbiting dot on outer (offset 180°) */}
           <motion.div
             animate={{ rotate: 360 }}
             transition={{ duration: 45, repeat: Infinity, ease: "linear", delay: -22.5 }}
@@ -126,7 +118,7 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* ── Gold top shimmer ─────────────────────────────── */}
+      {/* Gold shimmer at top */}
       <motion.div
         initial={{ scaleX: 0, opacity: 0 }}
         animate={{ scaleX: 1, opacity: 1 }}
@@ -134,7 +126,7 @@ export default function Hero() {
         className="absolute inset-x-0 top-0 h-px origin-left bg-gradient-to-r from-transparent via-[#C9A94B] to-transparent"
       />
 
-      {/* ── Main two-column layout ───────────────────────── */}
+      {/* Main layout */}
       <div className="relative z-10 mx-auto grid min-h-[92vh] max-w-7xl items-center gap-8 px-5 lg:grid-cols-[1.15fr_0.85fr]">
 
         {/* LEFT — text */}
@@ -154,7 +146,7 @@ export default function Hero() {
               className="inline-block h-px w-8 origin-left bg-[#C9A94B]"
             />
             <span className="text-[11px] font-bold uppercase tracking-[0.3em] text-[#C9A94B]">
-              Civic education, made practical
+              Advocating for Independent Representation in Canada
             </span>
           </motion.div>
 
@@ -200,15 +192,15 @@ export default function Hero() {
           >
             <Link
               href="/projects"
-              className="relative overflow-hidden bg-[#C9A94B] px-8 py-4 text-sm font-bold uppercase tracking-[0.12em] text-[#030C18] transition-colors hover:bg-white"
+              className="bg-white px-8 py-4 text-sm font-bold uppercase tracking-[0.12em] text-[#0A1628] transition hover:bg-[#C9A94B]"
             >
-              View projects
+              View Projects
             </Link>
             <Link
               href="/projects/detente"
-              className="border border-white/15 px-8 py-4 text-sm font-bold uppercase tracking-[0.12em] text-white/65 transition hover:border-[#C9A94B]/60 hover:text-white"
+              className="border border-white/15 px-8 py-4 text-sm font-bold uppercase tracking-[0.12em] text-white/65 transition hover:border-white/40 hover:text-white"
             >
-              Download Detente
+              Download Détente
             </Link>
           </motion.div>
 
@@ -233,7 +225,7 @@ export default function Hero() {
         {/* RIGHT — floating image collage */}
         <div className="relative hidden h-[620px] lg:block">
 
-          {/* Image 1: Chess — back-left, most parallax */}
+          {/* Image 1: Chess */}
           <motion.div
             style={{ x: x1, y: y1 }}
             initial={{ opacity: 0, scale: 0.82, rotate: -22, y: 50 }}
@@ -260,7 +252,7 @@ export default function Hero() {
             </div>
           </motion.div>
 
-          {/* Image 2: Parliament — front-right, medium parallax */}
+          {/* Image 2: Parliament */}
           <motion.div
             style={{ x: x2, y: y2 }}
             initial={{ opacity: 0, scale: 0.82, rotate: 12, y: 70 }}
@@ -282,9 +274,12 @@ export default function Hero() {
               />
               <div className="absolute inset-0 bg-[#1C3557]/25" />
             </motion.div>
+            <div className="absolute bottom-2.5 left-3 z-10 text-[10px] font-bold uppercase tracking-[0.22em] text-[#C9A94B]">
+              Parliament Tracker
+            </div>
           </motion.div>
 
-          {/* Image 3: Bangkok — bottom-center, least parallax */}
+          {/* Image 3: Bangkok */}
           <motion.div
             style={{ x: x3, y: y3 }}
             initial={{ opacity: 0, scale: 0.82, rotate: -9, y: 80 }}
@@ -304,34 +299,34 @@ export default function Hero() {
                 fill
                 className="object-cover"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#030C18]/50 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#0A1628]/50 to-transparent" />
             </motion.div>
             <div className="absolute bottom-2.5 left-3 z-10 text-[10px] font-bold uppercase tracking-[0.22em] text-[#C9A94B]">
               Fried Rice Index
             </div>
           </motion.div>
 
-          {/* Floating "Free · Non-partisan" pill */}
+          {/* "Free · Non-partisan" badge — rectangular (official) */}
           <motion.div
             initial={{ opacity: 0, scale: 0.5, y: 10 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             transition={{ delay: 1.25, type: "spring", stiffness: 180, damping: 14 }}
-            className="absolute right-[-2%] top-[6%] z-30 rounded-full border border-[#C9A94B]/25 bg-[#030C18]/85 px-4 py-2 backdrop-blur-md"
+            className="absolute right-[-2%] top-[6%] z-30 border border-[#C9A94B]/25 bg-[#0A1628]/85 px-4 py-2 backdrop-blur-md"
           >
             <span className="text-[10px] font-bold uppercase tracking-[0.22em] text-[#C9A94B]">
               Free · Non-partisan
             </span>
           </motion.div>
 
-          {/* Floating "3 projects" counter chip */}
+          {/* "3 active projects" badge */}
           <motion.div
             initial={{ opacity: 0, scale: 0.5, y: 10 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             transition={{ delay: 1.4, type: "spring", stiffness: 180, damping: 14 }}
-            className="absolute bottom-[18%] right-[1%] z-30 rounded-full border border-white/10 bg-[#030C18]/80 px-4 py-2 backdrop-blur-md"
+            className="absolute bottom-[18%] right-[1%] z-30 border border-white/10 bg-[#0A1628]/80 px-4 py-2 backdrop-blur-md"
           >
             <span className="text-[10px] font-bold uppercase tracking-[0.22em] text-white/40">
-              3 active projects
+              5 active projects
             </span>
           </motion.div>
         </div>

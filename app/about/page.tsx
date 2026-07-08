@@ -54,15 +54,16 @@ export default function AboutPage() {
               Mission
             </p>
             <h2 className="serif mt-2 text-3xl font-bold tracking-[-0.02em] text-[#1C3557]">
-              Make civic learning practical.
+              Promoting independent representation in Canada.
             </h2>
           </div>
 
           <p className="max-w-3xl text-lg leading-8 text-[#5E5A54]">
-            Many students are told that politics and economics matter, but aren't
-            given practical ways to engage with them. Civics Studio turns
-            abstract systems into activities, projects, and tools that are
-            actually usable.
+            Canada's House of Commons has 343 elected members. Party discipline
+            and whipping routinely collapse those voices into two effective
+            factions. Civics Studio was built to help Canadians understand how
+            their political system works and why independent representation
+            matters.
           </p>
         </div>
       </section>
@@ -78,6 +79,9 @@ export default function AboutPage() {
               Games and data projects.
             </h2>
             <p className="mt-4 leading-8 text-[#5E5A54]">
+              Parliament Tracker and Media Bias Tracker are our flagship
+              projects, using Parliament&apos;s own open data and AI-assisted
+              analysis to make whip pressure and media framing visible.
               Detente teaches political literacy through negotiation and
               strategy. The Fried Rice Index teaches economic literacy through
               everyday price comparison.
@@ -109,14 +113,17 @@ export default function AboutPage() {
                 Non-partisan statement
               </p>
               <h2 className="serif mt-2 text-3xl font-bold tracking-[-0.02em] text-[#1C3557]">
-                No party or ideology.
+                Non-partisan means pro-independent, not above politics.
               </h2>
             </div>
 
             <p className="max-w-3xl text-lg leading-8 text-[#5E5A54]">
-              Civics Studio does not promote any political party or ideology.
-              The goal is to help people understand how civic systems work — and
-              participate in them more thoughtfully.
+              Civics Studio doesn't support any political party or ideology.
+              But we do hold a clear interest in independent representation:
+              the idea that MPs should have the space to represent their
+              constituents, and that citizens should understand enough about
+              how Parliament works to engage meaningfully with it. No party
+              owns that position. It's a civic one.
             </p>
           </div>
         </div>
