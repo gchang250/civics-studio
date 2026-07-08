@@ -1,5 +1,5 @@
 /**
- * Thin client for api.openparliament.ca — Canada's open parliamentary data
+ * Thin client for api.openparliament.ca, Canada's open parliamentary data
  * project. No auth required. All responses are cached via Next's fetch
  * revalidation since historical votes never change and the MP roster only
  * changes on byelections/reshuffles.

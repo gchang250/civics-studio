@@ -25,8 +25,8 @@ export default function MediaBiasTrackerPage() {
             Paste in a news article, opinion piece, or transcript from any
             outlet. The tool reads for loaded language, framing choices,
             insinuation, and rhetorical technique, then estimates where the
-            piece sits on the political spectrum — so you can practice
-            reading critically, not just trust the byline.
+            piece sits on the political spectrum, so you can practice reading
+            critically, not just trust the byline.
           </p>
 
           <div className="mt-8 max-w-2xl border-l-4 border-[#C9A94B] bg-white p-5 text-sm leading-6 text-[#5E5A54] shadow-sm">

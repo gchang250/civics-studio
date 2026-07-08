@@ -4,6 +4,7 @@ import Link from "next/link";
 import Script from "next/script";
 import { Libre_Baskerville, Source_Sans_3 } from "next/font/google";
 import { SITE_URL } from "@/lib/site";
+import MobileNav from "@/app/components/MobileNav";
 import "./globals.css";
 
 const GA_ID = process.env.NEXT_PUBLIC_GA_ID;
@@ -75,7 +76,7 @@ export default function RootLayout({
         </div>
 
         {/* ── Navbar ──────────────────────────────────────── */}
-        <header className="sticky top-0 z-50 border-b border-white/10 bg-[#0A1628]/97 backdrop-blur-md">
+        <header className="sticky top-0 z-50 border-b border-white/10 bg-[#0A1628]/97 backdrop-blur-md relative">
           <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-6">
 
             {/* Logo */}
@@ -112,6 +113,8 @@ export default function RootLayout({
             >
               Download Détente
             </Link>
+
+            <MobileNav items={navItems} />
           </div>
         </header>
 
