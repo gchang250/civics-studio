@@ -15,7 +15,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const mp = await getMPDetail(slug);
   if (!mp) return {};
   return {
-    title: `${mp.name} — Parliament Tracker`,
+    title: `${mp.name} | Parliament Tracker`,
     description: `Voting record and profile for ${mp.name}, ${mp.currentParty ?? "MP"}${
       mp.currentRiding ? ` for ${mp.currentRiding.name}` : ""
     }.`,
@@ -189,7 +189,7 @@ export default async function MPProfilePage({ params }: Props) {
                     {dissentPct > 0 && (
                       <p className="mt-1 text-xs italic text-[#5E5A54]">
                         {entry.alignment === "against_party"
-                          ? `${dissentPct}% of the ${mp.currentParty} caucus also broke ranks on this vote — this wasn't a lone dissent.`
+                          ? `${dissentPct}% of the ${mp.currentParty} caucus also broke ranks on this vote. This wasn't a lone dissent.`
                           : `${dissentPct}% of the ${mp.currentParty} caucus voted differently on this one, even though this MP stuck with the party line.`}
                       </p>
                     )}
@@ -223,7 +223,7 @@ export default async function MPProfilePage({ params }: Props) {
                 <ul className="mt-3 space-y-2">
                   {profile.keyPromises.map((promise, i) => (
                     <li key={i} className="flex gap-2 text-sm leading-6 text-[#1C3557]">
-                      <span className="text-[#C9A94B]">—</span>
+                      <span className="text-[#C9A94B]">•</span>
                       {promise}
                     </li>
                   ))}
@@ -288,7 +288,7 @@ export default async function MPProfilePage({ params }: Props) {
                               day: "numeric",
                             })}
                             {": "}
-                            {vote.description} — Result: {vote.result}
+                            {vote.description} · Result: {vote.result}
                           </p>
                         )}
                       </div>
@@ -297,7 +297,7 @@ export default async function MPProfilePage({ params }: Props) {
                 </div>
                 <p className="mt-4 text-xs italic text-[#5E5A54]">
                   Civics Studio&apos;s editorial judgment, based on the MP&apos;s own stated
-                  platform and their actual recorded vote — not the MP&apos;s or party&apos;s
+                  platform and their actual recorded vote, not the MP&apos;s or party&apos;s
                   characterization.
                 </p>
               </div>
@@ -307,7 +307,7 @@ export default async function MPProfilePage({ params }: Props) {
             <div className="bg-white p-8 text-center shadow-sm">
               <p className="text-[#5E5A54]">
                 A full, sourced campaign-platform profile for {mp.name} hasn&apos;t been
-                researched yet. Their voting record above is still real, live data — this
+                researched yet. Their voting record above is still real, live data. This
                 pilot set is expanding over time.
               </p>
             </div>

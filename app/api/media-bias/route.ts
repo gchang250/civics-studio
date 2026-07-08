@@ -13,7 +13,7 @@ const SYSTEM_PROMPT = `You are a non-partisan media literacy analyst for Civics 
 - Ad hominem attacks
 - Dog whistles or coded language
 
-Estimate where the piece sits on a left-right political spectrum, from -100 (far left) to 100 (far right), with 0 being neutral/center. Be even-handed: don't assume any outlet, topic, or speaker is inherently biased — judge only the text given. Quote exact phrases from the text as evidence for every flag, and be specific and concrete rather than generic. If the text is too short or isn't political/persuasive in nature, say so honestly in the caveats and keep flags minimal.`;
+Estimate where the piece sits on a left-right political spectrum, from -100 (far left) to 100 (far right), with 0 being neutral/center. Be even-handed: don't assume any outlet, topic, or speaker is inherently biased. Judge only the text given. Quote exact phrases from the text as evidence for every flag, and be specific and concrete rather than generic. If the text is too short or isn't political/persuasive in nature, say so honestly in the caveats and keep flags minimal.`;
 
 const RESPONSE_SCHEMA = {
   type: "OBJECT",
@@ -61,7 +61,7 @@ export async function POST(request: NextRequest) {
     return Response.json(
       {
         error:
-          "Media Bias Tracker isn't configured yet — add a GEMINI_API_KEY environment variable to enable it.",
+          "Media Bias Tracker isn't configured yet. Add a GEMINI_API_KEY environment variable to enable it.",
       },
       { status: 503 }
     );

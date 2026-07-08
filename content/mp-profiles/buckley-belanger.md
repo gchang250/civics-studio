@@ -7,9 +7,9 @@ keyPromises:
   - "Serves as Secretary of State (Rural Development)"
   - "Represents a largely Métis and northern-Saskatchewan constituency after a long career in provincial politics"
 sources:
-  - title: "CBC News — Buckley Belanger sole Sask. Liberal in sea of blue"
+  - title: "CBC News: Buckley Belanger sole Sask. Liberal in sea of blue"
     url: "https://www.cbc.ca/news/canada/saskatchewan/buck-belanger-liberal-win-federal-election-1.7520921"
-  - title: "openparliament.ca — Buckley Belanger, Liberal MP for Desnethé—Missinippi—Churchill River"
+  - title: "openparliament.ca: Buckley Belanger, Liberal MP for Desnethé—Missinippi—Churchill River"
     url: "https://openparliament.ca/politicians/buckley-belanger/"
 platformAlignment:
   - promise: "Rural and northern development"
@@ -24,4 +24,4 @@ platformAlignment:
     explanation: "Belanger voted Yes on final passage of the government's budget bill (C-30), consistent with his role in a government he represents as the sole Saskatchewan Liberal MP."
 ---
 
-Buckley Belanger, who is of Métis descent, won the Saskatchewan riding of Desnethé—Missinippi—Churchill River in 2025 with more than 65% of the vote — a breakthrough for federal Liberals in a province otherwise dominated by Conservatives, and a comeback after losing the seat to a Conservative in 2021. He previously served in Saskatchewan's provincial legislature for over two decades and now serves as Secretary of State for Rural Development.
+Buckley Belanger, who is of Métis descent, won the Saskatchewan riding of Desnethé—Missinippi—Churchill River in 2025 with more than 65% of the vote, a breakthrough for federal Liberals in a province otherwise dominated by Conservatives, and a comeback after losing the seat to a Conservative in 2021. He previously served in Saskatchewan's provincial legislature for over two decades and now serves as Secretary of State for Rural Development.
