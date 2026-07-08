@@ -48,12 +48,12 @@ export default function MPDirectory({ mps, profiledSlugs }: Props) {
           value={query}
           onChange={(e) => setQuery(e.target.value)}
           placeholder="Search by name or riding…"
-          className="border border-[#D8D0C3] bg-white px-4 py-2.5 text-[#1C3557] placeholder:text-[#5E5A54]/50 focus:border-[#C9A94B] focus:outline-none"
+          className="border border-[#e5e0d4] bg-[#faf8f5] px-4 py-2.5 text-[#111f36] placeholder:text-[#5f697a]/50 focus:border-[#8b1e1e] focus:outline-none"
         />
         <select
           value={party}
           onChange={(e) => setParty(e.target.value)}
-          className="border border-[#D8D0C3] bg-white px-4 py-2.5 text-[#1C3557] focus:border-[#C9A94B] focus:outline-none"
+          className="border border-[#e5e0d4] bg-[#faf8f5] px-4 py-2.5 text-[#111f36] focus:border-[#8b1e1e] focus:outline-none"
         >
           {parties.map((p) => (
             <option key={p} value={p}>
@@ -64,7 +64,7 @@ export default function MPDirectory({ mps, profiledSlugs }: Props) {
         <select
           value={province}
           onChange={(e) => setProvince(e.target.value)}
-          className="border border-[#D8D0C3] bg-white px-4 py-2.5 text-[#1C3557] focus:border-[#C9A94B] focus:outline-none"
+          className="border border-[#e5e0d4] bg-[#faf8f5] px-4 py-2.5 text-[#111f36] focus:border-[#8b1e1e] focus:outline-none"
         >
           {provinces.map((p) => (
             <option key={p} value={p}>
@@ -74,7 +74,7 @@ export default function MPDirectory({ mps, profiledSlugs }: Props) {
         </select>
       </div>
 
-      <p className="mb-6 text-sm font-bold uppercase tracking-[0.1em] text-[#5E5A54]">
+      <p className="mb-6 text-[10px] font-semibold uppercase tracking-[0.1em] text-[#8b1e1e] lowercase">
         {filtered.length} of {mps.length} MPs
       </p>
 
@@ -87,9 +87,9 @@ export default function MPDirectory({ mps, profiledSlugs }: Props) {
             <Link
               key={mp.slug}
               href={`/projects/parliament-tracker/mps/${mp.slug}`}
-              className="group flex gap-4 border border-[#D8D0C3] bg-white p-4 transition hover:border-[#C9A94B] hover:shadow-md"
+              className="group flex gap-4 border border-[#e5e0d4] bg-[#f3efe6] p-4 transition hover:border-[#8b1e1e]/40"
             >
-              <div className="relative h-16 w-16 shrink-0 overflow-hidden bg-[#F3EEE4]">
+              <div className="relative h-16 w-16 shrink-0 overflow-hidden bg-[#faf8f5]">
                 {mp.image ? (
                   <Image
                     src={`https://openparliament.ca${mp.image}`}
@@ -99,7 +99,7 @@ export default function MPDirectory({ mps, profiledSlugs }: Props) {
                     sizes="64px"
                   />
                 ) : (
-                  <div className="flex h-full w-full items-center justify-center text-lg font-bold text-[#1C3557]/30">
+                  <div className="flex h-full w-full items-center justify-center text-lg font-bold text-[#111f36]/30">
                     {mp.name
                       .split(" ")
                       .map((n) => n[0])
@@ -110,21 +110,21 @@ export default function MPDirectory({ mps, profiledSlugs }: Props) {
               </div>
 
               <div className="min-w-0 flex-1">
-                <p className="truncate font-bold text-[#1C3557] group-hover:text-[#C9A94B]">
+                <p className="truncate font-semibold text-[#111f36] group-hover:text-[#8b1e1e]">
                   {mp.name}
                 </p>
-                <p className="mt-0.5 truncate text-sm text-[#5E5A54]">
+                <p className="mt-0.5 truncate text-sm text-[#5f697a]">
                   {mp.riding}, {mp.province}
                 </p>
                 <div className="mt-2 flex flex-wrap items-center gap-1.5">
                   <span
-                    className="px-2 py-0.5 text-[10px] font-bold uppercase tracking-[0.08em]"
+                    className="px-2 py-0.5 text-[10px] font-semibold uppercase tracking-[0.08em]"
                     style={{ backgroundColor: colors.bg, color: colors.text }}
                   >
                     {mp.party}
                   </span>
                   {hasFullProfile && (
-                    <span className="px-2 py-0.5 text-[10px] font-bold uppercase tracking-[0.08em] text-[#8B7335] ring-1 ring-inset ring-[#C9A94B]">
+                    <span className="px-2 py-0.5 text-[10px] font-semibold uppercase tracking-[0.08em] text-[#8b1e1e] ring-1 ring-inset ring-[#8b1e1e]/30">
                       Full profile
                     </span>
                   )}
@@ -136,7 +136,7 @@ export default function MPDirectory({ mps, profiledSlugs }: Props) {
       </div>
 
       {filtered.length === 0 && (
-        <p className="py-12 text-center text-[#5E5A54]">
+        <p className="py-12 text-center text-[#5f697a] lowercase">
           No MPs match those filters.
         </p>
       )}

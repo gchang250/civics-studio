@@ -70,7 +70,7 @@ const projects = [
     type: "French literacy program",
     title: "CYFFL",
     description:
-      "Free online French learning resources and local academic support for students. Youth-led, accessible, and built to make French less intimidating and more approachable.",
+      "A youth-led bridge preserving French culture and bilingual identity. Provides free tutoring and lessons to support students amidst a national deficit of 10,000 qualified French teachers.",
     cta: "Learn more",
     href: "/projects/cyffl",
     image:

@@ -28,9 +28,9 @@ interface Analysis {
 const MAX_CHARS = 15000;
 
 const leaningStyles: Record<Flag["leaning"], string> = {
-  left: "bg-[#1C3557] text-white",
-  right: "bg-[#C8102E] text-white",
-  neutral: "bg-[#F3EEE4] text-[#5E5A54]",
+  left: "bg-[#111f36] text-white",
+  right: "bg-[#8b1e1e] text-white",
+  neutral: "bg-[#f3efe6] text-[#5f697a]",
 };
 
 export default function BiasAnalyzer() {
@@ -77,17 +77,17 @@ export default function BiasAnalyzer() {
           rows={12}
           required
           placeholder="Paste a news article, opinion piece, or transcript here…"
-          className="block w-full resize-y border border-[#D8D0C3] bg-white px-4 py-3 leading-6 text-[#1C3557] placeholder:text-[#5E5A54]/50 focus:border-[#C9A94B] focus:outline-none"
+          className="block w-full resize-y border border-[#e5e0d4] bg-[#faf8f5] px-4 py-3 leading-6 text-[#111f36] placeholder:text-[#5f697a]/50 focus:border-[#8b1e1e] focus:outline-none"
         />
 
         <div className="flex flex-wrap items-center justify-between gap-3">
-          <p className="text-xs text-[#5E5A54]">
+          <p className="text-xs text-[#5f697a]">
             {text.length.toLocaleString()} / {MAX_CHARS.toLocaleString()} characters
           </p>
           <button
             type="submit"
             disabled={loading || text.trim().length < 40}
-            className="bg-[#1C3557] px-7 py-3 text-sm font-bold uppercase tracking-[0.08em] text-white transition hover:bg-[#C9A94B] hover:text-[#1C3557] disabled:cursor-not-allowed disabled:opacity-50"
+            className="border border-[#111f36] px-7 py-3 text-sm font-medium uppercase tracking-[0.08em] text-[#111f36] bg-transparent transition hover:bg-[#8b1e1e] hover:text-white hover:border-[#8b1e1e] disabled:cursor-not-allowed disabled:opacity-50"
           >
             {loading ? "Analyzing…" : "Analyze text"}
           </button>
@@ -95,7 +95,7 @@ export default function BiasAnalyzer() {
       </form>
 
       {error && (
-        <div className="mt-6 border border-[#C8102E]/30 bg-[#C8102E]/5 p-4 text-sm text-[#C8102E]">
+        <div className="mt-6 border border-[#8b1e1e]/30 bg-[#8b1e1e]/5 p-4 text-sm text-[#8b1e1e]">
           {error}
         </div>
       )}
@@ -104,23 +104,23 @@ export default function BiasAnalyzer() {
         <div className="mt-12 space-y-10">
           {/* Spectrum gauge */}
           <div>
-            <p className="text-xs font-bold uppercase tracking-[0.18em] text-[#C9A94B]">
+            <p className="text-[10px] font-semibold uppercase tracking-[0.3em] text-[#8b1e1e] lowercase">
               Estimated spectrum position
             </p>
             <div className="mt-4 flex items-baseline gap-3">
-              <h3 className="serif text-3xl font-bold text-[#1C3557]">{result.overallLabel}</h3>
-              <span className="text-xs font-bold uppercase tracking-[0.08em] text-[#5E5A54]">
+              <h3 className="serif text-3xl font-normal italic text-[#111f36] lowercase">{result.overallLabel}</h3>
+              <span className="text-xs font-semibold uppercase tracking-[0.08em] text-[#5f697a]">
                 {result.confidence} confidence
               </span>
             </div>
 
-            <div className="relative mt-6 h-3 w-full rounded-full bg-gradient-to-r from-[#1C3557] via-[#D8D0C3] to-[#C8102E]">
+            <div className="relative mt-6 h-2 w-full rounded-full bg-gradient-to-r from-[#111f36] via-[#e5e0d4] to-[#8b1e1e]">
               <div
-                className="absolute top-1/2 h-6 w-6 -translate-y-1/2 -translate-x-1/2 rounded-full border-4 border-white bg-[#C9A94B] shadow-md"
+                className="absolute top-1/2 h-5 w-5 -translate-y-1/2 -translate-x-1/2 rounded-full border-4 border-white bg-[#8b1e1e] shadow-sm"
                 style={{ left: `${markerPct}%` }}
               />
             </div>
-            <div className="mt-2 flex justify-between text-[10px] font-bold uppercase tracking-[0.08em] text-[#5E5A54]">
+            <div className="mt-2 flex justify-between text-[10px] font-semibold uppercase tracking-[0.08em] text-[#5f697a] lowercase">
               <span>Far Left</span>
               <span>Lean Left</span>
               <span>Center</span>
@@ -128,33 +128,33 @@ export default function BiasAnalyzer() {
               <span>Far Right</span>
             </div>
 
-            <p className="mt-6 max-w-3xl leading-7 text-[#5E5A54]">{result.summary}</p>
+            <p className="mt-6 max-w-3xl leading-7 text-[#5f697a]">{result.summary}</p>
           </div>
 
           {/* Flagged language */}
           {result.flags.length > 0 && (
             <div>
-              <p className="text-xs font-bold uppercase tracking-[0.18em] text-[#C9A94B]">
+              <p className="text-[10px] font-semibold uppercase tracking-[0.3em] text-[#8b1e1e] lowercase">
                 Flagged language
               </p>
-              <h3 className="serif mt-2 text-2xl font-bold text-[#1C3557]">
+              <h3 className="serif mt-2 text-2xl font-normal italic text-[#111f36] lowercase">
                 What stood out in the text
               </h3>
               <div className="mt-5 space-y-4">
                 {result.flags.map((flag, i) => (
-                  <div key={i} className="border border-[#D8D0C3] bg-[#FAF7F0] p-5">
+                  <div key={i} className="border border-[#e5e0d4] bg-[#f3efe6] p-5">
                     <div className="flex flex-wrap items-center gap-2">
-                      <span className="px-2 py-0.5 text-[10px] font-bold uppercase tracking-[0.08em] text-[#1C3557] ring-1 ring-inset ring-[#D8D0C3]">
+                      <span className="px-2 py-0.5 text-[10px] font-semibold uppercase tracking-[0.08em] text-[#111f36] ring-1 ring-inset ring-[#e5e0d4]">
                         {flag.category}
                       </span>
                       <span
-                        className={`px-2 py-0.5 text-[10px] font-bold uppercase tracking-[0.08em] ${leaningStyles[flag.leaning]}`}
+                        className={`px-2 py-0.5 text-[10px] font-semibold uppercase tracking-[0.08em] ${leaningStyles[flag.leaning]}`}
                       >
                         {flag.leaning}
                       </span>
                     </div>
-                    <p className="mt-3 italic leading-6 text-[#1C3557]">&ldquo;{flag.quote}&rdquo;</p>
-                    <p className="mt-2 text-sm leading-6 text-[#5E5A54]">{flag.explanation}</p>
+                    <p className="mt-3 italic leading-6 text-[#111f36]">&ldquo;{flag.quote}&rdquo;</p>
+                    <p className="mt-2 text-sm leading-6 text-[#5f697a]">{flag.explanation}</p>
                   </div>
                 ))}
               </div>
@@ -164,21 +164,21 @@ export default function BiasAnalyzer() {
           {/* Techniques */}
           {result.techniques.length > 0 && (
             <div>
-              <p className="text-xs font-bold uppercase tracking-[0.18em] text-[#C9A94B]">
+              <p className="text-[10px] font-semibold uppercase tracking-[0.3em] text-[#8b1e1e] lowercase">
                 Rhetorical techniques
               </p>
-              <h3 className="serif mt-2 text-2xl font-bold text-[#1C3557]">
+              <h3 className="serif mt-2 text-2xl font-normal italic text-[#111f36] lowercase">
                 Patterns across the piece
               </h3>
               <div className="mt-5 grid gap-4 sm:grid-cols-2">
                 {result.techniques.map((t, i) => (
-                  <div key={i} className="border-t-4 border-[#C9A94B] bg-white p-5 shadow-sm">
-                    <h4 className="font-bold text-[#1C3557]">{t.name}</h4>
-                    <p className="mt-2 text-sm leading-6 text-[#5E5A54]">{t.description}</p>
+                  <div key={i} className="border border-[#e5e0d4] bg-[#f3efe6] p-5">
+                    <h4 className="font-semibold text-[#111f36] lowercase">{t.name}</h4>
+                    <p className="mt-2 text-sm leading-6 text-[#5f697a]">{t.description}</p>
                     {t.examples.length > 0 && (
                       <ul className="mt-3 space-y-1">
                         {t.examples.map((ex, j) => (
-                          <li key={j} className="text-xs italic leading-5 text-[#5E5A54]">
+                          <li key={j} className="text-xs italic leading-5 text-[#5f697a]">
                             &ldquo;{ex}&rdquo;
                           </li>
                         ))}
@@ -191,8 +191,8 @@ export default function BiasAnalyzer() {
           )}
 
           {/* Caveats */}
-          <div className="border-l-4 border-[#1C3557] bg-[#F3EEE4] p-5 text-sm leading-6 text-[#5E5A54]">
-            <p className="mb-1 text-xs font-bold uppercase tracking-[0.08em] text-[#1C3557]">
+          <div className="border-l-4 border-[#111f36] bg-[#f3efe6] p-5 text-sm leading-6 text-[#5f697a]">
+            <p className="mb-1 text-[10px] font-semibold uppercase tracking-[0.08em] text-[#111f36] lowercase">
               Read this before you cite it
             </p>
             {result.caveats}

@@ -62,7 +62,7 @@ const projects = [
     fullName: "Canadian Youth Foundation for French Literacy",
     type: "French literacy program",
     description:
-      "A youth-led initiative creating free online French learning resources and local academic support for students.",
+      "A youth-led initiative bridging the gap for bilingual education and preserving French identity for youth, responding directly to a national deficit of 10,000 qualified French teachers.",
     href: "/projects/cyffl",
     status: "Live project",
     image:
