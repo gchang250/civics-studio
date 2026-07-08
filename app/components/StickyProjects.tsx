@@ -74,10 +74,10 @@ const projects = [
     cta: "Learn more",
     href: "/projects/cyffl",
     image:
-      "https://images.unsplash.com/photo-1544947950-fa07a98d237f?auto=format&fit=crop&w=1400&q=85",
-    imageAlt: "Sleek minimalist white book with blank cover resting in soft sunlight",
-    photographer: "Hope House Press",
-    photoHref: "https://unsplash.com/photos/white-hardbound-book-on-beige-surface-bxiOjnbjRM0",
+      "https://images.unsplash.com/photo-1506880018603-83d5b814b5a6?auto=format&fit=crop&w=1400&q=85",
+    imageAlt: "Close-up of a person reading an elegant classic open book under soft window light",
+    photographer: "Carolyn V",
+    photoHref: "https://unsplash.com/photos/person-reading-book-bxiOjnbjRM0",
   },
 ];
 

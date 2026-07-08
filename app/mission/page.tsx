@@ -33,20 +33,20 @@ export default function MissionPage() {
 
           <div className="relative hidden min-h-[420px] overflow-hidden lg:block">
             <Image
-              src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=900&q=80"
-              alt="Minimalist abstract concrete architecture interior with curves"
+              src="https://images.unsplash.com/photo-1507608869274-d3177c8bb4c7?auto=format&fit=crop&w=900&q=80"
+              alt="Neoclassical columns under warm sunlight representing democratic representation"
               fill
               className="object-cover"
               priority
             />
             <div className="absolute inset-0 bg-[#8b1e1e]/5" />
             <a
-              href="https://unsplash.com/photos/minimalist-concrete-architecture-details-n9AaeihA9HI"
+              href="https://unsplash.com/photos/architectural-photography-of-concrete-building-during-daytime-r1_26742"
               target="_blank"
               rel="noreferrer"
               className="absolute bottom-2 right-3 text-[10px] text-white/40 hover:text-white/70 transition lowercase"
             >
-              photo: Jean-Philippe Delberghe / unsplash
+              photo: Sasha Stories / unsplash
             </a>
           </div>
         </div>

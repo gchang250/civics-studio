@@ -29,20 +29,20 @@ export default function AboutPage() {
           {/* Right — photo */}
           <div className="relative hidden min-h-[420px] overflow-hidden lg:block">
             <Image
-              src="https://images.unsplash.com/photo-1586075010923-2dd4570fb338?auto=format&fit=crop&w=900&q=80"
-              alt="Minimalist abstract desk layout with clean plaster backdrop"
+              src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=900&q=80"
+              alt="High-end minimalist design studio conference table and workspace"
               fill
               className="object-cover"
               priority
             />
             <div className="absolute inset-0 bg-[#8b1e1e]/5" />
             <a
-              href="https://unsplash.com/photos/minimalist-workspace-details-n9AaeihA9HI"
+              href="https://unsplash.com/photos/black-office-chair-near-brown-wooden-table-gM3Y8yihnIM"
               target="_blank"
               rel="noreferrer"
               className="absolute bottom-2 right-3 text-[10px] text-white/40 hover:text-white/70 transition lowercase"
             >
-              photo: Jean-Philippe Delberghe / unsplash
+              photo: Campaign Creators / unsplash
             </a>
           </div>
         </div>
