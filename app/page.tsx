@@ -24,10 +24,10 @@ export default function HomePage() {
               Mission
             </p>
             <blockquote className="serif mt-8 text-[clamp(1.4rem,3vw,2rem)] font-bold leading-snug text-white">
-              "Canada elects 343 members of Parliament. Party structures often
+              &ldquo;Canada elects 343 members of Parliament. Party structures often
               reduce those voices to five parties, and voting patterns to two
-              factions. Independent representation isn't a radical idea. It's
-              the premise of Parliament."
+              factions. Independent representation isn&apos;t a radical idea. It&apos;s
+              the premise of Parliament.&rdquo;
             </blockquote>
             <div className="mt-10">
               <Link

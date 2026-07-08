@@ -23,9 +23,9 @@ export default function DisqusComments({ identifier, title }: Props) {
     window.disqus_config = function () {
       // @ts-expect-error Disqus uses non-standard `this`
       this.page.url = window.location.href;
-      // @ts-expect-error
+      // @ts-expect-error Disqus uses non-standard `this`
       this.page.identifier = identifier;
-      // @ts-expect-error
+      // @ts-expect-error Disqus uses non-standard `this`
       this.page.title = title;
     };
 

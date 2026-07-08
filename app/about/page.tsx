@@ -59,7 +59,7 @@ export default function AboutPage() {
           </div>
 
           <p className="max-w-3xl text-lg leading-8 text-[#5E5A54]">
-            Canada's House of Commons has 343 elected members. Party discipline
+            Canada&apos;s House of Commons has 343 elected members. Party discipline
             and whipping routinely collapse those voices into two effective
             factions. Civics Studio was built to help Canadians understand how
             their political system works and why independent representation
@@ -118,12 +118,12 @@ export default function AboutPage() {
             </div>
 
             <p className="max-w-3xl text-lg leading-8 text-[#5E5A54]">
-              Civics Studio doesn't support any political party or ideology.
+              Civics Studio doesn&apos;t support any political party or ideology.
               But we do hold a clear interest in independent representation:
               the idea that MPs should have the space to represent their
               constituents, and that citizens should understand enough about
               how Parliament works to engage meaningfully with it. No party
-              owns that position. It's a civic one.
+              owns that position. It&apos;s a civic one.
             </p>
           </div>
         </div>

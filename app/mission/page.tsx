@@ -20,7 +20,7 @@ export default function MissionPage() {
               Mission
             </p>
             <h1 className="serif mt-4 text-5xl font-bold leading-tight tracking-[-0.035em] text-[#1C3557] md:text-6xl">
-              Non-partisan doesn't mean neutral. It means we're for independent representation.
+              Non-partisan doesn&apos;t mean neutral. It means we&apos;re for independent representation.
             </h1>
             <p className="mt-5 max-w-xl text-lg leading-8 text-[#5E5A54]">
               Civics Studio exists to promote independent, non-partisan civic
@@ -82,7 +82,7 @@ export default function MissionPage() {
                 representatives.
               </p>
               <p>
-                Canada's multi-party system offers more diversity of thought
+                Canada&apos;s multi-party system offers more diversity of thought
                 than a two-party one. Civics Studio believes that
                 understanding these dynamics, and thinking about how
                 independent representation can work within them, is a
