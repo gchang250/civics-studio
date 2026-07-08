@@ -46,7 +46,6 @@ export const metadata: Metadata = {
 const navItems = [
   { href: "/mission", label: "Mission" },
   { href: "/projects", label: "Projects" },
-  { href: "/resources", label: "Resources" },
   { href: "/about", label: "About" },
   { href: "/contact", label: "Contact" },
 ];
@@ -166,7 +165,6 @@ export default function RootLayout({
               </p>
               <div className="mt-5 flex flex-col gap-3 text-sm">
                 <Link href="/mission" className="text-[#111f36]/70 transition hover:text-[#8b1e1e]">Mission</Link>
-                <Link href="/resources" className="text-[#111f36]/70 transition hover:text-[#8b1e1e]">Resources</Link>
                 <Link href="/about" className="text-[#111f36]/70 transition hover:text-[#8b1e1e]">About</Link>
                 <Link href="/contact" className="text-[#111f36]/70 transition hover:text-[#8b1e1e]">Contact</Link>
               </div>
