@@ -1,16 +1,16 @@
 @import "tailwindcss";
 
 :root {
-  --background: #faf7f0;
-  --foreground: #1c3557;
-  --paper: #ffffff;
-  --soft: #f3eee4;
-  --border: #d8d0c3;
-  --muted: #5e5a54;
-  --red: #c8102e;
-  --navy: #1c3557;
-  --gold: #c9a94b;
-  --gold-light: #e8d4a0;
+  --background: #faf8f5;
+  --foreground: #111f36;
+  --paper: #faf8f5;
+  --soft: #f3efe6;
+  --border: #e5e0d4;
+  --muted: #5f697a;
+  --red: #8b1e1e;
+  --navy: #111f36;
+  --gold: #8b1e1e;
+  --gold-light: #f3efe6;
 }
 
 html {
@@ -28,14 +28,15 @@ body {
 }
 
 ::selection {
-  background: #e8ddd0;
+  background: #ebe4d5;
+  color: #111f36;
 }
 
 /* ─── Article prose ─────────────────────────────────────────── */
 .article-body {
   font-size: 1.125rem;
   line-height: 1.8;
-  color: #222222;
+  color: #111f36;
 }
 
 .article-body p {
@@ -48,7 +49,7 @@ body {
   font-size: 1.875rem;
   font-weight: 700;
   letter-spacing: -0.02em;
-  color: #1c3557;
+  color: #111f36;
   margin-top: 2.5rem;
   margin-bottom: 1.25rem;
 }
@@ -57,24 +58,24 @@ body {
   font-family: var(--font-serif), Georgia, "Times New Roman", Times, serif;
   font-size: 1.5rem;
   font-weight: 700;
-  color: #1c3557;
+  color: #111f36;
   margin-top: 2rem;
   margin-bottom: 1rem;
 }
 
 .article-body a {
-  color: #1c3557;
+  color: #111f36;
   text-decoration: underline;
   text-underline-offset: 3px;
 }
 
 .article-body a:hover {
-  color: #c9a94b;
+  color: #8b1e1e;
 }
 
 .article-body strong {
   font-weight: 700;
-  color: #1c3557;
+  color: #111f36;
 }
 
 .article-body em {
@@ -92,11 +93,11 @@ body {
 }
 
 .article-body blockquote {
-  border-left: 4px solid #c9a94b;
+  border-left: 4px solid #8b1e1e;
   margin-left: 0;
   padding: 0.75rem 1.25rem;
-  background: #faf7f0;
-  color: #5e5a54;
+  background: #faf8f5;
+  color: #5f697a;
   font-style: italic;
   margin-bottom: 1.75rem;
 }
@@ -121,7 +122,7 @@ body {
   text-align: center;
   font-size: 0.75rem;
   font-style: normal;
-  color: #5e5a54;
+  color: #5f697a;
   margin-top: 0.5rem;
   margin-bottom: 2rem;
 }
@@ -129,6 +130,6 @@ body {
 /* Horizontal rule */
 .article-body hr {
   border: none;
-  border-top: 2px solid #d8d0c3;
+  border-top: 2px solid #e5e0d4;
   margin: 2.5rem 0;
 }

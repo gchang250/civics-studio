@@ -105,11 +105,13 @@ export default function StickyProjects() {
       style={{ height: `${projects.length * 100}vh` }}
       className="relative"
     >
-      <div className="sticky top-0 h-screen overflow-hidden bg-[#FAF7F0]">
+      <div className="sticky top-0 h-screen overflow-hidden bg-[#faf8f5]">
         <div className="grid h-full lg:grid-cols-[1fr_1fr]">
 
           {/* Left — text */}
-          <div className="flex flex-col justify-center px-8 py-16 md:px-16 lg:px-20">
+          <div className="flex flex-col justify-center px-8 py-16 md:px-16 lg:px-20 relative">
+            {/* Fine architectural line dividers */}
+            <div className="absolute inset-y-0 right-0 w-px bg-[#e5e0d4]/60 pointer-events-none hidden lg:block" />
 
             {/* Progress indicators */}
             <div className="mb-14 flex items-center gap-3">
@@ -118,7 +120,7 @@ export default function StickyProjects() {
                   key={i}
                   animate={{
                     width: i === activeIndex ? 48 : 16,
-                    backgroundColor: i === activeIndex ? "#C9A94B" : "#D8D0C3",
+                    backgroundColor: i === activeIndex ? "#8b1e1e" : "#e5e0d4",
                   }}
                   transition={{ duration: 0.4 }}
                   className="h-0.5 rounded-full"
@@ -129,26 +131,26 @@ export default function StickyProjects() {
             <AnimatePresence mode="wait">
               <motion.div
                 key={activeIndex}
-                initial={{ opacity: 0, y: 28 }}
+                initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -20 }}
+                exit={{ opacity: 0, y: -15 }}
                 transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
               >
-                <p className="text-[11px] font-bold uppercase tracking-[0.3em] text-[#C9A94B]">
+                <p className="text-[11px] font-semibold tracking-[0.25em] text-[#8b1e1e] lowercase">
                   {active.number} · {active.type}
                 </p>
 
-                <h2 className="serif mt-5 text-[clamp(3rem,5.5vw,4.5rem)] font-bold leading-[1.0] tracking-[-0.045em] text-[#1C3557]">
+                <h2 className="serif mt-5 text-[clamp(2.4rem,4.8vw,3.6rem)] font-normal italic leading-[1.1] tracking-[-0.02em] text-[#111f36]">
                   {active.title}
                 </h2>
 
-                <p className="mt-6 max-w-md text-lg leading-8 text-[#5E5A54]">
+                <p className="mt-6 max-w-md text-base leading-8 text-[#5f697a]">
                   {active.description}
                 </p>
 
                 <Link
                   href={active.href}
-                  className="mt-10 inline-flex items-center gap-2 bg-[#1C3557] px-7 py-3.5 text-sm font-bold uppercase tracking-[0.1em] text-white transition hover:bg-[#0f2347]"
+                  className="mt-10 inline-flex items-center gap-2 border border-[#111f36] px-7 py-3.5 text-[12px] font-bold uppercase tracking-[0.2em] text-[#111f36] transition duration-300 hover:bg-[#8b1e1e] hover:border-[#8b1e1e] hover:text-white bg-transparent lowercase"
                 >
                   {active.cta}
                   <span>→</span>
@@ -162,10 +164,10 @@ export default function StickyProjects() {
             <AnimatePresence mode="wait">
               <motion.div
                 key={`img-${activeIndex}`}
-                initial={{ opacity: 0, scale: 1.04 }}
+                initial={{ opacity: 0, scale: 1.02 }}
                 animate={{ opacity: 1, scale: 1 }}
-                exit={{ opacity: 0, scale: 0.97 }}
-                transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
+                exit={{ opacity: 0, scale: 0.98 }}
+                transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
                 className="absolute inset-0"
               >
                 <Image
@@ -175,14 +177,14 @@ export default function StickyProjects() {
                   className="object-cover"
                   priority
                 />
-                <div className="absolute inset-0 bg-[#1C3557]/15" />
+                <div className="absolute inset-0 bg-[#8b1e1e]/5" />
                 <a
                   href={active.photoHref}
                   target="_blank"
                   rel="noreferrer"
-                  className="absolute bottom-2 right-3 text-[10px] text-white/40 hover:text-white/70 transition"
+                  className="absolute bottom-2 right-3 text-[10px] text-white/40 hover:text-white/70 transition lowercase"
                 >
-                  Photo: {active.photographer} / Unsplash
+                  photo: {active.photographer} / unsplash
                 </a>
               </motion.div>
             </AnimatePresence>
