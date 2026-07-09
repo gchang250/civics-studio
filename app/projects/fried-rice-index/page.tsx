@@ -46,7 +46,7 @@ export default function CanPolIndexPage() {
 
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
             <a
-              href="https://canpol-index.vercel.app/"
+              href="https://canpolindex.vercel.app/"
               target="_blank"
               rel="noreferrer"
               className="inline-block border border-[#111f36] px-6 py-3 text-center text-sm font-medium uppercase tracking-[0.08em] text-[#111f36] transition hover:bg-[#8b1e1e] hover:text-white hover:border-[#8b1e1e]"
@@ -169,7 +169,7 @@ export default function CanPolIndexPage() {
               </p>
               <div className="flex flex-col gap-3 sm:flex-row">
                 <a
-                  href="https://canpol-index.vercel.app/"
+                  href="https://canpolindex.vercel.app/"
                   target="_blank"
                   rel="noreferrer"
                   className="inline-block border border-[#111f36] px-5 py-3 text-center text-sm font-medium uppercase tracking-[0.08em] text-[#111f36] transition hover:bg-[#8b1e1e] hover:text-white hover:border-[#8b1e1e]"
