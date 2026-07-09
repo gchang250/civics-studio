@@ -110,19 +110,19 @@ export default function DetentePage() {
       {/* Photo banner */}
       <div className="relative h-64 overflow-hidden bg-[#111f36]">
         <Image
-          src="https://images.unsplash.com/photo-1689859438394-2b59a858e31c?auto=format&fit=crop&w=1600&q=85"
-          alt="Row of international flags in front of a building"
+          src="https://images.unsplash.com/photo-1524661135-423995f22d0b?auto=format&fit=crop&w=1600&q=85"
+          alt="Close-up of a vintage world map lying flat on a table"
           fill
           className="object-cover opacity-60"
         />
         <div className="absolute inset-0 bg-[#111f36]/30 pointer-events-none" />
         <a
-          href="https://unsplash.com/photos/a-long-row-of-flags-in-front-of-a-building-PoZzH23r1oo"
+          href="https://unsplash.com/photos/a-close-up-of-a-world-map-on-a-table-H9ZhJTDNyKE"
           target="_blank"
           rel="noreferrer"
           className="absolute bottom-2 right-3 text-[10px] text-white/40 hover:text-white/70 transition lowercase"
         >
-          photo: Meizhi Lang / unsplash
+          photo: unsplash
         </a>
       </div>
 

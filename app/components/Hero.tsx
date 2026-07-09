@@ -164,8 +164,8 @@ export default function Hero() {
           >
             <div className="relative h-[85%] w-full overflow-hidden">
               <Image
-                src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=650&q=85"
-                alt="Abstract rendering of soft minimalist curves"
+                src="https://images.unsplash.com/photo-1529699211952-734e80c4d42b?auto=format&fit=crop&w=650&q=85"
+                alt="Close-up of minimalist wooden chess pieces standing on a board"
                 fill
                 className="object-cover transition duration-500 hover:scale-103"
               />
@@ -199,7 +199,7 @@ export default function Hero() {
             </div>
           </motion.div>
 
-          {/* Image 3: Bangkok */}
+          {/* Image 3: CanPol Index */}
           <motion.div
             style={{ x: x3, y: y3 }}
             initial={{ opacity: 0, scale: 0.92, y: 60 }}
@@ -210,15 +210,15 @@ export default function Hero() {
           >
             <div className="relative h-[83%] w-full overflow-hidden">
               <Image
-                src="https://images.unsplash.com/photo-1586201375761-83865001e31c?auto=format&fit=crop&w=650&q=85"
-                alt="A minimalist white ceramic bowl of white rice on a clean neutral background"
+                src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=650&q=85"
+                alt="Aerial view of a Canadian city skyline and residential neighbourhoods"
                 fill
                 className="object-cover transition duration-500 hover:scale-103"
               />
               <div className="absolute inset-0 bg-[#8b1e1e]/5 pointer-events-none" />
             </div>
             <div className="mt-2 text-[10px] font-semibold tracking-[0.2em] text-[#111f36] lowercase">
-              fried rice index
+              canpol index
             </div>
           </motion.div>
 
