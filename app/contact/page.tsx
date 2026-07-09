@@ -38,8 +38,8 @@ export default function ContactPage() {
             </a>
 
             <p className="mt-4 max-w-3xl text-sm leading-7 text-[#5f697a]">
-              Use this address for questions about Detente, The Fried Rice
-              Index, classroom or club use, or collaboration opportunities.
+              Use this address for questions about Détente, The CanPol Index,
+              classroom or club use, or collaboration opportunities.
             </p>
           </div>
         </div>

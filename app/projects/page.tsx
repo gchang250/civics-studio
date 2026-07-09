@@ -44,18 +44,18 @@ const projects = [
     photoHref: "https://unsplash.com/photos/chess-pieces-on-board-nAjil1z3eLk",
   },
   {
-    title: "The Fried Rice Index",
+    title: "The CanPol Index",
     type: "Data project",
     description:
-      "A global affordability index using the price of egg fried rice to compare cost of living across cities.",
+      "A cost-of-living index mapped across Canada's 338 federal electoral districts. Housing, food, and transport costs — broken down by riding.",
     href: "/projects/fried-rice-index",
     status: "Live project",
     image:
-      "https://images.unsplash.com/photo-1586201375761-83865001e31c?auto=format&fit=crop&w=800&q=80",
-    imageAlt: "A minimalist white ceramic bowl of white rice on a clean neutral background",
-    photographer: "Purnomo Capung",
+      "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=800&q=80",
+    imageAlt: "Aerial view of a Canadian city with residential neighbourhoods stretching to the horizon",
+    photographer: "Unsplash",
     photoHref:
-      "https://unsplash.com/photos/bowl-of-rice-on-neutral-table-H9ZhJTDNyKE",
+      "https://unsplash.com/photos/aerial-view-of-city-buildings-during-daytime",
   },
   {
     title: "CYFFL",

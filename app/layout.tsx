@@ -34,7 +34,7 @@ export const metadata: Metadata = {
     "youth civic engagement",
     "Canada civics",
     "Detente",
-    "Fried Rice Index",
+    "CanPol Index",
     "political literacy",
     "economic literacy",
   ],
@@ -151,7 +151,7 @@ export default function RootLayout({
                   Détente
                 </Link>
                 <Link href="/projects/fried-rice-index" className="text-[#111f36]/70 transition hover:text-[#8b1e1e]">
-                  The Fried Rice Index
+                  The CanPol Index
                 </Link>
                 <Link href="/projects/cyffl" className="text-[#111f36]/70 transition hover:text-[#8b1e1e]">
                   CYFFL

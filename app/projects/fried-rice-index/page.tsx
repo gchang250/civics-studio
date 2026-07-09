@@ -1,16 +1,32 @@
 import Image from "next/image";
+import Link from "next/link";
 import Comments from "@/app/components/Comments";
 
 const topics = [
   "Cost of living",
-  "Food prices",
-  "Urban affordability",
-  "Inflation",
-  "Global comparison",
-  "Economic literacy",
+  "Electoral districts",
+  "Housing affordability",
+  "Inflation by riding",
+  "Economic inequality",
+  "Civic data literacy",
 ];
 
-export default function FriedRiceIndexPage() {
+const dataPoints = [
+  {
+    label: "338",
+    description: "Federal electoral districts tracked across Canada",
+  },
+  {
+    label: "Live",
+    description: "Data sourced from Statistics Canada and Elections Canada",
+  },
+  {
+    label: "Free",
+    description: "Open access — no account or paywall required",
+  },
+];
+
+export default function CanPolIndexPage() {
   return (
     <div className="bg-[#faf8f5]">
       {/* Hero */}
@@ -21,23 +37,28 @@ export default function FriedRiceIndexPage() {
           </p>
 
           <h1 className="serif mt-4 max-w-5xl text-5xl font-normal italic leading-tight tracking-[-0.02em] text-[#111f36] md:text-6xl lowercase">
-            The Fried Rice Index
+            The CanPol Index
           </h1>
 
           <p className="mt-5 max-w-3xl text-xl leading-8 text-[#5f697a]">
-            A global affordability index based on the price of a bowl of egg
-            fried rice.
+            A cost-of-living index built around Canada&apos;s electoral geography. We track the real price of everyday life — housing, food, transport — broken down by federal riding, so you can see exactly how affordability differs across the country and what your MP is representing.
           </p>
 
-          <div className="mt-8">
+          <div className="mt-8 flex flex-col gap-3 sm:flex-row">
             <a
-              href="https://efr-index.vercel.app/"
+              href="https://canpol-index.vercel.app/"
               target="_blank"
               rel="noreferrer"
               className="inline-block border border-[#111f36] px-6 py-3 text-center text-sm font-medium uppercase tracking-[0.08em] text-[#111f36] transition hover:bg-[#8b1e1e] hover:text-white hover:border-[#8b1e1e]"
             >
-              Visit index
+              Visit the index
             </a>
+            <Link
+              href="/contact"
+              className="inline-block border border-[#111f36]/30 px-6 py-3 text-center text-sm font-medium uppercase tracking-[0.08em] text-[#111f36]/70 transition hover:bg-[#8b1e1e] hover:text-white hover:border-[#8b1e1e]"
+            >
+              Get in touch
+            </Link>
           </div>
         </div>
       </section>
@@ -45,19 +66,19 @@ export default function FriedRiceIndexPage() {
       {/* Photo banner */}
       <div className="relative h-64 overflow-hidden bg-[#111f36]">
         <Image
-          src="https://images.unsplash.com/photo-1744400363852-d2eb4908b9a8?auto=format&fit=crop&w=1600&q=85"
-          alt="Narrow street through a Japanese food market"
+          src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=1600&q=85"
+          alt="Aerial view of a Canadian city skyline and residential neighbourhoods"
           fill
-          className="object-cover opacity-60"
+          className="object-cover opacity-55"
         />
         <div className="absolute inset-0 bg-[#111f36]/30 pointer-events-none" />
         <a
-          href="https://unsplash.com/photos/a-narrow-street-in-a-japanese-food-market-XpVUxVgC6XY"
+          href="https://unsplash.com/photos/aerial-view-of-city-buildings-during-daytime"
           target="_blank"
           rel="noreferrer"
           className="absolute bottom-2 right-3 text-[10px] text-white/40 hover:text-white/70 transition lowercase"
         >
-          photo: mos design / unsplash
+          photo: unsplash
         </a>
       </div>
 
@@ -69,34 +90,59 @@ export default function FriedRiceIndexPage() {
               purpose
             </p>
             <h2 className="serif mt-2 text-3xl font-normal italic tracking-[-0.01em] text-[#111f36] lowercase">
-              prices make economics visible.
+              where you live shapes what you pay.
             </h2>
           </div>
 
-          <p className="max-w-3xl text-lg leading-8 text-[#5f697a]">
-            The Fried Rice Index tracks the price of a bowl of egg fried rice
-            across cities around the world. Instead of starting with abstract
-            statistics, it uses a familiar everyday food to make cost of
-            living tangible and easy to compare.
-          </p>
+          <div className="max-w-3xl space-y-5 text-lg leading-8 text-[#5f697a]">
+            <p>
+              Cost of living in Canada is not one number — it&apos;s 338 different realities. A family in Nunavut, a renter in Vancouver Centre, and a homeowner in rural New Brunswick are all living in the same country but facing vastly different economic pressures.
+            </p>
+            <p>
+              The CanPol Index maps those differences onto Canada&apos;s federal electoral map. Instead of abstract national averages, it gives you a riding-by-riding breakdown of affordability so you can hold your MP accountable to the economic reality of the people who actually elected them.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Stats */}
+      <section className="border-y border-[#e5e0d4] bg-[#f3efe6]">
+        <div className="mx-auto max-w-7xl px-5 py-12">
+          <div className="mb-6 border-b border-[#e5e0d4] pb-4">
+            <p className="text-[10px] font-semibold uppercase tracking-[0.3em] text-[#8b1e1e] lowercase">
+              scope
+            </p>
+            <h2 className="serif mt-2 text-3xl font-normal italic tracking-[-0.01em] text-[#111f36] lowercase">
+              what the index covers
+            </h2>
+          </div>
+
+          <div className="grid gap-px bg-[#e5e0d4] sm:grid-cols-3 border border-[#e5e0d4]">
+            {dataPoints.map((item) => (
+              <div key={item.label} className="bg-[#faf8f5] p-6">
+                <p className="serif text-4xl font-normal italic text-[#111f36] lowercase">{item.label}</p>
+                <p className="mt-2 text-sm leading-6 text-[#5f697a]">{item.description}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
       {/* Topics */}
-      <section className="border-y border-[#e5e0d4] bg-[#f3efe6]">
+      <section className="bg-[#faf8f5]">
         <div className="mx-auto max-w-7xl px-5 py-12">
           <div className="mb-6 border-b border-[#e5e0d4] pb-4">
             <p className="text-[10px] font-semibold uppercase tracking-[0.3em] text-[#8b1e1e] lowercase">
               topics
             </p>
             <h2 className="serif mt-2 text-3xl font-normal italic tracking-[-0.01em] text-[#111f36] lowercase">
-              what the project helps illuminate
+              what the index helps illuminate
             </h2>
           </div>
 
           <div className="grid gap-px bg-[#e5e0d4] sm:grid-cols-2 md:grid-cols-3 border border-[#e5e0d4]">
             {topics.map((topic) => (
-              <div key={topic} className="bg-[#faf8f5] p-5">
+              <div key={topic} className="bg-[#f3efe6] p-5">
                 <p className="font-semibold text-[#111f36]">{topic}</p>
               </div>
             ))}
@@ -113,21 +159,36 @@ export default function FriedRiceIndexPage() {
                 connection
               </p>
               <h2 className="serif mt-2 text-3xl font-normal italic tracking-[-0.01em] text-[#111f36] lowercase">
-                data is civic education.
+                data is civic accountability.
               </h2>
             </div>
 
-            <p className="max-w-3xl text-lg leading-8 text-[#5f697a]">
-              Detente teaches political literacy through play. The Fried Rice
-              Index teaches economic literacy through data. Both projects help
-              people understand the systems — political and economic — that
-              shape everyday life.
-            </p>
+            <div className="space-y-5">
+              <p className="max-w-3xl text-lg leading-8 text-[#5f697a]">
+                The Parliament Tracker shows how your MP votes. The CanPol Index shows the economic reality they&apos;re supposed to be representing. Together, they give you the full picture: what politicians promise, what they do, and whether it matches what people actually need.
+              </p>
+              <div className="flex flex-col gap-3 sm:flex-row">
+                <a
+                  href="https://canpol-index.vercel.app/"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-block border border-[#111f36] px-5 py-3 text-center text-sm font-medium uppercase tracking-[0.08em] text-[#111f36] transition hover:bg-[#8b1e1e] hover:text-white hover:border-[#8b1e1e]"
+                >
+                  Explore the index
+                </a>
+                <Link
+                  href="/projects/parliament-tracker"
+                  className="inline-block border border-[#111f36]/30 px-5 py-3 text-center text-sm font-medium uppercase tracking-[0.08em] text-[#111f36]/70 transition hover:bg-[#8b1e1e] hover:text-white hover:border-[#8b1e1e]"
+                >
+                  Parliament Tracker →
+                </Link>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
-      <Comments pageId="fried-rice-index" />
+      <Comments pageId="canpol-index" />
     </div>
   );
 }
