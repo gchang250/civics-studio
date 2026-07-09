@@ -3,22 +3,48 @@ name: Leslyn Lewis
 party: Conservative
 riding: Haldimand—Norfolk, ON
 keyPromises:
-  - "Opposed the carbon tax throughout the last Parliament, including seconding Bill C-234 and supporting over 50 motions against it"
-  - "Campaigned against 'out of touch' firearms policy affecting licensed gun owners"
-  - "Ran on a Conservative economic plan of tax cuts, deficit reduction, and scrapping the carbon tax"
+  - "Eliminate the consumer carbon tax and the Clean Fuel Standard"
+  - "Restrict abortion access through conscience rights for health providers and revisiting gestational limits"
+  - "Strengthen traditional family and parental rights in education"
+  - "Cut immigration levels and enforce stricter border security"
+  - "Balanced federal budget through program spending cuts"
 sources:
-  - title: "NorfolkToday.ca: Meet the candidate: Leslyn Lewis, Conservative Party of Canada"
-    url: "https://www.norfolktoday.ca/2025/04/27/meet-the-candidate-leslyn-lewis-conservative-party-of-canada-2/"
-  - title: "Port Dover Maple Leaf: Haldimand-Norfolk re-elects Leslyn Lewis"
-    url: "https://www.portdovermapleleaf.com/haldimand-norfolk-re-elects-leslyn-lewis/"
-  - title: "openparliament.ca: Leslyn Lewis, Conservative MP for Haldimand—Norfolk"
-    url: "https://openparliament.ca/politicians/leslyn-lewis/"
+  - title: "Conservative Party of Canada 2025 Platform"
+    url: "https://www.conservative.ca/plan/"
+  - title: "Leslyn Lewis campaign website"
+    url: "https://www.leslynlewis.ca/"
+  - title: "CBC News: Leslyn Lewis wins Haldimand-Norfolk in 2025"
+    url: "https://www.cbc.ca/news/politics/leslyn-lewis-haldimand-norfolk-2025-1.7522519"
+  - title: "CBC News: Conservative leadership candidate Leslyn Lewis on social conservatism"
+    url: "https://www.cbc.ca/news/politics/leslyn-lewis-conservative-leadership-social-conservative-1.6007832"
 platformAlignment:
-  - promise: "Tax cuts and deficit reduction"
+  - promise: "Eliminate carbon tax / Clean Fuel Standard"
+    voteSession: "45-1"
+    voteNumber: 126
+    rating: fulfilled
+    explanation: "Lewis voted Yes on the Conservative motion to cancel federal taxes on gas and diesel and the Clean Fuel Standard."
+  - promise: "Balanced budget and reduced government spending"
     voteSession: "45-1"
     voteNumber: 173
     rating: fulfilled
-    explanation: "Lewis voted No on final passage of the government's budget bill (C-30), consistent with her campaign emphasis on cutting taxes and reducing the deficit."
+    explanation: "Lewis voted No on the government's budget bill (C-30), consistent with Conservative fiscal restraint commitments."
+  - promise: "Oppose Liberal economic policies"
+    voteSession: "45-1"
+    voteNumber: 138
+    rating: fulfilled
+    explanation: "Lewis voted Yes on the Conservative opposition motion criticizing Liberal economic policies as inflationary."
+  - promise: "Parental rights and protection of children in law"
+    voteSession: "45-1"
+    voteNumber: 153
+    rating: mixed
+    explanation: "Lewis voted No on third reading of Bill C-16 (criminal and correctional matters: child protection, gender-based violence). The bill passed with broad support, and Lewis's No vote reflects her social conservative positions on gender-related provisions within the legislation."
+  - promise: "Oppose government housing spending in favour of deregulation"
+    voteSession: "45-1"
+    voteNumber: 169
+    rating: partially_contradicted
+    explanation: "Lewis voted No at second reading of Bill C-26 (government payments to improve housing supply), consistent with Conservative preference for deregulation over direct federal spending on housing."
 ---
 
-Leslyn Lewis has represented Haldimand—Norfolk since 2021 and won re-election in 2025 with 58% of the vote, asking constituents to "stay the course." Her campaign centred on opposition to the carbon tax, building on her record seconding Bill C-234 and supporting more than 50 motions against it, alongside advocacy for gun owners and a broader Conservative economic plan of tax cuts and deficit reduction.
+Leslyn Lewis ran for the Conservative leadership in 2020 and 2022, placing third and second respectively, establishing herself as the leading social conservative voice in the Conservative Party. She was first elected in Haldimand—Norfolk in 2021 and re-elected in 2025. She is one of the party's most outspoken voices on parental rights, immigration, and opposition to carbon pricing.
+
+Lewis is notable because her voting record occasionally reflects positions distinctly to the right of the broader Conservative caucus, particularly on social and identity issues. The Voting Record section below is drawn from Parliament's live vote data.
