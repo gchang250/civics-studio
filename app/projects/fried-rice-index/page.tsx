@@ -22,7 +22,7 @@ const dataPoints = [
   },
   {
     label: "Free",
-    description: "Open access — no account or paywall required",
+    description: "No account or paywall. Just open it.",
   },
 ];
 
@@ -41,7 +41,7 @@ export default function CanPolIndexPage() {
           </h1>
 
           <p className="mt-5 max-w-3xl text-xl leading-8 text-[#5f697a]">
-            A cost-of-living index built around Canada&apos;s electoral geography. We track the real price of everyday life — housing, food, transport — broken down by federal riding, so you can see exactly how affordability differs across the country and what your MP is representing.
+            A cost-of-living index organized by federal riding. We track what people in each district are actually paying for housing, food, and transport, so you can see how affordability varies across the country and what your MP is accountable to.
           </p>
 
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
@@ -96,10 +96,10 @@ export default function CanPolIndexPage() {
 
           <div className="max-w-3xl space-y-5 text-lg leading-8 text-[#5f697a]">
             <p>
-              Cost of living in Canada is not one number — it&apos;s 338 different realities. A family in Nunavut, a renter in Vancouver Centre, and a homeowner in rural New Brunswick are all living in the same country but facing vastly different economic pressures.
+              Cost of living in Canada is not one number. A family in Nunavut, a renter in Vancouver Centre, and a homeowner in rural New Brunswick are all living under the same federal government but dealing with completely different financial realities.
             </p>
             <p>
-              The CanPol Index maps those differences onto Canada&apos;s federal electoral map. Instead of abstract national averages, it gives you a riding-by-riding breakdown of affordability so you can hold your MP accountable to the economic reality of the people who actually elected them.
+              The CanPol Index maps those differences by electoral district. Instead of national averages that flatten everything out, it gives you a riding-by-riding picture of what people are actually paying, and what the MP representing that riding is supposed to be fighting for.
             </p>
           </div>
         </div>
@@ -136,7 +136,7 @@ export default function CanPolIndexPage() {
               topics
             </p>
             <h2 className="serif mt-2 text-3xl font-normal italic tracking-[-0.01em] text-[#111f36] lowercase">
-              what the index helps illuminate
+              what the index covers
             </h2>
           </div>
 
@@ -159,13 +159,13 @@ export default function CanPolIndexPage() {
                 connection
               </p>
               <h2 className="serif mt-2 text-3xl font-normal italic tracking-[-0.01em] text-[#111f36] lowercase">
-                data is civic accountability.
+                votes and costs, together.
               </h2>
             </div>
 
             <div className="space-y-5">
               <p className="max-w-3xl text-lg leading-8 text-[#5f697a]">
-                The Parliament Tracker shows how your MP votes. The CanPol Index shows the economic reality they&apos;re supposed to be representing. Together, they give you the full picture: what politicians promise, what they do, and whether it matches what people actually need.
+                The Parliament Tracker shows how your MP votes. The CanPol Index shows the economic conditions in the riding they represent. Put them side by side and you get a clearer picture of whether what happens in Ottawa actually reflects what people back home are dealing with.
               </p>
               <div className="flex flex-col gap-3 sm:flex-row">
                 <a
@@ -180,7 +180,7 @@ export default function CanPolIndexPage() {
                   href="/projects/parliament-tracker"
                   className="inline-block border border-[#111f36]/30 px-5 py-3 text-center text-sm font-medium uppercase tracking-[0.08em] text-[#111f36]/70 transition hover:bg-[#8b1e1e] hover:text-white hover:border-[#8b1e1e]"
                 >
-                  Parliament Tracker →
+                  Parliament Tracker
                 </Link>
               </div>
             </div>

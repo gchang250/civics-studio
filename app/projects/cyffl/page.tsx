@@ -14,7 +14,7 @@ const offerings = [
   {
     title: "Free French learning resources",
     description:
-      "Online lessons and practice materials designed to help students build stronger foundations in French.",
+      "Online lessons and practice materials to help students build stronger foundations in French.",
   },
   {
     title: "Student registration",
@@ -24,7 +24,7 @@ const offerings = [
   {
     title: "Local academic support",
     description:
-      "In-person tutoring is focused on school help, homework support, test preparation, and academic confidence.",
+      "In-person tutoring covering school help, homework, test prep, and building confidence in French.",
   },
 ];
 
@@ -44,7 +44,7 @@ export default function CYFFLPage() {
               </h1>
 
               <p className="mt-5 max-w-3xl text-xl leading-8 text-[#5f697a]">
-                As Canada faces a critical deficit of nearly 10,000 qualified French teachers, French instruction in schools is in jeopardy, putting our national bilingual identity at risk. CYFFL is a youth-led initiative bridging this gap by providing free online French learning resources and local academic support to preserve French culture and language literacy for the next generation.
+                Canada is short nearly 10,000 qualified French teachers. Kids who want to learn French or stay in French Immersion are running out of options. CYFFL is a youth-run program filling that gap with free online resources and local tutoring support.
               </p>
 
               <div className="mt-8 flex flex-col gap-3 sm:flex-row">
@@ -72,11 +72,11 @@ export default function CYFFLPage() {
               </p>
 
               <h2 className="serif mt-3 text-2xl font-normal italic leading-tight tracking-[-0.01em] text-[#111f36] lowercase">
-                preserving french literacy.
+                free french support for students.
               </h2>
 
               <p className="mt-4 text-sm leading-6 text-[#5f697a]">
-                CYFFL helps students strengthen their French skills outside of class through accessible resources, practical grammar guides, and structured student-to-student tutoring.
+                CYFFL helps students work on their French outside of school through study guides, grammar resources, and tutoring from other students who have been through the same curriculum.
               </p>
             </aside>
           </div>
@@ -91,17 +91,17 @@ export default function CYFFLPage() {
             </p>
 
             <h2 className="serif mt-2 text-3xl font-normal italic tracking-[-0.01em] text-[#111f36] lowercase">
-              bridging a critical bilingual deficit.
+              why this matters right now.
             </h2>
           </div>
 
           <div className="max-w-3xl text-lg leading-8 text-[#5f697a]">
             <p>
-              Canada is a bilingual nation with two official languages, yet French culture is fading for youth due to a severe and chronic national educator shortage. With a projected deficit of nearly 10,000 qualified French as a Second Language (FSL) and French Immersion teachers, schools are struggling to provide standard instruction.
+              Canada has two official languages. That&apos;s not just a constitutional fact, it&apos;s supposed to mean something practically. But French Immersion waitlists are growing, FSL classes are being cut, and the teacher shortage is getting worse each year. Students who want to engage with French genuinely have fewer and fewer places to do it.
             </p>
 
             <p className="mt-5">
-              The Canadian Youth Foundation for French Literacy is a direct response to this crisis, acting as a crucial bridge for students to build foundations and reclaim bilingual literacy. By pairing free, plain-language online study guides with direct academic support, we make French learning less intimidating, helping preserve a vital pillar of Canadian heritage.
+              CYFFL started because students noticed this and decided to do something about it. The program is run by youth, for youth. It&apos;s not a replacement for proper school instruction, but it&apos;s a real resource for students who want to keep learning and don&apos;t have anywhere else to turn.
             </p>
           </div>
         </div>
@@ -169,16 +169,13 @@ export default function CYFFLPage() {
               </p>
 
               <h2 className="serif mt-2 text-3xl font-normal italic tracking-[-0.01em] text-[#111f36] lowercase">
-                language learning is public learning.
+                language access is a civic issue.
               </h2>
             </div>
 
             <div>
               <p className="max-w-3xl text-lg leading-8 text-[#5f697a]">
-                Civics Studio focuses on education, communication, and access to
-                public life. CYFFL fits that mission by helping students build
-                French literacy, academic confidence, and stronger communication
-                skills.
+                If Canada is going to take bilingualism seriously, French has to be accessible to students who want to learn it, not just on paper. CYFFL is part of how Civics Studio thinks about public life: access to education, to language, to participation, shouldn&apos;t depend on which school you got into or which province you live in.
               </p>
 
               <div className="mt-6 flex flex-col gap-3 sm:flex-row">
