@@ -57,6 +57,7 @@ export default async function MPProfilePage({ params }: Props) {
     : [];
 
   const colors = partyColor(mp.currentParty ?? "Independent");
+  const isIndependent = mp.currentParty === "Independent" || !mp.currentParty;
   const withParty = votingRecord.filter((v) => v.alignment === "with_party").length;
   const againstParty = votingRecord.filter((v) => v.alignment === "against_party").length;
 
@@ -141,14 +142,16 @@ export default async function MPProfilePage({ params }: Props) {
             <div className="mb-8 grid gap-4 sm:grid-cols-2">
               <div className="border border-[#e5e0d4] bg-[#f3efe6] p-4">
                 <p className="serif text-2xl font-normal italic text-[#111f36] lowercase">
-                  {withParty} / {votingRecord.length}
+                  {isIndependent ? "n/a" : `${withParty} / ${votingRecord.length}`}
                 </p>
                 <p className="text-[10px] font-semibold uppercase tracking-[0.08em] text-[#8b1e1e] lowercase">
                   Votes with the party line
                 </p>
               </div>
               <div className="border border-[#e5e0d4] bg-[#f3efe6] p-4">
-                <p className="serif text-2xl font-normal italic text-[#111f36] lowercase">{againstParty}</p>
+                <p className="serif text-2xl font-normal italic text-[#111f36] lowercase">
+                  {isIndependent ? "n/a" : againstParty}
+                </p>
                 <p className="text-[10px] font-semibold uppercase tracking-[0.08em] text-[#8b1e1e] lowercase">
                   Votes against the party line
                 </p>
@@ -179,15 +182,21 @@ export default async function MPProfilePage({ params }: Props) {
                         })}
                         {" · "}Vote #{entry.vote.number} ({entry.vote.session})
                       </p>
-                      <span className={`px-2 py-0.5 text-[10px] font-semibold uppercase tracking-[0.08em] ${style.className}`}>
-                        {style.label}
-                      </span>
+                      {isIndependent ? (
+                        <span className="px-2 py-0.5 text-[10px] font-semibold uppercase tracking-[0.08em] bg-[#faf8f5] text-[#5f697a] ring-1 ring-inset ring-[#e5e0d4] lowercase">
+                          n/a
+                        </span>
+                      ) : (
+                        <span className={`px-2 py-0.5 text-[10px] font-semibold uppercase tracking-[0.08em] ${style.className}`}>
+                          {style.label}
+                        </span>
+                      )}
                     </div>
                     <p className="mt-2 leading-6 text-[#111f36]">{entry.vote.description}</p>
                     <p className="mt-1 text-sm text-[#5f697a]">
                       Ballot: <span className="font-semibold">{entry.ballot}</span> · Result: {entry.vote.result}
                     </p>
-                    {dissentPct > 0 && (
+                    {!isIndependent && dissentPct > 0 && (
                       <p className="mt-1 text-xs italic text-[#5f697a]">
                         {entry.alignment === "against_party"
                           ? `${dissentPct}% of the ${mp.currentParty} caucus also broke ranks on this vote. This wasn't a lone dissent.`
