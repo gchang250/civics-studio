@@ -34,7 +34,6 @@ export const metadata: Metadata = {
     "civic education",
     "youth civic engagement",
     "Canada civics",
-    "Detente",
     "CanPol Index",
     "political literacy",
     "economic literacy",
@@ -147,9 +146,6 @@ export default function RootLayout({
                 </Link>
                 <Link href="/projects/media-bias-tracker" className="text-[#111f36]/70 transition hover:text-[#8b1e1e]">
                   Media Bias Detector
-                </Link>
-                <Link href="/projects/detente" className="text-[#111f36]/70 transition hover:text-[#8b1e1e]">
-                  Détente
                 </Link>
                 <Link href="/projects/fried-rice-index" className="text-[#111f36]/70 transition hover:text-[#8b1e1e]">
                   The CanPol Index

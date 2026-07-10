@@ -38,20 +38,6 @@ const projects = [
   },
   {
     number: "03",
-    type: "Print-and-play game",
-    title: "Detente",
-    description:
-      "A political negotiation game about resources, hidden goals, and the signals every deal sends. Players compete to achieve secret goals while reading each other's motives in real time.",
-    cta: "Download free",
-    href: "/projects/detente",
-    image:
-      "https://images.unsplash.com/photo-1529699211952-734e80c4d42b?auto=format&fit=crop&w=1400&q=85",
-    imageAlt: "Close-up of minimalist wooden chess pieces standing on a board",
-    photographer: "Randy Fath",
-    photoHref: "https://unsplash.com/photos/chess-pieces-on-board-nAjil1z3eLk",
-  },
-  {
-    number: "04",
     type: "Data project",
     title: "The CanPol Index",
     description:
@@ -66,7 +52,7 @@ const projects = [
       "https://unsplash.com/photos/a-modern-house-exterior-facade-with-wood-panels",
   },
   {
-    number: "05",
+    number: "04",
     type: "French literacy program",
     title: "CYFFL",
     description:

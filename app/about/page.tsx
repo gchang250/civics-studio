@@ -83,8 +83,7 @@ export default function AboutPage() {
             <p className="mt-4 text-sm leading-7 text-[#5f697a]">
               Parliament Tracker and Media Bias Detector use
               Parliament&apos;s own open data and AI-assisted analysis to make
-              whip pressure and media framing visible. Detente teaches
-              political literacy through negotiation and strategy. The Fried
+              whip pressure and media framing visible. The Fried
               Rice Index teaches economic literacy through everyday price
               comparison.
             </p>

@@ -31,19 +31,6 @@ const projects = [
       "https://unsplash.com/photos/a-folded-newspaper-lying-on-a-surface-H9ZhJTDNyKE",
   },
   {
-    title: "Detente",
-    type: "Print-and-play game",
-    description:
-      "A political negotiation game for practising strategy, persuasion, resource management, and civic thinking.",
-    href: "/projects/detente",
-    status: "Files available",
-    image:
-      "https://images.unsplash.com/photo-1529699211952-734e80c4d42b?auto=format&fit=crop&w=800&q=80",
-    imageAlt: "Close-up of minimalist wooden chess pieces standing on a board",
-    photographer: "Randy Fath",
-    photoHref: "https://unsplash.com/photos/chess-pieces-on-board-nAjil1z3eLk",
-  },
-  {
     title: "The CanPol Index",
     type: "Data project",
     description:
