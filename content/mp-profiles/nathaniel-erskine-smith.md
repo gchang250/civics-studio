@@ -24,8 +24,8 @@ platformAlignment:
   - promise: "Bold climate action"
     voteSession: "45-1"
     voteNumber: 126
-    rating: fulfilled
-    explanation: "Erskine-Smith voted No on the Conservative motion to cancel the Clean Fuel Standard and gas taxes, consistent with his strong climate platform."
+    rating: mixed
+    explanation: "Erskine-Smith did not vote on the Conservative motion to cancel the Clean Fuel Standard and gas taxes. While he has a strong climate platform, his absence left no personal ballot signal on this division."
   - promise: "National pharmacare and dental care"
     voteSession: "45-1"
     voteNumber: 173

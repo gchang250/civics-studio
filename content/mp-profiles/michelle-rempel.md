@@ -37,7 +37,7 @@ platformAlignment:
     voteSession: "45-1"
     voteNumber: 130
     rating: fulfilled
-    explanation: "Rempel voted Yes on the Conservative opposition motion criticizing Liberal economic policies, consistent with her platform of reducing federal spending."
+    explanation: "Rempel was paired on the Conservative opposition motion criticizing Liberal economic policies, supporting the caucus's fiscal stance while balancing an absent Liberal member."
   - promise: "GST off new homes / build more homes"
     voteSession: "45-1"
     voteNumber: 169

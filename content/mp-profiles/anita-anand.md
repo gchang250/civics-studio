@@ -35,7 +35,7 @@ platformAlignment:
     voteSession: "45-1"
     voteNumber: 146
     rating: fulfilled
-    explanation: "Anand voted Yes on third reading of Bill C-20 (Build Canada Homes Act), consistent with the government's housing supply commitments."
+    explanation: "Anand was paired on third reading of Bill C-20 (Build Canada Homes Act). Under pairing agreements, her position is recorded as supporting the government's housing supply commitments while balancing an absent opposition member."
   - promise: "Oppose fiscal policies that undermine Canadian competitiveness"
     voteSession: "45-1"
     voteNumber: 138

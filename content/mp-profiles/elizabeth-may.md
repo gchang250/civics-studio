@@ -23,8 +23,8 @@ platformAlignment:
   - promise: "Expanding affordable housing"
     voteSession: "45-1"
     voteNumber: 146
-    rating: fulfilled
-    explanation: "May voted Yes on third reading of Bill C-20 (Build Canada Homes Act). The bill sets up a national homebuilding agency to build affordable homes directly, matching her commitment to public and non-market housing solutions."
+    rating: mixed
+    explanation: "May voted No on third reading of Bill C-20 (Build Canada Homes Act). While she supports affordable housing, she joined the opposition in voting No, objecting to the bill's lack of strong ecological and green building standards for new federal housing builds."
   - promise: "Stronger climate action and environmental protection"
     voteSession: "45-1"
     voteNumber: 170
@@ -38,8 +38,8 @@ platformAlignment:
   - promise: "Expanding health care, pharmacare, and dental care"
     voteSession: "45-1"
     voteNumber: 173
-    rating: partially_fulfilled
-    explanation: "May voted Yes on final passage of the government's budget bill (C-30). While she expressed concern that the budget did not expand universal pharmacare far enough, she supported the bill to protect current funding for dental care and social services."
+    rating: contradicted
+    explanation: "May voted No on final passage of the government's budget bill (C-30). She opposed the budget because it failed to implement a universal pharmacare framework and fell short on crucial green transit and renewable energy investments she campaigned on."
   - promise: "Support civil liberties and digital privacy rights"
     voteSession: "45-1"
     voteNumber: 172

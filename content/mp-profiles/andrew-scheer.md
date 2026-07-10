@@ -17,8 +17,8 @@ platformAlignment:
   - promise: "Cost of living / fiscal restraint"
     voteSession: "45-1"
     voteNumber: 173
-    rating: fulfilled
-    explanation: "Scheer voted No on final passage of Bill C-30 (the spring economic update implementation bill), matching the Conservative caucus's own recorded position on that vote. Consistent with a platform built around opposing the government's spending and tax approach."
+    rating: mixed
+    explanation: "Scheer did not vote on final passage of Bill C-30 (the spring economic update implementation bill). As Conservative House Leader, he was present to manage House operations but did not register a personal ballot on this division."
   - promise: "Tackling crime"
     voteSession: "45-1"
     voteNumber: 168

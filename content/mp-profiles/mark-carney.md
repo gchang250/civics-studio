@@ -29,8 +29,8 @@ platformAlignment:
   - promise: "Double the pace of home construction to 500,000 homes a year"
     voteSession: "45-1"
     voteNumber: 169
-    rating: fulfilled
-    explanation: "Carney voted Yes at second reading of Bill C-26 (government payments to improve housing supply), supporting key funding mechanisms for his housing targets."
+    rating: mixed
+    explanation: "Carney did not vote on second reading of Bill C-26 (government payments to improve housing supply). As Prime Minister, he conventionally misses many routine divisions, meaning his absence doesn't signal opposition to his housing targets."
   - promise: "Double the pace of home construction to 500,000 homes a year"
     voteSession: "45-1"
     voteNumber: 146

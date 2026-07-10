@@ -19,8 +19,8 @@ platformAlignment:
   - promise: "Non-market public housing"
     voteSession: "45-1"
     voteNumber: 146
-    rating: partially_fulfilled
-    explanation: "Kwan voted Yes on third reading of Bill C-20 (Build Canada Homes Act). The bill creates a federal homebuilding agency, which partially aligns with Kwan's platform for public housing, though her platform calls for non-market housing at a scale beyond what C-20 establishes."
+    rating: mixed
+    explanation: "Kwan voted No on third reading of Bill C-20 (Build Canada Homes Act). Consistent with the NDP caucus's position, she opposed the bill, arguing that the proposed federal homebuilder relied too heavily on market-driven incentives rather than direct construction of non-market public housing."
   - promise: "Build affordable housing"
     voteSession: "45-1"
     voteNumber: 169

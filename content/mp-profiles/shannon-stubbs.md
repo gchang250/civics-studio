@@ -30,7 +30,7 @@ platformAlignment:
     voteSession: "45-1"
     voteNumber: 138
     rating: fulfilled
-    explanation: "Stubbs voted Yes on the Conservative motion criticizing Liberal economic policies as inflationary, aligning with her broader opposition to Liberal resource and energy regulation."
+    explanation: "Stubbs was paired on the Conservative motion criticizing Liberal economic policies as inflationary, supporting the party's opposition to Liberal resource regulation while balancing an absent government member."
   - promise: "Oppose government intervention in housing over deregulation"
     voteSession: "45-1"
     voteNumber: 169

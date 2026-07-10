@@ -19,13 +19,13 @@ platformAlignment:
   - promise: "Tougher bail and sentencing laws"
     voteSession: "45-1"
     voteNumber: 155
-    rating: fulfilled
-    explanation: "Caputo voted Yes on time allocation for Bill C-14 (bail and sentencing reforms), supporting the government moving this bill forward. As a former Crown prosecutor, bail reform is central to Caputo's platform and he has been a vocal advocate across party lines for tougher bail standards."
+    rating: contradicted
+    explanation: "Caputo voted No on the motion for time allocation on Bill C-14 (bail and sentencing reforms). Despite his platform advocating for bail reform, he voted with his caucus to oppose the government's timing and limitations on debate for this bill."
   - promise: "Tougher bail and sentencing laws"
     voteSession: "45-1"
     voteNumber: 153
-    rating: partially_fulfilled
-    explanation: "Caputo voted Yes on third reading of Bill C-16 (child protection, gender-based violence, delays in the criminal justice system). As a former prosecutor, Caputo's Yes reflects genuine support for measures reducing court delays and improving child protection, even under a Liberal bill."
+    rating: contradicted
+    explanation: "Caputo voted No on third reading of Bill C-16 (criminal and correctional matters). Although the bill aimed to address court delays and child protection, Caputo and the Conservative caucus opposed it, criticizing its broader criminal justice changes as too lenient."
   - promise: "Eliminate carbon tax"
     voteSession: "45-1"
     voteNumber: 126

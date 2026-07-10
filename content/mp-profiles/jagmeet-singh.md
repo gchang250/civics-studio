@@ -1,7 +1,7 @@
 ---
 name: Jagmeet Singh
 party: NDP
-riding: Burnaby Central, BC
+riding: Burnaby South, BC (44th Parliament)
 keyPromises:
   - "Dental care for all Canadians, not just children"
   - "Pharmacare covering prescription drugs under a universal public plan"
@@ -9,30 +9,38 @@ keyPromises:
   - "Wealth tax of 1% annually on fortunes over $10 million"
   - "Cancel the CPPIB's investments in fossil fuels"
 sources:
-  - title: "NDP 2025 Federal Election Platform"
+  - title: "NDP Platform 2021"
     url: "https://www.ndp.ca/platform"
-  - title: "CBC News: NDP promises dental care for all adults in election platform"
-    url: "https://www.cbc.ca/news/politics/ndp-2025-election-platform-1.7510392"
-  - title: "Globe and Mail: Singh promises wealth tax, affordable housing in NDP platform"
-    url: "https://www.theglobeandmail.com/politics/article-ndp-2025-election-platform-jagmeet-singh/"
+  - title: "openparliament.ca: Jagmeet Singh"
+    url: "https://openparliament.ca/politicians/jagmeet-singh/"
 platformAlignment:
-  - promise: "Build affordable housing"
-    voteSession: "45-1"
-    voteNumber: 169
+  - promise: "Establish universal benefits and support vulnerable groups"
+    voteSession: "44-1"
+    voteNumber: 250
     rating: fulfilled
-    explanation: "Singh voted Yes at second reading of Bill C-26 (payments to improve housing supply), consistent with his housing platform."
-  - promise: "Dental care for all"
-    voteSession: "45-1"
-    voteNumber: 173
-    rating: mixed
-    explanation: "Singh voted No on final passage of the government's budget bill (C-30). For an NDP leader whose party lost official status, a No vote on a Liberal budget most plausibly signals insufficient investment in social programs rather than opposition to spending itself."
-  - promise: "Cancel fossil fuel investments"
-    voteSession: "45-1"
-    voteNumber: 126
+    explanation: "Singh voted Yes on third reading of Bill C-22 to establish the Canada Disability Benefit, supporting universal income measures for low-income persons with disabilities."
+  - promise: "Support Canadian culture and independent creators"
+    voteSession: "44-1"
+    voteNumber: 164
     rating: fulfilled
-    explanation: "Singh voted No on the Conservative motion to cancel federal taxes on gas and diesel and the Clean Fuel Standard, consistent with his pro-climate-pricing platform."
+    explanation: "Singh voted Yes on third reading of Bill C-11 (Online Streaming Act) to support domestic broadcasting and digital content distribution."
+  - promise: "Support independent journalism and Canadian news"
+    voteSession: "44-1"
+    voteNumber: 244
+    rating: fulfilled
+    explanation: "Singh voted Yes on third reading of Bill C-18 (Online News Act) to support news content distribution and independent journalism."
+  - promise: "Tax carbon while protecting farming operations"
+    voteSession: "44-1"
+    voteNumber: 289
+    rating: fulfilled
+    explanation: "Singh voted Yes on third reading of Bill C-234 to exempt natural gas and propane used for agricultural operations from the federal carbon price."
+  - promise: "Build non-market affordable housing over market deregulation"
+    voteSession: "44-1"
+    voteNumber: 790
+    rating: fulfilled
+    explanation: "Singh voted No on second reading of Bill C-356 (Poilievre's Housing Bill), opposing Conservative deregulation proposals in favor of direct public funding for housing builds."
 ---
 
-Jagmeet Singh led the NDP into the 2025 election but lost his own seat in Burnaby South. He subsequently resigned as party leader. He won a byelection in Burnaby Central in late 2025 and returned to the House as an NDP backbencher rather than leader. The NDP lost official party status in the 2025 election, falling below the 12-seat threshold.
+Jagmeet Singh served as leader of the federal New Democratic Party (NDP) from 2017 to 2025. He represented Burnaby South as an MP in the 44th Parliament. Following the 2025 federal election, he resigned the leadership of the NDP.
 
-As one of only a handful of NDP MPs remaining, Singh's votes represent both his personal platform and a de facto expression of where the diminished NDP caucus stands. The Voting Record section below is drawn from Parliament's live vote data.
+As leader of the NDP, Singh was the primary architect of the party's platform and its supply-and-confidence agreement with the Liberal government, which secured the initial legislative steps toward federal dental care and pharmacare programs. His voting record is documented here as a historical record of his legislative alignment.

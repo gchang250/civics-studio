@@ -29,23 +29,23 @@ platformAlignment:
   - promise: "Defend Quebec's economic and housing interests"
     voteSession: "45-1"
     voteNumber: 169
-    rating: fulfilled
-    explanation: "Blanchet voted Yes at second reading of Bill C-26 (government housing supply payments). Since the bill included provisions allowing Quebec to receive opt-out compensation for housing programs, Blanchet supported it as a positive outcome for provincial autonomy."
+    rating: mixed
+    explanation: "Blanchet did not vote on second reading of Bill C-26 (government housing supply payments). While the Bloc supported the bill because of Quebec's opt-out compensation, Blanchet was absent for this division, leaving no personal ballot signal."
   - promise: "Promote consumer protection and local industry"
     voteSession: "45-1"
     voteNumber: 170
-    rating: fulfilled
-    explanation: "Blanchet voted Yes at second reading of Bill C-267 (durability of electronic products and appliances). The Bloc strongly supports right-to-repair and eco-responsibility frameworks, aligning this vote directly with Quebec's progressive environmental and consumer files."
+    rating: mixed
+    explanation: "Blanchet did not vote on second reading of Bill C-267 (durability of electronic products and appliances). While the Bloc caucus supported the right-to-repair framework, Blanchet did not register a ballot for this vote."
   - promise: "Defend Quebec's economic and housing interests"
     voteSession: "45-1"
     voteNumber: 146
-    rating: fulfilled
-    explanation: "Blanchet voted Yes on third reading of Bill C-20 (Build Canada Homes Act), joining the Liberals in passing the bill 184-140. The Bloc's support is notable given their usual federalism objections: it likely reflects Quebec-specific housing concessions or a strategic decision to support policies benefiting Quebec constituents over ideological purity on jurisdiction."
+    rating: mixed
+    explanation: "Blanchet did not vote on third reading of Bill C-20 (Build Canada Homes Act). The Bloc caucus supported the bill in a 184-140 division, but Blanchet was absent, leaving no personal vote on the final passage of the homebuilder agency."
   - promise: "Support for public safety and human rights"
     voteSession: "45-1"
     voteNumber: 153
-    rating: fulfilled
-    explanation: "Blanchet voted Yes on third reading of Bill C-16 (criminal and correctional matters: child protection, gender-based violence). This matches the Bloc's progressive consensus on social justice and modernizing safety laws."
+    rating: mixed
+    explanation: "Blanchet did not vote on third reading of Bill C-16 (criminal and correctional matters). While the Bloc caucus supported the child protection and safety measures, Blanchet did not cast a ballot on this division."
 ---
 
 Yves-François Blanchet ran the Bloc Québécois's 2025 campaign, "Choose Quebec," on provincial-jurisdiction and Quebec-identity issues rather than a bid to govern federally; the Bloc only runs candidates in Quebec. After the election left the Liberals short of a majority, Blanchet positioned the Bloc to trade support on confidence votes for concessions on the priorities above.

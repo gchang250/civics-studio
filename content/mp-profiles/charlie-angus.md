@@ -1,7 +1,7 @@
 ---
 name: Charlie Angus
 party: NDP
-riding: Timmins—James Bay, ON
+riding: Timmins—James Bay, ON (44th Parliament)
 keyPromises:
   - "Public broadband and digital access for remote and northern communities"
   - "Nickel and critical minerals policy that benefits northern workers, not just shareholders"
@@ -9,35 +9,35 @@ keyPromises:
   - "Universal pharmacare and dental care"
   - "Tax the ultra-wealthy to fund social programs"
 sources:
-  - title: "NDP 2025 Federal Platform"
+  - title: "NDP Platform 2021"
     url: "https://www.ndp.ca/platform"
   - title: "Charlie Angus MP website"
     url: "https://charlieangus.ndp.ca/"
-  - title: "CBC News: NDP's Charlie Angus wins Timmins-James Bay in 2025"
-    url: "https://www.cbc.ca/news/politics/charlie-angus-2025-election-timmins-1.7521884"
+  - title: "CBC News: Longtime NDP MP Charlie Angus says he won't seek re-election"
+    url: "https://www.cbc.ca/news/politics/charlie-angus-not-seeking-reelection-1.7163836"
 platformAlignment:
-  - promise: "End drinking water advisories on First Nations reserves"
-    voteSession: "45-1"
-    voteNumber: 148
-    rating: partially_fulfilled
-    explanation: "Angus voted Yes on Bill C-33 (main supply bill for 2026-27), supporting continued federal spending. The bill funds programs including Indigenous services, though the specific long-term water advisory issue requires dedicated allocation beyond supply votes."
-  - promise: "Tax the ultra-wealthy"
-    voteSession: "45-1"
-    voteNumber: 130
+  - promise: "End long-term drinking water advisories on reserves / support Indigenous communities"
+    voteSession: "44-1"
+    voteNumber: 250
     rating: fulfilled
-    explanation: "Angus voted No on the Conservative opposition motion criticizing the government's economic policies as inflationary. The Conservative motion would have pointed toward fewer taxes and reduced social spending, the opposite of Angus's platform."
-  - promise: "Universal pharmacare and dental care"
-    voteSession: "45-1"
-    voteNumber: 173
-    rating: mixed
-    explanation: "Angus voted No on the government's budget bill (C-30). For Angus this reflects NDP pressure for more investment in social programs rather than opposition to health care spending."
-  - promise: "Northern and remote community investment"
-    voteSession: "45-1"
-    voteNumber: 169
-    rating: partially_fulfilled
-    explanation: "Angus voted Yes at second reading of Bill C-26 (housing supply payments). Housing is acute in northern Ontario but this bill focuses largely on urban markets, making it a partial match."
+    explanation: "Angus voted Yes on third reading of Bill C-22 (Canada Disability Benefit Act), supporting universal income measures for low-income and vulnerable Canadians, including Indigenous persons with disabilities."
+  - promise: "Public broadband and digital regulation for remote communities"
+    voteSession: "44-1"
+    voteNumber: 164
+    rating: fulfilled
+    explanation: "Angus voted Yes on third reading of Bill C-11 (Online Streaming Act) to support domestic broadcasting and digital content distribution networks in remote communities."
+  - promise: "Tax carbon while protecting agricultural producers"
+    voteSession: "44-1"
+    voteNumber: 289
+    rating: fulfilled
+    explanation: "Angus voted Yes on third reading of Bill C-234 to carve out greenhouse gas pricing exemptions for farming operations, balancing climate goals with relief for agricultural workers."
+  - promise: "Affordable housing for northern workers"
+    voteSession: "44-1"
+    voteNumber: 790
+    rating: fulfilled
+    explanation: "Angus voted No on second reading of Bill C-356 (Poilievre's Housing Bill), opposing market deregulation as a solution for housing affordability in favor of direct public funding."
 ---
 
-Charlie Angus has held Timmins—James Bay since 2004, making him one of the longest-serving NDP MPs. He ran for the NDP leadership in 2017. He's built a reputation as one of Parliament's most outspoken advocates for First Nations communities, northern mining workers, and digital access in remote areas. He survived the 2025 NDP collapse by a comfortable margin in his resource-industry riding.
+Charlie Angus served as the Member of Parliament for Timmins—James Bay from 2004 until his retirement in 2025. He was one of the longest-serving and most prominent members of the federal NDP caucus, serving as shadow critic for natural resources, Indigenous youth, and ethics. In April 2024, Angus announced he would not seek re-election, retiring at the dissolution of the 44th Parliament.
 
-Angus is known for his willingness to speak bluntly in the House and to take positions at odds with the majority when the issue involves Indigenous rights or northern communities. The Voting Record section below is drawn from Parliament's live vote data.
+Angus built a national profile as an advocate for First Nations children, remote northern communities, and workers in the resource industries. His voting record is presented here as a historical account of his alignment in the House of Commons.
