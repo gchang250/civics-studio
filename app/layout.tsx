@@ -124,7 +124,7 @@ export default function RootLayout({
                 </div>
                 <div>
                   <span className="serif block text-xl font-bold text-[#111f36]">civics studio.</span>
-                  <span className="block text-[10px] uppercase tracking-[0.2em] text-[#5f697a]/60">Est. 2024</span>
+                  <span className="block text-[10px] uppercase tracking-[0.2em] text-[#5f697a]/60">Est. 2026</span>
                 </div>
               </Link>
               <p className="mt-6 max-w-sm text-sm leading-7 text-[#5f697a]">
