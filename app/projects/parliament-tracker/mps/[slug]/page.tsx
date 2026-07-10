@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { getMPDetail, getMPVotingRecord, getVoteDetail, type WhipAlignment } from "@/lib/openparliament";
+import { getMPDetail, getMPVotingRecord, getVoteDetail, getMPImageUrl, type WhipAlignment } from "@/lib/openparliament";
 import { getProfile, hasProfile, ALIGNMENT_LABELS, alignmentPct } from "@/lib/mpProfiles";
 import { partyColor } from "@/lib/partyStyles";
 import Comments from "@/app/components/Comments";
@@ -76,7 +76,7 @@ export default async function MPProfilePage({ params }: Props) {
             <div className="relative h-28 w-28 shrink-0 overflow-hidden bg-[#faf8f5] border border-[#e5e0d4]">
               {mp.image ? (
                 <Image
-                  src={`https://openparliament.ca${mp.image}`}
+                  src={getMPImageUrl(mp.image)}
                   alt={mp.name}
                   fill
                   className="object-cover"

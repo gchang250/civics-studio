@@ -3,7 +3,7 @@
 import { useMemo, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import type { MPListing } from "@/lib/openparliament";
+import { getMPImageUrl, type MPListing } from "@/lib/openparliament";
 import { partyColor } from "@/lib/partyStyles";
 
 interface Props {
@@ -92,7 +92,7 @@ export default function MPDirectory({ mps, profiledSlugs }: Props) {
               <div className="relative h-16 w-16 shrink-0 overflow-hidden bg-[#faf8f5]">
                 {mp.image ? (
                   <Image
-                    src={`https://openparliament.ca${mp.image}`}
+                    src={getMPImageUrl(mp.image)}
                     alt={mp.name}
                     fill
                     className="object-cover"

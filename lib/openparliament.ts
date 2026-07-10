@@ -40,6 +40,18 @@ function slugFromUrl(url: string): string {
   return parts[parts.length - 1];
 }
 
+const IMAGE_OVERRIDES: Record<string, string> = {
+  "doly-begum": "https://upload.wikimedia.org/wikipedia/commons/e/ec/Doly_Begum_MS_2023.jpg",
+};
+
+export function getMPImageUrl(image: string | null): string {
+  if (!image) return "";
+  if (image.startsWith("http://") || image.startsWith("https://")) {
+    return image;
+  }
+  return `https://openparliament.ca${image}`;
+}
+
 // ─── MP roster ────────────────────────────────────────────────────
 
 export interface MPListing {
@@ -64,14 +76,17 @@ export async function getMPRoster(): Promise<MPListing[]> {
     "/politicians/?limit=400",
     ONE_DAY
   );
-  return data.objects.map((p) => ({
-    slug: slugFromUrl(p.url),
-    name: p.name,
-    party: p.current_party?.short_name.en ?? "Independent",
-    province: p.current_riding?.province ?? "",
-    riding: p.current_riding?.name.en ?? "",
-    image: p.image ?? null,
-  }));
+  return data.objects.map((p) => {
+    const slug = slugFromUrl(p.url);
+    return {
+      slug,
+      name: p.name,
+      party: p.current_party?.short_name.en ?? "Independent",
+      province: p.current_riding?.province ?? "",
+      riding: p.current_riding?.name.en ?? "",
+      image: IMAGE_OVERRIDES[slug] || p.image || null,
+    };
+  });
 }
 
 // ─── MP detail ────────────────────────────────────────────────────
@@ -122,7 +137,7 @@ export async function getMPDetail(slug: string): Promise<MPDetail | null> {
       givenName: data.given_name,
       familyName: data.family_name,
       email: data.email ?? null,
-      image: data.image ?? null,
+      image: IMAGE_OVERRIDES[slug] || data.image || null,
       currentParty: current?.party?.short_name.en ?? null,
       currentRiding: current?.riding
         ? { name: current.riding.name.en, province: current.riding.province }
