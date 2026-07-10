@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import Script from "next/script";
+import { Analytics } from "@vercel/analytics/next";
 import { Libre_Baskerville, Source_Sans_3 } from "next/font/google";
 import { SITE_URL } from "@/lib/site";
 import MobileNav from "@/app/components/MobileNav";
@@ -195,6 +196,8 @@ export default function RootLayout({
             </Script>
           </>
         )}
+
+        <Analytics />
       </body>
     </html>
   );
