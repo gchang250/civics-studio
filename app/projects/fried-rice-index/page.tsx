@@ -66,19 +66,19 @@ export default function CanPolIndexPage() {
       {/* Photo banner */}
       <div className="relative h-64 overflow-hidden bg-[#111f36]">
         <Image
-          src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=1600&q=85"
-          alt="Aerial view of a Canadian city skyline and residential neighbourhoods"
+          src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1600&q=85"
+          alt="Minimalist modern house facade with wood panels and warm lighting"
           fill
           className="object-cover opacity-55"
         />
         <div className="absolute inset-0 bg-[#111f36]/30 pointer-events-none" />
         <a
-          href="https://unsplash.com/photos/aerial-view-of-city-buildings-during-daytime"
+          href="https://unsplash.com/photos/a-modern-house-exterior-facade-with-wood-panels"
           target="_blank"
           rel="noreferrer"
           className="absolute bottom-2 right-3 text-[10px] text-white/40 hover:text-white/70 transition lowercase"
         >
-          photo: unsplash
+          photo: Qingbao Meng / unsplash
         </a>
       </div>
 

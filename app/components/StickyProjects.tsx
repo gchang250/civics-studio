@@ -59,11 +59,11 @@ const projects = [
     cta: "Visit the index",
     href: "/projects/fried-rice-index",
     image:
-      "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=1400&q=85",
-    imageAlt: "Aerial view of a Canadian city with residential neighbourhoods stretching to the horizon",
-    photographer: "Unsplash",
+      "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1400&q=85",
+    imageAlt: "Minimalist modern house facade with wood panels and warm lighting",
+    photographer: "Qingbao Meng",
     photoHref:
-      "https://unsplash.com/photos/aerial-view-of-city-buildings-during-daytime",
+      "https://unsplash.com/photos/a-modern-house-exterior-facade-with-wood-panels",
   },
   {
     number: "05",

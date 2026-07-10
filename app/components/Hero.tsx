@@ -210,8 +210,8 @@ export default function Hero() {
           >
             <div className="relative h-[83%] w-full overflow-hidden">
               <Image
-                src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=650&q=85"
-                alt="Aerial view of a Canadian city skyline and residential neighbourhoods"
+                src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=650&q=85"
+                alt="Minimalist modern house facade with wood panels and warm lighting"
                 fill
                 className="object-cover transition duration-500 hover:scale-103"
               />
