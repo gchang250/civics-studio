@@ -6,7 +6,7 @@ import AnimatedSection from "@/app/components/AnimatedSection";
 
 const stats = [
   { value: "500+", label: "Users", desc: "Across all Civics Studio projects" },
-  { value: "5", label: "Active Projects", desc: "Trackers, games, data, and literacy programs" },
+  { value: "3", label: "Active Projects", desc: "Trackers, data, and literacy programs" },
 ];
 
 export default function HomePage() {
