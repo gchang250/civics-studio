@@ -26,6 +26,26 @@ platformAlignment:
     voteNumber: 173
     rating: mixed
     explanation: "Carney did not vote on final passage of his own government's budget bill (C-30), recorded as 'Didn't vote.' Prime Ministers conventionally skip many routine divisions, and this shouldn't be read as opposition to his own signature promise; it's an honest example of a vote that simply doesn't produce a clean signal either way."
+  - promise: "Double the pace of home construction to 500,000 homes a year"
+    voteSession: "45-1"
+    voteNumber: 169
+    rating: fulfilled
+    explanation: "Carney voted Yes at second reading of Bill C-26 (government payments to improve housing supply), supporting key funding mechanisms for his housing targets."
+  - promise: "Double the pace of home construction to 500,000 homes a year"
+    voteSession: "45-1"
+    voteNumber: 146
+    rating: fulfilled
+    explanation: "Carney voted Yes on third reading of Bill C-20 (Build Canada Homes Act), which establishes a crown corporation to build housing, a key institutional pillar of his construction acceleration platform."
+  - promise: "Repeal federal consumer carbon tax / keep industrial pricing"
+    voteSession: "45-1"
+    voteNumber: 126
+    rating: mixed
+    explanation: "Carney voted No on the Conservative motion to cancel the Clean Fuel Standard and gas/diesel taxes. While Carney has campaigned on shifting away from the consumer carbon tax, he opposed this specific Conservative motion to protect other environmental standards and industrial pricing mechanisms."
+  - promise: "Support progressive social safety nets"
+    voteSession: "45-1"
+    voteNumber: 153
+    rating: fulfilled
+    explanation: "Carney voted Yes on third reading of Bill C-16 (child protection and gender-based violence measures), matching his platform's emphasis on building safer communities."
 ---
 
 Mark Carney became Liberal leader and Prime Minister ahead of the 2025 federal election, campaigning heavily on responding to U.S. tariff threats and economic sovereignty, alongside housing, tax, and energy commitments above. He won the riding of Nepean.

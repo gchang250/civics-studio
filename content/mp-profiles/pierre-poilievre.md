@@ -21,11 +21,31 @@ platformAlignment:
     voteNumber: 173
     rating: fulfilled
     explanation: "Poilievre voted No on final passage of the government's budget bill (C-30), matching the Conservative caucus's own recorded position, a direct, clean match with his fiscal-restraint promise."
+  - promise: "$75 billion in tax cuts / 70% deficit cut"
+    voteSession: "45-1"
+    voteNumber: 126
+    rating: fulfilled
+    explanation: "Poilievre voted Yes on the Conservative opposition motion calling to cancel the Clean Fuel Standard and federal taxes on gas and diesel, matching his signature campaign pledge to 'Axe the Tax'."
   - promise: "Build 2.3 million homes (tax cuts and deregulation, not government payments)"
     voteSession: "45-1"
     voteNumber: 169
     rating: mixed
-    explanation: "Poilievre voted No at second reading of Bill C-26 (government payments to improve housing supply). His housing platform relies on tax cuts and deregulation rather than direct payments, so opposing this specific Liberal bill doesn't necessarily contradict his own housing-supply goal; it may reflect a disagreement over method, not over whether more homes should get built."
+    explanation: "Poilievre voted No at second reading of Bill C-26 (government payments to improve housing supply). His housing platform relies on tax cuts and deregulation rather than direct payments, so opposing this specific Liberal bill doesn't necessarily contradict his own housing-supply goal; it reflects a disagreement over method, not over whether more homes should get built."
+  - promise: "Build 2.3 million homes (tax cuts and deregulation, not government payments)"
+    voteSession: "45-1"
+    voteNumber: 146
+    rating: contradicted
+    explanation: "Poilievre voted No on third reading of Bill C-20 (Build Canada Homes Act). The bill creates a crown corporation to build housing directly, representing the kind of federal government expansion and direct building programs Poilievre actively campaigned against."
+  - promise: "Cut spending / oppose inflationary policies"
+    voteSession: "45-1"
+    voteNumber: 138
+    rating: fulfilled
+    explanation: "Poilievre voted Yes on the Conservative opposition motion calling Liberal economic policies inflationary, a direct match with his platform of fiscal restraint."
+  - promise: "Oppose Liberal public safety and security expansion"
+    voteSession: "45-1"
+    voteNumber: 172
+    rating: contradicted
+    explanation: "Poilievre voted Yes on Government Business No. 13 (Bill C-22, lawful access), supporting the expansion of digital investigation powers for police. While Poilievre campaigns as a defender of civil liberties against government overreach, his support for this police-access bill aligns with his tough-on-crime agenda."
 ---
 
 Pierre Poilievre led the Conservative Party into the 2025 election on an "axe taxes, build homes, unlock resources, unleash the economy" platform. He lost his own Ottawa-area seat that election and returned to the House of Commons after winning a byelection in the safer riding of Battle River—Crowfoot, Alberta, where he now sits as Leader of the Opposition.

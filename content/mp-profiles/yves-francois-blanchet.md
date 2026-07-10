@@ -26,6 +26,26 @@ platformAlignment:
     voteNumber: 172
     rating: mixed
     explanation: "Blanchet voted No on final passage of Bill C-22 (lawful access) after voting Yes on a failed amendment to it (vote #171), supporting a change to the bill, then opposing it once that change failed. That pattern of conditional support, not blanket rejection, is a clearer sign of nuance than either a straight Yes or No would show on its own, and loosely touches his border/security priorities without being a direct match."
+  - promise: "Defend Quebec's economic and housing interests"
+    voteSession: "45-1"
+    voteNumber: 169
+    rating: fulfilled
+    explanation: "Blanchet voted Yes at second reading of Bill C-26 (government housing supply payments). Since the bill included provisions allowing Quebec to receive opt-out compensation for housing programs, Blanchet supported it as a positive outcome for provincial autonomy."
+  - promise: "Promote consumer protection and local industry"
+    voteSession: "45-1"
+    voteNumber: 170
+    rating: fulfilled
+    explanation: "Blanchet voted Yes at second reading of Bill C-267 (durability of electronic products and appliances). The Bloc strongly supports right-to-repair and eco-responsibility frameworks, aligning this vote directly with Quebec's progressive environmental and consumer files."
+  - promise: "Oppose federal intrusions into Quebec jurisdiction"
+    voteSession: "45-1"
+    voteNumber: 146
+    rating: contradicted
+    explanation: "Blanchet voted No on third reading of Bill C-20 (Build Canada Homes Act). The Bloc argued that creating a national federal homebuilder represents a direct encroachment into provincial jurisdiction over housing, opposing the bill on federalist grounds despite their general support for affordable housing."
+  - promise: "Support for public safety and human rights"
+    voteSession: "45-1"
+    voteNumber: 153
+    rating: fulfilled
+    explanation: "Blanchet voted Yes on third reading of Bill C-16 (criminal and correctional matters: child protection, gender-based violence). This matches the Bloc's progressive consensus on social justice and modernizing safety laws."
 ---
 
 Yves-François Blanchet ran the Bloc Québécois's 2025 campaign, "Choose Quebec," on provincial-jurisdiction and Quebec-identity issues rather than a bid to govern federally; the Bloc only runs candidates in Quebec. After the election left the Liberals short of a majority, Blanchet positioned the Bloc to trade support on confidence votes for concessions on the priorities above.
