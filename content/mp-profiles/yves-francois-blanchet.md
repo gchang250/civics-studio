@@ -36,11 +36,11 @@ platformAlignment:
     voteNumber: 170
     rating: fulfilled
     explanation: "Blanchet voted Yes at second reading of Bill C-267 (durability of electronic products and appliances). The Bloc strongly supports right-to-repair and eco-responsibility frameworks, aligning this vote directly with Quebec's progressive environmental and consumer files."
-  - promise: "Oppose federal intrusions into Quebec jurisdiction"
+  - promise: "Defend Quebec's economic and housing interests"
     voteSession: "45-1"
     voteNumber: 146
-    rating: contradicted
-    explanation: "Blanchet voted No on third reading of Bill C-20 (Build Canada Homes Act). The Bloc argued that creating a national federal homebuilder represents a direct encroachment into provincial jurisdiction over housing, opposing the bill on federalist grounds despite their general support for affordable housing."
+    rating: fulfilled
+    explanation: "Blanchet voted Yes on third reading of Bill C-20 (Build Canada Homes Act), joining the Liberals in passing the bill 184-140. The Bloc's support is notable given their usual federalism objections: it likely reflects Quebec-specific housing concessions or a strategic decision to support policies benefiting Quebec constituents over ideological purity on jurisdiction."
   - promise: "Support for public safety and human rights"
     voteSession: "45-1"
     voteNumber: 153

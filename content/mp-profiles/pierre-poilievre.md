@@ -41,11 +41,11 @@ platformAlignment:
     voteNumber: 138
     rating: fulfilled
     explanation: "Poilievre voted Yes on the Conservative opposition motion calling Liberal economic policies inflationary, a direct match with his platform of fiscal restraint."
-  - promise: "Oppose Liberal public safety and security expansion"
+  - promise: "Defend civil liberties against government overreach"
     voteSession: "45-1"
     voteNumber: 172
-    rating: contradicted
-    explanation: "Poilievre voted Yes on Government Business No. 13 (Bill C-22, lawful access), supporting the expansion of digital investigation powers for police. While Poilievre campaigns as a defender of civil liberties against government overreach, his support for this police-access bill aligns with his tough-on-crime agenda."
+    rating: fulfilled
+    explanation: "Poilievre voted No on Government Business No. 13 (Bill C-22, lawful access), joining the Bloc and Green Party in opposing the Liberals' expansion of police powers to access digital communications data. This aligns with his broader rhetoric against government surveillance and overreach, and with the Conservative caucus's unanimous opposition to the bill."
 ---
 
 Pierre Poilievre led the Conservative Party into the 2025 election on an "axe taxes, build homes, unlock resources, unleash the economy" platform. He lost his own Ottawa-area seat that election and returned to the House of Commons after winning a byelection in the safer riding of Battle River—Crowfoot, Alberta, where he now sits as Leader of the Opposition.
