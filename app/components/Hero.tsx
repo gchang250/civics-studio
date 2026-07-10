@@ -11,8 +11,8 @@ import {
 } from "framer-motion";
 
 const WORDS = [
-  "Helping", "students", "understand",
-  "how", "the", "world", "is", "governed.",
+  "Promoting", "government", "transparency",
+  "and", "independent", "representation", "in", "Canada.",
 ];
 
 export default function Hero() {
