@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Comments from "@/app/components/Comments";
+import CrossSiteLink from "@/app/components/CrossSiteLink";
 
 const focusAreas = [
   "French literacy",
@@ -48,14 +49,12 @@ export default function CYFFLPage() {
               </p>
 
               <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-                <a
+                <CrossSiteLink
                   href="https://canyffl.vercel.app/"
-                  target="_blank"
-                  rel="noreferrer"
                   className="border border-[#111f36] px-6 py-3 text-center text-sm font-medium uppercase tracking-[0.08em] text-[#111f36] transition hover:bg-[#8b1e1e] hover:text-white hover:border-[#8b1e1e]"
                 >
                   Visit the CYFFL website
-                </a>
+                </CrossSiteLink>
 
                 <a
                   href="mailto:canadianyouthffl@gmail.com"
@@ -179,14 +178,12 @@ export default function CYFFLPage() {
               </p>
 
               <div className="mt-6 flex flex-col gap-3 sm:flex-row">
-                <a
+                <CrossSiteLink
                   href="https://canyffl.vercel.app/"
-                  target="_blank"
-                  rel="noreferrer"
                   className="inline-block border border-[#111f36] px-5 py-3 text-center text-sm font-medium uppercase tracking-[0.08em] text-[#111f36] transition hover:bg-[#8b1e1e] hover:text-white hover:border-[#8b1e1e]"
                 >
                   Visit the CYFFL website
-                </a>
+                </CrossSiteLink>
 
                 <Link
                   href="/contact"

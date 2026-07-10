@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import Comments from "@/app/components/Comments";
+import CrossSiteLink from "@/app/components/CrossSiteLink";
 
 const topics = [
   "Cost of living",
@@ -45,14 +46,12 @@ export default function CanPolIndexPage() {
           </p>
 
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-            <a
+            <CrossSiteLink
               href="https://canpolindex.vercel.app/"
-              target="_blank"
-              rel="noreferrer"
               className="inline-block border border-[#111f36] px-6 py-3 text-center text-sm font-medium uppercase tracking-[0.08em] text-[#111f36] transition hover:bg-[#8b1e1e] hover:text-white hover:border-[#8b1e1e]"
             >
               Visit the index
-            </a>
+            </CrossSiteLink>
             <Link
               href="/contact"
               className="inline-block border border-[#111f36]/30 px-6 py-3 text-center text-sm font-medium uppercase tracking-[0.08em] text-[#111f36]/70 transition hover:bg-[#8b1e1e] hover:text-white hover:border-[#8b1e1e]"
@@ -168,14 +167,12 @@ export default function CanPolIndexPage() {
                 The Parliament Tracker shows how your MP votes. The CanPol Index shows the economic conditions in the riding they represent. Put them side by side and you get a clearer picture of whether what happens in Ottawa actually reflects what people back home are dealing with.
               </p>
               <div className="flex flex-col gap-3 sm:flex-row">
-                <a
+                <CrossSiteLink
                   href="https://canpolindex.vercel.app/"
-                  target="_blank"
-                  rel="noreferrer"
                   className="inline-block border border-[#111f36] px-5 py-3 text-center text-sm font-medium uppercase tracking-[0.08em] text-[#111f36] transition hover:bg-[#8b1e1e] hover:text-white hover:border-[#8b1e1e]"
                 >
                   Explore the index
-                </a>
+                </CrossSiteLink>
                 <Link
                   href="/projects/parliament-tracker"
                   className="inline-block border border-[#111f36]/30 px-5 py-3 text-center text-sm font-medium uppercase tracking-[0.08em] text-[#111f36]/70 transition hover:bg-[#8b1e1e] hover:text-white hover:border-[#8b1e1e]"
