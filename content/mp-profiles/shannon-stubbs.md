@@ -13,8 +13,8 @@ sources:
     url: "https://www.conservative.ca/plan/"
   - title: "Shannon Stubbs MP website"
     url: "https://shannonstubbs.ca/"
-  - title: "CBC News: Conservative Shannon Stubbs re-elected in Lakeland"
-    url: "https://www.cbc.ca/news/politics/shannon-stubbs-lakeland-2025-1.7522451"
+  - title: "House of Commons: Shannon Stubbs, MP for Lakeland"
+    url: "https://www.ourcommons.ca/members/en/shannon-stubbs(89198)"
 platformAlignment:
   - promise: "Axe the carbon tax / Clean Fuel Standard"
     voteSession: "45-1"

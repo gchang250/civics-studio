@@ -15,8 +15,8 @@ sources:
     url: "https://www.michellerempelgarner.ca/"
   - title: "Global News: Canada election 2025 results: Calgary Nose Hill"
     url: "https://globalnews.ca/news/11130610/canada-election-2025-results-calgary-nose-hill/"
-  - title: "CBC News: Rempel Garner wins Calgary Nose Hill with 59% of the vote"
-    url: "https://www.cbc.ca/news/politics/michelle-rempel-garner-2025-1.7522274"
+  - title: "Wikipedia: Calgary Nose Hill, 2025 results (Rempel Garner 59.4%)"
+    url: "https://en.wikipedia.org/wiki/Calgary_Nose_Hill"
 platformAlignment:
   - promise: "Tax cuts and deficit reduction"
     voteSession: "45-1"

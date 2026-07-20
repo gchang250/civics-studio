@@ -44,20 +44,20 @@ export default function DisqusComments({ identifier, title }: Props) {
   if (!shortname) return null;
 
   return (
-    <section className="bg-white">
+    <section className="bg-ink-2 border-t border-edge">
       <div className="mx-auto max-w-7xl px-5 py-12">
-        <div className="mb-8 border-b-2 border-[#C9A94B] pb-4">
-          <p className="text-xs font-bold uppercase tracking-[0.18em] text-[#C9A94B]">
+        <div className="mb-8 border-b border-edge pb-4">
+          <p className="text-[10px] font-semibold uppercase tracking-[0.3em] text-maple lowercase">
             Discussion
           </p>
-          <h2 className="serif mt-2 text-3xl font-bold tracking-[-0.02em] text-[#1C3557]">
+          <h2 className="serif mt-2 text-3xl font-normal italic tracking-[-0.01em] text-cream lowercase">
             Feedback
           </h2>
         </div>
 
         <div id="disqus_thread" />
         <noscript>
-          <p className="text-sm text-[#5E5A54]">
+          <p className="text-sm text-mist">
             Enable JavaScript to view comments powered by{" "}
             <a href="https://disqus.com" className="underline">
               Disqus

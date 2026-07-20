@@ -13,8 +13,8 @@ sources:
     url: "https://www.ndp.ca/platform"
   - title: "Leah Gazan MP website"
     url: "https://www.leahgazan.ca/"
-  - title: "CBC News: Leah Gazan holds Winnipeg Centre for NDP in 2025"
-    url: "https://www.cbc.ca/news/politics/leah-gazan-winnipeg-centre-2025-1.7521853"
+  - title: "House of Commons: Leah Gazan, MP for Winnipeg Centre"
+    url: "https://www.ourcommons.ca/members/en/leah-gazan(87121)"
 platformAlignment:
   - promise: "Universal pharmacare and social programs"
     voteSession: "45-1"

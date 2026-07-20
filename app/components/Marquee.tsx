@@ -3,9 +3,9 @@
 import { motion } from "framer-motion";
 
 const ITEMS = [
-  "PARLIAMENT TRACKER", "MEDIA BIAS DETECTOR", "THE FRIED RICE INDEX", "CYFFL",
+  "PARLIAMENT TRACKER", "MEDIA BIAS DETECTOR", "THE CANPOL INDEX", "CYFFL",
   "FREE RESOURCES", "NON-PARTISAN", "CIVIC EDUCATION",
-  "NEGOTIATION", "DATA PROJECTS", "GAMES",
+  "OPEN DATA", "DATA PROJECTS", "INDEPENDENT REPRESENTATION",
   "ECONOMIC LITERACY", "POLITICAL LITERACY", "CANADA",
 ];
 
@@ -13,7 +13,7 @@ export default function Marquee() {
   const doubled = [...ITEMS, ...ITEMS];
 
   return (
-    <div className="overflow-hidden border-y border-[#e5e0d4] bg-[#faf8f5] py-5">
+    <div className="overflow-hidden border-y border-edge bg-ink-2 py-5">
       <motion.div
         animate={{ x: ["0%", "-50%"] }}
         transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
@@ -21,10 +21,10 @@ export default function Marquee() {
       >
         {doubled.map((item, i) => (
           <span key={i} className="flex items-center gap-12">
-            <span className="text-[12px] font-medium tracking-[0.25em] text-[#111f36]/30 whitespace-nowrap lowercase">
+            <span className="text-[12px] font-medium tracking-[0.25em] text-mist/40 whitespace-nowrap lowercase">
               {item}
             </span>
-            <span className="text-[#8b1e1e]/45 text-sm font-semibold">*</span>
+            <span className="text-maple/60 text-sm font-semibold">*</span>
           </span>
         ))}
       </motion.div>

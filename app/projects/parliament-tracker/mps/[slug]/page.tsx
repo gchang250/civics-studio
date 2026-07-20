@@ -26,15 +26,15 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 const alignmentStyles: Record<WhipAlignment, { label: string; className: string }> = {
   with_party: {
     label: "Voted with party",
-    className: "bg-[#f3efe6] text-[#5f697a]",
+    className: "bg-panel-2 text-mist ring-1 ring-inset ring-edge",
   },
   against_party: {
     label: "Broke with party",
-    className: "bg-[#8b1e1e] text-white",
+    className: "bg-maple text-ink",
   },
   no_clear_party_position: {
     label: "No clear party position",
-    className: "bg-[#faf8f5] text-[#5f697a] ring-1 ring-inset ring-[#e5e0d4]",
+    className: "bg-panel text-mist-dim ring-1 ring-inset ring-edge",
   },
 };
 
@@ -62,18 +62,19 @@ export default async function MPProfilePage({ params }: Props) {
   const againstParty = votingRecord.filter((v) => v.alignment === "against_party").length;
 
   return (
-    <div className="bg-[#faf8f5]">
-      <section className="border-b border-[#e5e0d4] bg-[#f3efe6]">
-        <div className="mx-auto max-w-5xl px-5 py-14">
+    <div className="bg-ink">
+      <section className="relative overflow-hidden border-b border-edge bg-ink-2">
+        <div className="glow-maple pointer-events-none absolute right-[4%] top-[-40%] h-[60vh] w-[60vh] opacity-70" />
+        <div className="relative mx-auto max-w-5xl px-5 py-14">
           <Link
             href="/projects/parliament-tracker"
-            className="text-xs font-semibold uppercase tracking-[0.08em] text-[#8b1e1e] hover:underline lowercase"
+            className="text-xs font-semibold uppercase tracking-[0.08em] text-maple hover:text-maple-soft lowercase"
           >
             ← Parliament Tracker
           </Link>
 
           <div className="mt-8 flex flex-wrap items-start gap-6">
-            <div className="relative h-28 w-28 shrink-0 overflow-hidden bg-[#faf8f5] border border-[#e5e0d4]">
+            <div className="relative h-28 w-28 shrink-0 overflow-hidden bg-panel border border-edge">
               {mp.image ? (
                 <Image
                   src={getMPImageUrl(mp.image)}
@@ -83,7 +84,7 @@ export default async function MPProfilePage({ params }: Props) {
                   sizes="112px"
                 />
               ) : (
-                <div className="flex h-full w-full items-center justify-center text-3xl font-bold text-[#111f36]/30">
+                <div className="flex h-full w-full items-center justify-center text-3xl font-bold text-mist/40">
                   {mp.name
                     .split(" ")
                     .map((n) => n[0])
@@ -94,10 +95,10 @@ export default async function MPProfilePage({ params }: Props) {
             </div>
 
             <div className="min-w-0 flex-1">
-              <h1 className="serif text-4xl font-normal italic leading-tight tracking-[-0.02em] text-[#111f36] md:text-5xl lowercase">
+              <h1 className="serif text-4xl font-normal italic leading-tight tracking-[-0.02em] text-cream md:text-5xl lowercase">
                 {mp.name}
               </h1>
-              <p className="mt-2 text-lg text-[#5f697a]">
+              <p className="mt-2 text-lg text-mist">
                 {mp.currentRiding ? `${mp.currentRiding.name}, ${mp.currentRiding.province}` : "Riding unavailable"}
               </p>
               <div className="mt-3 flex flex-wrap items-center gap-2">
@@ -108,14 +109,14 @@ export default async function MPProfilePage({ params }: Props) {
                   {mp.currentParty ?? "Independent"}
                 </span>
                 {profile && (
-                  <span className="px-2.5 py-1 text-[10px] font-semibold uppercase tracking-[0.08em] text-[#8b1e1e] ring-1 ring-inset ring-[#8b1e1e]/30">
+                  <span className="px-2.5 py-1 text-[10px] font-semibold uppercase tracking-[0.08em] text-maple ring-1 ring-inset ring-maple/40">
                     Full profile
                   </span>
                 )}
                 {mp.email && (
                   <a
                     href={`mailto:${mp.email}`}
-                    className="text-xs font-semibold uppercase tracking-[0.08em] text-[#111f36] hover:text-[#8b1e1e] lowercase"
+                    className="text-xs font-semibold uppercase tracking-[0.08em] text-mist hover:text-maple-soft lowercase"
                   >
                     {mp.email}
                   </a>
@@ -127,32 +128,32 @@ export default async function MPProfilePage({ params }: Props) {
       </section>
 
       {/* Voting record */}
-      <section className="bg-[#faf8f5]">
+      <section className="bg-ink">
         <div className="mx-auto max-w-5xl px-5 py-12">
-          <div className="mb-6 border-b border-[#e5e0d4] pb-4">
-            <p className="text-[10px] font-semibold uppercase tracking-[0.3em] text-[#8b1e1e] lowercase">
+          <div className="mb-6 border-b border-edge pb-4">
+            <p className="text-[10px] font-semibold uppercase tracking-[0.3em] text-maple lowercase">
               Voting record
             </p>
-            <h2 className="serif mt-2 text-3xl font-normal italic tracking-[-0.01em] text-[#111f36] lowercase">
+            <h2 className="serif mt-2 text-3xl font-normal italic tracking-[-0.01em] text-cream lowercase">
               Most recent recorded votes
             </h2>
           </div>
 
           {votingRecord.length > 0 && (
             <div className="mb-8 grid gap-4 sm:grid-cols-2">
-              <div className="border border-[#e5e0d4] bg-[#f3efe6] p-4">
-                <p className="serif text-2xl font-normal italic text-[#111f36] lowercase">
+              <div className="border border-edge bg-panel p-4">
+                <p className="serif text-2xl font-normal italic text-cream lowercase">
                   {isIndependent ? "n/a" : `${withParty} / ${votingRecord.length}`}
                 </p>
-                <p className="text-[10px] font-semibold uppercase tracking-[0.08em] text-[#8b1e1e] lowercase">
+                <p className="text-[10px] font-semibold uppercase tracking-[0.08em] text-maple lowercase">
                   Votes with the party line
                 </p>
               </div>
-              <div className="border border-[#e5e0d4] bg-[#f3efe6] p-4">
-                <p className="serif text-2xl font-normal italic text-[#111f36] lowercase">
+              <div className="border border-edge bg-panel p-4">
+                <p className="serif text-2xl font-normal italic text-cream lowercase">
                   {isIndependent ? "n/a" : againstParty}
                 </p>
-                <p className="text-[10px] font-semibold uppercase tracking-[0.08em] text-[#8b1e1e] lowercase">
+                <p className="text-[10px] font-semibold uppercase tracking-[0.08em] text-maple lowercase">
                   Votes against the party line
                 </p>
               </div>
@@ -160,9 +161,9 @@ export default async function MPProfilePage({ params }: Props) {
           )}
 
           {votingRecord.length === 0 ? (
-            <p className="text-[#5f697a] lowercase">No recorded votes found for this MP yet.</p>
+            <p className="text-mist lowercase">No recorded votes found for this MP yet.</p>
           ) : (
-            <div className="divide-y divide-[#e5e0d4]">
+            <div className="divide-y divide-edge">
               {votingRecord.map((entry) => {
                 const style = alignmentStyles[entry.alignment];
                 const partyPosition = entry.vote.partyVotes.find(
@@ -174,7 +175,7 @@ export default async function MPProfilePage({ params }: Props) {
                 return (
                   <div key={`${entry.vote.session}-${entry.vote.number}`} className="py-5">
                     <div className="flex flex-wrap items-center justify-between gap-3">
-                      <p className="text-xs font-semibold uppercase tracking-[0.08em] text-[#5f697a] lowercase">
+                      <p className="text-xs font-semibold uppercase tracking-[0.08em] text-mist-dim lowercase">
                         {new Date(entry.vote.date).toLocaleDateString("en-CA", {
                           year: "numeric",
                           month: "long",
@@ -183,7 +184,7 @@ export default async function MPProfilePage({ params }: Props) {
                         {" · "}Vote #{entry.vote.number} ({entry.vote.session})
                       </p>
                       {isIndependent ? (
-                        <span className="px-2 py-0.5 text-[10px] font-semibold uppercase tracking-[0.08em] bg-[#faf8f5] text-[#5f697a] ring-1 ring-inset ring-[#e5e0d4] lowercase">
+                        <span className="px-2 py-0.5 text-[10px] font-semibold uppercase tracking-[0.08em] bg-panel text-mist-dim ring-1 ring-inset ring-edge lowercase">
                           n/a
                         </span>
                       ) : (
@@ -192,12 +193,12 @@ export default async function MPProfilePage({ params }: Props) {
                         </span>
                       )}
                     </div>
-                    <p className="mt-2 leading-6 text-[#111f36]">{entry.vote.description}</p>
-                    <p className="mt-1 text-sm text-[#5f697a]">
-                      Ballot: <span className="font-semibold">{entry.ballot}</span> · Result: {entry.vote.result}
+                    <p className="mt-2 leading-6 text-cream">{entry.vote.description}</p>
+                    <p className="mt-1 text-sm text-mist">
+                      Ballot: <span className="font-semibold text-cream">{entry.ballot}</span> · Result: {entry.vote.result}
                     </p>
                     {!isIndependent && dissentPct > 0 && (
-                      <p className="mt-1 text-xs italic text-[#5f697a]">
+                      <p className="mt-1 text-xs italic text-mist-dim">
                         {entry.alignment === "against_party"
                           ? `${dissentPct}% of the ${mp.currentParty} caucus also broke ranks on this vote. This wasn't a lone dissent.`
                           : `${dissentPct}% of the ${mp.currentParty} caucus voted differently on this one, even though this MP stuck with the party line.`}
@@ -212,13 +213,13 @@ export default async function MPProfilePage({ params }: Props) {
       </section>
 
       {/* Campaign platform / profile */}
-      <section className="border-t border-[#e5e0d4] bg-[#f3efe6]">
+      <section className="border-t border-edge bg-ink-2">
         <div className="mx-auto max-w-5xl px-5 py-12">
-          <div className="mb-6 border-b border-[#e5e0d4] pb-4">
-            <p className="text-[10px] font-semibold uppercase tracking-[0.3em] text-[#8b1e1e] lowercase">
+          <div className="mb-6 border-b border-edge pb-4">
+            <p className="text-[10px] font-semibold uppercase tracking-[0.3em] text-maple lowercase">
               Campaign platform
             </p>
-            <h2 className="serif mt-2 text-3xl font-normal italic tracking-[-0.01em] text-[#111f36] lowercase">
+            <h2 className="serif mt-2 text-3xl font-normal italic tracking-[-0.01em] text-cream lowercase">
               What they ran on
             </h2>
           </div>
@@ -227,19 +228,19 @@ export default async function MPProfilePage({ params }: Props) {
             <>
               <div className="grid gap-8 md:grid-cols-[0.8fr_1.2fr]">
                 <div>
-                  <p className="text-[10px] font-semibold uppercase tracking-[0.08em] text-[#8b1e1e] lowercase">
+                  <p className="text-[10px] font-semibold uppercase tracking-[0.08em] text-maple lowercase">
                     Key promises
                   </p>
                   <ul className="mt-3 space-y-2">
                     {profile.keyPromises.map((promise, i) => (
-                      <li key={i} className="flex gap-2 text-sm leading-6 text-[#111f36]">
-                        <span className="text-[#8b1e1e]">•</span>
+                      <li key={i} className="flex gap-2 text-sm leading-6 text-cream">
+                        <span className="text-maple">•</span>
                         {promise}
                       </li>
                     ))}
                   </ul>
 
-                  <p className="mt-6 text-[10px] font-semibold uppercase tracking-[0.08em] text-[#8b1e1e] lowercase">
+                  <p className="mt-6 text-[10px] font-semibold uppercase tracking-[0.08em] text-maple lowercase">
                     Sources
                   </p>
                   <ul className="mt-2 space-y-1">
@@ -249,7 +250,7 @@ export default async function MPProfilePage({ params }: Props) {
                           href={s.url}
                           target="_blank"
                           rel="noreferrer"
-                          className="text-sm text-[#111f36] underline decoration-[#e5e0d4] hover:text-[#8b1e1e]"
+                          className="text-sm text-mist underline decoration-edge hover:text-maple-soft"
                         >
                           {s.title}
                         </a>
@@ -259,14 +260,14 @@ export default async function MPProfilePage({ params }: Props) {
                 </div>
 
                 <div
-                  className="article-body text-[#111f36]"
+                  className="article-body"
                   dangerouslySetInnerHTML={{ __html: profile.contentHtml }}
                 />
               </div>
 
               {profile.platformAlignment.length > 0 && (
-                <div className="mt-10 border-t border-[#e5e0d4] pt-8">
-                  <p className="text-[10px] font-semibold uppercase tracking-[0.08em] text-[#8b1e1e] lowercase">
+                <div className="mt-10 border-t border-edge pt-8">
+                  <p className="text-[10px] font-semibold uppercase tracking-[0.08em] text-maple lowercase">
                     How their votes measure up
                   </p>
                   <div className="mt-5 space-y-6">
@@ -274,23 +275,23 @@ export default async function MPProfilePage({ params }: Props) {
                       const vote = alignmentVotes[i];
                       const pct = alignmentPct(entry.rating);
                       return (
-                        <div key={i} className="border border-[#e5e0d4] bg-[#faf8f5] p-5">
-                          <p className="text-sm font-semibold text-[#111f36]">{entry.promise}</p>
+                        <div key={i} className="border border-edge bg-panel p-5">
+                          <p className="text-sm font-semibold text-cream">{entry.promise}</p>
 
-                          <div className="relative mt-4 h-2 w-full max-w-md rounded-full bg-gradient-to-r from-[#8b1e1e] via-[#e5e0d4] to-emerald-600">
+                          <div className="relative mt-4 h-2 w-full max-w-md rounded-full bg-gradient-to-r from-maple via-mist-dim to-[#34d399]">
                             <div
-                              className="absolute top-1/2 h-5 w-5 -translate-y-1/2 -translate-x-1/2 rounded-full border-4 border-white bg-[#111f36] shadow-sm"
+                              className="absolute top-1/2 h-5 w-5 -translate-y-1/2 -translate-x-1/2 rounded-full border-[3px] border-ink bg-cream shadow-[0_0_0_1px_rgba(255,255,255,0.25)]"
                               style={{ left: `${pct}%` }}
                             />
                           </div>
-                          <p className="mt-2 text-[10px] font-semibold uppercase tracking-[0.08em] text-[#8b1e1e] lowercase">
+                          <p className="mt-2 text-[10px] font-semibold uppercase tracking-[0.08em] text-maple lowercase">
                             {ALIGNMENT_LABELS[entry.rating]}
                           </p>
 
-                          <p className="mt-3 text-sm leading-6 text-[#5f697a]">{entry.explanation}</p>
+                          <p className="mt-3 text-sm leading-6 text-mist">{entry.explanation}</p>
 
                           {vote && (
-                            <p className="mt-3 text-xs text-[#5f697a]">
+                            <p className="mt-3 text-xs text-mist-dim">
                               Vote #{vote.number} ({vote.session}),{" "}
                               {new Date(vote.date).toLocaleDateString("en-CA", {
                                 year: "numeric",
@@ -305,7 +306,7 @@ export default async function MPProfilePage({ params }: Props) {
                       );
                     })}
                   </div>
-                  <p className="mt-4 text-xs italic text-[#5f697a] lowercase">
+                  <p className="mt-4 text-xs italic text-mist-dim lowercase">
                     Civics Studio&apos;s editorial judgment, based on the MP&apos;s own stated
                     platform and their actual recorded vote, not the MP&apos;s or party&apos;s
                     characterization.
@@ -314,8 +315,8 @@ export default async function MPProfilePage({ params }: Props) {
               )}
             </>
           ) : (
-            <div className="border border-[#e5e0d4] bg-[#faf8f5] p-8 text-center">
-              <p className="text-[#5f697a]">
+            <div className="border border-edge bg-panel p-8 text-center">
+              <p className="text-mist">
                 A full, sourced campaign-platform profile for {mp.name} hasn&apos;t been
                 researched yet. Their voting record above is still real, live data. This
                 pilot set is expanding over time.

@@ -11,10 +11,8 @@ keyPromises:
 sources:
   - title: "Conservative Party of Canada 2025 Platform"
     url: "https://www.conservative.ca/plan/"
-  - title: "Frank Caputo MP website"
-    url: "https://www.frankcaputo.ca/"
-  - title: "Kamloops This Week: Frank Caputo re-elected in Kamloops—Thompson—Cariboo"
-    url: "https://www.kamloopsthisweek.com/local-news/caputo-wins-kamloops-2025"
+  - title: "House of Commons: Frank Caputo, MP for Kamloops—Thompson—Cariboo"
+    url: "https://www.ourcommons.ca/members/en/frank-caputo(111007)"
 platformAlignment:
   - promise: "Tougher bail and sentencing laws"
     voteSession: "45-1"

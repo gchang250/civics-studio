@@ -62,18 +62,18 @@ const projects = [
 
 export default function ProjectsPage() {
   return (
-    <div className="bg-[#faf8f5]">
-      <section className="border-b border-[#e5e0d4] bg-[#faf8f5]">
+    <div className="bg-ink">
+      <section className="border-b border-edge bg-ink">
         <div className="mx-auto max-w-7xl px-5 py-16 md:py-20">
-          <p className="text-xs font-semibold tracking-[0.25em] text-[#8b1e1e] lowercase">
+          <p className="text-xs font-semibold tracking-[0.25em] text-maple lowercase">
             projects
           </p>
 
-          <h1 className="serif mt-4 max-w-4xl text-5xl font-normal italic leading-tight tracking-[-0.02em] text-[#111f36] md:text-6xl lowercase">
+          <h1 className="serif mt-4 max-w-4xl text-5xl font-normal italic leading-tight tracking-[-0.02em] text-cream md:text-6xl lowercase">
             games, data, and civic tools.
           </h1>
 
-          <p className="mt-6 max-w-3xl text-base leading-8 text-[#5f697a]">
+          <p className="mt-6 max-w-3xl text-base leading-8 text-mist">
             Civics Studio builds practical projects that make politics,
             economics, negotiation, affordability, French learning, and civic
             participation easier to understand.
@@ -81,16 +81,16 @@ export default function ProjectsPage() {
         </div>
       </section>
 
-      <section className="bg-[#faf8f5]">
+      <section className="bg-ink">
         <div className="mx-auto max-w-7xl px-5 py-16">
           <div className="grid gap-8 md:grid-cols-3">
             {projects.map((project) => (
               <div key={project.title} className="flex flex-col">
                 <Link
                   href={project.href}
-                  className="group flex h-full flex-col overflow-hidden border border-[#e5e0d4] bg-[#faf8f5] p-3 transition duration-300 hover:border-[#8b1e1e]/40"
+                  className="group flex h-full flex-col overflow-hidden border border-edge bg-ink p-3 transition duration-300 hover:border-maple/40"
                 >
-                  <div className="relative h-56 overflow-hidden bg-[#f3efe6]">
+                  <div className="relative h-56 overflow-hidden bg-panel">
                     <Image
                       src={project.image}
                       alt={project.imageAlt}
@@ -98,9 +98,9 @@ export default function ProjectsPage() {
                       className="object-cover transition duration-700 group-hover:scale-103"
                     />
 
-                    <div className="absolute inset-0 bg-[#8b1e1e]/5" />
+                    <div className="absolute inset-0 bg-ink/20" />
 
-                    <p className="absolute bottom-3 left-3 text-[10px] font-semibold tracking-[0.2em] bg-[#faf8f5]/90 px-3 py-1.5 text-[#8b1e1e] lowercase">
+                    <p className="absolute bottom-3 left-3 text-[10px] font-semibold tracking-[0.2em] bg-ink/90 px-3 py-1.5 text-maple lowercase">
                       {project.type}
                     </p>
                   </div>
@@ -108,38 +108,38 @@ export default function ProjectsPage() {
                   <div className="flex flex-1 flex-col p-4">
                     <div className="flex items-start justify-between gap-4">
                       <div>
-                        <h2 className="serif text-3xl font-normal italic tracking-[-0.01em] text-[#111f36] lowercase">
+                        <h2 className="serif text-3xl font-normal italic tracking-[-0.01em] text-cream lowercase">
                           {project.title}
                         </h2>
 
                         {"fullName" in project && (
-                          <p className="mt-1.5 text-xs font-semibold leading-5 text-[#5f697a] lowercase">
+                          <p className="mt-1.5 text-xs font-semibold leading-5 text-mist lowercase">
                             {project.fullName}
                           </p>
                         )}
                       </div>
 
-                      <p className="mt-2 shrink-0 text-right text-[10px] font-bold tracking-[0.15em] text-[#5f697a]/60 lowercase">
+                      <p className="mt-2 shrink-0 text-right text-[10px] font-bold tracking-[0.15em] text-mist-dim lowercase">
                         {project.status}
                       </p>
                     </div>
 
-                    <p className="mt-4 text-sm leading-6 text-[#5f697a]">
+                    <p className="mt-4 text-sm leading-6 text-mist">
                       {project.description}
                     </p>
 
-                    <p className="mt-auto pt-6 text-[11px] font-bold tracking-[0.15em] text-[#111f36] transition duration-300 group-hover:text-[#8b1e1e] lowercase">
+                    <p className="mt-auto pt-6 text-[11px] font-bold tracking-[0.15em] text-cream transition duration-300 group-hover:text-maple lowercase">
                       view project →
                     </p>
                   </div>
                 </Link>
 
-                <p className="mt-2 text-right text-[9px] text-[#5f697a]/50 lowercase">
+                <p className="mt-2 text-right text-[9px] text-mist-dim lowercase">
                   <a
                     href={project.photoHref}
                     target="_blank"
                     rel="noreferrer"
-                    className="transition hover:text-[#8b1e1e]"
+                    className="transition hover:text-maple"
                   >
                     photo: {project.photographer} / unsplash
                   </a>

@@ -13,8 +13,8 @@ sources:
     url: "https://www.conservative.ca/plan/"
   - title: "Greg McLean MP website"
     url: "https://www.gregmcleanmp.ca/"
-  - title: "Calgary Herald: Greg McLean re-elected Calgary Centre"
-    url: "https://calgaryherald.com/news/politics/greg-mclean-calgary-centre-2025"
+  - title: "House of Commons: Greg McLean, MP for Calgary Centre"
+    url: "https://www.ourcommons.ca/members/en/greg-mclean(105623)"
 platformAlignment:
   - promise: "Eliminate the carbon tax and Clean Fuel Standard"
     voteSession: "45-1"

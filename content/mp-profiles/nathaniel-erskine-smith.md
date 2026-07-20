@@ -9,10 +9,10 @@ keyPromises:
   - "Housing supply through zoning reform and ending exclusionary single-family zoning"
   - "Digital rights: data privacy reform and breaking up Big Tech monopolies"
 sources:
-  - title: "Nathaniel Erskine-Smith campaign website"
-    url: "https://www.nickerskine-smith.ca/"
-  - title: "CBC News: Erskine-Smith enters Liberal leadership race, then endorses Freeland"
-    url: "https://www.cbc.ca/news/politics/erskine-smith-liberal-leadership-2024-1.7371829"
+  - title: "House of Commons: Nathaniel Erskine-Smith, MP for Beaches—East York"
+    url: "https://www.ourcommons.ca/members/en/nathaniel-erskine-smith(88687)"
+  - title: "Wikipedia: Nate Erskine-Smith"
+    url: "https://en.wikipedia.org/wiki/Nate_Erskine-Smith"
   - title: "Liberal Party 2025 Platform"
     url: "https://liberal.ca/plan/"
 platformAlignment:
@@ -38,6 +38,6 @@ platformAlignment:
     explanation: "Erskine-Smith voted Yes at second reading of Bill C-267 (durability of electronic products and home appliances). While consumer electronics durability isn't core to his digital rights platform, it reflects his general orientation toward regulating corporations to protect consumers."
 ---
 
-Nathaniel Erskine-Smith (known as Nick) has represented Beaches—East York in Toronto since 2015. He ran briefly for the Liberal leadership in 2024 before endorsing Chrystia Freeland. He is one of the party's most outspoken internal critics, having publicly pushed for proportional representation, bolder climate action, and digital rights reform in ways that sometimes put him at odds with the Liberal leadership of the day.
+Nathaniel Erskine-Smith (known as Nick) represented Beaches—East York in Toronto from 2015 until he resigned his seat in July 2026. He served as Minister of Housing, Infrastructure and Communities from December 2024 to May 2025. Throughout his time in the House he was one of the party's most outspoken internal critics, publicly pushing for proportional representation, bolder climate action, and digital rights reform in ways that sometimes put him at odds with the Liberal leadership of the day.
 
-Erskine-Smith is worth watching specifically because his votes occasionally diverge from the Liberal whip position, particularly on issues where he has staked out personal positions publicly. The Voting Record section below is drawn from Parliament's live vote data.
+His record is worth reading because his votes occasionally diverged from the Liberal whip position, particularly on issues where he had staked out personal positions publicly. The voting record below is a historical record of his votes in the 45th Parliament, drawn from Parliament's live vote data.

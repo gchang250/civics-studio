@@ -13,8 +13,8 @@ sources:
     url: "https://liberal.ca/plan/"
   - title: "Kevin Lamoureux MP website"
     url: "https://kevinlamoureux.liberal.ca/"
-  - title: "CBC News: Kevin Lamoureux re-elected in Winnipeg North 2025"
-    url: "https://www.cbc.ca/news/politics/kevin-lamoureux-winnipeg-north-2025-1.7522198"
+  - title: "House of Commons: Kevin Lamoureux, MP for Winnipeg North"
+    url: "https://www.ourcommons.ca/members/en/kevin-lamoureux(30552)"
 platformAlignment:
   - promise: "Expand access to health care and social programs"
     voteSession: "45-1"

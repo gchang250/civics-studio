@@ -31,50 +31,50 @@ const offerings = [
 
 export default function CYFFLPage() {
   return (
-    <div className="bg-[#faf8f5]">
-      <section className="border-b border-[#e5e0d4] bg-[#f3efe6]">
+    <div className="bg-ink">
+      <section className="border-b border-edge bg-panel">
         <div className="mx-auto max-w-7xl px-5 py-14 md:py-18">
           <div className="grid gap-10 lg:grid-cols-[1.25fr_0.75fr]">
             <div>
-              <p className="text-[10px] font-semibold uppercase tracking-[0.3em] text-[#8b1e1e] lowercase">
+              <p className="text-[10px] font-semibold uppercase tracking-[0.3em] text-maple lowercase">
                 french literacy program
               </p>
 
-              <h1 className="serif mt-4 max-w-5xl text-5xl font-normal italic leading-tight tracking-[-0.02em] text-[#111f36] md:text-6xl lowercase">
+              <h1 className="serif mt-4 max-w-5xl text-5xl font-normal italic leading-tight tracking-[-0.02em] text-cream md:text-6xl lowercase">
                 Canadian Youth Foundation for French Literacy
               </h1>
 
-              <p className="mt-5 max-w-3xl text-xl leading-8 text-[#5f697a]">
+              <p className="mt-5 max-w-3xl text-xl leading-8 text-mist">
                 Canada is short nearly 10,000 qualified French teachers. Kids who want to learn French or stay in French Immersion are running out of options. CYFFL is a youth-run program filling that gap with free online resources and local tutoring support.
               </p>
 
               <div className="mt-8 flex flex-col gap-3 sm:flex-row">
                 <CrossSiteLink
                   href="https://canyffl.vercel.app/"
-                  className="border border-[#111f36] px-6 py-3 text-center text-sm font-medium uppercase tracking-[0.08em] text-[#111f36] transition hover:bg-[#8b1e1e] hover:text-white hover:border-[#8b1e1e]"
+                  className="border border-edge px-6 py-3 text-center text-sm font-medium uppercase tracking-[0.08em] text-cream transition hover:bg-maple hover:text-ink hover:border-maple"
                 >
                   Visit the CYFFL website
                 </CrossSiteLink>
 
                 <a
                   href="mailto:canadianyouthffl@gmail.com"
-                  className="border border-[#111f36]/30 px-6 py-3 text-center text-sm font-medium uppercase tracking-[0.08em] text-[#111f36]/70 transition hover:bg-[#8b1e1e] hover:text-white hover:border-[#8b1e1e]"
+                  className="border border-edge px-6 py-3 text-center text-sm font-medium uppercase tracking-[0.08em] text-mist transition hover:bg-maple hover:text-ink hover:border-maple"
                 >
                   Contact CYFFL
                 </a>
               </div>
             </div>
 
-            <aside className="border border-[#e5e0d4] bg-[#faf8f5] p-6">
-              <p className="text-[10px] font-semibold uppercase tracking-[0.3em] text-[#8b1e1e] lowercase">
+            <aside className="border border-edge bg-ink p-6">
+              <p className="text-[10px] font-semibold uppercase tracking-[0.3em] text-maple lowercase">
                 program brief
               </p>
 
-              <h2 className="serif mt-3 text-2xl font-normal italic leading-tight tracking-[-0.01em] text-[#111f36] lowercase">
+              <h2 className="serif mt-3 text-2xl font-normal italic leading-tight tracking-[-0.01em] text-cream lowercase">
                 free french support for students.
               </h2>
 
-              <p className="mt-4 text-sm leading-6 text-[#5f697a]">
+              <p className="mt-4 text-sm leading-6 text-mist">
                 CYFFL helps students work on their French outside of school through study guides, grammar resources, and tutoring from other students who have been through the same curriculum.
               </p>
             </aside>
@@ -82,19 +82,19 @@ export default function CYFFLPage() {
         </div>
       </section>
 
-      <section className="bg-[#faf8f5]">
+      <section className="bg-ink">
         <div className="mx-auto grid max-w-7xl gap-10 px-5 py-12 md:grid-cols-[0.8fr_1.2fr]">
           <div>
-            <p className="text-[10px] font-semibold uppercase tracking-[0.3em] text-[#8b1e1e] lowercase">
+            <p className="text-[10px] font-semibold uppercase tracking-[0.3em] text-maple lowercase">
               overview
             </p>
 
-            <h2 className="serif mt-2 text-3xl font-normal italic tracking-[-0.01em] text-[#111f36] lowercase">
+            <h2 className="serif mt-2 text-3xl font-normal italic tracking-[-0.01em] text-cream lowercase">
               why this matters right now.
             </h2>
           </div>
 
-          <div className="max-w-3xl text-lg leading-8 text-[#5f697a]">
+          <div className="max-w-3xl text-lg leading-8 text-mist">
             <p>
               Canada has two official languages. That&apos;s not just a constitutional fact, it&apos;s supposed to mean something practically. But French Immersion waitlists are growing, FSL classes are being cut, and the teacher shortage is getting worse each year. Students who want to engage with French genuinely have fewer and fewer places to do it.
             </p>
@@ -106,36 +106,36 @@ export default function CYFFLPage() {
         </div>
       </section>
 
-      <section className="border-y border-[#e5e0d4] bg-[#f3efe6]">
+      <section className="border-y border-edge bg-panel">
         <div className="mx-auto max-w-7xl px-5 py-12">
-          <div className="mb-6 border-b border-[#e5e0d4] pb-4">
-            <p className="text-[10px] font-semibold uppercase tracking-[0.3em] text-[#8b1e1e] lowercase">
+          <div className="mb-6 border-b border-edge pb-4">
+            <p className="text-[10px] font-semibold uppercase tracking-[0.3em] text-maple lowercase">
               focus areas
             </p>
 
-            <h2 className="serif mt-2 text-3xl font-normal italic tracking-[-0.01em] text-[#111f36] lowercase">
+            <h2 className="serif mt-2 text-3xl font-normal italic tracking-[-0.01em] text-cream lowercase">
               what CYFFL supports
             </h2>
           </div>
 
-          <div className="grid gap-px bg-[#e5e0d4] sm:grid-cols-2 md:grid-cols-3 border border-[#e5e0d4]">
+          <div className="grid gap-px bg-edge sm:grid-cols-2 md:grid-cols-3 border border-edge">
             {focusAreas.map((area) => (
-              <div key={area} className="bg-[#faf8f5] p-5">
-                <p className="font-semibold text-[#111f36]">{area}</p>
+              <div key={area} className="bg-ink p-5">
+                <p className="font-semibold text-cream">{area}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      <section className="bg-[#faf8f5]">
+      <section className="bg-ink">
         <div className="mx-auto max-w-7xl px-5 py-12">
-          <div className="mb-6 border-b border-[#e5e0d4] pb-4">
-            <p className="text-[10px] font-semibold uppercase tracking-[0.3em] text-[#8b1e1e] lowercase">
+          <div className="mb-6 border-b border-edge pb-4">
+            <p className="text-[10px] font-semibold uppercase tracking-[0.3em] text-maple lowercase">
               programs
             </p>
 
-            <h2 className="serif mt-2 text-3xl font-normal italic tracking-[-0.01em] text-[#111f36] lowercase">
+            <h2 className="serif mt-2 text-3xl font-normal italic tracking-[-0.01em] text-cream lowercase">
               resources, registration, and support
             </h2>
           </div>
@@ -144,13 +144,13 @@ export default function CYFFLPage() {
             {offerings.map((item) => (
               <div
                 key={item.title}
-                className="border border-[#e5e0d4] bg-[#f3efe6] p-6"
+                className="border border-edge bg-panel p-6"
               >
-                <h3 className="serif text-2xl font-normal italic text-[#111f36] lowercase">
+                <h3 className="serif text-2xl font-normal italic text-cream lowercase">
                   {item.title}
                 </h3>
 
-                <p className="mt-4 text-sm leading-6 text-[#5f697a]">
+                <p className="mt-4 text-sm leading-6 text-mist">
                   {item.description}
                 </p>
               </div>
@@ -159,35 +159,35 @@ export default function CYFFLPage() {
         </div>
       </section>
 
-      <section className="bg-[#faf8f5]">
+      <section className="bg-ink">
         <div className="mx-auto max-w-7xl px-5 py-12">
-          <div className="grid gap-8 border-t border-[#e5e0d4] pt-8 md:grid-cols-[0.7fr_1.3fr]">
+          <div className="grid gap-8 border-t border-edge pt-8 md:grid-cols-[0.7fr_1.3fr]">
             <div>
-              <p className="text-[10px] font-semibold uppercase tracking-[0.3em] text-[#8b1e1e] lowercase">
+              <p className="text-[10px] font-semibold uppercase tracking-[0.3em] text-maple lowercase">
                 connection
               </p>
 
-              <h2 className="serif mt-2 text-3xl font-normal italic tracking-[-0.01em] text-[#111f36] lowercase">
+              <h2 className="serif mt-2 text-3xl font-normal italic tracking-[-0.01em] text-cream lowercase">
                 language access is a civic issue.
               </h2>
             </div>
 
             <div>
-              <p className="max-w-3xl text-lg leading-8 text-[#5f697a]">
+              <p className="max-w-3xl text-lg leading-8 text-mist">
                 If Canada is going to take bilingualism seriously, French has to be accessible to students who want to learn it, not just on paper. CYFFL is part of how Civics Studio thinks about public life: access to education, to language, to participation, shouldn&apos;t depend on which school you got into or which province you live in.
               </p>
 
               <div className="mt-6 flex flex-col gap-3 sm:flex-row">
                 <CrossSiteLink
                   href="https://canyffl.vercel.app/"
-                  className="inline-block border border-[#111f36] px-5 py-3 text-center text-sm font-medium uppercase tracking-[0.08em] text-[#111f36] transition hover:bg-[#8b1e1e] hover:text-white hover:border-[#8b1e1e]"
+                  className="inline-block border border-edge px-5 py-3 text-center text-sm font-medium uppercase tracking-[0.08em] text-cream transition hover:bg-maple hover:text-ink hover:border-maple"
                 >
                   Visit the CYFFL website
                 </CrossSiteLink>
 
                 <Link
                   href="/contact"
-                  className="inline-block border border-[#111f36]/30 px-5 py-3 text-center text-sm font-medium uppercase tracking-[0.08em] text-[#111f36]/70 transition hover:bg-[#8b1e1e] hover:text-white hover:border-[#8b1e1e]"
+                  className="inline-block border border-edge px-5 py-3 text-center text-sm font-medium uppercase tracking-[0.08em] text-mist transition hover:bg-maple hover:text-ink hover:border-maple"
                 >
                   Contact Civics Studio
                 </Link>

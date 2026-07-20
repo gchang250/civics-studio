@@ -13,8 +13,8 @@ sources:
     url: "https://www.ndp.ca/platform"
   - title: "Jenny Kwan MP website"
     url: "https://www.jennykwan.ca/"
-  - title: "CBC News: Jenny Kwan wins Vancouver East, holds NDP seat"
-    url: "https://www.cbc.ca/news/politics/jenny-kwan-vancouver-east-2025-1.7521777"
+  - title: "House of Commons: Jenny Kwan, MP for Vancouver East"
+    url: "https://www.ourcommons.ca/members/en/jenny-kwan(89346)"
 platformAlignment:
   - promise: "Non-market public housing"
     voteSession: "45-1"

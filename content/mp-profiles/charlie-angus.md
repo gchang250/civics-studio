@@ -13,8 +13,8 @@ sources:
     url: "https://www.ndp.ca/platform"
   - title: "Charlie Angus MP website"
     url: "https://charlieangus.ndp.ca/"
-  - title: "CBC News: Longtime NDP MP Charlie Angus says he won't seek re-election"
-    url: "https://www.cbc.ca/news/politics/charlie-angus-not-seeking-reelection-1.7163836"
+  - title: "CTV News: Long-time Timmins—James Bay MP Charlie Angus will not run for re-election"
+    url: "https://www.ctvnews.ca/northern-ontario/article/long-time-timmins-james-bay-mp-charlie-angus-will-not-run-for-re-election/"
 platformAlignment:
   - promise: "End long-term drinking water advisories on reserves / support Indigenous communities"
     voteSession: "44-1"

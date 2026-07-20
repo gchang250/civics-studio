@@ -48,12 +48,12 @@ export default function MPDirectory({ mps, profiledSlugs }: Props) {
           value={query}
           onChange={(e) => setQuery(e.target.value)}
           placeholder="Search by name or riding…"
-          className="border border-[#e5e0d4] bg-[#faf8f5] px-4 py-2.5 text-[#111f36] placeholder:text-[#5f697a]/50 focus:border-[#8b1e1e] focus:outline-none"
+          className="border border-edge bg-panel px-4 py-2.5 text-cream placeholder:text-mist-dim focus:border-maple focus:outline-none"
         />
         <select
           value={party}
           onChange={(e) => setParty(e.target.value)}
-          className="border border-[#e5e0d4] bg-[#faf8f5] px-4 py-2.5 text-[#111f36] focus:border-[#8b1e1e] focus:outline-none"
+          className="border border-edge bg-panel px-4 py-2.5 text-cream focus:border-maple focus:outline-none"
         >
           {parties.map((p) => (
             <option key={p} value={p}>
@@ -64,7 +64,7 @@ export default function MPDirectory({ mps, profiledSlugs }: Props) {
         <select
           value={province}
           onChange={(e) => setProvince(e.target.value)}
-          className="border border-[#e5e0d4] bg-[#faf8f5] px-4 py-2.5 text-[#111f36] focus:border-[#8b1e1e] focus:outline-none"
+          className="border border-edge bg-panel px-4 py-2.5 text-cream focus:border-maple focus:outline-none"
         >
           {provinces.map((p) => (
             <option key={p} value={p}>
@@ -74,7 +74,7 @@ export default function MPDirectory({ mps, profiledSlugs }: Props) {
         </select>
       </div>
 
-      <p className="mb-6 text-[10px] font-semibold uppercase tracking-[0.1em] text-[#8b1e1e] lowercase">
+      <p className="mb-6 text-[10px] font-semibold uppercase tracking-[0.1em] text-maple lowercase">
         {filtered.length} of {mps.length} MPs
       </p>
 
@@ -87,9 +87,9 @@ export default function MPDirectory({ mps, profiledSlugs }: Props) {
             <Link
               key={mp.slug}
               href={`/projects/parliament-tracker/mps/${mp.slug}`}
-              className="group flex gap-4 border border-[#e5e0d4] bg-[#f3efe6] p-4 transition hover:border-[#8b1e1e]/40"
+              className="card-hover group flex gap-4 border border-edge bg-panel p-4"
             >
-              <div className="relative h-16 w-16 shrink-0 overflow-hidden bg-[#faf8f5]">
+              <div className="relative h-16 w-16 shrink-0 overflow-hidden bg-ink-2 ring-1 ring-edge">
                 {mp.image ? (
                   <Image
                     src={getMPImageUrl(mp.image)}
@@ -99,7 +99,7 @@ export default function MPDirectory({ mps, profiledSlugs }: Props) {
                     sizes="64px"
                   />
                 ) : (
-                  <div className="flex h-full w-full items-center justify-center text-lg font-bold text-[#111f36]/30">
+                  <div className="flex h-full w-full items-center justify-center text-lg font-bold text-mist/40">
                     {mp.name
                       .split(" ")
                       .map((n) => n[0])
@@ -110,10 +110,10 @@ export default function MPDirectory({ mps, profiledSlugs }: Props) {
               </div>
 
               <div className="min-w-0 flex-1">
-                <p className="truncate font-semibold text-[#111f36] group-hover:text-[#8b1e1e]">
+                <p className="truncate font-semibold text-cream group-hover:text-maple-soft">
                   {mp.name}
                 </p>
-                <p className="mt-0.5 truncate text-sm text-[#5f697a]">
+                <p className="mt-0.5 truncate text-sm text-mist">
                   {mp.riding}, {mp.province}
                 </p>
                 <div className="mt-2 flex flex-wrap items-center gap-1.5">
@@ -124,7 +124,7 @@ export default function MPDirectory({ mps, profiledSlugs }: Props) {
                     {mp.party}
                   </span>
                   {hasFullProfile && (
-                    <span className="px-2 py-0.5 text-[10px] font-semibold uppercase tracking-[0.08em] text-[#8b1e1e] ring-1 ring-inset ring-[#8b1e1e]/30">
+                    <span className="px-2 py-0.5 text-[10px] font-semibold uppercase tracking-[0.08em] text-maple ring-1 ring-inset ring-maple/40">
                       Full profile
                     </span>
                   )}
@@ -136,7 +136,7 @@ export default function MPDirectory({ mps, profiledSlugs }: Props) {
       </div>
 
       {filtered.length === 0 && (
-        <p className="py-12 text-center text-[#5f697a] lowercase">
+        <p className="py-12 text-center text-mist lowercase">
           No MPs match those filters.
         </p>
       )}

@@ -60,14 +60,14 @@ export default function RootLayout({
       <body className={`${sourceSans.variable} ${libreBaskerville.variable}`}>
 
         {/* ── Utility bar ─────────────────────────────────── */}
-        <div className="border-b border-[#e5e0d4] bg-[#f3efe6]">
+        <div className="border-b border-edge-soft bg-ink-2">
           <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-2">
-            <span className="text-[10px] font-semibold uppercase tracking-[0.3em] text-[#5f697a]">
+            <span className="text-[10px] font-semibold uppercase tracking-[0.3em] text-mist-dim">
               Non-Partisan Civic Education
             </span>
             <a
               href="mailto:civicsstudio@gmail.com"
-              className="text-[10px] tracking-[0.05em] text-[#5f697a] transition hover:text-[#8b1e1e]"
+              className="text-[10px] tracking-[0.05em] text-mist-dim transition hover:text-maple-soft"
             >
               civicsstudio@gmail.com
             </a>
@@ -75,7 +75,7 @@ export default function RootLayout({
         </div>
 
         {/* ── Navbar ──────────────────────────────────────── */}
-        <header className="sticky top-0 z-50 border-b border-[#e5e0d4] bg-[#faf8f5]/90 backdrop-blur-md relative">
+        <header className="sticky top-0 z-50 border-b border-edge bg-ink/80 backdrop-blur-xl">
           <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-6">
 
             {/* Logo */}
@@ -85,11 +85,12 @@ export default function RootLayout({
                   src="/seal.png"
                   alt="Civics Studio seal"
                   fill
+                  sizes="32px"
                   className="object-contain"
                   priority
                 />
               </div>
-              <span className="serif text-lg font-bold tracking-tight text-[#111f36]">
+              <span className="serif text-lg font-bold tracking-tight text-cream">
                 civics studio.
               </span>
             </Link>
@@ -100,7 +101,7 @@ export default function RootLayout({
                 <Link
                   key={item.href}
                   href={item.href}
-                  className="text-[12px] font-medium tracking-[0.2em] text-[#111f36]/65 transition duration-300 hover:text-[#8b1e1e] lowercase"
+                  className="text-[12px] font-medium tracking-[0.2em] text-mist transition duration-300 hover:text-maple-soft lowercase"
                 >
                   {item.label}
                 </Link>
@@ -114,64 +115,80 @@ export default function RootLayout({
         <main>{children}</main>
 
         {/* ── Footer ──────────────────────────────────────── */}
-        <footer className="border-t border-[#e5e0d4] bg-[#f3efe6] text-[#111f36]">
+        <footer className="border-t border-edge bg-ink-2 text-cream">
           <div className="mx-auto grid max-w-7xl gap-12 px-6 py-16 md:grid-cols-[2fr_1fr_1fr]">
 
             <div>
               <Link href="/" className="flex items-center gap-3 group">
                 <div className="relative w-10 h-10 opacity-90 group-hover:opacity-100 transition duration-300">
-                  <Image src="/seal.png" alt="Civics Studio seal" fill className="object-contain" />
+                  <Image src="/seal.png" alt="Civics Studio seal" fill sizes="40px" className="object-contain" />
                 </div>
                 <div>
-                  <span className="serif block text-xl font-bold text-[#111f36]">civics studio.</span>
-                  <span className="block text-[10px] uppercase tracking-[0.2em] text-[#5f697a]/60">Est. 2026</span>
+                  <span className="serif block text-xl font-bold text-cream">civics studio.</span>
+                  <span className="block text-[10px] uppercase tracking-[0.2em] text-mist-dim">Est. 2026</span>
                 </div>
               </Link>
-              <p className="mt-6 max-w-sm text-sm leading-7 text-[#5f697a]">
+              <p className="mt-6 max-w-sm text-sm leading-7 text-mist">
                 Free games, data projects, and civic learning resources for
                 students and educators in Canada and beyond.
               </p>
-              <p className="mt-6 text-[10px] uppercase tracking-[0.2em] text-[#8b1e1e] font-semibold">
+              <p className="mt-6 text-[10px] uppercase tracking-[0.2em] text-maple font-semibold">
                 For independent representation in Canada.
               </p>
             </div>
 
             <div>
-              <p className="text-[11px] font-bold uppercase tracking-[0.25em] text-[#8b1e1e]">
+              <p className="text-[11px] font-bold uppercase tracking-[0.25em] text-maple">
                 Projects
               </p>
               <div className="mt-5 flex flex-col gap-3 text-sm">
-                <Link href="/projects/parliament-tracker" className="text-[#111f36]/70 transition hover:text-[#8b1e1e]">
+                <Link href="/projects/parliament-tracker" className="text-mist transition hover:text-maple-soft">
                   Parliament Tracker
                 </Link>
-                <Link href="/projects/media-bias-tracker" className="text-[#111f36]/70 transition hover:text-[#8b1e1e]">
+                <Link href="/projects/media-bias-tracker" className="text-mist transition hover:text-maple-soft">
                   Media Bias Detector
                 </Link>
-                <Link href="/projects/fried-rice-index" className="text-[#111f36]/70 transition hover:text-[#8b1e1e]">
+                <Link href="/projects/fried-rice-index" className="text-mist transition hover:text-maple-soft">
                   The CanPol Index
                 </Link>
-                <Link href="/projects/cyffl" className="text-[#111f36]/70 transition hover:text-[#8b1e1e]">
+                <Link href="/projects/cyffl" className="text-mist transition hover:text-maple-soft">
                   CYFFL
                 </Link>
               </div>
             </div>
 
             <div>
-              <p className="text-[11px] font-bold uppercase tracking-[0.25em] text-[#8b1e1e]">
+              <p className="text-[11px] font-bold uppercase tracking-[0.25em] text-maple">
                 Site
               </p>
               <div className="mt-5 flex flex-col gap-3 text-sm">
-                <Link href="/mission" className="text-[#111f36]/70 transition hover:text-[#8b1e1e]">Mission</Link>
-                <Link href="/about" className="text-[#111f36]/70 transition hover:text-[#8b1e1e]">About</Link>
-                <Link href="/contact" className="text-[#111f36]/70 transition hover:text-[#8b1e1e]">Contact</Link>
+                <Link href="/mission" className="text-mist transition hover:text-maple-soft">Mission</Link>
+                <Link href="/about" className="text-mist transition hover:text-maple-soft">About</Link>
+                <Link href="/contact" className="text-mist transition hover:text-maple-soft">Contact</Link>
               </div>
             </div>
           </div>
 
-          <div className="border-t border-[#e5e0d4] px-6 py-5">
-            <p className="mx-auto max-w-7xl text-[10px] uppercase tracking-[0.2em] text-[#5f697a]/50">
-              © {new Date().getFullYear()} Civics Studio · All rights reserved
-            </p>
+          <div className="border-t border-edge-soft px-6 py-5">
+            <div className="mx-auto flex max-w-7xl flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+              <p className="text-[10px] uppercase tracking-[0.2em] text-mist-dim">
+                © {new Date().getFullYear()} Civics Studio · All rights reserved
+              </p>
+              <div className="flex items-center gap-5">
+                <Link
+                  href="/privacy"
+                  className="text-[10px] uppercase tracking-[0.2em] text-mist-dim transition hover:text-maple-soft"
+                >
+                  Privacy Policy
+                </Link>
+                <Link
+                  href="/terms"
+                  className="text-[10px] uppercase tracking-[0.2em] text-mist-dim transition hover:text-maple-soft"
+                >
+                  Terms of Service
+                </Link>
+              </div>
+            </div>
           </div>
         </footer>
 

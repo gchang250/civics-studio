@@ -64,15 +64,15 @@ export default function Comments({ pageId }: Props) {
   }
 
   return (
-    <section className="border-t border-[#D8D0C3] bg-white">
+    <section className="border-t border-edge bg-ink-2">
       <div className="mx-auto max-w-7xl px-5 py-12">
 
         {/* Header */}
-        <div className="mb-8 border-b-2 border-[#C9A94B] pb-4">
-          <p className="text-xs font-bold uppercase tracking-[0.18em] text-[#C9A94B]">
+        <div className="mb-8 border-b border-edge pb-4">
+          <p className="text-[10px] font-semibold uppercase tracking-[0.3em] text-maple lowercase">
             Discussion
           </p>
-          <h2 className="serif mt-2 text-3xl font-bold tracking-[-0.02em] text-[#1C3557]">
+          <h2 className="serif mt-2 text-3xl font-normal italic tracking-[-0.01em] text-cream lowercase">
             Feedback
           </h2>
         </div>
@@ -80,18 +80,18 @@ export default function Comments({ pageId }: Props) {
         {/* Comment list */}
         <div className="mb-10">
           {loading ? (
-            <p className="text-sm text-[#5E5A54]">Loading…</p>
+            <p className="text-sm text-mist">Loading…</p>
           ) : comments.length === 0 ? (
-            <p className="text-sm text-[#5E5A54]">
+            <p className="text-sm text-mist">
               No feedback yet. Be the first to leave a comment.
             </p>
           ) : (
-            <div className="divide-y divide-[#D8D0C3]">
+            <div className="divide-y divide-edge">
               {comments.map((c) => (
                 <div key={c.id} className="py-6">
                   <div className="flex flex-wrap items-baseline gap-3">
-                    <p className="font-bold text-[#1C3557]">{c.author}</p>
-                    <p className="text-xs text-[#5E5A54]">
+                    <p className="font-semibold text-cream">{c.author}</p>
+                    <p className="text-xs text-mist-dim">
                       {new Date(c.created_at).toLocaleDateString("en-CA", {
                         year: "numeric",
                         month: "long",
@@ -99,7 +99,7 @@ export default function Comments({ pageId }: Props) {
                       })}
                     </p>
                   </div>
-                  <p className="mt-2 leading-7 text-[#5E5A54]">{c.body}</p>
+                  <p className="mt-2 leading-7 text-mist">{c.body}</p>
                 </div>
               ))}
             </div>
@@ -107,20 +107,20 @@ export default function Comments({ pageId }: Props) {
         </div>
 
         {/* Submit form */}
-        <div className="border-t-2 border-[#C9A94B] pt-8">
-          <h3 className="serif text-2xl font-bold text-[#1C3557]">
+        <div className="border-t border-edge pt-8">
+          <h3 className="serif text-2xl font-normal italic text-cream lowercase">
             Leave feedback
           </h3>
 
           {submitted && (
-            <p className="mt-4 text-sm font-bold text-[#C9A94B]">
+            <p className="mt-4 text-sm font-semibold text-maple">
               Thanks for your feedback!
             </p>
           )}
 
           <form onSubmit={handleSubmit} className="mt-6 grid max-w-xl gap-4">
             <div>
-              <label className="text-xs font-bold uppercase tracking-[0.12em] text-[#5E5A54]">
+              <label className="text-[10px] font-semibold uppercase tracking-[0.12em] text-mist">
                 Name
               </label>
               <input
@@ -130,12 +130,12 @@ export default function Comments({ pageId }: Props) {
                 required
                 maxLength={80}
                 placeholder="Your name"
-                className="mt-1 block w-full border border-[#D8D0C3] bg-[#FAF7F0] px-4 py-2 text-[#1C3557] placeholder:text-[#5E5A54]/50 focus:border-[#C9A94B] focus:outline-none"
+                className="mt-1 block w-full border border-edge bg-panel px-4 py-2 text-cream placeholder:text-mist-dim focus:border-maple focus:outline-none"
               />
             </div>
 
             <div>
-              <label className="text-xs font-bold uppercase tracking-[0.12em] text-[#5E5A54]">
+              <label className="text-[10px] font-semibold uppercase tracking-[0.12em] text-mist">
                 Comment
               </label>
               <textarea
@@ -145,18 +145,18 @@ export default function Comments({ pageId }: Props) {
                 maxLength={1000}
                 rows={4}
                 placeholder="Share your thoughts on this project…"
-                className="mt-1 block w-full resize-none border border-[#D8D0C3] bg-[#FAF7F0] px-4 py-2 text-[#1C3557] placeholder:text-[#5E5A54]/50 focus:border-[#C9A94B] focus:outline-none"
+                className="mt-1 block w-full resize-none border border-edge bg-panel px-4 py-2 text-cream placeholder:text-mist-dim focus:border-maple focus:outline-none"
               />
             </div>
 
             {error && (
-              <p className="text-sm text-red-600">{error}</p>
+              <p className="text-sm text-maple-soft">{error}</p>
             )}
 
             <button
               type="submit"
               disabled={submitting}
-              className="justify-self-start bg-[#1C3557] px-6 py-3 text-sm font-bold uppercase tracking-[0.08em] text-white transition hover:bg-[#C9A94B] hover:text-[#1C3557] disabled:opacity-50"
+              className="justify-self-start bg-maple px-6 py-3 text-sm font-bold uppercase tracking-[0.08em] text-ink transition hover:shadow-[0_0_26px_-6px_rgba(249,85,61,0.7)] disabled:opacity-50"
             >
               {submitting ? "Posting…" : "Post comment"}
             </button>

@@ -91,13 +91,13 @@ export default function StickyProjects() {
       style={{ height: `${projects.length * 100}vh` }}
       className="relative"
     >
-      <div className="sticky top-0 h-screen overflow-hidden bg-[#faf8f5]">
+      <div className="sticky top-0 h-screen overflow-hidden bg-ink">
         <div className="grid h-full lg:grid-cols-[1fr_1fr]">
 
           {/* Left — text */}
           <div className="flex flex-col justify-center px-8 py-16 md:px-16 lg:px-20 relative">
             {/* Fine architectural line dividers */}
-            <div className="absolute inset-y-0 right-0 w-px bg-[#e5e0d4]/60 pointer-events-none hidden lg:block" />
+            <div className="absolute inset-y-0 right-0 w-px bg-edge/60 pointer-events-none hidden lg:block" />
 
             {/* Progress indicators */}
             <div className="mb-14 flex items-center gap-3">
@@ -106,7 +106,7 @@ export default function StickyProjects() {
                   key={i}
                   animate={{
                     width: i === activeIndex ? 48 : 16,
-                    backgroundColor: i === activeIndex ? "#8b1e1e" : "#e5e0d4",
+                    backgroundColor: i === activeIndex ? "#f9553d" : "#253048",
                   }}
                   transition={{ duration: 0.4 }}
                   className="h-0.5 rounded-full"
@@ -122,21 +122,21 @@ export default function StickyProjects() {
                 exit={{ opacity: 0, y: -15 }}
                 transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
               >
-                <p className="text-[11px] font-semibold tracking-[0.25em] text-[#8b1e1e] lowercase">
+                <p className="text-[11px] font-semibold tracking-[0.25em] text-maple lowercase">
                   {active.number} · {active.type}
                 </p>
 
-                <h2 className="serif mt-5 text-[clamp(2.4rem,4.8vw,3.6rem)] font-normal italic leading-[1.1] tracking-[-0.02em] text-[#111f36]">
+                <h2 className="serif mt-5 text-[clamp(2.4rem,4.8vw,3.6rem)] font-normal italic leading-[1.1] tracking-[-0.02em] text-cream">
                   {active.title}
                 </h2>
 
-                <p className="mt-6 max-w-md text-base leading-8 text-[#5f697a]">
+                <p className="mt-6 max-w-md text-base leading-8 text-mist">
                   {active.description}
                 </p>
 
                 <Link
                   href={active.href}
-                  className="mt-10 inline-flex items-center gap-2 border border-[#111f36] px-7 py-3.5 text-[12px] font-bold uppercase tracking-[0.2em] text-[#111f36] transition duration-300 hover:bg-[#8b1e1e] hover:border-[#8b1e1e] hover:text-white bg-transparent lowercase"
+                  className="mt-10 inline-flex items-center gap-2 bg-maple px-7 py-3.5 text-[12px] font-bold uppercase tracking-[0.2em] text-ink transition duration-300 hover:shadow-[0_0_30px_-4px_rgba(249,85,61,0.6)] lowercase"
                 >
                   {active.cta}
                   <span>→</span>
@@ -146,7 +146,7 @@ export default function StickyProjects() {
           </div>
 
           {/* Right — photo */}
-          <div className="relative hidden overflow-hidden lg:block">
+          <div className="relative hidden overflow-hidden lg:block border-l border-edge">
             <AnimatePresence mode="wait">
               <motion.div
                 key={`img-${activeIndex}`}
@@ -154,21 +154,22 @@ export default function StickyProjects() {
                 animate={{ clipPath: "polygon(0 0%, 100% 0%, 100% 100%, 0 100%)", scale: 1 }}
                 exit={{ opacity: 0, scale: 0.98 }}
                 transition={{ duration: 0.85, ease: [0.16, 1, 0.3, 1] }}
-                className="absolute inset-0 bg-[#f3efe6]"
+                className="absolute inset-0 bg-panel"
               >
                 <Image
                   src={active.image}
                   alt={active.imageAlt}
                   fill
+                  sizes="50vw"
                   className="object-cover"
                   priority
                 />
-                <div className="absolute inset-0 bg-[#8b1e1e]/5" />
+                <div className="absolute inset-0 bg-gradient-to-t from-ink/70 via-ink/10 to-transparent" />
                 <a
                   href={active.photoHref}
                   target="_blank"
                   rel="noreferrer"
-                  className="absolute bottom-2 right-3 text-[10px] text-white/40 hover:text-white/70 transition lowercase"
+                  className="absolute bottom-2 right-3 text-[10px] text-cream/40 hover:text-cream/70 transition lowercase"
                 >
                   photo: {active.photographer} / unsplash
                 </a>

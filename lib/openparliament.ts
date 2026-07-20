@@ -23,16 +23,77 @@ interface PaginatedResponse<T> {
   pagination: Pagination;
 }
 
+// Global concurrency limiter for openparliament requests.
+//
+// A cold MP-profile render fans out ~18 requests at once (12 recent-vote
+// details + the ballots list + ~6 cited-vote details). openparliament (behind
+// Cloudflare) rate-limits *concurrency* aggressively: firing 12 requests at
+// once returns mostly 429s, and even 2 in parallel get connection-reset, while
+// fully serial requests succeed 100% of the time. Because getVoteDetail/
+// getMPBallots swallow a failed fetch into `null`, each dropped request silently
+// removed a real vote from the server-rendered HTML — which is exactly why a
+// plain refresh (warm data cache, no live burst) appeared to "fix" it.
+//
+// So we serialize: one live request in flight at a time. Cache hits resolve
+// instantly and release immediately, so warm renders pay no penalty; only the
+// first cold render pays the (one-time, then cached) serial cost.
+const MAX_CONCURRENT = 1;
+let activeRequests = 0;
+const pending: Array<() => void> = [];
+
+function acquireSlot(): Promise<void> {
+  if (activeRequests < MAX_CONCURRENT) {
+    activeRequests++;
+    return Promise.resolve();
+  }
+  // Blocked: wait for a release() to hand us its slot (activeRequests unchanged).
+  return new Promise<void>((resolve) => pending.push(resolve));
+}
+
+function releaseSlot(): void {
+  const next = pending.shift();
+  if (next) {
+    next(); // pass the slot straight to the next waiter; count stays the same
+  } else {
+    activeRequests--;
+  }
+}
+
 async function fetchJSON<T>(path: string, revalidateSeconds: number): Promise<T> {
   const url = `${API_BASE}${path}${path.includes("?") ? "&" : "?"}format=json`;
-  const res = await fetch(url, {
-    headers: { "User-Agent": USER_AGENT },
-    next: { revalidate: revalidateSeconds },
-  });
-  if (!res.ok) {
-    throw new Error(`openparliament request failed (${res.status}): ${url}`);
+
+  // Retry transient failures (429/5xx and network blips) with jittered backoff;
+  // never retry a genuine 4xx like a 404 (the resource simply isn't there).
+  const MAX_ATTEMPTS = 4;
+  let lastError: unknown;
+  for (let attempt = 1; attempt <= MAX_ATTEMPTS; attempt++) {
+    let retryable = false;
+    await acquireSlot();
+    try {
+      const res = await fetch(url, {
+        headers: { "User-Agent": USER_AGENT },
+        next: { revalidate: revalidateSeconds },
+      });
+      if (res.ok) {
+        return (await res.json()) as T;
+      }
+      retryable = res.status === 429 || res.status >= 500;
+      lastError = new Error(`openparliament request failed (${res.status}): ${url}`);
+    } catch (err) {
+      // Network/DNS/timeout errors are transient — worth another attempt.
+      retryable = true;
+      lastError = err;
+    } finally {
+      releaseSlot();
+    }
+    if (!retryable || attempt === MAX_ATTEMPTS) throw lastError;
+    // Jittered backoff (~500/1000/1500ms + up to 300ms). A 429 here means the
+    // (shared, on Vercel) egress IP is genuinely throttled, so give it room.
+    await new Promise((resolve) =>
+      setTimeout(resolve, attempt * 500 + Math.random() * 300)
+    );
   }
-  return res.json() as Promise<T>;
+  throw lastError ?? new Error(`openparliament request failed: ${url}`);
 }
 
 function slugFromUrl(url: string): string {

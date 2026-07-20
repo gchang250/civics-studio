@@ -2,24 +2,24 @@ import Image from "next/image";
 
 export default function AboutPage() {
   return (
-    <div className="bg-[#faf8f5]">
+    <div className="bg-ink">
       {/* Hero — split layout */}
-      <section className="border-b border-[#e5e0d4] bg-[#faf8f5]">
+      <section className="border-b border-edge bg-ink">
         <div className="mx-auto grid max-w-7xl lg:grid-cols-[1fr_1fr] relative">
           {/* Divider line */}
-          <div className="absolute inset-y-0 left-1/2 w-px bg-[#e5e0d4]/60 pointer-events-none hidden lg:block" />
+          <div className="absolute inset-y-0 left-1/2 w-px bg-edge/60 pointer-events-none hidden lg:block" />
 
           {/* Left — text */}
           <div className="flex flex-col justify-center px-5 py-16 md:py-20 lg:pr-12">
-            <p className="text-xs font-semibold tracking-[0.25em] text-[#8b1e1e] lowercase">
+            <p className="text-xs font-semibold tracking-[0.25em] text-maple lowercase">
               about
             </p>
 
-            <h1 className="serif mt-4 text-5xl font-normal italic leading-tight tracking-[-0.02em] text-[#111f36] md:text-6xl lowercase">
+            <h1 className="serif mt-4 text-5xl font-normal italic leading-tight tracking-[-0.02em] text-cream md:text-6xl lowercase">
               Civics Studio is a youth-led Canadian civic education project.
             </h1>
 
-            <p className="mt-6 max-w-xl text-base leading-8 text-[#5f697a]">
+            <p className="mt-6 max-w-xl text-base leading-8 text-mist">
               The project creates free games, data tools, and learning resources
               that make politics, economics, and government more accessible and
               easier to understand.
@@ -35,12 +35,12 @@ export default function AboutPage() {
               className="object-cover"
               priority
             />
-            <div className="absolute inset-0 bg-[#8b1e1e]/5" />
+            <div className="absolute inset-0 bg-ink/20" />
             <a
               href="https://unsplash.com/photos/black-office-chair-near-brown-wooden-table-gM3Y8yihnIM"
               target="_blank"
               rel="noreferrer"
-              className="absolute bottom-2 right-3 text-[10px] text-white/40 hover:text-white/70 transition lowercase"
+              className="absolute bottom-2 right-3 text-[10px] text-cream/40 hover:text-cream/70 transition lowercase"
             >
               photo: Campaign Creators / unsplash
             </a>
@@ -49,18 +49,18 @@ export default function AboutPage() {
       </section>
 
       {/* Mission */}
-      <section className="bg-[#faf8f5]">
+      <section className="bg-ink">
         <div className="mx-auto grid max-w-7xl gap-10 px-5 py-16 md:grid-cols-[0.8fr_1.2fr]">
           <div>
-            <p className="text-xs font-semibold tracking-[0.25em] text-[#8b1e1e] lowercase">
+            <p className="text-xs font-semibold tracking-[0.25em] text-maple lowercase">
               mission
             </p>
-            <h2 className="serif mt-2 text-3xl font-normal italic tracking-[-0.01em] text-[#111f36] lowercase">
+            <h2 className="serif mt-2 text-3xl font-normal italic tracking-[-0.01em] text-cream lowercase">
               Promoting independent representation in Canada.
             </h2>
           </div>
 
-          <p className="max-w-3xl text-base leading-8 text-[#5f697a]">
+          <p className="max-w-3xl text-base leading-8 text-mist">
             Canada&apos;s House of Commons has 343 elected members. Party discipline
             and whipping routinely collapse those voices into two effective
             factions. Civics Studio was built to help Canadians understand how
@@ -71,16 +71,16 @@ export default function AboutPage() {
       </section>
 
       {/* Current work */}
-      <section className="border-y border-[#e5e0d4] bg-[#f3efe6]">
+      <section className="border-y border-edge bg-panel">
         <div className="mx-auto grid max-w-7xl gap-8 px-5 py-16 md:grid-cols-2">
-          <div className="bg-[#faf8f5] p-8 border border-[#e5e0d4] transition duration-300 hover:border-[#8b1e1e]/40">
-            <p className="text-xs font-semibold tracking-[0.25em] text-[#8b1e1e] lowercase">
+          <div className="bg-ink p-8 border border-edge transition duration-300 hover:border-maple/40">
+            <p className="text-xs font-semibold tracking-[0.25em] text-maple lowercase">
               current work
             </p>
-            <h2 className="serif mt-3 text-3xl font-normal italic tracking-[-0.01em] text-[#111f36] lowercase">
+            <h2 className="serif mt-3 text-3xl font-normal italic tracking-[-0.01em] text-cream lowercase">
               Games and data projects.
             </h2>
-            <p className="mt-4 text-sm leading-7 text-[#5f697a]">
+            <p className="mt-4 text-sm leading-7 text-mist">
               Parliament Tracker and Media Bias Detector use
               Parliament&apos;s own open data and AI-assisted analysis to make
               whip pressure and media framing visible. The Fried
@@ -89,14 +89,14 @@ export default function AboutPage() {
             </p>
           </div>
 
-          <div className="bg-[#faf8f5] p-8 border border-[#e5e0d4] transition duration-300 hover:border-[#8b1e1e]/40">
-            <p className="text-xs font-semibold tracking-[0.25em] text-[#8b1e1e] lowercase">
+          <div className="bg-ink p-8 border border-edge transition duration-300 hover:border-maple/40">
+            <p className="text-xs font-semibold tracking-[0.25em] text-maple lowercase">
               approach
             </p>
-            <h2 className="serif mt-3 text-3xl font-normal italic tracking-[-0.01em] text-[#111f36] lowercase">
+            <h2 className="serif mt-3 text-3xl font-normal italic tracking-[-0.01em] text-cream lowercase">
               Interactive, accessible, non-partisan.
             </h2>
-            <p className="mt-4 text-sm leading-7 text-[#5f697a]">
+            <p className="mt-4 text-sm leading-7 text-mist">
               Civics Studio focuses on practical formats: games, simulations,
               indexes, guides, and resources that make civic and economic
               systems easier to discuss and understand.
@@ -106,19 +106,19 @@ export default function AboutPage() {
       </section>
 
       {/* Non-partisan */}
-      <section className="bg-[#faf8f5]">
+      <section className="bg-ink">
         <div className="mx-auto max-w-7xl px-5 py-16">
-          <div className="grid gap-8 border-t border-[#e5e0d4] pt-12 md:grid-cols-[0.8fr_1.2fr]">
+          <div className="grid gap-8 border-t border-edge pt-12 md:grid-cols-[0.8fr_1.2fr]">
             <div>
-              <p className="text-xs font-semibold tracking-[0.25em] text-[#8b1e1e] lowercase">
+              <p className="text-xs font-semibold tracking-[0.25em] text-maple lowercase">
                 non-partisan statement
               </p>
-              <h2 className="serif mt-2 text-3xl font-normal italic tracking-[-0.01em] text-[#111f36] lowercase">
+              <h2 className="serif mt-2 text-3xl font-normal italic tracking-[-0.01em] text-cream lowercase">
                 Non-partisan means pro-independent, not above politics.
               </h2>
             </div>
 
-            <p className="max-w-3xl text-base leading-8 text-[#5f697a]">
+            <p className="max-w-3xl text-base leading-8 text-mist">
               Civics Studio doesn&apos;t support any political party or ideology.
               But we do hold a clear interest in independent representation:
               the idea that MPs should have the space to represent their

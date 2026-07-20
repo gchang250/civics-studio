@@ -13,8 +13,8 @@ sources:
     url: "https://www.ndp.ca/platform"
   - title: "Blake Desjarlais MP website"
     url: "https://blakedesjarlais.ndp.ca/"
-  - title: "CBC News: Edmonton Griesbach results 2025"
-    url: "https://www.cbc.ca/news/politics/edmonton-griesbach-2025-election"
+  - title: "House of Commons: Blake Desjarlais (Edmonton Griesbach)"
+    url: "https://www.ourcommons.ca/members/en/blake-desjarlais(110889)"
 platformAlignment:
   - promise: "Support low-income Canadians with disabilities"
     voteSession: "44-1"

@@ -17,13 +17,14 @@ export default function HomePage() {
       <StickyProjects />
 
       {/* ── Mission ───────────────────────────────────────── */}
-      <section className="border-y border-[#e5e0d4] bg-[#f3efe6]">
-        <div className="mx-auto max-w-3xl px-6 py-24 text-center">
+      <section className="relative overflow-hidden border-y border-edge bg-ink-2">
+        <div className="glow-maple pointer-events-none absolute left-1/2 top-0 h-[60vh] w-[60vh] -translate-x-1/2 opacity-70" />
+        <div className="relative mx-auto max-w-3xl px-6 py-24 text-center">
           <AnimatedSection>
-            <p className="text-[10px] font-semibold uppercase tracking-[0.3em] text-[#8b1e1e] lowercase">
+            <p className="text-[10px] font-semibold uppercase tracking-[0.3em] text-maple lowercase">
               mission
             </p>
-            <blockquote className="serif mt-8 text-[clamp(1.4rem,3vw,1.8rem)] font-normal italic leading-relaxed text-[#111f36] lowercase">
+            <blockquote className="serif mt-8 text-[clamp(1.4rem,3vw,1.8rem)] font-normal italic leading-relaxed text-cream lowercase">
               &ldquo;Canada elects 343 members of Parliament. Party structures often
               reduce those voices to five parties, and voting patterns to two
               factions. Independent representation isn&apos;t a radical idea. It&apos;s
@@ -32,7 +33,7 @@ export default function HomePage() {
             <div className="mt-10">
               <Link
                 href="/mission"
-                className="border border-[#111f36] px-7 py-3 text-[11px] font-medium uppercase tracking-[0.2em] text-[#111f36] transition hover:bg-[#8b1e1e] hover:text-white hover:border-[#8b1e1e]"
+                className="border border-edge px-7 py-3 text-[11px] font-medium uppercase tracking-[0.2em] text-cream transition hover:border-maple hover:text-maple-soft"
               >
                 Read Full Mission Statement
               </Link>
@@ -42,25 +43,25 @@ export default function HomePage() {
       </section>
 
       {/* ── By the Numbers ────────────────────────────────── */}
-      <section className="bg-[#faf8f5]">
+      <section className="bg-ink">
         <div className="mx-auto max-w-7xl px-6 py-20">
-          <AnimatedSection className="mb-10 border-b border-[#e5e0d4] pb-5">
-            <p className="text-[10px] font-semibold uppercase tracking-[0.3em] text-[#8b1e1e] lowercase">
+          <AnimatedSection className="mb-10 border-b border-edge pb-5">
+            <p className="text-[10px] font-semibold uppercase tracking-[0.3em] text-maple lowercase">
               by the numbers
             </p>
           </AnimatedSection>
 
-          <div className="grid gap-px bg-[#e5e0d4] sm:grid-cols-2 border border-[#e5e0d4]">
+          <div className="grid gap-px bg-edge sm:grid-cols-2 border border-edge">
             {stats.map((s, i) => (
               <AnimatedSection key={s.label} delay={i * 0.08} className="h-full">
-                <div className="flex h-full flex-col justify-center bg-[#faf8f5] p-10 text-center">
-                  <p className="serif text-[clamp(2.5rem,5vw,3.5rem)] font-normal italic text-[#111f36] lowercase">
+                <div className="flex h-full flex-col justify-center bg-panel p-10 text-center">
+                  <p className="serif text-[clamp(2.5rem,5vw,3.5rem)] font-normal italic text-cream lowercase">
                     {s.value}
                   </p>
-                  <p className="mt-2 text-[10px] font-semibold uppercase tracking-[0.25em] text-[#8b1e1e] lowercase">
+                  <p className="mt-2 text-[10px] font-semibold uppercase tracking-[0.25em] text-maple lowercase">
                     {s.label}
                   </p>
-                  <p className="mt-3 text-sm leading-6 text-[#5f697a]">{s.desc}</p>
+                  <p className="mt-3 text-sm leading-6 text-mist">{s.desc}</p>
                 </div>
               </AnimatedSection>
             ))}
@@ -69,19 +70,19 @@ export default function HomePage() {
       </section>
 
       {/* ── Non-Partisan Statement ────────────────────────── */}
-      <section className="border-t border-[#e5e0d4] bg-[#faf8f5]">
+      <section className="border-t border-edge bg-ink">
         <div className="mx-auto max-w-7xl px-6 py-20">
           <AnimatedSection className="grid gap-12 md:grid-cols-2 md:items-start">
-            <div className="border-t border-[#e5e0d4] pt-8">
-              <p className="text-[10px] font-semibold uppercase tracking-[0.3em] text-[#8b1e1e] lowercase">
+            <div className="border-t border-maple/60 pt-8">
+              <p className="text-[10px] font-semibold uppercase tracking-[0.3em] text-maple lowercase">
                 statement
               </p>
-              <h2 className="serif mt-5 text-[clamp(1.8rem,3.5vw,2.6rem)] font-normal italic leading-[1.15] text-[#111f36] lowercase">
+              <h2 className="serif mt-5 text-[clamp(1.8rem,3.5vw,2.6rem)] font-normal italic leading-[1.15] text-cream lowercase">
                 non-partisan means<br />pro-independent.
               </h2>
             </div>
-            <div className="border-t border-[#e5e0d4] md:border-t-0 pt-8">
-              <p className="text-base leading-8 text-[#5f697a]">
+            <div className="border-t border-edge md:border-t-0 pt-8">
+              <p className="text-base leading-8 text-mist">
                 Civics Studio actively works to strengthen independent civic
                 thinking. When MPs vote along party lines rather than as their
                 constituents need, something is lost. We build tools that help
@@ -91,7 +92,7 @@ export default function HomePage() {
               <div className="mt-8">
                 <Link
                   href="/projects"
-                  className="border border-[#111f36] px-7 py-3.5 text-[11px] font-medium uppercase tracking-[0.15em] text-[#111f36] transition hover:bg-[#8b1e1e] hover:text-white hover:border-[#8b1e1e]"
+                  className="bg-maple px-7 py-3.5 text-[11px] font-bold uppercase tracking-[0.15em] text-ink transition hover:shadow-[0_0_30px_-4px_rgba(249,85,61,0.6)]"
                 >
                   View All Projects
                 </Link>

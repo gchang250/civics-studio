@@ -4,7 +4,7 @@ party: NDP
 riding: Vancouver Kingsway, BC
 keyPromises:
   - "Campaigned on affordability, housing, public healthcare, and the NDP's Dental Care Plan"
-  - "Narrowly held his seat in 2025 by 310 votes, one of only seven NDP MPs elected"
+  - "Narrowly held his seat in 2025 by 303 votes, one of only seven NDP MPs elected"
   - "Appointed interim NDP leader after Jagmeet Singh resigned, serving until Avi Lewis won the 2026 leadership election"
 sources:
   - title: "CBC News: NDP appoints Don Davies as interim leader"
@@ -24,4 +24,4 @@ platformAlignment:
     explanation: "Davies voted Yes at second reading of Bill C-267 (durability of electronic products and appliances), consistent with the party's broader consumer and environmental protection priorities."
 ---
 
-Don Davies has represented Vancouver Kingsway since 2008 and narrowly held his seat in the 2025 election by just 310 votes, one of only seven NDP MPs to survive a collapse that cost the party official status and leader Jagmeet Singh, who resigned soon after. The NDP's governing council appointed Davies interim leader, a role he held until Avi Lewis won the party's 2026 leadership race. His Vancouver Kingsway campaign focused on affordability, housing, public healthcare, and the NDP's Dental Care Plan.
+Don Davies has represented Vancouver Kingsway since 2008 and narrowly held his seat in the 2025 election by just 303 votes, one of only seven NDP MPs to survive a collapse that cost the party official status and leader Jagmeet Singh, who resigned soon after. The NDP's governing council appointed Davies interim leader, a role he held until Avi Lewis won the party's 2026 leadership race. His Vancouver Kingsway campaign focused on affordability, housing, public healthcare, and the NDP's Dental Care Plan.

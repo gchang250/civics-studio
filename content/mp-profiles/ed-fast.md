@@ -11,8 +11,8 @@ keyPromises:
 sources:
   - title: "Conservative Party of Canada 2021 Platform"
     url: "https://www.conservative.ca/plan/"
-  - title: "Ed Fast MP website"
-    url: "https://www.edfast.ca/"
+  - title: "House of Commons: Ed Fast (Abbotsford, 44th Parliament)"
+    url: "https://www.ourcommons.ca/members/en/ed-fast(35904)"
   - title: "openparliament.ca: Ed Fast"
     url: "https://openparliament.ca/politicians/ed-fast/"
 platformAlignment:

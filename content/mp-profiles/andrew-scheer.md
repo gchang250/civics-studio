@@ -9,8 +9,8 @@ keyPromises:
 sources:
   - title: "openparliament.ca: Andrew Scheer, Conservative MP for Regina—Qu'Appelle"
     url: "https://openparliament.ca/politicians/andrew-scheer/"
-  - title: "620 CKRM: Regina MP Andrew Scheer Will Lead the Conservatives in the House of Commons, For Now"
-    url: "https://www.620ckrm.com/2025/05/07/65024/"
+  - title: "House of Commons: Andrew Scheer, MP for Regina—Qu'Appelle"
+    url: "https://www.ourcommons.ca/members/en/andrew-scheer(25454)"
   - title: "650 CKOM: Andrew Scheer seeking re-election in Regina-Qu'Appelle"
     url: "https://www.ckom.com/2025/03/23/andrew-scheer-seeking-re-election-in-regina-quappelle/"
 platformAlignment:

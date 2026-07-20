@@ -11,12 +11,12 @@ keyPromises:
 sources:
   - title: "Conservative Party of Canada 2025 Platform"
     url: "https://www.conservative.ca/plan/"
-  - title: "Leslyn Lewis campaign website"
-    url: "https://www.leslynlewis.ca/"
+  - title: "House of Commons: Leslyn Lewis, MP for Haldimand—Norfolk"
+    url: "https://www.ourcommons.ca/members/en/leslyn-lewis(88958)"
   - title: "CBC News: Leslyn Lewis wins Haldimand-Norfolk in 2025"
     url: "https://www.cbc.ca/news/politics/leslyn-lewis-haldimand-norfolk-2025-1.7522519"
-  - title: "CBC News: Conservative leadership candidate Leslyn Lewis on social conservatism"
-    url: "https://www.cbc.ca/news/politics/leslyn-lewis-conservative-leadership-social-conservative-1.6007832"
+  - title: "Wikipedia: Leslyn Lewis (Conservative leadership runs, 2020 and 2022)"
+    url: "https://en.wikipedia.org/wiki/Leslyn_Lewis"
 platformAlignment:
   - promise: "Eliminate carbon tax / Clean Fuel Standard"
     voteSession: "45-1"

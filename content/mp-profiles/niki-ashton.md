@@ -13,8 +13,8 @@ sources:
     url: "https://www.ndp.ca/platform"
   - title: "openparliament.ca: Niki Ashton"
     url: "https://openparliament.ca/politicians/niki-ashton/"
-  - title: "CBC News: Manitoba election results 2025"
-    url: "https://www.cbc.ca/news/canada/manitoba/manitoba-results-2025-election"
+  - title: "House of Commons: Niki Ashton (Churchill—Keewatinook Aski)"
+    url: "https://www.ourcommons.ca/members/en/niki-ashton(36037)"
 platformAlignment:
   - promise: "Establish universal benefits and support vulnerable groups"
     voteSession: "44-1"

@@ -1,26 +1,52 @@
 @import "tailwindcss";
 
+/* ─── Design tokens (bold / modern dark) ─────────────────────────
+   Dark, high-contrast surface that keeps the warm "paper" heritage
+   as warm-white text + a vivid maple-red accent. Exposed as Tailwind
+   v4 theme colors so pages can use bg-ink / text-cream / border-edge /
+   text-maple utilities directly. */
+@theme {
+  --color-ink: #090c14;        /* page background — deep blue-black    */
+  --color-ink-2: #0d1220;      /* alternate section background         */
+  --color-panel: #131a2b;      /* cards / raised surfaces              */
+  --color-panel-2: #1a2338;    /* hover / higher elevation             */
+  --color-edge: #253048;       /* hairline borders                     */
+  --color-edge-soft: #1b2333;  /* faint dividers                       */
+
+  --color-cream: #f4f0e7;      /* headings + primary text (warm white) */
+  --color-mist: #97a3bd;       /* secondary text                       */
+  --color-mist-dim: #667089;   /* tertiary / captions                  */
+
+  --color-maple: #f9553d;      /* vivid brand accent                   */
+  --color-maple-soft: #ff8471; /* accent for text on dark              */
+  --color-gold: #e7b64d;       /* secondary highlight                  */
+  --color-positive: #34d399;   /* "fulfilled" end of the spectrum      */
+}
+
 :root {
-  --background: #faf8f5;
-  --foreground: #111f36;
-  --paper: #faf8f5;
-  --soft: #f3efe6;
-  --border: #e5e0d4;
-  --muted: #5f697a;
-  --red: #8b1e1e;
-  --navy: #111f36;
-  --gold: #8b1e1e;
-  --gold-light: #f3efe6;
+  color-scheme: dark;
+  /* Legacy aliases kept so any stray var() references resolve on-theme. */
+  --background: #090c14;
+  --foreground: #f4f0e7;
+  --paper: #090c14;
+  --soft: #131a2b;
+  --border: #253048;
+  --muted: #97a3bd;
+  --red: #f9553d;
+  --navy: #f4f0e7;
 }
 
 html {
   scroll-behavior: smooth;
+  background: #090c14;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
+  background: #090c14;
+  color: #f4f0e7;
   font-family: var(--font-sans), Arial, Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
 }
 
 .serif {
@@ -28,54 +54,90 @@ body {
 }
 
 ::selection {
-  background: #ebe4d5;
-  color: #111f36;
+  background: rgba(249, 85, 61, 0.28);
+  color: #f4f0e7;
 }
 
-/* ─── Article prose ─────────────────────────────────────────── */
+/* Subtle, consistent focus ring for keyboard users */
+:focus-visible {
+  outline: 2px solid var(--color-maple);
+  outline-offset: 2px;
+}
+
+/* Reusable maple underline for eyebrow rules */
+.rule-maple {
+  background: linear-gradient(90deg, var(--color-maple), transparent);
+}
+
+/* Ambient radial glow used behind hero / section headers */
+.glow-maple {
+  background: radial-gradient(
+    60% 60% at 50% 40%,
+    rgba(249, 85, 61, 0.18),
+    transparent 70%
+  );
+}
+
+/* Card hover lift + accent glow */
+.card-hover {
+  transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease,
+    background-color 0.3s ease;
+}
+.card-hover:hover {
+  border-color: rgba(249, 85, 61, 0.45);
+  box-shadow: 0 0 0 1px rgba(249, 85, 61, 0.12),
+    0 18px 40px -24px rgba(0, 0, 0, 0.8);
+}
+
+/* ─── Article prose (dark) ──────────────────────────────────── */
 .article-body {
   font-size: 1.125rem;
-  line-height: 1.8;
-  color: #111f36;
+  line-height: 1.85;
+  color: #d4d9e4;
 }
 
 .article-body p {
   margin-top: 0;
-  margin-bottom: 1.75rem;
+  margin-bottom: 1.6rem;
 }
 
 .article-body h2 {
   font-family: var(--font-serif), Georgia, "Times New Roman", Times, serif;
+  font-style: italic;
   font-size: 1.875rem;
-  font-weight: 700;
+  font-weight: 400;
   letter-spacing: -0.02em;
-  color: #111f36;
+  color: #f4f0e7;
   margin-top: 2.5rem;
   margin-bottom: 1.25rem;
+  text-transform: lowercase;
 }
 
 .article-body h3 {
   font-family: var(--font-serif), Georgia, "Times New Roman", Times, serif;
+  font-style: italic;
   font-size: 1.5rem;
-  font-weight: 700;
-  color: #111f36;
+  font-weight: 400;
+  color: #f4f0e7;
   margin-top: 2rem;
   margin-bottom: 1rem;
+  text-transform: lowercase;
 }
 
 .article-body a {
-  color: #111f36;
+  color: #f4f0e7;
   text-decoration: underline;
+  text-decoration-color: rgba(249, 85, 61, 0.5);
   text-underline-offset: 3px;
 }
 
 .article-body a:hover {
-  color: #8b1e1e;
+  color: var(--color-maple-soft);
 }
 
 .article-body strong {
   font-weight: 700;
-  color: #111f36;
+  color: #f4f0e7;
 }
 
 .article-body em {
@@ -85,7 +147,7 @@ body {
 .article-body ul,
 .article-body ol {
   padding-left: 1.5rem;
-  margin-bottom: 1.75rem;
+  margin-bottom: 1.6rem;
 }
 
 .article-body li {
@@ -93,43 +155,40 @@ body {
 }
 
 .article-body blockquote {
-  border-left: 4px solid #8b1e1e;
+  border-left: 3px solid var(--color-maple);
   margin-left: 0;
   padding: 0.75rem 1.25rem;
-  background: #faf8f5;
-  color: #5f697a;
+  background: rgba(255, 255, 255, 0.02);
+  color: #b7bfce;
   font-style: italic;
-  margin-bottom: 1.75rem;
+  margin-bottom: 1.6rem;
 }
 
-/* Images and captions */
 .article-body img {
   width: 100%;
   max-height: 420px;
   object-fit: cover;
   display: block;
   margin-bottom: 0;
+  border: 1px solid var(--color-edge);
 }
 
-/* Paragraph wrapping an image gets no bottom margin */
 .article-body p:has(> img) {
   margin-bottom: 0;
 }
 
-/* Italic paragraph immediately after an image = caption */
 .article-body p:has(> img) + p > em:only-child {
   display: block;
   text-align: center;
   font-size: 0.75rem;
   font-style: normal;
-  color: #5f697a;
+  color: var(--color-mist-dim);
   margin-top: 0.5rem;
   margin-bottom: 2rem;
 }
 
-/* Horizontal rule */
 .article-body hr {
   border: none;
-  border-top: 2px solid #e5e0d4;
+  border-top: 1px solid var(--color-edge);
   margin: 2.5rem 0;
 }
