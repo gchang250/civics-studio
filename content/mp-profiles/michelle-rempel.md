@@ -4,13 +4,15 @@ party: Conservative
 riding: Calgary Nose Hill, AB
 keyPromises:
   - "Eliminate the consumer and industrial carbon taxes"
-  - "$75 billion in tax cuts: 15% income tax rate for the bottom bracket, GST off new homes"
-  - "Cap total immigration at 250,000 per year and fix the backlog at IRCC"
+  - "$75 billion in tax cuts over four years, cutting the lowest income tax bracket from 15% to 12.75%, and GST off new homes"
+  - "Keep population growth below the rate of housing growth, job growth and health care accessibility"
   - "Repeal Bill C-69 and unlock pipeline and LNG export capacity"
-  - "Cut $34 billion in federal program spending and reach a balanced budget"
+  - "$56 billion in spending reductions over four years, cutting the deficit to $14.1 billion by 2028-29"
 sources:
   - title: "Conservative Party of Canada 2025 Platform"
     url: "https://www.conservative.ca/plan/"
+  - title: "The Globe and Mail: Conservative platform pledges $75-billion in tax cuts"
+    url: "https://www.theglobeandmail.com/politics/article-pierre-poilievre-conservatives-federal-election-platform-2025/"
   - title: "Michelle Rempel Garner MP website"
     url: "https://www.michellerempelgarner.ca/"
   - title: "Global News: Canada election 2025 results: Calgary Nose Hill"

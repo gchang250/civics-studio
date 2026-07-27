@@ -1,3 +1,5 @@
+import { cache } from "react";
+
 /**
  * Thin client for api.openparliament.ca, Canada's open parliamentary data
  * project. No auth required. All responses are cached via Next's fetch
@@ -255,7 +257,12 @@ interface RawVoteDetail {
   }>;
 }
 
-export async function getVoteDetail(
+// Deduplicated per render pass with React's `cache`. A profile page asks for
+// the same vote twice whenever a cited platformAlignment vote is also one of
+// the 12 most recent ones (very common — most profiles cite the latest budget
+// vote), and because every openparliament request is serialized, each redundant
+// lookup added a full round-trip to the critical path rather than overlapping.
+export const getVoteDetail = cache(async function getVoteDetail(
   session: string,
   number: number
 ): Promise<VoteDetail | null> {
@@ -280,7 +287,7 @@ export async function getVoteDetail(
   } catch {
     return null;
   }
-}
+});
 
 interface RawBallot {
   vote_url: string;

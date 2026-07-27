@@ -9,6 +9,13 @@
       "autoPort": true
     },
     {
+      "name": "civics-studio-prod",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["start", "--", "--port", "3100"],
+      "port": 3100,
+      "autoPort": true
+    },
+    {
       "name": "canpol",
       "runtimeExecutable": "npm",
       "runtimeArgs": ["run", "dev", "--prefix", "/Users/gabrielchang/egg-fried-rice-index"],

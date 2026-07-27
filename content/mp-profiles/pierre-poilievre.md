@@ -3,7 +3,7 @@ name: Pierre Poilievre
 party: Conservative
 riding: Battle River—Crowfoot, AB
 keyPromises:
-  - "$75 billion in tax cuts, including a 15% income tax cut, funded partly by $34 billion in new spending and a 70% deficit cut"
+  - "$75 billion in tax cuts over four years, cutting the lowest income tax bracket from 15% to 12.75%, alongside $34 billion in new spending and $56 billion in spending reductions"
   - "Build 2.3 million homes by axing the GST on new homes and selling off federal land"
   - "Repeal Bill C-69 and the tanker ban to unlock pipelines and LNG exports"
   - "Raise military spending to 2% of GDP by 2030"

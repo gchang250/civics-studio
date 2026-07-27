@@ -6,7 +6,7 @@ keyPromises:
   - "Dental care for all Canadians, not just children"
   - "Pharmacare covering prescription drugs under a universal public plan"
   - "Cap rent increases and build 500,000 affordable homes"
-  - "Wealth tax of 1% annually on fortunes over $10 million"
+  - "A progressive wealth tax: 1% on net worth from $10 to $50 million, 2% to $100 million, and 3% above that"
   - "Cancel the CPPIB's investments in fossil fuels"
 sources:
   - title: "NDP Platform 2021"

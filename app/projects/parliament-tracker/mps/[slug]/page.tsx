@@ -11,6 +11,41 @@ interface Props {
   params: Promise<{ slug: string }>;
 }
 
+// Render this route as ISR rather than on demand.
+//
+// A cold profile render fans out ~19 openparliament requests, and they run
+// strictly one at a time (see MAX_CONCURRENT in lib/openparliament.ts — the
+// serialization is what stops throttled requests from silently dropping votes
+// off the page). Serially that is ~6s, which every visitor paid whenever the
+// data cache was cold, because the route was server-rendered per request.
+//
+// With a route-level revalidate the page is cached and served instantly, and
+// once it goes stale Next serves the stale copy while regenerating in the
+// background — so nobody waits on the 6s path except the very first request
+// for an MP who has never been rendered. Deliberately no generateStaticParams:
+// prerendering all 339 MPs at build time would serialize the same fan-out
+// across the whole roster. Must be a literal — `60 * 60` is not statically
+// analyzable and would be ignored.
+export const revalidate = 3600;
+
+// Empty on purpose — do NOT prerender the roster here.
+//
+// `next build` generates pages across 7 parallel workers, and each worker is a
+// separate process with its own copy of the MAX_CONCURRENT limiter in
+// lib/openparliament.ts. Prerendering therefore puts ~7 concurrent requests on
+// openparliament, which is precisely what that limiter exists to prevent:
+// building the 89 profiled MPs failed with `openparliament request failed
+// (429)` even after the retry/backoff budget was exhausted.
+//
+// Returning no params still opts the route into the static/ISR path rather
+// than plain on-demand rendering. With the default `dynamicParams: true` each
+// MP is generated on first request and then cached and revalidated like any
+// other ISR page — so exactly one visitor per MP per revalidate window pays the
+// cold-render cost, and never with a concurrent request in flight.
+export function generateStaticParams(): { slug: string }[] {
+  return [];
+}
+
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const mp = await getMPDetail(slug);
@@ -21,6 +56,22 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       mp.currentRiding ? ` for ${mp.currentRiding.name}` : ""
     }.`,
   };
+}
+
+/**
+ * openparliament returns vote dates as bare calendar dates ("2026-06-18").
+ * `new Date("2026-06-18")` parses that as UTC midnight, so rendering it in any
+ * timezone west of Greenwich shows the previous day — every vote on the tracker
+ * was dated one day early. Format the parts directly instead of round-tripping
+ * through a timestamp.
+ */
+function formatVoteDate(isoDate: string): string {
+  const [year, month, day] = isoDate.split("-").map(Number);
+  return new Date(year, month - 1, day).toLocaleDateString("en-CA", {
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+  });
 }
 
 const alignmentStyles: Record<WhipAlignment, { label: string; className: string }> = {
@@ -176,11 +227,7 @@ export default async function MPProfilePage({ params }: Props) {
                   <div key={`${entry.vote.session}-${entry.vote.number}`} className="py-5">
                     <div className="flex flex-wrap items-center justify-between gap-3">
                       <p className="text-xs font-semibold uppercase tracking-[0.08em] text-mist-dim lowercase">
-                        {new Date(entry.vote.date).toLocaleDateString("en-CA", {
-                          year: "numeric",
-                          month: "long",
-                          day: "numeric",
-                        })}
+                        {formatVoteDate(entry.vote.date)}
                         {" · "}Vote #{entry.vote.number} ({entry.vote.session})
                       </p>
                       {isIndependent ? (
@@ -278,10 +325,15 @@ export default async function MPProfilePage({ params }: Props) {
                         <div key={i} className="border border-edge bg-panel p-5">
                           <p className="text-sm font-semibold text-cream">{entry.promise}</p>
 
-                          <div className="relative mt-4 h-2 w-full max-w-md rounded-full bg-gradient-to-r from-maple via-mist-dim to-[#34d399]">
+                          <div className="relative mt-4 h-2 w-full rounded-full bg-gradient-to-r from-maple via-mist-dim to-[#34d399]">
+                            {/* The marker is 20px wide, so travel its centre from
+                                10px to (100% - 10px). Positioning it at a raw
+                                `${pct}%` would hang half the dot outside the
+                                track at the contradicted (0%) and fulfilled
+                                (100%) ends. */}
                             <div
                               className="absolute top-1/2 h-5 w-5 -translate-y-1/2 -translate-x-1/2 rounded-full border-[3px] border-ink bg-cream shadow-[0_0_0_1px_rgba(255,255,255,0.25)]"
-                              style={{ left: `${pct}%` }}
+                              style={{ left: `calc(10px + (100% - 20px) * ${pct / 100})` }}
                             />
                           </div>
                           <p className="mt-2 text-[10px] font-semibold uppercase tracking-[0.08em] text-maple lowercase">
@@ -293,11 +345,7 @@ export default async function MPProfilePage({ params }: Props) {
                           {vote && (
                             <p className="mt-3 text-xs text-mist-dim">
                               Vote #{vote.number} ({vote.session}),{" "}
-                              {new Date(vote.date).toLocaleDateString("en-CA", {
-                                year: "numeric",
-                                month: "long",
-                                day: "numeric",
-                              })}
+                              {formatVoteDate(vote.date)}
                               {": "}
                               {vote.description} · Result: {vote.result}
                             </p>
