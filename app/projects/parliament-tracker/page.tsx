@@ -4,6 +4,7 @@ import { getMPRoster } from "@/lib/openparliament";
 import { getProfileSlugs } from "@/lib/mpProfiles";
 import MPDirectory from "./MPDirectory";
 import Comments from "@/app/components/Comments";
+import DownloadLink from "@/app/components/DownloadLink";
 
 const TOTAL_SEATS = 343;
 
@@ -167,6 +168,36 @@ export default async function ParliamentTrackerPage() {
                 byelections, per Elections Canada.
               </p>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Download the data */}
+      <section className="border-b border-edge bg-ink">
+        <div className="mx-auto max-w-7xl px-5 py-14">
+          <div className="card-hover flex flex-col gap-6 border border-edge bg-panel p-8 md:flex-row md:items-center md:justify-between">
+            <div className="max-w-2xl">
+              <p className="text-[10px] font-semibold uppercase tracking-[0.3em] text-maple lowercase">
+                Open data
+              </p>
+              <h2 className="serif mt-3 text-2xl font-normal italic text-cream lowercase">
+                Download the voting dataset
+              </h2>
+              <p className="mt-3 text-base leading-7 text-mist">
+                Every recorded vote of the current session (45-1) as a CSV,
+                pulled live from Parliament&apos;s open data: vote number, date,
+                bill, description, result, and the yea / nay / paired tallies.
+                Free to use with attribution to{" "}
+                <span className="text-cream">openparliament.ca</span>.
+              </p>
+            </div>
+            <DownloadLink
+              href="/projects/parliament-tracker/dataset"
+              file="parliament-votes-45-1.csv"
+              className="inline-flex shrink-0 items-center justify-center bg-maple px-6 py-3 text-center text-sm font-bold uppercase tracking-[0.08em] text-ink transition hover:shadow-[0_0_30px_-4px_rgba(249,85,61,0.6)]"
+            >
+              Download CSV
+            </DownloadLink>
           </div>
         </div>
       </section>

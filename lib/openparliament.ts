@@ -289,6 +289,58 @@ export const getVoteDetail = cache(async function getVoteDetail(
   }
 });
 
+// ─── Session vote catalog (downloadable dataset) ──────────────────
+
+export interface CatalogVote {
+  session: string;
+  number: number;
+  date: string;
+  description: string;
+  result: string;
+  yeaTotal: number;
+  nayTotal: number;
+  pairedTotal: number;
+  billUrl: string | null;
+}
+
+interface RawCatalogVote {
+  session: string;
+  number: number;
+  date: string;
+  description: { en: string };
+  result: string;
+  yea_total: number;
+  nay_total: number;
+  paired_total: number;
+  bill_url: string | null;
+}
+
+/**
+ * Every recorded vote in a session, with tallies. openparliament returns all
+ * of session 45-1's ~173 votes in a single page at limit=250, so this is one
+ * live request (cached a day) — no per-vote fan-out and no rate-limit risk.
+ * Returned newest-first, as openparliament orders them.
+ */
+export async function getSessionVoteCatalog(
+  session = "45-1"
+): Promise<CatalogVote[]> {
+  const data = await fetchJSON<PaginatedResponse<RawCatalogVote>>(
+    `/votes/?session=${session}&limit=250`,
+    ONE_DAY
+  );
+  return data.objects.map((v) => ({
+    session: v.session,
+    number: v.number,
+    date: v.date,
+    description: v.description.en,
+    result: v.result,
+    yeaTotal: v.yea_total,
+    nayTotal: v.nay_total,
+    pairedTotal: v.paired_total,
+    billUrl: v.bill_url ?? null,
+  }));
+}
+
 interface RawBallot {
   vote_url: string;
   ballot: string;
