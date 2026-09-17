@@ -33,7 +33,7 @@ interface PaginatedResponse<T> {
 // once returns mostly 429s, and even 2 in parallel get connection-reset, while
 // fully serial requests succeed 100% of the time. Because getVoteDetail/
 // getMPBallots swallow a failed fetch into `null`, each dropped request silently
-// removed a real vote from the server-rendered HTML — which is exactly why a
+// removed a real vote from the server-rendered HTML, which is exactly why a
 // plain refresh (warm data cache, no live burst) appeared to "fix" it.
 //
 // So we serialize: one live request in flight at a time. Cache hits resolve
@@ -82,7 +82,7 @@ async function fetchJSON<T>(path: string, revalidateSeconds: number): Promise<T>
       retryable = res.status === 429 || res.status >= 500;
       lastError = new Error(`openparliament request failed (${res.status}): ${url}`);
     } catch (err) {
-      // Network/DNS/timeout errors are transient — worth another attempt.
+      // Network/DNS/timeout errors are transient, so they are worth another attempt.
       retryable = true;
       lastError = err;
     } finally {
@@ -259,7 +259,7 @@ interface RawVoteDetail {
 
 // Deduplicated per render pass with React's `cache`. A profile page asks for
 // the same vote twice whenever a cited platformAlignment vote is also one of
-// the 12 most recent ones (very common — most profiles cite the latest budget
+// the 12 most recent ones (very common, since most profiles cite the latest budget
 // vote), and because every openparliament request is serialized, each redundant
 // lookup added a full round-trip to the critical path rather than overlapping.
 export const getVoteDetail = cache(async function getVoteDetail(
@@ -318,7 +318,7 @@ interface RawCatalogVote {
 /**
  * Every recorded vote in a session, with tallies. openparliament returns all
  * of session 45-1's ~173 votes in a single page at limit=250, so this is one
- * live request (cached a day) — no per-vote fan-out and no rate-limit risk.
+ * live request (cached a day), with no per-vote fan-out and no rate-limit risk.
  * Returned newest-first, as openparliament orders them.
  */
 export async function getSessionVoteCatalog(

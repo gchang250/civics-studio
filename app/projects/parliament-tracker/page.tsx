@@ -1,230 +1,187 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { getMPRoster } from "@/lib/openparliament";
+import { getMPRoster, getSessionVoteCatalog, type CatalogVote } from "@/lib/openparliament";
 import { getProfileSlugs } from "@/lib/mpProfiles";
 import MPDirectory from "./MPDirectory";
 import Comments from "@/app/components/Comments";
 import DownloadLink from "@/app/components/DownloadLink";
+import PageHeader from "@/app/components/PageHeader";
+import Section from "@/app/components/Section";
 
 const TOTAL_SEATS = 343;
+const SESSION = "45-1";
+
+export const revalidate = 3600;
 
 export const metadata: Metadata = {
   title: "Parliament Tracker",
   description:
-    "Track how Canada's 343 MPs actually vote, using Parliament's own open data, including whether their ballots line up with their party's official position.",
+    "Every recorded vote of Canada's 45th Parliament, MP by MP, from Parliament's own open data, including when a member voted against their own party.",
 };
 
 export default async function ParliamentTrackerPage() {
-  const [mps, profiledSlugs] = await Promise.all([
+  const [mps, votes, profiledSlugs] = await Promise.all([
     getMPRoster(),
+    getSessionVoteCatalog(SESSION).catch((): CatalogVote[] => []),
     Promise.resolve(getProfileSlugs()),
   ]);
 
+  const vacant = TOTAL_SEATS - mps.length;
+
   return (
-    <div className="bg-ink">
-      {/* Hero */}
-      <section className="relative overflow-hidden border-b border-edge bg-ink-2">
-        <div className="glow-maple pointer-events-none absolute -top-[20%] left-[8%] h-[70vh] w-[70vh]" />
-        <div className="relative mx-auto max-w-7xl px-5 py-14 md:py-18">
-          <p className="text-[10px] font-semibold uppercase tracking-[0.3em] text-maple lowercase">
-            Data project
-          </p>
+    <div>
+      <PageHeader
+        title="Parliament Tracker"
+        lede="Every recorded vote of the current session, ballot by ballot, for every sitting member, pulled straight from Parliament's own open data. Where a party took an official position, we flag the MPs whose ballot broke from it."
+      >
+        <DownloadLink
+          href="/projects/parliament-tracker/dataset"
+          file="parliament-votes-45-1.csv"
+          className="cta cta-invert"
+        >
+          Download every vote (CSV)
+        </DownloadLink>
+      </PageHeader>
 
-          <h1 className="serif mt-4 max-w-4xl text-5xl font-normal italic leading-tight tracking-[-0.02em] text-cream md:text-6xl lowercase">
-            Parliament Tracker
-          </h1>
-
-          <p className="mt-5 max-w-3xl text-lg leading-8 text-mist">
-            Canada elects 343 members of Parliament, but party discipline and
-            whip pressure often collapse those voices into a handful of
-            positions. This tracker pulls MPs, ridings, and real vote records
-            directly from Parliament&apos;s own open data so you can see how
-            each MP actually votes, and how often that lines up with their
-            own party&apos;s official position.
-          </p>
-
-          <div className="mt-8 grid max-w-2xl gap-4 sm:grid-cols-3">
-            <div className="card-hover border border-edge bg-panel p-4">
-              <p className="serif text-2xl font-normal italic text-cream lowercase">
-                {mps.length} of {TOTAL_SEATS}
-              </p>
-              <p className="text-[10px] font-semibold uppercase tracking-[0.08em] text-maple lowercase">
-                Seats tracked live
-              </p>
-            </div>
-            <div className="card-hover border border-edge bg-panel p-4">
-              <p className="serif text-2xl font-normal italic text-cream lowercase">
-                {profiledSlugs.length}
-              </p>
-              <p className="text-[10px] font-semibold uppercase tracking-[0.08em] text-maple lowercase">
-                Full researched profiles
-              </p>
-            </div>
-            <div className="card-hover border border-edge bg-panel p-4">
-              <p className="serif text-2xl font-normal italic text-cream lowercase">Live</p>
-              <p className="text-[10px] font-semibold uppercase tracking-[0.08em] text-maple lowercase">
-                Voting records, all MPs
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Why this exists */}
-      <section className="border-b border-edge bg-ink">
-        <div className="mx-auto max-w-5xl px-5 pt-16 text-center">
-          <p className="text-[10px] font-semibold uppercase tracking-[0.3em] text-maple lowercase">
-            Why this exists
-          </p>
-          <h2 className="serif mt-4 text-[clamp(1.8rem,4vw,2.8rem)] font-normal italic leading-tight text-cream lowercase">
-            A party label shouldn&apos;t outvote the promise an MP got elected on.
-          </h2>
-          <p className="mx-auto mt-6 max-w-3xl text-lg leading-8 text-mist">
-            Every one of Canada&apos;s 343 MPs was elected by a specific riding,
-            on specific promises. The moment they&apos;re sworn in, party
-            structures push hard to compress that individual mandate into one
-            of five boxes. Toe the line and you keep your committee seat, your
-            shot at cabinet, your place on the next ballot. Break from it and
-            you can lose all three. None of that pressure has anything to do
-            with what&apos;s actually best for the people who elected you.
-          </p>
-        </div>
-
-        <div className="mx-auto grid max-w-6xl gap-6 px-5 py-16 md:grid-cols-3">
-          <div className="card-hover border border-edge bg-panel p-6">
-            <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-maple lowercase">
-              The pressure
-            </p>
-            <h3 className="serif mt-3 text-xl font-normal italic text-cream lowercase">
-              Whip pressure
-            </h3>
-            <p className="mt-3 text-sm leading-6 text-mist">
-              <span className="font-semibold text-cream">A party whip is an MP</span>{" "}
-              whose job is to enforce how the rest of caucus votes. They track attendance, count votes before they happen, and enforce discipline with real consequences: lose your committee seat, your shot at cabinet, or your nomination next election.
-            </p>
-          </div>
-          <div className="card-hover border border-edge bg-panel p-6">
-            <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-maple lowercase">
-              The influence
-            </p>
-            <h3 className="serif mt-3 text-xl font-normal italic text-cream lowercase">
-              Lobbying &amp; outside pressure
-            </h3>
-            <p className="mt-3 text-sm leading-6 text-mist">
-              Donors, lobbyists, and party leadership can all pull a vote
-              toward what serves them, not constituents, and a party label
-              alone can never show you when that&apos;s happened.
-            </p>
-          </div>
-          <div className="card-hover border border-edge bg-panel p-6">
-            <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-maple lowercase">
-              The check
-            </p>
-            <h3 className="serif mt-3 text-xl font-normal italic text-cream lowercase">
-              What we track instead
-            </h3>
-            <p className="mt-3 text-sm leading-6 text-mist">
-              Not just whether an MP voted with their party, but whether they
-              voted the way they told their own constituents they would. When
-              those two answers diverge, that&apos;s the moment worth your
-              attention.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* How to read it */}
-      <section className="relative overflow-hidden border-b border-edge bg-ink-2">
-        <div className="glow-maple pointer-events-none absolute right-[6%] top-[-30%] h-[60vh] w-[60vh] opacity-70" />
-        <div className="relative mx-auto max-w-7xl px-5 py-14">
-          <div className="grid gap-8 md:grid-cols-[0.7fr_1.3fr]">
+      {/* Live figures as a plain summary row. No bordered stat cards. */}
+      <section className="bg-paper-2">
+        <div className="mx-auto max-w-6xl px-6 py-10">
+          <dl className="grid gap-x-10 gap-y-7 sm:grid-cols-3">
             <div>
-              <p className="text-[10px] font-semibold uppercase tracking-[0.3em] text-maple lowercase">
-                How it works
-              </p>
-              <h2 className="serif mt-2 text-2xl font-normal italic text-cream lowercase">
-                Real data, honest gaps.
-              </h2>
+              <dt className="small text-muted">Sitting members tracked</dt>
+              <dd className="num mt-1 text-3xl font-semibold" style={{ fontFamily: "var(--font-display), Georgia, serif" }}>
+                {mps.length}
+                <span className="text-muted"> / {TOTAL_SEATS}</span>
+              </dd>
             </div>
-            <div className="space-y-3 text-base leading-7 text-mist">
-              <p>
-                Every MP&apos;s riding, party, and recent votes come straight
-                from Parliament&apos;s open data, including each party&apos;s
-                official position on a given vote, which lets us flag when an
-                individual MP&apos;s ballot broke from their own whip.
-              </p>
-              <p>
-                Researching what all 343 MPs actually campaigned on is a large,
-                ongoing task. Rather than guess, we&apos;ve written full,
-                sourced campaign-platform profiles for a pilot set of MPs
-                (marked <span className="text-maple">&quot;Full profile&quot;</span> below) and are expanding that
-                set over time. Every other MP still gets a real, live voting
-                record, just without the platform comparison yet.
-              </p>
-              <p className="text-sm text-mist-dim">
-                Note: only {mps.length} of {TOTAL_SEATS} seats have a sitting
-                MP right now. North Vancouver–Capilano and
-                Saint-Hyacinthe–Bagot–Acton are both vacant pending
+            {votes.length > 0 && (
+              <div>
+                <dt className="small text-muted">
+                  Recorded votes, session {SESSION}
+                </dt>
+                <dd className="num mt-1 text-3xl font-semibold" style={{ fontFamily: "var(--font-display), Georgia, serif" }}>
+                  {votes.length}
+                </dd>
+              </div>
+            )}
+            <div>
+              <dt className="small text-muted">
+                Sourced campaign-platform profiles
+              </dt>
+              <dd className="num mt-1 text-3xl font-semibold" style={{ fontFamily: "var(--font-display), Georgia, serif" }}>
+                {profiledSlugs.length}
+              </dd>
+            </div>
+          </dl>
+        </div>
+      </section>
+
+      <Section title="What a party label can't show you.">
+        <div className="grid gap-12 lg:grid-cols-[1.6fr_1fr] lg:gap-20">
+          <div className="copy space-y-4">
+            <p>
+              Every one of Canada&apos;s 343 MPs was elected by a specific
+              riding, on specific promises. The moment they&apos;re sworn in,
+              party structures push to compress that mandate into one of five
+              positions. Toe the line and you keep your committee seat and
+              your place on the next ballot. Break from it and you can lose
+              both.
+            </p>
+            <p>
+              A party whip is an MP whose job is to enforce how the rest of
+              caucus votes, counting the numbers before a vote happens and
+              holding people to the result. Donors and party leadership add
+              their own pull. None of that shows up in a party label.
+            </p>
+            <p>
+              So the tracker records two things. First, whether an MP voted
+              with their party. Second, for the MPs we&apos;ve researched,
+              whether they voted the way they told their own constituents they
+              would. When those answers diverge, that&apos;s the moment worth
+              your attention.
+            </p>
+          </div>
+
+          <div className="lg:pt-1">
+            <h3 className="h3">Where the data comes from</h3>
+            <p className="copy mt-2 text-[1rem]">
+              Everything here comes from{" "}
+              <a
+                href="https://openparliament.ca"
+                target="_blank"
+                rel="noreferrer"
+                className="link"
+              >
+                openparliament.ca
+              </a>
+              , which republishes the House of Commons&apos; own open data. We
+              add no estimates and no modelling.
+            </p>
+
+            <h3 className="h3 mt-7">Honest gaps</h3>
+            <p className="copy mt-2 text-[1rem]">
+              Researching what all 343 MPs campaigned on is a large, ongoing
+              task, so platform profiles exist for{" "}
+              <span className="num">{profiledSlugs.length}</span> MPs so far
+              (marked <span className="font-semibold">Full profile</span>{" "}
+              below). Every other MP still gets a real, live voting record,
+              without the platform comparison for now.
+            </p>
+            {vacant > 0 && (
+              <p className="small mt-4 text-muted">
+                <span className="num">{mps.length}</span> of {TOTAL_SEATS}{" "}
+                seats currently have a sitting member;{" "}
+                <span className="num">{vacant}</span> are vacant pending
                 byelections, per Elections Canada.
               </p>
-            </div>
+            )}
           </div>
         </div>
-      </section>
+      </Section>
 
-      {/* Download the data */}
-      <section className="border-b border-edge bg-ink">
-        <div className="mx-auto max-w-7xl px-5 py-14">
-          <div className="card-hover flex flex-col gap-6 border border-edge bg-panel p-8 md:flex-row md:items-center md:justify-between">
-            <div className="max-w-2xl">
-              <p className="text-[10px] font-semibold uppercase tracking-[0.3em] text-maple lowercase">
-                Open data
-              </p>
-              <h2 className="serif mt-3 text-2xl font-normal italic text-cream lowercase">
-                Download the voting dataset
-              </h2>
-              <p className="mt-3 text-base leading-7 text-mist">
-                Every recorded vote of the current session (45-1) as a CSV,
-                pulled live from Parliament&apos;s open data: vote number, date,
-                bill, description, result, and the yea / nay / paired tallies.
-                Free to use with attribution to{" "}
-                <span className="text-cream">openparliament.ca</span>.
-              </p>
-            </div>
+      <Section title="Download the full dataset" tone="paper-2">
+        <div className="grid gap-10 lg:grid-cols-[1.6fr_1fr] lg:gap-20">
+          <p className="copy">
+            Every recorded vote of session {SESSION} as a single CSV,{" "}
+            rebuilt hourly from Parliament&apos;s open data: session, vote number,
+            date, bill, description, result, and the yea / nay / paired
+            tallies. Free to use for any purpose with attribution to
+            openparliament.ca.
+          </p>
+          <div className="lg:pt-1">
             <DownloadLink
               href="/projects/parliament-tracker/dataset"
               file="parliament-votes-45-1.csv"
-              className="inline-flex shrink-0 items-center justify-center bg-maple px-6 py-3 text-center text-sm font-bold uppercase tracking-[0.08em] text-ink transition hover:shadow-[0_0_30px_-4px_rgba(249,85,61,0.6)]"
+              className="cta"
             >
-              Download CSV
+              {votes.length > 0
+                ? `Download ${votes.length} votes (CSV)`
+                : "Download CSV"}
             </DownloadLink>
           </div>
         </div>
-      </section>
+      </Section>
 
-      {/* Directory */}
-      <section className="bg-ink">
-        <div className="mx-auto max-w-7xl px-5 py-12">
-          <MPDirectory mps={mps} profiledSlugs={profiledSlugs} />
-        </div>
-      </section>
+      <Section title="Look up a member">
+        <MPDirectory mps={mps} profiledSlugs={profiledSlugs} />
+      </Section>
 
-      <section className="bg-ink">
-        <div className="mx-auto max-w-7xl px-5 py-12">
-          <div className="flex flex-wrap items-center justify-between gap-4 border-t border-edge pt-8">
-            <p className="max-w-2xl text-lg leading-8 text-mist">
-              Curious how party structures shape Parliament? Read the full
-              mission behind this project.
-            </p>
-            <Link
-              href="/mission"
-              className="inline-block bg-maple px-6 py-3 text-center text-sm font-bold uppercase tracking-[0.08em] text-ink transition hover:shadow-[0_0_30px_-4px_rgba(249,85,61,0.6)]"
-            >
+      <Section tone="paper-2">
+        <div className="max-w-2xl">
+          <h2 className="h2">
+            Curious why we built this?
+          </h2>
+          <p className="copy mt-5">
+            The tracker exists so anyone can check the record without taking
+            our word for it. The mission page explains the reasoning in full.
+          </p>
+          <div className="mt-8">
+            <Link href="/mission" className="cta">
               Read the mission
             </Link>
           </div>
         </div>
-      </section>
+      </Section>
 
       <Comments pageId="parliament-tracker" />
     </div>

@@ -27,11 +27,7 @@ interface Analysis {
 
 const MAX_CHARS = 15000;
 
-const leaningStyles: Record<Flag["leaning"], string> = {
-  left: "bg-[#2f74e8] text-white",
-  right: "bg-maple text-ink",
-  neutral: "bg-panel text-mist ring-1 ring-inset ring-edge",
-};
+const SPECTRUM_LABELS = ["Far left", "Lean left", "Centre", "Lean right", "Far right"];
 
 export default function BiasAnalyzer() {
   const [text, setText] = useState("");
@@ -65,29 +61,36 @@ export default function BiasAnalyzer() {
     }
   }
 
-  const markerPct = result ? Math.min(100, Math.max(0, (result.overallScore + 100) / 2)) : 50;
+  const markerPct = result
+    ? Math.min(100, Math.max(0, (result.overallScore + 100) / 2))
+    : 50;
 
   return (
     <div>
       <form onSubmit={handleSubmit} className="grid gap-4">
+        <label htmlFor="bias-text" className="small font-semibold">
+          Paste the text to analyze
+        </label>
         <textarea
+          id="bias-text"
           value={text}
           onChange={(e) => setText(e.target.value)}
           maxLength={MAX_CHARS}
           rows={12}
           required
           placeholder="Paste a news article, opinion piece, or transcript here…"
-          className="block w-full resize-y border border-edge bg-ink px-4 py-3 leading-6 text-cream placeholder:text-mist-dim focus:border-maple focus:outline-none"
+          className="field resize-y leading-relaxed"
         />
 
-        <div className="flex flex-wrap items-center justify-between gap-3">
-          <p className="text-xs text-mist">
-            {text.length.toLocaleString()} / {MAX_CHARS.toLocaleString()} characters
+        <div className="flex flex-wrap items-center justify-between gap-4">
+          <p className="small num text-muted">
+            {text.length.toLocaleString()} / {MAX_CHARS.toLocaleString()}{" "}
+            characters
           </p>
           <button
             type="submit"
             disabled={loading || text.trim().length < 40}
-            className="border border-edge px-7 py-3 text-sm font-medium uppercase tracking-[0.08em] text-cream bg-transparent transition hover:bg-maple hover:text-ink hover:border-maple disabled:cursor-not-allowed disabled:opacity-50"
+            className="btn"
           >
             {loading ? "Analyzing…" : "Analyze text"}
           </button>
@@ -95,107 +98,99 @@ export default function BiasAnalyzer() {
       </form>
 
       {error && (
-        <div className="mt-6 border border-maple/30 bg-ink/20 p-4 text-sm text-maple">
+        <p className="mt-6 border-l-[3px] border-red pl-4 text-[1rem] text-red">
           {error}
-        </div>
+        </p>
       )}
 
       {result && (
-        <div className="mt-12 space-y-10">
-          {/* Spectrum gauge */}
+        <div className="mt-14 space-y-12">
+          {/* Spectrum estimate. One flat track with one marker. The reading
+              is spelled out in words above it, so position is never the only
+              cue and there is no left/right colour coding to misread. */}
           <div>
-            <p className="text-[10px] font-semibold uppercase tracking-[0.3em] text-maple lowercase">
-              Estimated spectrum position
-            </p>
-            <div className="mt-4 flex items-baseline gap-3">
-              <h3 className="serif text-3xl font-normal italic text-cream lowercase">{result.overallLabel}</h3>
-              <span className="text-xs font-semibold uppercase tracking-[0.08em] text-mist">
+            <div className="flex flex-wrap items-baseline gap-x-4 gap-y-1">
+              <h3 className="h2">{result.overallLabel}</h3>
+              <span className="small text-muted">
                 {result.confidence} confidence
               </span>
             </div>
 
-            <div className="relative mt-6 h-2 w-full rounded-full bg-gradient-to-r from-[#2f74e8] via-mist-dim to-maple">
+            <div className="mt-7 max-w-2xl">
               <div
-                className="absolute top-1/2 h-5 w-5 -translate-y-1/2 -translate-x-1/2 rounded-full border-[3px] border-ink bg-cream shadow-[0_0_0_1px_rgba(255,255,255,0.25)]"
-                style={{ left: `${markerPct}%` }}
-              />
-            </div>
-            <div className="mt-2 flex justify-between text-[10px] font-semibold uppercase tracking-[0.08em] text-mist lowercase">
-              <span>Far Left</span>
-              <span>Lean Left</span>
-              <span>Center</span>
-              <span>Lean Right</span>
-              <span>Far Right</span>
+                className="relative h-[3px]"
+                style={{ background: "rgba(35,32,28,0.15)" }}
+              >
+                {/* The marker is 14px wide, so travel its centre from 7px to
+                    (100% - 7px); a raw percentage would hang half of it past
+                    each end of the track. */}
+                <div
+                  className="absolute top-1/2 h-3.5 w-3.5 -translate-x-1/2 -translate-y-1/2 rounded-full bg-red"
+                  style={{ left: `calc(7px + (100% - 14px) * ${markerPct / 100})` }}
+                />
+              </div>
+              <div className="small mt-3 flex justify-between text-muted">
+                {SPECTRUM_LABELS.map((label) => (
+                  <span key={label}>{label}</span>
+                ))}
+              </div>
             </div>
 
-            <p className="mt-6 max-w-3xl leading-7 text-mist">{result.summary}</p>
+            <p className="copy mt-7">{result.summary}</p>
           </div>
 
-          {/* Flagged language */}
           {result.flags.length > 0 && (
             <div>
-              <p className="text-[10px] font-semibold uppercase tracking-[0.3em] text-maple lowercase">
-                Flagged language
-              </p>
-              <h3 className="serif mt-2 text-2xl font-normal italic text-cream lowercase">
-                What stood out in the text
-              </h3>
-              <div className="mt-5 space-y-4">
+              <h3 className="h2">What stood out in the text</h3>
+              <ul className="mt-6 space-y-7">
                 {result.flags.map((flag, i) => (
-                  <div key={i} className="border border-edge bg-panel p-5">
-                    <div className="flex flex-wrap items-center gap-2">
-                      <span className="px-2 py-0.5 text-[10px] font-semibold uppercase tracking-[0.08em] text-cream ring-1 ring-inset ring-edge">
-                        {flag.category}
-                      </span>
-                      <span
-                        className={`px-2 py-0.5 text-[10px] font-semibold uppercase tracking-[0.08em] ${leaningStyles[flag.leaning]}`}
-                      >
-                        {flag.leaning}
-                      </span>
-                    </div>
-                    <p className="mt-3 italic leading-6 text-cream">&ldquo;{flag.quote}&rdquo;</p>
-                    <p className="mt-2 text-sm leading-6 text-mist">{flag.explanation}</p>
-                  </div>
+                  <li key={i}>
+                    <p className="small text-muted">
+                      {flag.category} · reads as {flag.leaning}
+                    </p>
+                    <blockquote className="mt-2 border-l-[3px] border-red pl-4 text-[1.0625rem] leading-relaxed">
+                      {flag.quote}
+                    </blockquote>
+                    <p className="copy mt-2.5 text-[1rem]">
+                      {flag.explanation}
+                    </p>
+                  </li>
                 ))}
-              </div>
+              </ul>
             </div>
           )}
 
-          {/* Techniques */}
           {result.techniques.length > 0 && (
             <div>
-              <p className="text-[10px] font-semibold uppercase tracking-[0.3em] text-maple lowercase">
-                Rhetorical techniques
-              </p>
-              <h3 className="serif mt-2 text-2xl font-normal italic text-cream lowercase">
-                Patterns across the piece
-              </h3>
-              <div className="mt-5 grid gap-4 sm:grid-cols-2">
+              <h3 className="h2">Patterns across the piece</h3>
+              <dl className="mt-6 space-y-7">
                 {result.techniques.map((t, i) => (
-                  <div key={i} className="border border-edge bg-panel p-5">
-                    <h4 className="font-semibold text-cream lowercase">{t.name}</h4>
-                    <p className="mt-2 text-sm leading-6 text-mist">{t.description}</p>
-                    {t.examples.length > 0 && (
-                      <ul className="mt-3 space-y-1">
-                        {t.examples.map((ex, j) => (
-                          <li key={j} className="text-xs italic leading-5 text-mist">
-                            &ldquo;{ex}&rdquo;
-                          </li>
-                        ))}
-                      </ul>
-                    )}
+                  <div key={i} className="grid gap-x-10 gap-y-2 md:grid-cols-[13rem_1fr]">
+                    <dt className="h3">{t.name}</dt>
+                    <dd>
+                      <p className="copy text-[1rem]">{t.description}</p>
+                      {t.examples.length > 0 && (
+                        <ul className="mt-2.5 space-y-1.5">
+                          {t.examples.map((ex, j) => (
+                            <li
+                              key={j}
+                              className="small border-l-[3px] border-red/40 pl-3 text-muted"
+                            >
+                              {ex}
+                            </li>
+                          ))}
+                        </ul>
+                      )}
+                    </dd>
                   </div>
                 ))}
-              </div>
+              </dl>
             </div>
           )}
 
-          {/* Caveats */}
-          <div className="border-l-4 border-edge bg-panel p-5 text-sm leading-6 text-mist">
-            <p className="mb-1 text-[10px] font-semibold uppercase tracking-[0.08em] text-cream lowercase">
-              Read this before you cite it
-            </p>
-            {result.caveats}
+          <div>
+            <h3 className="h3">Read this before you cite it</h3>
+            <p className="copy mt-2 text-[1rem]">{result.caveats}</p>
           </div>
         </div>
       )}

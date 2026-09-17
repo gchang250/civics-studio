@@ -2,7 +2,7 @@ import { getSessionVoteCatalog, type CatalogVote } from "@/lib/openparliament";
 
 // Rebuild the CSV at most once an hour; the underlying openparliament fetch is
 // itself cached a day, so this is cheap either way. `date` is openparliament's
-// bare calendar string (YYYY-MM-DD) — we pass it through verbatim rather than
+// bare calendar string (YYYY-MM-DD), so we pass it through verbatim instead of
 // through `new Date()`, which would shift it a day (parses as UTC midnight).
 export const revalidate = 3600;
 

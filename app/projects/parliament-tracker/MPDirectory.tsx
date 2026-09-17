@@ -15,6 +15,9 @@ export default function MPDirectory({ mps, profiledSlugs }: Props) {
   const [query, setQuery] = useState("");
   const [party, setParty] = useState("All");
   const [province, setProvince] = useState("All");
+  const [fullOnly, setFullOnly] = useState(false);
+
+  const profiledSet = useMemo(() => new Set(profiledSlugs), [profiledSlugs]);
 
   const parties = useMemo(
     () => ["All", ...Array.from(new Set(mps.map((m) => m.party))).sort()],
@@ -30,30 +33,30 @@ export default function MPDirectory({ mps, profiledSlugs }: Props) {
     return mps.filter((m) => {
       if (party !== "All" && m.party !== party) return false;
       if (province !== "All" && m.province !== province) return false;
+      if (fullOnly && !profiledSet.has(m.slug)) return false;
       if (q && !(m.name.toLowerCase().includes(q) || m.riding.toLowerCase().includes(q))) {
         return false;
       }
       return true;
     });
-  }, [mps, query, party, province]);
-
-  const profiledSet = new Set(profiledSlugs);
+  }, [mps, query, party, province, fullOnly, profiledSet]);
 
   return (
     <div>
-      {/* Filters */}
-      <div className="mb-8 grid gap-3 sm:grid-cols-3">
+      <div className="grid gap-3 sm:grid-cols-3">
         <input
           type="text"
           value={query}
           onChange={(e) => setQuery(e.target.value)}
           placeholder="Search by name or riding…"
-          className="border border-edge bg-panel px-4 py-2.5 text-cream placeholder:text-mist-dim focus:border-maple focus:outline-none"
+          aria-label="Search members of Parliament by name or riding"
+          className="field"
         />
         <select
           value={party}
           onChange={(e) => setParty(e.target.value)}
-          className="border border-edge bg-panel px-4 py-2.5 text-cream focus:border-maple focus:outline-none"
+          aria-label="Filter by party"
+          className="field"
         >
           {parties.map((p) => (
             <option key={p} value={p}>
@@ -64,7 +67,8 @@ export default function MPDirectory({ mps, profiledSlugs }: Props) {
         <select
           value={province}
           onChange={(e) => setProvince(e.target.value)}
-          className="border border-edge bg-panel px-4 py-2.5 text-cream focus:border-maple focus:outline-none"
+          aria-label="Filter by province"
+          className="field"
         >
           {provinces.map((p) => (
             <option key={p} value={p}>
@@ -74,32 +78,45 @@ export default function MPDirectory({ mps, profiledSlugs }: Props) {
         </select>
       </div>
 
-      <p className="mb-6 text-[10px] font-semibold uppercase tracking-[0.1em] text-maple lowercase">
-        {filtered.length} of {mps.length} MPs
-      </p>
+      <div className="mt-5 flex flex-wrap items-center justify-between gap-4">
+        <p className="small num text-muted">
+          Showing {filtered.length} of {mps.length} members
+        </p>
+        <label className="small flex cursor-pointer items-center gap-2 select-none">
+          <input
+            type="checkbox"
+            checked={fullOnly}
+            onChange={(e) => setFullOnly(e.target.checked)}
+            className="h-4 w-4 accent-red"
+          />
+          Full profiles only
+        </label>
+      </div>
 
-      {/* Grid */}
-      <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-        {filtered.map((mp) => {
-          const colors = partyColor(mp.party);
-          const hasFullProfile = profiledSet.has(mp.slug);
-          return (
+      {/* A roster of 338 rows is a table of data, so rows do get a faint
+          separator. That one is functional, unlike the decorative section
+          rules the rest of the site avoids. */}
+      <ul className="mt-6">
+        {filtered.map((mp) => (
+          <li
+            key={mp.slug}
+            style={{ boxShadow: "inset 0 -1px 0 rgba(35,32,28,0.12)" }}
+          >
             <Link
-              key={mp.slug}
               href={`/projects/parliament-tracker/mps/${mp.slug}`}
-              className="card-hover group flex gap-4 border border-edge bg-panel p-4"
+              className="group flex items-center gap-4 py-3.5"
             >
-              <div className="relative h-16 w-16 shrink-0 overflow-hidden bg-ink-2 ring-1 ring-edge">
+              <div className="relative h-11 w-11 shrink-0 overflow-hidden rounded-full bg-paper-2">
                 {mp.image ? (
                   <Image
                     src={getMPImageUrl(mp.image)}
-                    alt={mp.name}
+                    alt=""
                     fill
                     className="object-cover"
-                    sizes="64px"
+                    sizes="44px"
                   />
                 ) : (
-                  <div className="flex h-full w-full items-center justify-center text-lg font-bold text-mist/40">
+                  <div className="small flex h-full w-full items-center justify-center text-muted">
                     {mp.name
                       .split(" ")
                       .map((n) => n[0])
@@ -110,35 +127,38 @@ export default function MPDirectory({ mps, profiledSlugs }: Props) {
               </div>
 
               <div className="min-w-0 flex-1">
-                <p className="truncate font-semibold text-cream group-hover:text-maple-soft">
+                <p className="truncate font-medium transition-colors group-hover:text-red">
                   {mp.name}
                 </p>
-                <p className="mt-0.5 truncate text-sm text-mist">
+                <p className="small mt-0.5 truncate text-muted">
                   {mp.riding}, {mp.province}
                 </p>
-                <div className="mt-2 flex flex-wrap items-center gap-1.5">
+              </div>
+
+              <div className="flex shrink-0 items-center gap-3">
+                {profiledSet.has(mp.slug) && (
+                  <span className="small hidden text-red sm:inline">
+                    Full profile
+                  </span>
+                )}
+                <span className="flex items-center gap-2">
                   <span
-                    className="px-2 py-0.5 text-[10px] font-semibold uppercase tracking-[0.08em]"
-                    style={{ backgroundColor: colors.bg, color: colors.text }}
-                  >
+                    className="h-2 w-2 shrink-0 rounded-full"
+                    style={{ backgroundColor: partyColor(mp.party) }}
+                    aria-hidden
+                  />
+                  <span className="small w-[6.5rem] text-muted">
                     {mp.party}
                   </span>
-                  {hasFullProfile && (
-                    <span className="px-2 py-0.5 text-[10px] font-semibold uppercase tracking-[0.08em] text-maple ring-1 ring-inset ring-maple/40">
-                      Full profile
-                    </span>
-                  )}
-                </div>
+                </span>
               </div>
             </Link>
-          );
-        })}
-      </div>
+          </li>
+        ))}
+      </ul>
 
       {filtered.length === 0 && (
-        <p className="py-12 text-center text-mist lowercase">
-          No MPs match those filters.
-        </p>
+        <p className="copy py-10">No members match those filters.</p>
       )}
     </div>
   );

@@ -10,27 +10,18 @@ const UPDATED = "July 20, 2026";
 
 export default function TermsPage() {
   return (
-    <div className="bg-ink">
-      {/* Header */}
-      <section className="border-b border-edge bg-ink">
-        <div className="mx-auto max-w-3xl px-5 py-16 md:py-20">
-          <p className="text-xs font-semibold tracking-[0.25em] text-maple lowercase">
-            legal
-          </p>
-          <h1 className="serif mt-4 text-5xl font-normal italic leading-tight tracking-[-0.02em] text-cream md:text-6xl lowercase">
-            Terms of Service
-          </h1>
-          <p className="mt-6 text-[10px] uppercase tracking-[0.2em] text-mist-dim">
-            Last updated {UPDATED}
-          </p>
+    <div>
+      <header className="bg-ink-2 text-paper">
+        <div className="mx-auto max-w-3xl px-6 pb-14 pt-12">
+          <h1 className="display-sm">Terms of Service</h1>
+          <p className="small mt-5 text-muted-ink">Last updated {UPDATED}</p>
         </div>
-      </section>
+      </header>
 
-      {/* Body */}
-      <section className="bg-ink">
-        <div className="mx-auto max-w-3xl space-y-12 px-5 py-16">
+      <section className="bg-paper">
+        <div className="mx-auto max-w-3xl space-y-11 px-6 py-16">
           <div className="space-y-4">
-            <p className="text-base leading-8 text-mist">
+            <p className="lede max-w-none">
               These Terms of Service (&ldquo;Terms&rdquo;) govern your use of the
               Civics Studio website and the games, data projects, and learning
               resources we make available (together, the &ldquo;Services&rdquo;).
@@ -54,7 +45,7 @@ export default function TermsPage() {
               and non-commercial use. You agree to use the Services lawfully and
               not to:
             </p>
-            <ul className="mt-4 list-disc space-y-2 pl-5 text-mist">
+            <ul className="copy mt-4 max-w-none list-disc space-y-2 pl-5">
               <li>Interfere with, disrupt, or attempt to gain unauthorized access to the Services or their systems;</li>
               <li>Scrape, overload, or misuse the Services in a way that harms their availability;</li>
               <li>Misrepresent our content or use it in a misleading way; or</li>
@@ -77,7 +68,7 @@ export default function TermsPage() {
               such as records published by the Parliament of Canada, and from
               other public sources. We work to present this information
               accurately, but we do not guarantee that it is complete,
-              error-free, or current. Where our tools use AI-assisted analysis,
+              error-free, or current. Where our projects use AI-assisted analysis,
               results are best-effort interpretations and may contain mistakes.
               Always verify important information against original sources.
             </p>
@@ -142,7 +133,7 @@ export default function TermsPage() {
               Questions about these Terms? Email us at{" "}
               <a
                 href="mailto:civicsstudio@gmail.com"
-                className="text-maple-soft underline underline-offset-4 transition hover:text-maple"
+                className="link"
               >
                 civicsstudio@gmail.com
               </a>
@@ -164,12 +155,8 @@ function Section({
 }) {
   return (
     <div>
-      <h2 className="serif text-2xl font-normal italic tracking-[-0.01em] text-cream lowercase">
-        {title}
-      </h2>
-      <div className="mt-4 space-y-4 text-base leading-8 text-mist">
-        {children}
-      </div>
+      <h2 className="h2">{title}</h2>
+      <div className="copy mt-4 max-w-none space-y-4">{children}</div>
     </div>
   );
 }

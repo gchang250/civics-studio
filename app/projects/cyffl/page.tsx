@@ -1,15 +1,15 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import Comments from "@/app/components/Comments";
 import CrossSiteLink from "@/app/components/CrossSiteLink";
+import PageHeader from "@/app/components/PageHeader";
+import Section from "@/app/components/Section";
 
-const focusAreas = [
-  "French literacy",
-  "French foundations",
-  "Student support",
-  "Online learning",
-  "Academic confidence",
-  "Youth-led education",
-];
+export const metadata: Metadata = {
+  title: "CYFFL",
+  description:
+    "The Canadian Youth Foundation for French Literacy. Free French learning resources and tutoring, run by students, for a country short thousands of qualified French teachers.",
+};
 
 const offerings = [
   {
@@ -31,171 +31,73 @@ const offerings = [
 
 export default function CYFFLPage() {
   return (
-    <div className="bg-ink">
-      <section className="border-b border-edge bg-panel">
-        <div className="mx-auto max-w-7xl px-5 py-14 md:py-18">
-          <div className="grid gap-10 lg:grid-cols-[1.25fr_0.75fr]">
-            <div>
-              <p className="text-[10px] font-semibold uppercase tracking-[0.3em] text-maple lowercase">
-                french literacy program
-              </p>
+    <div>
+      <PageHeader
+        title="Canadian Youth Foundation for French Literacy"
+        lede="Canada is short nearly 10,000 qualified French teachers. Students who want to learn French or stay in French Immersion are running out of options. CYFFL is a youth-run program filling that gap with free online resources and local tutoring support."
+      >
+        <CrossSiteLink href="https://canyffl.vercel.app/" className="cta cta-invert">
+          Visit the CYFFL website
+        </CrossSiteLink>
+        <a href="mailto:canadianyouthffl@gmail.com" className="cta cta-invert">
+          Contact CYFFL
+        </a>
+      </PageHeader>
 
-              <h1 className="serif mt-4 max-w-5xl text-5xl font-normal italic leading-tight tracking-[-0.02em] text-cream md:text-6xl lowercase">
-                Canadian Youth Foundation for French Literacy
-              </h1>
+      <Section title="Why this matters right now.">
+        <div className="copy space-y-5">
+          <p>
+            Canada has two official languages, and that&apos;s supposed to
+            mean something practically. French Immersion waitlists are growing
+            and FSL classes are being cut while the teacher shortage gets
+            worse each year. Students who want to engage with French have
+            fewer and fewer places to do it.
+          </p>
+          <p>
+            CYFFL started because students noticed this and decided to do
+            something about it. The program is run by youth, for youth. It
+            sits alongside school instruction and gives students who want to
+            keep learning somewhere to turn.
+          </p>
+        </div>
+      </Section>
 
-              <p className="mt-5 max-w-3xl text-xl leading-8 text-mist">
-                Canada is short nearly 10,000 qualified French teachers. Kids who want to learn French or stay in French Immersion are running out of options. CYFFL is a youth-run program filling that gap with free online resources and local tutoring support.
-              </p>
-
-              <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-                <CrossSiteLink
-                  href="https://canyffl.vercel.app/"
-                  className="border border-edge px-6 py-3 text-center text-sm font-medium uppercase tracking-[0.08em] text-cream transition hover:bg-maple hover:text-ink hover:border-maple"
-                >
-                  Visit the CYFFL website
-                </CrossSiteLink>
-
-                <a
-                  href="mailto:canadianyouthffl@gmail.com"
-                  className="border border-edge px-6 py-3 text-center text-sm font-medium uppercase tracking-[0.08em] text-mist transition hover:bg-maple hover:text-ink hover:border-maple"
-                >
-                  Contact CYFFL
-                </a>
-              </div>
+      <Section title="Resources, registration, and support" tone="paper-2">
+        <dl>
+          {offerings.map((item) => (
+            <div
+              key={item.title}
+              className="grid gap-x-10 gap-y-2 py-6 md:grid-cols-[16rem_1fr]"
+            >
+              <dt className="h3">{item.title}</dt>
+              <dd className="copy text-[1rem]">{item.description}</dd>
             </div>
+          ))}
+        </dl>
 
-            <aside className="border border-edge bg-ink p-6">
-              <p className="text-[10px] font-semibold uppercase tracking-[0.3em] text-maple lowercase">
-                program brief
-              </p>
+        <p className="copy mt-8 text-[1rem]">
+          Focus areas include French literacy foundations and online
+          learning.
+        </p>
+      </Section>
 
-              <h2 className="serif mt-3 text-2xl font-normal italic leading-tight tracking-[-0.01em] text-cream lowercase">
-                free french support for students.
-              </h2>
-
-              <p className="mt-4 text-sm leading-6 text-mist">
-                CYFFL helps students work on their French outside of school through study guides, grammar resources, and tutoring from other students who have been through the same curriculum.
-              </p>
-            </aside>
-          </div>
+      <Section title="Language access is a civic issue.">
+        <p className="copy">
+          If Canada is going to take bilingualism seriously, French has to be
+          genuinely accessible to students who want to learn it. CYFFL is part
+          of how Civics Studio thinks about public life: access to education
+          and to language still depends far too much on which school you got
+          into and which province you live in.
+        </p>
+        <div className="mt-8 flex flex-wrap gap-x-8 gap-y-3">
+          <CrossSiteLink href="https://canyffl.vercel.app/" className="cta">
+            Visit the CYFFL website
+          </CrossSiteLink>
+          <Link href="/contact" className="cta">
+            Contact Civics Studio
+          </Link>
         </div>
-      </section>
-
-      <section className="bg-ink">
-        <div className="mx-auto grid max-w-7xl gap-10 px-5 py-12 md:grid-cols-[0.8fr_1.2fr]">
-          <div>
-            <p className="text-[10px] font-semibold uppercase tracking-[0.3em] text-maple lowercase">
-              overview
-            </p>
-
-            <h2 className="serif mt-2 text-3xl font-normal italic tracking-[-0.01em] text-cream lowercase">
-              why this matters right now.
-            </h2>
-          </div>
-
-          <div className="max-w-3xl text-lg leading-8 text-mist">
-            <p>
-              Canada has two official languages. That&apos;s not just a constitutional fact, it&apos;s supposed to mean something practically. But French Immersion waitlists are growing, FSL classes are being cut, and the teacher shortage is getting worse each year. Students who want to engage with French genuinely have fewer and fewer places to do it.
-            </p>
-
-            <p className="mt-5">
-              CYFFL started because students noticed this and decided to do something about it. The program is run by youth, for youth. It&apos;s not a replacement for proper school instruction, but it&apos;s a real resource for students who want to keep learning and don&apos;t have anywhere else to turn.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <section className="border-y border-edge bg-panel">
-        <div className="mx-auto max-w-7xl px-5 py-12">
-          <div className="mb-6 border-b border-edge pb-4">
-            <p className="text-[10px] font-semibold uppercase tracking-[0.3em] text-maple lowercase">
-              focus areas
-            </p>
-
-            <h2 className="serif mt-2 text-3xl font-normal italic tracking-[-0.01em] text-cream lowercase">
-              what CYFFL supports
-            </h2>
-          </div>
-
-          <div className="grid gap-px bg-edge sm:grid-cols-2 md:grid-cols-3 border border-edge">
-            {focusAreas.map((area) => (
-              <div key={area} className="bg-ink p-5">
-                <p className="font-semibold text-cream">{area}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="bg-ink">
-        <div className="mx-auto max-w-7xl px-5 py-12">
-          <div className="mb-6 border-b border-edge pb-4">
-            <p className="text-[10px] font-semibold uppercase tracking-[0.3em] text-maple lowercase">
-              programs
-            </p>
-
-            <h2 className="serif mt-2 text-3xl font-normal italic tracking-[-0.01em] text-cream lowercase">
-              resources, registration, and support
-            </h2>
-          </div>
-
-          <div className="grid gap-6 md:grid-cols-3">
-            {offerings.map((item) => (
-              <div
-                key={item.title}
-                className="border border-edge bg-panel p-6"
-              >
-                <h3 className="serif text-2xl font-normal italic text-cream lowercase">
-                  {item.title}
-                </h3>
-
-                <p className="mt-4 text-sm leading-6 text-mist">
-                  {item.description}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="bg-ink">
-        <div className="mx-auto max-w-7xl px-5 py-12">
-          <div className="grid gap-8 border-t border-edge pt-8 md:grid-cols-[0.7fr_1.3fr]">
-            <div>
-              <p className="text-[10px] font-semibold uppercase tracking-[0.3em] text-maple lowercase">
-                connection
-              </p>
-
-              <h2 className="serif mt-2 text-3xl font-normal italic tracking-[-0.01em] text-cream lowercase">
-                language access is a civic issue.
-              </h2>
-            </div>
-
-            <div>
-              <p className="max-w-3xl text-lg leading-8 text-mist">
-                If Canada is going to take bilingualism seriously, French has to be accessible to students who want to learn it, not just on paper. CYFFL is part of how Civics Studio thinks about public life: access to education, to language, to participation, shouldn&apos;t depend on which school you got into or which province you live in.
-              </p>
-
-              <div className="mt-6 flex flex-col gap-3 sm:flex-row">
-                <CrossSiteLink
-                  href="https://canyffl.vercel.app/"
-                  className="inline-block border border-edge px-5 py-3 text-center text-sm font-medium uppercase tracking-[0.08em] text-cream transition hover:bg-maple hover:text-ink hover:border-maple"
-                >
-                  Visit the CYFFL website
-                </CrossSiteLink>
-
-                <Link
-                  href="/contact"
-                  className="inline-block border border-edge px-5 py-3 text-center text-sm font-medium uppercase tracking-[0.08em] text-mist transition hover:bg-maple hover:text-ink hover:border-maple"
-                >
-                  Contact Civics Studio
-                </Link>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      </Section>
 
       <Comments pageId="cyffl" />
     </div>

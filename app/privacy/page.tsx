@@ -10,27 +10,18 @@ const UPDATED = "July 20, 2026";
 
 export default function PrivacyPage() {
   return (
-    <div className="bg-ink">
-      {/* Header */}
-      <section className="border-b border-edge bg-ink">
-        <div className="mx-auto max-w-3xl px-5 py-16 md:py-20">
-          <p className="text-xs font-semibold tracking-[0.25em] text-maple lowercase">
-            legal
-          </p>
-          <h1 className="serif mt-4 text-5xl font-normal italic leading-tight tracking-[-0.02em] text-cream md:text-6xl lowercase">
-            Privacy Policy
-          </h1>
-          <p className="mt-6 text-[10px] uppercase tracking-[0.2em] text-mist-dim">
-            Last updated {UPDATED}
-          </p>
+    <div>
+      <header className="bg-ink-2 text-paper">
+        <div className="mx-auto max-w-3xl px-6 pb-14 pt-12">
+          <h1 className="display-sm">Privacy Policy</h1>
+          <p className="small mt-5 text-muted-ink">Last updated {UPDATED}</p>
         </div>
-      </section>
+      </header>
 
-      {/* Body */}
-      <section className="bg-ink">
-        <div className="mx-auto max-w-3xl space-y-12 px-5 py-16">
+      <section className="bg-paper">
+        <div className="mx-auto max-w-3xl space-y-11 px-6 py-16">
           <div className="space-y-4">
-            <p className="text-base leading-8 text-mist">
+            <p className="lede max-w-none">
               Civics Studio (&ldquo;we,&rdquo; &ldquo;us,&rdquo; or
               &ldquo;our&rdquo;) is a youth-led, non-partisan civic education
               project. This Privacy Policy explains what information we collect
@@ -44,21 +35,21 @@ export default function PrivacyPage() {
               We do not require you to create an account to browse the site. We
               collect three kinds of information:
             </p>
-            <ul className="mt-4 list-disc space-y-2 pl-5 text-mist">
+            <ul className="copy mt-4 max-w-none list-disc space-y-2 pl-5">
               <li>
-                <span className="text-cream">Usage and analytics data</span>: how
+                <span className="font-semibold">Usage and analytics data</span>: how
                 many people use our projects and how many times each page is
                 viewed, along with a persistent visitor identifier that our
                 analytics provider stores in a cookie so returning visits can be
                 recognized.
               </li>
               <li>
-                <span className="text-cream">Comments you post</span>: if you leave
+                <span className="font-semibold">Comments you post</span>: if you leave
                 a comment on a project, we store the name and comment text you
                 submit, and they are shown publicly on the page.
               </li>
               <li>
-                <span className="text-cream">Information you choose to send</span>:
+                <span className="font-semibold">Information you choose to send</span>:
                 if you email us, we receive whatever information you include, such
                 as your name and email address.
               </li>
@@ -71,13 +62,13 @@ export default function PrivacyPage() {
               used, mainly to measure how many people use the app and how many
               views each page receives:
             </p>
-            <ul className="mt-4 list-disc space-y-2 pl-5 text-mist">
+            <ul className="copy mt-4 max-w-none list-disc space-y-2 pl-5">
               <li>
-                <span className="text-cream">Vercel Analytics</span>: cookieless
+                <span className="font-semibold">Vercel Analytics</span>: cookieless
                 measurement of visits and page views.
               </li>
               <li>
-                <span className="text-cream">PostHog</span>: measures visits and
+                <span className="font-semibold">PostHog</span>: measures visits and
                 page views and assigns each visitor a persistent identifier,
                 stored in a cookie and in your browser&apos;s local storage, so we
                 can recognize returning visits and build an anonymous visitor
@@ -110,7 +101,7 @@ export default function PrivacyPage() {
 
           <Section title="How we use information">
             <p>We use the information we collect to:</p>
-            <ul className="mt-4 list-disc space-y-2 pl-5 text-mist">
+            <ul className="copy mt-4 max-w-none list-disc space-y-2 pl-5">
               <li>Operate, maintain, and improve the site and our projects;</li>
               <li>Understand which resources are useful to students and educators;</li>
               <li>Display the comments you choose to post;</li>
@@ -177,7 +168,7 @@ export default function PrivacyPage() {
               Questions about this policy? Email us at{" "}
               <a
                 href="mailto:civicsstudio@gmail.com"
-                className="text-maple-soft underline underline-offset-4 transition hover:text-maple"
+                className="link"
               >
                 civicsstudio@gmail.com
               </a>
@@ -199,12 +190,8 @@ function Section({
 }) {
   return (
     <div>
-      <h2 className="serif text-2xl font-normal italic tracking-[-0.01em] text-cream lowercase">
-        {title}
-      </h2>
-      <div className="mt-4 space-y-4 text-base leading-8 text-mist">
-        {children}
-      </div>
+      <h2 className="h2">{title}</h2>
+      <div className="copy mt-4 max-w-none space-y-4">{children}</div>
     </div>
   );
 }

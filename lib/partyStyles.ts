@@ -1,19 +1,27 @@
-// Party colours tuned for the dark UI: vivid, recognizable, and legible as
-// solid pills on the near-black panel surfaces. Each returns a background plus
-// a text colour with sufficient contrast against that background.
-export function partyColor(party: string): { bg: string; text: string } {
+/**
+ * Party identity as a single hue, rendered as a small dot beside the party
+ * name, never as a filled pill.
+ *
+ * Six saturated pill backgrounds sitting next to the site's one accent colour
+ * was the loudest thing on the tracker, and it read as decoration rather than
+ * data. A 6px dot carries the same information (these are the conventional
+ * Canadian party colours, so readers decode them instantly) at a fraction of
+ * the visual weight, and the party name is always spelled out next to it so
+ * the colour is never the only cue.
+ */
+export function partyColor(party: string): string {
   switch (party) {
     case "Liberal":
-      return { bg: "#e5384f", text: "#ffffff" };
+      return "#d6455a";
     case "Conservative":
-      return { bg: "#2f74e8", text: "#ffffff" };
+      return "#4a86e8";
     case "NDP":
-      return { bg: "#f5852a", text: "#1a0f00" };
+      return "#e8913f";
     case "Bloc":
-      return { bg: "#3fbdd6", text: "#06222b" };
+      return "#57b8cf";
     case "Green":
-      return { bg: "#4bb03f", text: "#06210a" };
+      return "#5aa64f";
     default:
-      return { bg: "#7c869b", text: "#0a0d16" };
+      return "#7c869b";
   }
 }

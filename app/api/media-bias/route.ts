@@ -83,7 +83,7 @@ export async function POST(request: NextRequest) {
   }
   if (text.length > MAX_CHARS) {
     return Response.json(
-      { error: `Text is too long — please paste under ${MAX_CHARS.toLocaleString()} characters.` },
+      { error: `Text is too long. Please paste under ${MAX_CHARS.toLocaleString()} characters.` },
       { status: 400 }
     );
   }
