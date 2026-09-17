@@ -34,7 +34,9 @@ export default async function HomePage() {
     getSessionVoteCatalog(SESSION).catch((): CatalogVote[] => []),
     getMPRoster().catch((): MPListing[] => []),
   ]);
-  const profiled = getProfileSlugs().length;
+  // Sitting members only; see the note on the members page.
+  const profiledSet = new Set(getProfileSlugs());
+  const profiled = mps.filter((m) => profiledSet.has(m.slug)).length;
 
   const latestVotes = votes.slice(0, 5);
   const seats = seatsByParty(mps);
@@ -155,7 +157,7 @@ export default async function HomePage() {
                 </p>
                 <p>
                   For{" "}
-                  <span className="num">{profiled}</span> members we have also
+                  <span className="num">{profiled}</span> of them we have also
                   written sourced profiles of what they campaigned on, so you
                   can hold the promise up against the record. Every other
                   member still has a full voting record, without the platform

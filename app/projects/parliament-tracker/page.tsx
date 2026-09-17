@@ -28,6 +28,13 @@ export default async function MembersPage() {
 
   const vacant = TOTAL_SEATS - mps.length;
 
+  // Count only profiles belonging to a currently sitting member. Nine profiles
+  // cover members of the 44th Parliament, and the directory below cannot link
+  // to them, so including them in this figure would overstate the coverage a
+  // reader can actually browse.
+  const profiledSet = new Set(profiledSlugs);
+  const profiledSitting = mps.filter((m) => profiledSet.has(m.slug)).length;
+
   return (
     <div>
       <PageHeader
@@ -72,13 +79,14 @@ export default async function MembersPage() {
             )}
             <div>
               <dt className="small text-muted">
-                Sourced campaign-platform profiles
+                Members with a sourced profile
               </dt>
               <dd
                 className="num mt-1 text-3xl font-semibold"
                 style={{ fontFamily: "var(--font-display), Georgia, serif" }}
               >
-                {profiledSlugs.length}
+                {profiledSitting}
+                <span className="text-muted"> / {mps.length}</span>
               </dd>
             </div>
           </dl>
@@ -106,7 +114,7 @@ export default async function MembersPage() {
             <p>
               Researching what all 343 members campaigned on is a large,
               ongoing task, so sourced platform profiles exist for{" "}
-              <span className="num">{profiledSlugs.length}</span> of them so
+              <span className="num">{profiledSitting}</span> sitting members so
               far, marked <span className="font-semibold">Full profile</span>{" "}
               below. Every other member still has a real voting record, without
               the platform comparison for now.
