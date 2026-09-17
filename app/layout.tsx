@@ -5,10 +5,17 @@ import Script from "next/script";
 import { Analytics } from "@vercel/analytics/next";
 import { Fraunces, DM_Sans } from "next/font/google";
 import { SITE_URL } from "@/lib/site";
+import { getSessionVoteCatalog, type CatalogVote } from "@/lib/openparliament";
 import MobileNav from "@/app/components/MobileNav";
 import "./globals.css";
 
 const GA_ID = process.env.NEXT_PUBLIC_GA_ID;
+const SESSION = "45-1";
+
+// Applies to every route under the root layout, so the footer's "current
+// through" date cannot freeze at build time on the otherwise-static pages
+// (/terms, /privacy). Pages may still set a shorter window of their own.
+export const revalidate = 3600;
 
 // High-character variable serif for display type. SOFT and WONK are Fraunces'
 // own axes (only `wght` ships by default) and are what give it the engraved,
@@ -32,14 +39,14 @@ export const metadata: Metadata = {
     template: "%s | Civics Studio",
   },
   description:
-    "Civics Studio publishes every recorded vote of Canada's 45th Parliament, MP by MP, and flags when a member voted against their own party.",
+    "Civics Studio publishes every recorded vote of Canada's 45th Parliament, MP by MP, and shows how those votes line up against what members campaigned on.",
   keywords: [
     "civic education",
-    "youth civic engagement",
+    "MP voting record",
     "Canada civics",
-    "CanPol Index",
+    "Parliament open data",
     "political literacy",
-    "economic literacy",
+    "campaign promises",
   ],
   verification: process.env.GOOGLE_SITE_VERIFICATION
     ? { google: process.env.GOOGLE_SITE_VERIFICATION }
@@ -47,17 +54,36 @@ export const metadata: Metadata = {
 };
 
 const navItems = [
-  { href: "/projects", label: "Projects" },
+  { href: "/projects/parliament-tracker", label: "Members" },
   { href: "/mission", label: "Mission" },
   { href: "/about", label: "About" },
   { href: "/contact", label: "Contact" },
 ];
 
-export default function RootLayout({
+/** Bare calendar strings parse as UTC midnight, which renders a day early
+ *  west of Greenwich. Build the date from its parts. */
+function formatDate(isoDate: string): string {
+  const [y, m, d] = isoDate.split("-").map(Number);
+  return new Date(y, m - 1, d).toLocaleDateString("en-CA", {
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+  });
+}
+
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  // Dating the footer from the newest vote we actually hold keeps the claim
+  // checkable. It says what the data covers, with no assertion about how
+  // often anyone touches the site.
+  const votes = await getSessionVoteCatalog(SESSION).catch(
+    (): CatalogVote[] => []
+  );
+  const currentThrough = votes.length > 0 ? formatDate(votes[0].date) : null;
+
   return (
     <html lang="en">
       <body className={`${dmSans.variable} ${fraunces.variable}`}>
@@ -66,13 +92,7 @@ export default function RootLayout({
         <header className="sticky top-0 z-50 bg-ink-2 text-paper">
           <div className="mx-auto flex h-[4.5rem] max-w-6xl items-center justify-between px-6">
             <Link href="/" className="flex shrink-0 items-center gap-3">
-              <Image
-                src="/seal.png"
-                alt=""
-                width={30}
-                height={30}
-                priority
-              />
+              <Image src="/seal.png" alt="" width={30} height={30} priority />
               <span
                 className="text-[1.3rem] font-semibold tracking-[-0.02em]"
                 style={{ fontFamily: "var(--font-display), Georgia, serif" }}
@@ -124,48 +144,42 @@ export default function RootLayout({
                 </a>
               </div>
 
-              <div className="grid gap-x-10 gap-y-8 sm:grid-cols-2">
-                <nav className="flex flex-col gap-2.5">
-                  <p className="text-[0.9375rem] font-semibold">Projects</p>
-                  <Link href="/projects/parliament-tracker" className="text-[0.9375rem] text-muted-ink transition-colors hover:text-paper">
-                    Parliament Tracker
-                  </Link>
-                  <Link href="/projects/media-bias-tracker" className="text-[0.9375rem] text-muted-ink transition-colors hover:text-paper">
-                    Media Bias Detector
-                  </Link>
-                  <Link href="/projects/fried-rice-index" className="text-[0.9375rem] text-muted-ink transition-colors hover:text-paper">
-                    The CanPol Index
-                  </Link>
-                  <Link href="/projects/cyffl" className="text-[0.9375rem] text-muted-ink transition-colors hover:text-paper">
-                    CYFFL
-                  </Link>
-                </nav>
-
-                <nav className="flex flex-col gap-2.5">
-                  <p className="text-[0.9375rem] font-semibold">Studio</p>
-                  <Link href="/mission" className="text-[0.9375rem] text-muted-ink transition-colors hover:text-paper">
-                    Mission
-                  </Link>
-                  <Link href="/about" className="text-[0.9375rem] text-muted-ink transition-colors hover:text-paper">
-                    About
-                  </Link>
-                  <Link href="/contact" className="text-[0.9375rem] text-muted-ink transition-colors hover:text-paper">
-                    Contact
-                  </Link>
-                  <Link href="/privacy" className="text-[0.9375rem] text-muted-ink transition-colors hover:text-paper">
-                    Privacy
-                  </Link>
-                  <Link href="/terms" className="text-[0.9375rem] text-muted-ink transition-colors hover:text-paper">
-                    Terms
-                  </Link>
-                </nav>
-              </div>
+              <nav className="flex flex-col gap-2.5 sm:items-start">
+                {[...navItems, { href: "/privacy", label: "Privacy" }, { href: "/terms", label: "Terms" }].map(
+                  (item) => (
+                    <Link
+                      key={item.href}
+                      href={item.href}
+                      className="text-[0.9375rem] text-muted-ink transition-colors hover:text-paper"
+                    >
+                      {item.label}
+                    </Link>
+                  )
+                )}
+              </nav>
             </div>
 
-            <p className="small mt-14 text-muted-ink">
-              © {new Date().getFullYear()} Civics Studio · Vote data from
-              openparliament.ca
-            </p>
+            <div className="mt-14 space-y-1">
+              {currentThrough && (
+                <p className="small text-muted-ink">
+                  Vote records current through {currentThrough}. The site reads
+                  Parliament&apos;s open data directly, so new votes appear
+                  without a redeploy.
+                </p>
+              )}
+              <p className="small text-muted-ink">
+                © {new Date().getFullYear()} Civics Studio · Vote data from{" "}
+                <a
+                  href="https://openparliament.ca"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="link text-muted-ink"
+                  style={{ textDecorationColor: "var(--color-red-bright)" }}
+                >
+                  openparliament.ca
+                </a>
+              </p>
+            </div>
           </div>
         </footer>
 

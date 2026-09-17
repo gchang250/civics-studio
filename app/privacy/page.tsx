@@ -25,7 +25,7 @@ export default function PrivacyPage() {
               Civics Studio (&ldquo;we,&rdquo; &ldquo;us,&rdquo; or
               &ldquo;our&rdquo;) is a youth-led, non-partisan civic education
               project. This Privacy Policy explains what information we collect
-              when you visit our website and use our projects, how we use it, and
+              when you visit and use our website, how we use it, and
               the choices you have. We keep data collection to a minimum.
             </p>
           </div>
@@ -38,7 +38,7 @@ export default function PrivacyPage() {
             <ul className="copy mt-4 max-w-none list-disc space-y-2 pl-5">
               <li>
                 <span className="font-semibold">Usage and analytics data</span>: how
-                many people use our projects and how many times each page is
+                many people use the site and how many times each page is
                 viewed, along with a persistent visitor identifier that our
                 analytics provider stores in a cookie so returning visits can be
                 recognized.
@@ -58,7 +58,7 @@ export default function PrivacyPage() {
 
           <Section title="Analytics">
             <p>
-              We use two analytics services to understand how our projects are
+              We use two analytics services to understand how the site is
               used, mainly to measure how many people use the app and how many
               views each page receives:
             </p>
@@ -82,7 +82,7 @@ export default function PrivacyPage() {
               not use this data for advertising, and we do not sell it.
             </p>
             <p className="mt-4">
-              Some of our projects display public information sourced from open
+              The site displays public information sourced from open
               government data, such as records published by the Parliament of
               Canada. That data concerns public officials in their public roles
               and is not personal information about you as a visitor.
@@ -102,7 +102,7 @@ export default function PrivacyPage() {
           <Section title="How we use information">
             <p>We use the information we collect to:</p>
             <ul className="copy mt-4 max-w-none list-disc space-y-2 pl-5">
-              <li>Operate, maintain, and improve the site and our projects;</li>
+              <li>Operate, maintain, and improve the site;</li>
               <li>Understand which resources are useful to students and educators;</li>
               <li>Display the comments you choose to post;</li>
               <li>Respond to messages you send us; and</li>

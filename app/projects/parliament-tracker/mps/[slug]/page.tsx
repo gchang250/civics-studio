@@ -52,7 +52,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const mp = await getMPDetail(slug);
   if (!mp) return {};
   return {
-    title: `${mp.name} | Parliament Tracker`,
+    title: mp.name,
     description: `Voting record and profile for ${mp.name}, ${mp.currentParty ?? "MP"}${
       mp.currentRiding ? ` for ${mp.currentRiding.name}` : ""
     }.`,

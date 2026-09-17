@@ -23,10 +23,10 @@ export default function TermsPage() {
           <div className="space-y-4">
             <p className="lede max-w-none">
               These Terms of Service (&ldquo;Terms&rdquo;) govern your use of the
-              Civics Studio website and the games, data projects, and learning
-              resources we make available (together, the &ldquo;Services&rdquo;).
-              By using the Services, you agree to these Terms. If you do not
-              agree, please do not use the Services.
+              Civics Studio website, including the voting records, member
+              profiles, and downloadable data we publish (together, the
+              &ldquo;Services&rdquo;). By using the Services, you agree to these
+              Terms. If you do not agree, please do not use the Services.
             </p>
           </div>
 
@@ -64,13 +64,14 @@ export default function TermsPage() {
 
           <Section title="Third-party data and accuracy">
             <p>
-              Some projects present information drawn from open government data,
-              such as records published by the Parliament of Canada, and from
-              other public sources. We work to present this information
+              The site presents information drawn from open government data,
+              chiefly records published by the Parliament of Canada and
+              republished by openparliament.ca. We work to present it
               accurately, but we do not guarantee that it is complete,
-              error-free, or current. Where our projects use AI-assisted analysis,
-              results are best-effort interpretations and may contain mistakes.
-              Always verify important information against original sources.
+              error-free, or current. Where we describe what a member
+              campaigned on, that is our own sourced reading of their stated
+              platform. Always verify important information against the
+              original sources, which we link.
             </p>
           </Section>
 

@@ -14,12 +14,12 @@ const SESSION = "45-1";
 export const revalidate = 3600;
 
 export const metadata: Metadata = {
-  title: "Parliament Tracker",
+  title: "Members of Parliament",
   description:
-    "Every recorded vote of Canada's 45th Parliament, MP by MP, from Parliament's own open data, including when a member voted against their own party.",
+    "Look up any of Canada's sitting MPs and read their recorded votes, straight from Parliament's own open data.",
 };
 
-export default async function ParliamentTrackerPage() {
+export default async function MembersPage() {
   const [mps, votes, profiledSlugs] = await Promise.all([
     getMPRoster(),
     getSessionVoteCatalog(SESSION).catch((): CatalogVote[] => []),
@@ -31,8 +31,8 @@ export default async function ParliamentTrackerPage() {
   return (
     <div>
       <PageHeader
-        title="Parliament Tracker"
-        lede="Every recorded vote of the current session, ballot by ballot, for every sitting member, pulled straight from Parliament's own open data. Where a party took an official position, we flag the MPs whose ballot broke from it."
+        title="Members of Parliament"
+        lede="Every recorded vote of the current session, ballot by ballot, for every sitting member. Where a party took an official position, we flag the members whose ballot broke from it."
       >
         <DownloadLink
           href="/projects/parliament-tracker/dataset"
@@ -49,7 +49,10 @@ export default async function ParliamentTrackerPage() {
           <dl className="grid gap-x-10 gap-y-7 sm:grid-cols-3">
             <div>
               <dt className="small text-muted">Sitting members tracked</dt>
-              <dd className="num mt-1 text-3xl font-semibold" style={{ fontFamily: "var(--font-display), Georgia, serif" }}>
+              <dd
+                className="num mt-1 text-3xl font-semibold"
+                style={{ fontFamily: "var(--font-display), Georgia, serif" }}
+              >
                 {mps.length}
                 <span className="text-muted"> / {TOTAL_SEATS}</span>
               </dd>
@@ -59,7 +62,10 @@ export default async function ParliamentTrackerPage() {
                 <dt className="small text-muted">
                   Recorded votes, session {SESSION}
                 </dt>
-                <dd className="num mt-1 text-3xl font-semibold" style={{ fontFamily: "var(--font-display), Georgia, serif" }}>
+                <dd
+                  className="num mt-1 text-3xl font-semibold"
+                  style={{ fontFamily: "var(--font-display), Georgia, serif" }}
+                >
                   {votes.length}
                 </dd>
               </div>
@@ -68,7 +74,10 @@ export default async function ParliamentTrackerPage() {
               <dt className="small text-muted">
                 Sourced campaign-platform profiles
               </dt>
-              <dd className="num mt-1 text-3xl font-semibold" style={{ fontFamily: "var(--font-display), Georgia, serif" }}>
+              <dd
+                className="num mt-1 text-3xl font-semibold"
+                style={{ fontFamily: "var(--font-display), Georgia, serif" }}
+              >
                 {profiledSlugs.length}
               </dd>
             </div>
@@ -76,36 +85,12 @@ export default async function ParliamentTrackerPage() {
         </div>
       </section>
 
-      <Section title="What a party label can't show you.">
+      <Section title="Where the data comes from">
         <div className="grid gap-12 lg:grid-cols-[1.6fr_1fr] lg:gap-20">
           <div className="copy space-y-4">
             <p>
-              Every one of Canada&apos;s 343 MPs was elected by a specific
-              riding, on specific promises. The moment they&apos;re sworn in,
-              party structures push to compress that mandate into one of five
-              positions. Toe the line and you keep your committee seat and
-              your place on the next ballot. Break from it and you can lose
-              both.
-            </p>
-            <p>
-              A party whip is an MP whose job is to enforce how the rest of
-              caucus votes, counting the numbers before a vote happens and
-              holding people to the result. Donors and party leadership add
-              their own pull. None of that shows up in a party label.
-            </p>
-            <p>
-              So the tracker records two things. First, whether an MP voted
-              with their party. Second, for the MPs we&apos;ve researched,
-              whether they voted the way they told their own constituents they
-              would. When those answers diverge, that&apos;s the moment worth
-              your attention.
-            </p>
-          </div>
-
-          <div className="lg:pt-1">
-            <h3 className="h3">Where the data comes from</h3>
-            <p className="copy mt-2 text-[1rem]">
-              Everything here comes from{" "}
+              Ridings, ballots, and each party&apos;s official position on a
+              vote all come from{" "}
               <a
                 href="https://openparliament.ca"
                 target="_blank"
@@ -115,20 +100,40 @@ export default async function ParliamentTrackerPage() {
                 openparliament.ca
               </a>
               , which republishes the House of Commons&apos; own open data. We
-              add no estimates and no modelling.
+              add no estimates and no modelling. The site reads that data
+              directly, so new votes appear here on their own.
             </p>
+            <p>
+              Researching what all 343 members campaigned on is a large,
+              ongoing task, so sourced platform profiles exist for{" "}
+              <span className="num">{profiledSlugs.length}</span> of them so
+              far, marked <span className="font-semibold">Full profile</span>{" "}
+              below. Every other member still has a real voting record, without
+              the platform comparison for now.
+            </p>
+          </div>
 
-            <h3 className="h3 mt-7">Honest gaps</h3>
+          <div className="lg:pt-1">
+            <h3 className="h3">The full dataset</h3>
             <p className="copy mt-2 text-[1rem]">
-              Researching what all 343 MPs campaigned on is a large, ongoing
-              task, so platform profiles exist for{" "}
-              <span className="num">{profiledSlugs.length}</span> MPs so far
-              (marked <span className="font-semibold">Full profile</span>{" "}
-              below). Every other MP still gets a real, live voting record,
-              without the platform comparison for now.
+              Every recorded vote of session {SESSION} as one CSV, rebuilt
+              hourly: session, vote number, date, bill, description, result,
+              and the yea / nay / paired tallies. Free to use for any purpose
+              with attribution to openparliament.ca.
             </p>
+            <div className="mt-6">
+              <DownloadLink
+                href="/projects/parliament-tracker/dataset"
+                file="parliament-votes-45-1.csv"
+                className="cta"
+              >
+                {votes.length > 0
+                  ? `Download ${votes.length} votes (CSV)`
+                  : "Download CSV"}
+              </DownloadLink>
+            </div>
             {vacant > 0 && (
-              <p className="small mt-4 text-muted">
+              <p className="small mt-6 text-muted">
                 <span className="num">{mps.length}</span> of {TOTAL_SEATS}{" "}
                 seats currently have a sitting member;{" "}
                 <span className="num">{vacant}</span> are vacant pending
@@ -139,41 +144,16 @@ export default async function ParliamentTrackerPage() {
         </div>
       </Section>
 
-      <Section title="Download the full dataset" tone="paper-2">
-        <div className="grid gap-10 lg:grid-cols-[1.6fr_1fr] lg:gap-20">
-          <p className="copy">
-            Every recorded vote of session {SESSION} as a single CSV,{" "}
-            rebuilt hourly from Parliament&apos;s open data: session, vote number,
-            date, bill, description, result, and the yea / nay / paired
-            tallies. Free to use for any purpose with attribution to
-            openparliament.ca.
-          </p>
-          <div className="lg:pt-1">
-            <DownloadLink
-              href="/projects/parliament-tracker/dataset"
-              file="parliament-votes-45-1.csv"
-              className="cta"
-            >
-              {votes.length > 0
-                ? `Download ${votes.length} votes (CSV)`
-                : "Download CSV"}
-            </DownloadLink>
-          </div>
-        </div>
-      </Section>
-
-      <Section title="Look up a member">
+      <Section title="Look up a member" tone="paper-2">
         <MPDirectory mps={mps} profiledSlugs={profiledSlugs} />
       </Section>
 
-      <Section tone="paper-2">
+      <Section>
         <div className="max-w-2xl">
-          <h2 className="h2">
-            Curious why we built this?
-          </h2>
+          <h2 className="h2">Why we publish this</h2>
           <p className="copy mt-5">
-            The tracker exists so anyone can check the record without taking
-            our word for it. The mission page explains the reasoning in full.
+            A vote you can look up settles an argument that a party label never
+            will. The mission page explains the reasoning in full.
           </p>
           <div className="mt-8">
             <Link href="/mission" className="cta">

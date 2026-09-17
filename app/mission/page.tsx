@@ -6,21 +6,21 @@ import Section from "@/app/components/Section";
 export const metadata: Metadata = {
   title: "Mission",
   description:
-    "Civics Studio promotes independent, non-partisan civic thinking, building projects that let anyone check how Parliament actually votes.",
+    "Why Civics Studio publishes how every MP votes, and how those votes compare to what they campaigned on.",
 };
 
 const principles = [
   {
-    title: "Independent over partisan",
-    text: "The 343 elected members of the House represent 343 distinct constituencies. Our projects show how party structures shape the votes made on their behalf.",
+    title: "Independent representation",
+    text: "The 343 elected members of the House represent 343 distinct constituencies, and should give a voice to everybody in Canada.",
   },
   {
-    title: "Literacy as accountability",
-    text: "Most people already know whip pressure exists. What's harder to find is the specific vote where your own MP bent to it, which is what the tracker is for.",
+    title: "Political literacy",
+    text: "Most people already know pressure in politics exists. What's harder to find is the specific vote where it affected an MP, which is what this project is made for.",
   },
   {
-    title: "Non-partisan by conviction",
-    text: "We support no party and take money from none of them. Our only interest is that the record stays public and accurate.",
+    title: "Non-partisan",
+    text: "We support no particular party and take money from none of them. Our only interest is that the truth stays public and accurate.",
   },
 ];
 
@@ -28,8 +28,8 @@ export default function MissionPage() {
   return (
     <div>
       <PageHeader
-        title="Our case for independent representation."
-        lede="Civics Studio exists to make Parliament's own record easy to look up, so anyone can check what their MP actually did."
+        title="Our case for independent representation"
+        lede="We make Parliament's own record easy to look up, so anyone can check what their MP actually did."
       />
 
       <Section title="How party structures shape Parliament">
@@ -40,33 +40,23 @@ export default function MissionPage() {
               Canada has 343 seats in the House of Commons, and each one
               represents a constituency with its own priorities. In practice,
               party structures and coalition dynamics mean voting follows party
-              lines, which concentrates 343 voices into a far smaller number of
+              lines, which funnels 343 voices into a far smaller number of
               positions.
             </p>
             <p>
-              That pressure is very concrete. A party whip counts votes before
-              they happen and holds members to the result, with consequences an
-              MP can feel: a committee seat, or a nomination next election.
-              Lobbying compounds it by treating each party as a single unit
-              whose leadership can be approached on behalf of a whole caucus.
-            </p>
-            <p>
-              A multi-party system carries more diversity of thought than a
-              two-party one. Understanding how it works, and how independent
-              representation can function inside it, belongs in civic
-              education.
+              That pressure is a threat to democracy. A party whip counts votes
+              before they happen and holds members to the result, with
+              consequences an MP can feel: losing a committee seat or a
+              nomination next election. Ultimately this leads to a loss of
+              diversity.
             </p>
           </div>
 
           <div className="lg:pt-1">
             <p className="copy text-[1rem]">
-              Our{" "}
-              <Link href="/projects/parliament-tracker" className="link">
-                Parliament Tracker
-              </Link>{" "}
-              puts this into practice: every recorded vote of the current
-              session, for every sitting MP, including the ones where a ballot
-              broke from the party&apos;s own stated position.
+              So we publish every recorded vote of the current session, for
+              every sitting MP, including the ones where a ballot broke from
+              the party&apos;s own stated position.
             </p>
             <div className="mt-6">
               <Link href="/projects/parliament-tracker" className="cta">
@@ -89,21 +79,6 @@ export default function MissionPage() {
             </div>
           ))}
         </dl>
-      </Section>
-
-      <Section title="What we build">
-        <p className="copy">
-          Games and data projects that make the mechanics of political systems
-          tangible. Understanding how incentives and institutional structures
-          actually work is what makes it possible to engage with them.
-          Everything we publish is free and built for students and
-          educators.
-        </p>
-        <div className="mt-8">
-          <Link href="/projects" className="cta">
-            See the projects
-          </Link>
-        </div>
       </Section>
     </div>
   );

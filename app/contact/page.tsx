@@ -5,14 +5,14 @@ import Section from "@/app/components/Section";
 export const metadata: Metadata = {
   title: "Contact",
   description:
-    "Email Civics Studio about classroom use, data corrections, or questions about any project.",
+    "Email Civics Studio about classroom use, or to send a correction to any vote or profile on the site.",
 };
 
 export default function ContactPage() {
   return (
     <div>
       <PageHeader
-        title="Get in touch."
+        title="Get in touch"
         lede="One address, and a person reads it. Write about classroom use, or send a correction if you find something wrong in our data."
       >
         <a href="mailto:civicsstudio@gmail.com" className="cta cta-invert">
@@ -25,16 +25,14 @@ export default function ContactPage() {
           <div className="copy space-y-4">
             <p>
               Teachers and club organizers: tell us what you&apos;re running
-              and we&apos;ll tell you which projects fit and how to use them
-              with a group. Everything is free and there&apos;s nothing to
-              sign.
+              and we&apos;ll tell you how to use the record with a group.
+              Everything is free and there&apos;s nothing to sign.
             </p>
             <p>
-              Corrections are especially welcome. Every vote on the Parliament
-              Tracker is pulled from Parliament&apos;s open data and every MP
-              profile is sourced, but if you find something wrong, send the
-              specific vote number or MP and we&apos;ll check it against the
-              record.
+              Corrections are especially welcome. Every vote comes from
+              Parliament&apos;s open data and every profile is sourced, but if
+              you find something wrong, send the specific vote number or member
+              and we&apos;ll check it against the record.
             </p>
           </div>
 
